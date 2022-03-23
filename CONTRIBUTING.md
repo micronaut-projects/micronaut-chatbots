@@ -1,6 +1,6 @@
 # Contributing Code or Documentation to Micronaut
 
-Sign the [Contributor License Agreement (CLA)](https://cla-assistant.io/micronaut-projects/micronaut-chabots). This is required before any of your code or pull-requests are accepted.
+Sign the [Contributor License Agreement (CLA)](https://cla-assistant.io/micronaut-projects/micronaut-chatbots). This is required before any of your code or pull-requests are accepted.
 
 ## Finding Issues to Work on
 
@@ -8,15 +8,15 @@ If you are interested in contributing to Micronaut and are looking for issues to
 
 ## JDK Setup
 
-Micronaut chabots currently requires JDK 8.
+Micronaut chatbots currently requires JDK 8.
 
 ## IDE Setup
 
-Micronaut chabots can be imported into IntelliJ IDEA by opening the `build.gradle` file.
+Micronaut chatbots can be imported into IntelliJ IDEA by opening the `build.gradle` file.
 
 ## Docker Setup
 
-Micronaut chabots tests currently require Docker to be installed.
+Micronaut chatbots tests currently require Docker to be installed.
 
 ## Running Tests
 
