@@ -2,10 +2,10 @@ plugins {
     id("io.micronaut.build.internal.module")
 }
 dependencies {
-    annotationProcessor("io.micronaut.serde:micronaut-serde-processor")
-    api("io.micronaut.serde:micronaut-serde-api")
-    api("io.micronaut:micronaut-http-client")
-    implementation("io.micronaut:micronaut-validation")
+    annotationProcessor(libs.micronaut.serde.processor)
+    api(libs.micronaut.serde.api)
+    api(libs.micronaut.http.client)
+    implementation(libs.micronaut.validation)
 }
 
 configurations.all {
