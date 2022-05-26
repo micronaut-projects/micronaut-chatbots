@@ -8,6 +8,12 @@ dependencies {
     implementation(libs.micronaut.validation)
 }
 
+micronautBuild {
+    binaryCompatibility {
+        enabled.set(false)
+    }
+}
+
 configurations.all {
     resolutionStrategy.dependencySubstitution {
         substitute(module("io.micronaut:micronaut-jackson-databind"))
