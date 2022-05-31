@@ -1,0 +1,6 @@
+[libraries]
+# Micronaut
+micronaut-http-client = { module = "io.micronaut:micronaut-http-client" }
+micronaut-serde-api = { module = "io.micronaut.serde:micronaut-serde-api" }
+micronaut-serde-processor = { module = "io.micronaut.serde:micronaut-serde-processor" }
+micronaut-validation = { module = "io.micronaut:micronaut-validation" }
