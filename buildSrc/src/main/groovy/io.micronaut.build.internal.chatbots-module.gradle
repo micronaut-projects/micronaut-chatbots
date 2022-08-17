@@ -1,0 +1,15 @@
+plugins {
+    id 'io.micronaut.build.internal.chatbots-base'
+    id "io.micronaut.build.internal.module"
+}
+dependencies {
+    implementation(libs.micronaut.validation)
+}
+
+micronautBuild {
+    binaryCompatibility {
+        enabled.set(false)
+    }
+}
+
+
