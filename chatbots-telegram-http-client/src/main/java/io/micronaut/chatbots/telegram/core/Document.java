@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 original authors
+ * Copyright 2017-2021 original authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,59 +15,43 @@
  */
 package io.micronaut.chatbots.telegram.core;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.core.annotation.Nullable;
 import io.micronaut.serde.annotation.Serdeable;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 /**
- * This object represents an audio file to be treated as music by the Telegram clients.
- * @see <a href="https://core.telegram.org/bots/api#audio">Audio</a>
- * @author Sergio del Amo
- * @since 1.0.0
+ * This object represents a general file (as opposed to photos, voice messages and audio files).
+ * @see <a href="https://core.telegram.org/bots/api#document">Document</a>
  */
 @Serdeable
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class Audio {
+public class Document {
 
     /**
      * Identifier for this file.
      */
     @JsonProperty("file_id")
-    @NotBlank
     @NonNull
+    @NotBlank
     private String fileId;
 
     /**
      * Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file.
      */
     @JsonProperty("file_unique_id")
-    @NotBlank
     @NonNull
+    @NotBlank
     private String fileUniqueId;
 
     /**
-     * Duration of the audio in seconds as defined by sender.
-     */
-    @NonNull
-    @NotNull
-    private Integer duration;
-
-    /**
-     * Performer of the audio as defined by sender or by audio tags.
+     * Document thumbnail as defined by sender.
      */
     @Nullable
-    private String performer;
-
-    /**
-     * Title of the audio as defined by sender or by audio tags.
-     */
-    @Nullable
-    private String title;
+    @Valid
+    private PhotoSize thumb;
 
     /**
      * Original filename as defined by sender.
@@ -79,24 +63,18 @@ public class Audio {
     /**
      * MIME type of the file as defined by sender.
      */
-    @Nullable
     @JsonProperty("mime_type")
+    @Nullable
     private String mimeType;
 
-    @Nullable
+    /**
+     * File size.
+     */
     @JsonProperty("file_size")
+    @Nullable
     private Integer fileSize;
 
-    /**
-     * Thumbnail of the album cover to which the music file belongs.
-     */
-    @Nullable
-    private PhotoSize thumb;
-
-    /**
-     * Constructor.
-     */
-    public Audio() {
+    public Document() {
     }
 
     /**
@@ -118,7 +96,7 @@ public class Audio {
 
     /**
      *
-     * @return Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file..
+     * @return Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file.
      */
     @NonNull
     public String getFileUniqueId() {
@@ -135,92 +113,7 @@ public class Audio {
 
     /**
      *
-     * @return Duration of the audio in seconds as defined by sender.
-     */
-    @NonNull
-    public Integer getDuration() {
-        return duration;
-    }
-
-    /**
-     *
-     * @param duration Duration of the audio in seconds as defined by sender.
-     */
-    public void setDuration(@NonNull Integer duration) {
-        this.duration = duration;
-    }
-
-    /**
-     *
-     * @return Performer of the audio as defined by sender or by audio tags.
-     */
-    @Nullable
-    public String getPerformer() {
-        return performer;
-    }
-
-    /**
-     *
-     * @param performer Performer of the audio as defined by sender or by audio tags.
-     */
-    public void setPerformer(@Nullable String performer) {
-        this.performer = performer;
-    }
-
-    /**
-     *
-     * @return Title of the audio as defined by sender or by audio tags.
-     */
-    @Nullable
-    public String getTitle() {
-        return title;
-    }
-
-    /**
-     *
-     * @param title Title of the audio as defined by sender or by audio tags.
-     */
-    public void setTitle(@Nullable String title) {
-        this.title = title;
-    }
-
-    /**
-     *
-     * @return MIME type of the file as defined by sender.
-     */
-    @Nullable
-    public String getMimeType() {
-        return mimeType;
-    }
-
-    /**
-     *
-     * @param mimeType MIME type of the file as defined by sender.
-     */
-    public void setMimeType(@Nullable String mimeType) {
-        this.mimeType = mimeType;
-    }
-
-    /**
-     *
-     * @return File size
-     */
-    @Nullable
-    public Integer getFileSize() {
-        return fileSize;
-    }
-
-    /**
-     *
-     * @param fileSize File size
-     */
-    public void setFileSize(@Nullable Integer fileSize) {
-        this.fileSize = fileSize;
-    }
-
-    /**
-     *
-     * @return Thumbnail of the album cover to which the music file belongs.
+     * @return Document thumbnail as defined by sender.
      */
     @Nullable
     public PhotoSize getThumb() {
@@ -229,7 +122,7 @@ public class Audio {
 
     /**
      *
-     * @param thumb Thumbnail of the album cover to which the music file belongs.
+     * @param thumb Document thumbnail as defined by sender.
      */
     public void setThumb(@Nullable PhotoSize thumb) {
         this.thumb = thumb;
@@ -252,17 +145,49 @@ public class Audio {
         this.fileName = fileName;
     }
 
+    /**
+     *
+     * @return MIME type of the file as defined by sender.
+     */
+    @Nullable
+    public String getMimeType() {
+        return mimeType;
+    }
+
+    /**
+     *
+     * @param mimeType MIME type of the file as defined by sender.
+     */
+    public void setMimeType(@Nullable String mimeType) {
+        this.mimeType = mimeType;
+    }
+
+    /**
+     *
+     * @return File size.
+     */
+    @Nullable
+    public Integer getFileSize() {
+        return fileSize;
+    }
+
+    /**
+     *
+     * @param fileSize File size.
+     */
+    public void setFileSize(@Nullable Integer fileSize) {
+        this.fileSize = fileSize;
+    }
+
     @Override
     public String toString() {
-        return "Audio{" +
+        return "Document{" +
                 "fileId='" + fileId + '\'' +
                 ", fileUniqueId='" + fileUniqueId + '\'' +
-                ", duration=" + duration +
-                ", performer='" + performer + '\'' +
-                ", title='" + title + '\'' +
+                ", thumb=" + (thumb != null ? thumb.toString() : "") +
+                ", fileName='" + fileName + '\'' +
                 ", mimeType='" + mimeType + '\'' +
                 ", fileSize=" + fileSize +
-                ", thumb=" + (thumb != null ? thumb.toString() : "") +
                 '}';
     }
 }

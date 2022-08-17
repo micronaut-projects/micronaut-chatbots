@@ -15,7 +15,6 @@
  */
 package io.micronaut.chatbots.telegram.core;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.core.annotation.Nullable;
@@ -25,29 +24,25 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 /**
- * This object represents an audio file to be treated as music by the Telegram clients.
- * @see <a href="https://core.telegram.org/bots/api#audio">Audio</a>
- * @author Sergio del Amo
- * @since 1.0.0
+ * This object represents a voice note.
+ * @see <a href="https://core.telegram.org/bots/api#voice">Voice</a>
  */
 @Serdeable
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class Audio {
-
+public class Voice {
     /**
      * Identifier for this file.
      */
     @JsonProperty("file_id")
-    @NotBlank
     @NonNull
+    @NotBlank
     private String fileId;
 
     /**
      * Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file.
      */
     @JsonProperty("file_unique_id")
-    @NotBlank
     @NonNull
+    @NotBlank
     private String fileUniqueId;
 
     /**
@@ -58,45 +53,20 @@ public class Audio {
     private Integer duration;
 
     /**
-     * Performer of the audio as defined by sender or by audio tags.
-     */
-    @Nullable
-    private String performer;
-
-    /**
-     * Title of the audio as defined by sender or by audio tags.
-     */
-    @Nullable
-    private String title;
-
-    /**
-     * Original filename as defined by sender.
-     */
-    @JsonProperty("file_name")
-    @Nullable
-    private String fileName;
-
-    /**
      * MIME type of the file as defined by sender.
      */
-    @Nullable
     @JsonProperty("mime_type")
+    @Nullable
     private String mimeType;
 
+    /**
+     * File size.
+     */
     @Nullable
     @JsonProperty("file_size")
     private Integer fileSize;
 
-    /**
-     * Thumbnail of the album cover to which the music file belongs.
-     */
-    @Nullable
-    private PhotoSize thumb;
-
-    /**
-     * Constructor.
-     */
-    public Audio() {
+    public Voice() {
     }
 
     /**
@@ -118,7 +88,7 @@ public class Audio {
 
     /**
      *
-     * @return Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file..
+     * @return Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file.
      */
     @NonNull
     public String getFileUniqueId() {
@@ -152,40 +122,6 @@ public class Audio {
 
     /**
      *
-     * @return Performer of the audio as defined by sender or by audio tags.
-     */
-    @Nullable
-    public String getPerformer() {
-        return performer;
-    }
-
-    /**
-     *
-     * @param performer Performer of the audio as defined by sender or by audio tags.
-     */
-    public void setPerformer(@Nullable String performer) {
-        this.performer = performer;
-    }
-
-    /**
-     *
-     * @return Title of the audio as defined by sender or by audio tags.
-     */
-    @Nullable
-    public String getTitle() {
-        return title;
-    }
-
-    /**
-     *
-     * @param title Title of the audio as defined by sender or by audio tags.
-     */
-    public void setTitle(@Nullable String title) {
-        this.title = title;
-    }
-
-    /**
-     *
      * @return MIME type of the file as defined by sender.
      */
     @Nullable
@@ -203,7 +139,7 @@ public class Audio {
 
     /**
      *
-     * @return File size
+     * @return File size.
      */
     @Nullable
     public Integer getFileSize() {
@@ -212,57 +148,20 @@ public class Audio {
 
     /**
      *
-     * @param fileSize File size
+     * @param fileSize File size.
      */
     public void setFileSize(@Nullable Integer fileSize) {
         this.fileSize = fileSize;
     }
 
-    /**
-     *
-     * @return Thumbnail of the album cover to which the music file belongs.
-     */
-    @Nullable
-    public PhotoSize getThumb() {
-        return thumb;
-    }
-
-    /**
-     *
-     * @param thumb Thumbnail of the album cover to which the music file belongs.
-     */
-    public void setThumb(@Nullable PhotoSize thumb) {
-        this.thumb = thumb;
-    }
-
-    /**
-     *
-     * @return Original filename as defined by sender.
-     */
-    @Nullable
-    public String getFileName() {
-        return fileName;
-    }
-
-    /**
-     *
-     * @param fileName Original filename as defined by sender.
-     */
-    public void setFileName(@Nullable String fileName) {
-        this.fileName = fileName;
-    }
-
     @Override
     public String toString() {
-        return "Audio{" +
+        return "Voice{" +
                 "fileId='" + fileId + '\'' +
                 ", fileUniqueId='" + fileUniqueId + '\'' +
                 ", duration=" + duration +
-                ", performer='" + performer + '\'' +
-                ", title='" + title + '\'' +
                 ", mimeType='" + mimeType + '\'' +
                 ", fileSize=" + fileSize +
-                ", thumb=" + (thumb != null ? thumb.toString() : "") +
                 '}';
     }
 }
