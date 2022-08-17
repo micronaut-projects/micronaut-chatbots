@@ -17,7 +17,7 @@ micronautBuild {
 configurations.all {
     resolutionStrategy.dependencySubstitution {
         substitute(module("io.micronaut:micronaut-jackson-databind"))
-            .using(module("io.micronaut.serde:micronaut-serde-jackson:1.0.0"))
+            .using(module("io.micronaut.serde:micronaut-serde-jackson:1.3.0"))
     }
 }
 
