@@ -74,9 +74,6 @@ public class ShippingAddress {
     @JsonProperty("post_code")
     private String postCode;
 
-    public ShippingAddress() {
-    }
-
     /**
      *
      * @return ISO 3166-1 alpha-2 country code.

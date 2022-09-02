@@ -86,9 +86,6 @@ public class PreCheckoutQuery {
     @JsonProperty("order_info")
     private OrderInfo orderInfo;
 
-    public PreCheckoutQuery() {
-    }
-
     /**
      *
      * @return Unique query identifier.

@@ -72,9 +72,6 @@ public class Game {
     @Nullable
     private Animation animation;
 
-    public Game() {
-    }
-
     /**
      *
      * @return Title of the game.

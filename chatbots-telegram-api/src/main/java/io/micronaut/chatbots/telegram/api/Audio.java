@@ -92,12 +92,6 @@ public class Audio {
     private PhotoSize thumb;
 
     /**
-     * Constructor.
-     */
-    public Audio() {
-    }
-
-    /**
      *
      * @return Identifier for this file.
      */

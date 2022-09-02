@@ -78,9 +78,6 @@ public class InlineQuery {
     @Valid
     private Location location;
 
-    public InlineQuery() {
-    }
-
     /**
      *
      * @return Unique identifier for this query.

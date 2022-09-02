@@ -164,9 +164,6 @@ public class ChatMember {
     @JsonProperty("can_add_web_page_previews")
     private Boolean canAddWebPagePreviews;
 
-    public ChatMember() {
-    }
-
     /**
      *
      * @return Information about the user.

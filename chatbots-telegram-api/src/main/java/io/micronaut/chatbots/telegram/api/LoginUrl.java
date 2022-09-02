@@ -59,9 +59,6 @@ public class LoginUrl {
     @JsonProperty("request_write_access")
     private Boolean requestWriteAccess;
 
-    public LoginUrl() {
-    }
-
     /**
      *
      * @return An HTTP URL to be opened with user authorization data added to the query string when the button is pressed.

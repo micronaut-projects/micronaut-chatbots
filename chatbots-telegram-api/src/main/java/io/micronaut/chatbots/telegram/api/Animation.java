@@ -98,9 +98,6 @@ public class Animation {
     @JsonProperty("file_size")
     private Integer fileSize;
 
-    public Animation() {
-    }
-
     /**
      *
      * @return Identifier for this file.

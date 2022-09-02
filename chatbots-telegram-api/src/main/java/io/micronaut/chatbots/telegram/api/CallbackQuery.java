@@ -80,9 +80,6 @@ public class CallbackQuery {
     @JsonProperty("game_short_name")
     private String gameShortName;
 
-    public CallbackQuery() {
-    }
-
     /**
      *
      * @return Unique identifier for this query.

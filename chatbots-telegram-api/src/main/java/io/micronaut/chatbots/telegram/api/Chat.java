@@ -188,9 +188,6 @@ public class Chat implements Serializable {
     @Valid
     private ChatLocation location;
 
-    public Chat() {
-    }
-
     /**
      *
      * @return Unique identifier for this chat.

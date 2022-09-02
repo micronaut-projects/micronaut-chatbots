@@ -82,9 +82,6 @@ public class ChatPermissions {
     @Nullable
     private Boolean canPinMessages;
 
-    public ChatPermissions() {
-    }
-
     /**
      *
      * @return True, if the user is allowed to send text messages, contacts, locations and venues.

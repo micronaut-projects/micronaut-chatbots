@@ -99,9 +99,6 @@ public class EncryptedPassportElement {
     @NonNull
     private String hash;
 
-    public EncryptedPassportElement() {
-    }
-
     /**
      *
      * @return Element type

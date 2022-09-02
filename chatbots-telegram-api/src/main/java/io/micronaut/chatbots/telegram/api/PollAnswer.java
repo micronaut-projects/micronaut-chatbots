@@ -54,9 +54,6 @@ public class PollAnswer {
     @JsonProperty("option_ids")
     private List<Integer> optionIds;
 
-    public PollAnswer() {
-    }
-
     /**
      *
      * @return Unique poll identifier.

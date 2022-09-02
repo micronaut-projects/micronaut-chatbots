@@ -43,9 +43,6 @@ public class PollOption {
     @NotNull
     private Integer voterCount;
 
-    public PollOption() {
-    }
-
     /**
      *
      * @return Option text, 1-100 characters.

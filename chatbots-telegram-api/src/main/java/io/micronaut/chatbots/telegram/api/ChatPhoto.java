@@ -59,9 +59,6 @@ public class ChatPhoto {
     @JsonProperty("big_file_unique_id")
     private String bigFileUniqueId;
 
-    public ChatPhoto() {
-    }
-
     /**
      *
      * @return File identifier of small (160x160) chat photo.

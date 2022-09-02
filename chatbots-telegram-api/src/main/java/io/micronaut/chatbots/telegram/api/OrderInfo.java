@@ -52,9 +52,6 @@ public class OrderInfo {
     @JsonProperty("shipping_address")
     private ShippingAddress shippingAddress;
 
-    public OrderInfo() {
-    }
-
     /**
      *
      * @return User name.

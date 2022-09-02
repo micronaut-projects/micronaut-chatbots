@@ -66,9 +66,6 @@ public class KeyboardButton {
     @Valid
     private WebAppInfo webApp;
 
-    public KeyboardButton() {
-    }
-
     /**
      *
      * @return Text of the button.

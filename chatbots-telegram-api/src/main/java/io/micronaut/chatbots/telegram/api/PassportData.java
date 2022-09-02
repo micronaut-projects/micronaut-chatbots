@@ -36,9 +36,6 @@ public class PassportData {
      */
     private EncryptedCredentials credentials;
 
-    public PassportData() {
-    }
-
     /**
      *
      * @return Array with information about documents and other Telegram Passport elements that was shared with the bot.

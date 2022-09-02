@@ -98,9 +98,6 @@ public class InlineKeyboardButton {
     @Nullable
     private Boolean pay;
 
-    public InlineKeyboardButton() {
-    }
-
     /**
      *
      * @return Label text on the button.

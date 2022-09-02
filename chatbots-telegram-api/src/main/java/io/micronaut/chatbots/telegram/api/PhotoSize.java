@@ -69,9 +69,6 @@ public class PhotoSize {
     @Nullable
     private Integer fileSize;
 
-    public PhotoSize() {
-    }
-
     /**
      *
      * @return Identifier for this file.

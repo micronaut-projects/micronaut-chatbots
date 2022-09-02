@@ -23,9 +23,6 @@ import io.micronaut.serde.annotation.Serdeable;
 @Serdeable
 public class CallbackGame {
 
-    public CallbackGame() {
-    }
-
     @Override
     public String toString() {
         return "CallbackGame{}";

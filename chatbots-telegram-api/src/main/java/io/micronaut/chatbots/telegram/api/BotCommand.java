@@ -42,9 +42,6 @@ public class BotCommand {
     @Size(min = 3, max = 256)
     private String description;
 
-    public BotCommand() {
-    }
-
     /**
      *
      * @return Text of the command

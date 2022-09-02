@@ -67,9 +67,6 @@ public class Contact {
     @Nullable
     private String vcard;
 
-    public Contact() {
-    }
-
     /**
      *
      * @return Contact's phone number.

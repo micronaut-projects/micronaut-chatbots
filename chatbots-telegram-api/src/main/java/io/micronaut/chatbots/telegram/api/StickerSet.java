@@ -75,9 +75,6 @@ public class StickerSet {
     @Nullable
     private PhotoSize thumb;
 
-    public StickerSet() {
-    }
-
     /**
      *
      * @return Sticker set name.

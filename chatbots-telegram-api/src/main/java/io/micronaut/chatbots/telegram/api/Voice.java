@@ -65,10 +65,7 @@ public class Voice {
     @Nullable
     @JsonProperty("file_size")
     private Integer fileSize;
-
-    public Voice() {
-    }
-
+    
     /**
      *
      * @return Identifier for this file.

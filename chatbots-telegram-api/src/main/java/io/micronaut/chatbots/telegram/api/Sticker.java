@@ -99,9 +99,6 @@ public class Sticker {
     @Nullable
     private Integer fileSize;
 
-    public Sticker() {
-    }
-
     /**
      *
      * @return Identifier for this file, which can be used to download or reuse the file.

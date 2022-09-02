@@ -58,9 +58,6 @@ public class MaskPosition {
     @NotNull
     private Float scale;
 
-    public MaskPosition() {
-    }
-
     /**
      *
      * @return The part of the face relative to which the mask should be placed.

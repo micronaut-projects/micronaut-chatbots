@@ -58,9 +58,6 @@ public class File {
     @JsonProperty("file_path")
     private String filePath;
 
-    public File() {
-    }
-
     /**
      *
      * @return Identifier for this file, which can be used to download or reuse the file.

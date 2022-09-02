@@ -66,9 +66,6 @@ public class ReplyKeyboardMarkup {
     @Nullable
     private Boolean selective;
 
-    public ReplyKeyboardMarkup() {
-    }
-
     /**
      *
      * @return Array of button rows, each represented by an Array of KeyboardButton objects.

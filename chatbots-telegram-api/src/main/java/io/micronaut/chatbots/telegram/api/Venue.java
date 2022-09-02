@@ -81,9 +81,6 @@ public class Venue {
     @JsonProperty("google_place_type")
     private String googlePlaceType;
 
-    public Venue() {
-    }
-
     /**
      *
      * @return Venue location.

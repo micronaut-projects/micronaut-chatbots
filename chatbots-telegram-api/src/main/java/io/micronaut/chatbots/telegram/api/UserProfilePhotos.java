@@ -45,9 +45,6 @@ public class UserProfilePhotos {
     @NotNull
     private List<List<PhotoSize>> photos;
 
-    public UserProfilePhotos() {
-    }
-
     /**
      *
      * @return Total number of profile pictures the target user has.

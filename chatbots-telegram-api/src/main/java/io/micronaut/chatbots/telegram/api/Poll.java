@@ -127,9 +127,6 @@ public class Poll {
     @JsonProperty("close_date")
     private Integer closeDate;
 
-    public Poll() {
-    }
-
     /**
      *
      * @return Unique poll identifier.

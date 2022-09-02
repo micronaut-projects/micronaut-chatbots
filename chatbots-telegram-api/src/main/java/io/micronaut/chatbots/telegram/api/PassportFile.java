@@ -58,9 +58,6 @@ public class PassportFile {
     @NotNull
     private Integer fileDate;
 
-    public PassportFile() {
-    }
-
     /**
      *
      * @return Identifier for this file, which can be used to download or reuse the file.

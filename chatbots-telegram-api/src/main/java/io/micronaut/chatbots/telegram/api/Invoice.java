@@ -64,9 +64,6 @@ public class Invoice {
     @NotNull
     private Integer totalAmount;
 
-    public Invoice() {
-    }
-
     /**
      *
      * @return Product name.

@@ -71,9 +71,6 @@ public class Location {
     @Nullable
     private Integer proximityAlertRadius;
 
-    public Location() {
-    }
-
     /**
      *
      * @return Longitude as defined by sender.

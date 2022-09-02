@@ -115,9 +115,6 @@ public class Update {
     @Nullable
     private PollAnswer pollAnswer;
 
-    public Update() {
-    }
-
     /**
      *
      * @return The update‘s unique identifier.

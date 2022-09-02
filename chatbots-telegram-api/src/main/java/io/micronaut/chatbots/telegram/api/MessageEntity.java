@@ -78,9 +78,6 @@ public class MessageEntity {
     @Nullable
     private String customEmojiId;
 
-    public MessageEntity() {
-    }
-
     /**
      *
      * @return Type of the entity.

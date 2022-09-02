@@ -89,9 +89,6 @@ public class Video {
     @JsonProperty("file_size")
     private Integer fileSize;
 
-    public Video() {
-    }
-
     /**
      *
      * @return Identifier for this file.

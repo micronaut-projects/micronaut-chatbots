@@ -63,9 +63,6 @@ public class ShippingQuery {
     @Valid
     private ShippingAddress shippingAddress;
 
-    public ShippingQuery() {
-    }
-
     /**
      *
      * @return Unique query identifier.

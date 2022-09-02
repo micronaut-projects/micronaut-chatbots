@@ -36,9 +36,6 @@ public class InlineKeyboardMarkup {
     @JsonProperty("inline_keyboard")
     private List<List<InlineKeyboardButton>> inlineKeyboard;
 
-    public InlineKeyboardMarkup() {
-    }
-
     /**
      *
      * @return Array of button rows, each represented by an Array of InlineKeyboardButton objects.

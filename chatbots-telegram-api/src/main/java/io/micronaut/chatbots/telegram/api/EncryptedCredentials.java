@@ -47,9 +47,6 @@ public class EncryptedCredentials {
     @NotBlank
     private String secret;
 
-    public EncryptedCredentials() {
-    }
-
     /**
      *
      * @return Base64-encoded encrypted JSON-serialized data with unique user's payload, data hashes and secrets required for EncryptedPassportElement decryption and authentication.

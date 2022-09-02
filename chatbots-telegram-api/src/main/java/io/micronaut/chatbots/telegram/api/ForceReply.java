@@ -50,9 +50,6 @@ public class ForceReply {
     @Nullable
     private Boolean selective;
 
-    public ForceReply() {
-    }
-
     /**
      *
      * @return Shows reply interface to the user, as if they manually selected the bot‘s message and tapped ’Reply'.

@@ -68,9 +68,6 @@ public class ChosenInlineResult {
     @NotBlank
     private String query;
 
-    public ChosenInlineResult() {
-    }
-
     /**
      *
      * @return The unique identifier for the result that was chosen
