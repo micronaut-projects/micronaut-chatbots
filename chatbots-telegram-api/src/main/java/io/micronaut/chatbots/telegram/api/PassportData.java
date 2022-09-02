@@ -15,8 +15,10 @@
  */
 package io.micronaut.chatbots.telegram.api;
 
+import io.micronaut.core.annotation.NonNull;
 import io.micronaut.serde.annotation.Serdeable;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,11 +31,15 @@ public class PassportData {
     /**
      * Array with information about documents and other Telegram Passport elements that was shared with the bot.
      */
+    @NonNull
+    @NotNull
     private List<EncryptedPassportElement> data;
 
     /**
      * Encrypted credentials required to decrypt the data.
      */
+    @NonNull
+    @NotNull
     private EncryptedCredentials credentials;
 
     /**

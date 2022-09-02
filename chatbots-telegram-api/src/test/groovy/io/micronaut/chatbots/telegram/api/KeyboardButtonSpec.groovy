@@ -59,4 +59,22 @@ class KeyboardButtonSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid KeyboardButton does not trigger any constraint exception"() {
+        when:
+        KeyboardButton el = validKeyboardButton()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static KeyboardButton validKeyboardButton() {
+        KeyboardButton el = new KeyboardButton()
+        el.text = 'x'
+        el.requestContact = null
+        el.requestLocation = null
+        el.requestPoll = null
+        el.webApp = null
+        el
+    }
 }

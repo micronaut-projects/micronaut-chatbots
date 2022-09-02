@@ -59,4 +59,31 @@ class VenueSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid Venue does not trigger any constraint exception"() {
+        when:
+        Venue el = validVenue()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static Venue validVenue() {
+        Venue el = new Venue()
+        el.location = validLocation()
+        el.title = "xxx.yyy"
+        el.address = "x"
+        el.foursquareId = null
+        el.foursquareType = null
+        el.googlePlaceId = null
+        el.googlePlaceType = null
+        el
+    }
+
+    static Location validLocation() {
+        Location el = new Location()
+        el.longitude = 1.2
+        el.latitude = 2.5
+        el
+    }
 }

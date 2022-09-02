@@ -59,4 +59,27 @@ class PassportDataSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid PassportData does not trigger any constraint exception"() {
+        when:
+        PassportData el = validPassportData()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static PassportData validPassportData() {
+        PassportData el = new PassportData()
+        el.data = []
+        el.credentials = validEncryptedCredentials()
+        el
+    }
+
+    static EncryptedCredentials validEncryptedCredentials() {
+        EncryptedCredentials el = new EncryptedCredentials()
+        el.data = "x"
+        el.hash = "x"
+        el.secret = "x"
+        el
+    }
 }

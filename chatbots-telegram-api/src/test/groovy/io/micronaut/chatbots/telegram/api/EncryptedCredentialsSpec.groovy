@@ -22,7 +22,7 @@ class EncryptedCredentialsSpec extends Specification {
     @Inject
     BeanContext beanContext
 
-    void "io.micronaut.chatbots.telegram.core.EncryptedCredentials is annotated with @Serdeable.Deserializable"() {
+    void "EncryptedCredentials is annotated with @Serdeable.Deserializable"() {
         given:
         SerdeIntrospections serdeIntrospections = beanContext.getBean(SerdeIntrospections)
 
@@ -33,7 +33,7 @@ class EncryptedCredentialsSpec extends Specification {
         noExceptionThrown()
     }
 
-    void "io.micronaut.chatbots.telegram.core.EncryptedCredentials is annotated with @Serdeable.Serializable"() {
+    void "EncryptedCredentials is annotated with @Serdeable.Serializable"() {
         given:
         SerdeIntrospections serdeIntrospections = beanContext.getBean(SerdeIntrospections)
 
@@ -44,7 +44,7 @@ class EncryptedCredentialsSpec extends Specification {
         noExceptionThrown()
     }
 
-    void "io.micronaut.chatbots.telegram.core.EncryptedCredentials is annotated with Introspected"() {
+    void "EncryptedCredentials is annotated with Introspected"() {
         when:
         BeanIntrospection.getIntrospection(EncryptedCredentials)
 
@@ -52,11 +52,27 @@ class EncryptedCredentialsSpec extends Specification {
         noExceptionThrown()
     }
 
-    void "io.micronaut.chatbots.telegram.core.EncryptedCredentials::toString() does not throw NPE"() {
+    void "EncryptedCredentials::toString() does not throw NPE"() {
         when:
         new EncryptedCredentials().toString()
 
         then:
         noExceptionThrown()
+    }
+
+    void "valid EncryptedCredentials does not trigger any constraint exception"() {
+        when:
+        EncryptedCredentials el = validEncryptedCredentials()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static EncryptedCredentials validEncryptedCredentials() {
+        EncryptedCredentials el = new EncryptedCredentials()
+        el.data = "x"
+        el.hash = "x"
+        el.secret = "x"
+        el
     }
 }
