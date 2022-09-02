@@ -41,9 +41,10 @@ import java.util.Optional;
  * @author Sergio del Amo
  * @param <B> The Bot configuration
  * @param <I> input type.
+ * @param <O> output type.
  * @since 1.0.0
  */
-public abstract class AbstractHandler<B extends BotConfiguration, I>
+public abstract class AbstractHandler<B extends BotConfiguration, I, O>
     extends MicronautRequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
     private static final Logger LOG = LoggerFactory.getLogger(AbstractHandler.class);
 
@@ -113,7 +114,7 @@ public abstract class AbstractHandler<B extends BotConfiguration, I>
      * @return The Dispatcher
      */
     @NonNull
-    protected abstract Dispatcher<B, I, ?> getDispatcher();
+    protected abstract Dispatcher<B, I, O> getDispatcher();
 
     /**
      *
