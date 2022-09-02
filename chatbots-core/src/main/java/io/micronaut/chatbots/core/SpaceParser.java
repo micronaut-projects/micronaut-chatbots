@@ -23,18 +23,18 @@ import java.util.Optional;
 
 /**
  * Api to retrieve the space associated with the message.
- * @param <INPUT> input type.
- * @param <SPACE> The Space
+ * @param <I> input type.
+ * @param <S> The Space
  * @author Sergio del Amo
  * @since 1.0.0
  */
 @FunctionalInterface
-public interface SpaceParser<INPUT, SPACE> {
+public interface SpaceParser<I, S> {
     /**
      *
      * @param input The message
      * @return retrieves the space associated with the message
      */
     @NonNull
-    Optional<SPACE> parse(@NonNull @NotNull @Valid INPUT input);
+    Optional<S> parse(@NonNull @NotNull @Valid I input);
 }

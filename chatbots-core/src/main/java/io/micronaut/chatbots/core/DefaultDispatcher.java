@@ -25,26 +25,26 @@ import java.util.Optional;
 
 /**
  * Iterates through every {@link Handler} in odered and dispatch the message to the first which can handle the request.
- * @param <BOT> The Bot configuration
- * @param <INPUT> input type.
- * @param <OUTPUT> output type.
+ * @param <B> The Bot configuration
+ * @param <I> input type.
+ * @param <O> output type.
  * @author Sergio del Amo
  * @since 1.0.0
  */
 @Singleton
-public class DefaultDispatcher<BOT extends BotConfiguration, INPUT, OUTPUT> implements Dispatcher<BOT, INPUT, OUTPUT> {
+public class DefaultDispatcher<B extends BotConfiguration, I, O> implements Dispatcher<B, I, O> {
 
-    private final List<Handler<BOT, INPUT, OUTPUT>> handlers;
+    private final List<Handler<B, I, O>> handlers;
 
-    public DefaultDispatcher(List<Handler<BOT, INPUT, OUTPUT>> handlers) {
+    public DefaultDispatcher(List<Handler<B, I, O>> handlers) {
         this.handlers = handlers;
     }
 
     @Override
     @NonNull
-    public Optional<OUTPUT> dispatch(@NonNull @NotNull @Valid BOT bot,
-                                     @NonNull @NotNull @Valid INPUT input) {
-        Optional<Handler<BOT, INPUT, OUTPUT>> handlerOptional = handlers.stream()
+    public Optional<O> dispatch(@NonNull @NotNull @Valid B bot,
+                                     @NonNull @NotNull @Valid I input) {
+        Optional<Handler<B, I, O>> handlerOptional = handlers.stream()
             .filter(handler -> handler.canHandle(bot, input))
             .findFirst();
         return handlerOptional.isPresent() ?
