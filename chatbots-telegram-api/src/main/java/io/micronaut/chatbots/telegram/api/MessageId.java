@@ -35,10 +35,6 @@ public class MessageId {
     @NotNull
     private Integer messageId;
 
-    public MessageId() {
-
-    }
-
     /**
      *
      * @return Unique message identifier inside this chat.

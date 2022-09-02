@@ -85,7 +85,7 @@ public abstract class AbstractHandler<Bot extends BotConfiguration, Input>
                     .orElseGet(this::ok);
             } catch (Exception e) {
                 if (LOG.isErrorEnabled()) {
-                    LOG.error("{}", e);
+                    LOG.error("exception dispatching update", e);
                 }
                 return serverError();
             }

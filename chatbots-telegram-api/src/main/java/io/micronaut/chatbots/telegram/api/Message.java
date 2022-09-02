@@ -428,10 +428,6 @@ public class Message {
     @JsonProperty("reply_markup")
     private InlineKeyboardMarkup replyMarkup;
 
-    public Message() {
-
-    }
-
     /**
      *
      * @return Unique message identifier inside this chat.

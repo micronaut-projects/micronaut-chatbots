@@ -110,11 +110,7 @@ public class User {
     @Nullable
     @JsonProperty("supports_inline_queries")
     private Boolean supportsInlineQueries;
-
-    public User() {
-
-    }
-
+    
     /**
      *
      * @return Unique identifier for this user or bot.
