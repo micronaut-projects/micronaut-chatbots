@@ -54,9 +54,6 @@ public class Document extends AbstractFile {
     @Nullable
     private Integer fileSize;
 
-    public Document() {
-    }
-
     /**
      *
      * @return Document thumbnail as defined by sender.
