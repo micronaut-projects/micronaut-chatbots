@@ -53,7 +53,7 @@ public abstract class AbstractHandler<Bot extends BotConfiguration, Input>
     /**
      * Default constructor; will initialize a suitable ApplicationContext for Lambda deployment.
      */
-    public AbstractHandler() {
+    protected AbstractHandler() {
         super();
     }
 
@@ -61,7 +61,7 @@ public abstract class AbstractHandler<Bot extends BotConfiguration, Input>
      * Constructor used to inject a preexisting {@link ApplicationContext}.
      * @param applicationContext the application context
      */
-    public AbstractHandler(ApplicationContext applicationContext) {
+    protected AbstractHandler(ApplicationContext applicationContext) {
         super(applicationContext);
     }
 
@@ -69,7 +69,7 @@ public abstract class AbstractHandler<Bot extends BotConfiguration, Input>
      * Constructor used to inject a preexisting {@link ApplicationContextBuilder}.
      * @param applicationContextBuilder the application context builder
      */
-    public AbstractHandler(ApplicationContextBuilder applicationContextBuilder) {
+    protected AbstractHandler(ApplicationContextBuilder applicationContextBuilder) {
         super(applicationContextBuilder);
     }
 
