@@ -24,14 +24,14 @@ import java.util.Optional;
 /**
  * @author Sergio del Amo
  * @since 1.0.0
- * @param <Bot> The Bot configuration
- * @param <Input> input type.
- * @param <Output> output type.
+ * @param <BOT> The Bot configuration
+ * @param <INPUT> input type.
+ * @param <OUTPUT> output type.
  */
 @DefaultImplementation(DefaultDispatcher.class)
 @FunctionalInterface
-public interface Dispatcher<Bot extends BotConfiguration, Input, Output> {
+public interface Dispatcher<BOT extends BotConfiguration, INPUT, OUTPUT> {
     @NonNull
-    Optional<Output> dispatch(@NonNull @NotNull @Valid Bot bot,
-                              @NonNull @NotNull @Valid Input input);
+    Optional<OUTPUT> dispatch(@NonNull @NotNull @Valid BOT bot,
+                              @NonNull @NotNull @Valid INPUT input);
 }
