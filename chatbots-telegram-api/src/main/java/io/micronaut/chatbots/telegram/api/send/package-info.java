@@ -16,6 +16,5 @@
 /**
  * @author Sergio del Amo
  * @since 1.0.0
- * Telegram Bots API classes.
  */
-package io.micronaut.chatbots.telegram.api;
+package io.micronaut.chatbots.telegram.api.send;

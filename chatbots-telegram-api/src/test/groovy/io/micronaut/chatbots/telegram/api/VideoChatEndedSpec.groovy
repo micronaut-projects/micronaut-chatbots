@@ -59,4 +59,29 @@ class VideoChatEndedSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid VideoChatEnded does not trigger any constraint exception"() {
+        when:
+        VideoChatEnded el = validVideoChatEnded()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static VideoChatEnded validVideoChatEnded() {
+        VideoChatEnded el = new VideoChatEnded()
+        el.duration = 12
+        el
+    }
+
+    void "snake case is used for Json serialization"() {
+        given:
+        VideoChatEnded el = validVideoChatEnded()
+
+        when:
+        String json = objectMapper.writeValueAsString(el)
+
+        then:
+        json.contains('duration')
+    }
 }

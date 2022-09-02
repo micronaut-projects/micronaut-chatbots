@@ -54,7 +54,7 @@ class FileSpec extends Specification {
 
     void "File::toString() does not throw NPE"() {
         when:
-        new Invoice().toString()
+        new File().toString()
 
         then:
         noExceptionThrown()
@@ -72,6 +72,20 @@ class FileSpec extends Specification {
         File el = new File()
         el.fileId = "x"
         el.fileUniqueId = "y"
+        el.filePath = null
+        el.fileSize = null
         el
+    }
+
+    void "snake case is used for Json serialization"() {
+        given:
+        File el = validFile()
+
+        when:
+        String json = objectMapper.writeValueAsString(el)
+
+        then:
+        json.contains('file_id')
+        json.contains('file_unique_id')
     }
 }

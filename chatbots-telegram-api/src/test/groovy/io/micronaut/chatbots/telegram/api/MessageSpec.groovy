@@ -1,5 +1,6 @@
 package io.micronaut.chatbots.telegram.api
 
+import io.micronaut.chatbots.telegram.api.send.SendAudio
 import io.micronaut.context.BeanContext
 import io.micronaut.core.beans.BeanIntrospection
 import io.micronaut.core.type.Argument
@@ -58,5 +59,37 @@ class MessageSpec extends Specification {
 
         then:
         noExceptionThrown()
+    }
+
+    void "valid Message does not trigger any constraint exception"() {
+        when:
+        Message el = validMessage()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static Message validMessage() {
+        Message el = new Message()
+        el.messageId = 123
+        el.from = validUser()
+        el.date = 123
+        el.chat = validChat()
+        el
+    }
+
+    static Chat validChat() {
+        Chat el = new Chat()
+        el.id = 123
+        el.type = "private"
+        el
+    }
+
+    static User validUser() {
+        User el = new User()
+        el.id = 1L
+        el.bot = false
+        el.firstName = "foo"
+        el
     }
 }

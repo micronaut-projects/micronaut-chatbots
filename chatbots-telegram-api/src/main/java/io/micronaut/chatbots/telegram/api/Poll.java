@@ -67,7 +67,7 @@ public class Poll {
     @JsonProperty("is_closed")
     @NonNull
     @NotNull
-    private Boolean isClosed;
+    private Boolean closed;
 
     /**
      * True, if the poll is anonymous.
@@ -75,7 +75,7 @@ public class Poll {
     @JsonProperty("is_anonymous")
     @NonNull
     @NotNull
-    private Boolean isAnonymous;
+    private Boolean anonymous;
 
     /**
      * type, currently can be “regular” or “quiz”.
@@ -83,7 +83,7 @@ public class Poll {
     @NonNull
     @NotBlank
     @Pattern(regexp = "regular|quiz")
-    private String typePoll;
+    private String type;
 
     /**
      * True, if the poll allows multiple answers.
@@ -97,6 +97,7 @@ public class Poll {
      * Optional. 0-based identifier of the correct answer option. Available only for polls in the quiz mode, which are closed, or was sent (not forwarded) by the bot or to the private chat with the bot.
      */
     @JsonProperty("correct_option_id")
+    @Nullable
     private Integer correctOptionId;
 
     /**
@@ -202,8 +203,8 @@ public class Poll {
      * @return True, if the poll is closed.
      */
     @NonNull
-    public Boolean getClosed() {
-        return isClosed;
+    public Boolean isClosed() {
+        return closed;
     }
 
     /**
@@ -211,7 +212,7 @@ public class Poll {
      * @param closed True, if the poll is closed.
      */
     public void setClosed(@NonNull Boolean closed) {
-        isClosed = closed;
+        this.closed = closed;
     }
 
     /**
@@ -219,8 +220,8 @@ public class Poll {
      * @return True, if the poll is anonymous.
      */
     @NonNull
-    public Boolean getAnonymous() {
-        return isAnonymous;
+    public Boolean isAnonymous() {
+        return anonymous;
     }
 
     /**
@@ -228,7 +229,7 @@ public class Poll {
      * @param anonymous True, if the poll is anonymous.
      */
     public void setAnonymous(@NonNull Boolean anonymous) {
-        isAnonymous = anonymous;
+        this.anonymous = anonymous;
     }
 
     /**
@@ -236,16 +237,16 @@ public class Poll {
      * @return type, currently can be “regular” or “quiz”.
      */
     @NonNull
-    public String getTypePoll() {
-        return typePoll;
+    public String getType() {
+        return type;
     }
 
     /**
      *
-     * @param typePoll type, currently can be “regular” or “quiz”.
+     * @param type type, currently can be “regular” or “quiz”.
      */
-    public void setTypePoll(@NonNull String typePoll) {
-        this.typePoll = typePoll;
+    public void setType(@NonNull String type) {
+        this.type = type;
     }
 
     /**
@@ -356,9 +357,9 @@ public class Poll {
                 ", question='" + question + '\'' +
                 ", options=" + (options != null ? options.stream().map(PollOption::toString).collect(Collectors.joining(",")) : "") +
                 ", totalVoterCount=" + totalVoterCount +
-                ", isClosed=" + isClosed +
-                ", isAnonymous=" + isAnonymous +
-                ", typePoll='" + typePoll + '\'' +
+                ", isClosed=" + closed +
+                ", isAnonymous=" + anonymous +
+                ", typePoll='" + type + '\'' +
                 ", allowsMultipleAnswers=" + allowsMultipleAnswers +
                 ", correctOptionId=" + correctOptionId +
                 '}';

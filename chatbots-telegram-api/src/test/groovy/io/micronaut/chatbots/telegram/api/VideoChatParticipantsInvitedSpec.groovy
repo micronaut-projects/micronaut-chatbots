@@ -59,4 +59,18 @@ class VideoChatParticipantsInvitedSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid VideoChatParticipantsInvited does not trigger any constraint exception"() {
+        when:
+        VideoChatParticipantsInvited el = validVideoChatParticipantsInvited()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static VideoChatParticipantsInvited validVideoChatParticipantsInvited() {
+        VideoChatParticipantsInvited el = new VideoChatParticipantsInvited()
+        el.users = []
+        el
+    }
 }

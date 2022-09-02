@@ -59,5 +59,30 @@ class ReplyKeyboardMarkupSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid ReplyKeyboardMarkup does not trigger any constraint exception"() {
+        when:
+        ReplyKeyboardMarkup el = validReplyKeyboardMarkup()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static ReplyKeyboardMarkup validReplyKeyboardMarkup() {
+        ReplyKeyboardMarkup el = new ReplyKeyboardMarkup()
+        el.keyboard = []
+        el
+    }
+
+    void "snake case is used for Json serialization"() {
+        given:
+        ReplyKeyboardMarkup el = validReplyKeyboardMarkup()
+
+        when:
+        objectMapper.writeValueAsString(el)
+
+        then:
+        noExceptionThrown()
+    }
 }
 

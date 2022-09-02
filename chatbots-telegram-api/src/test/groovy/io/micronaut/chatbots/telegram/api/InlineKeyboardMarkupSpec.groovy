@@ -54,7 +54,7 @@ class InlineKeyboardMarkupSpec extends Specification {
 
     void "InlineKeyboardMarkup::toString() does not throw NPE"() {
         when:
-        new Invoice().toString()
+        new InlineKeyboardMarkup().toString()
 
         then:
         noExceptionThrown()

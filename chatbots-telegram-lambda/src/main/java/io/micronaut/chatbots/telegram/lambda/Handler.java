@@ -21,6 +21,8 @@ import io.micronaut.chatbots.lambda.AbstractHandler;
 import io.micronaut.chatbots.telegram.api.Update;
 import io.micronaut.chatbots.telegram.core.TelegramBotConfiguration;
 import io.micronaut.chatbots.telegram.core.TokenValidator;
+import io.micronaut.context.ApplicationContext;
+import io.micronaut.context.ApplicationContextBuilder;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.serde.ObjectMapper;
 import jakarta.inject.Inject;
@@ -37,7 +39,7 @@ import java.util.Optional;
  */
 public class Handler extends AbstractHandler<TelegramBotConfiguration, Update> {
     private static final Logger LOG = LoggerFactory.getLogger(Handler.class);
-    public static final String X_TELEGRAM_BOT_API_SECRET_TOKEN = "X-Telegram-Bot-Api-Secret-Token";
+    private static final String X_TELEGRAM_BOT_API_SECRET_TOKEN = "X-Telegram-Bot-Api-Secret-Token";
 
     @Inject
     TokenValidator tokenValidator;
@@ -47,6 +49,29 @@ public class Handler extends AbstractHandler<TelegramBotConfiguration, Update> {
 
     @Inject
     Dispatcher<TelegramBotConfiguration, Update, ?> dispatcher;
+
+    /**
+     * Default constructor; will initialize a suitable ApplicationContext for Lambda deployment.
+     */
+    public Handler() {
+        super();
+    }
+
+    /**
+     * Constructor used to inject a preexisting {@link ApplicationContext}.
+     * @param applicationContext the application context
+     */
+    public Handler(ApplicationContext applicationContext) {
+        super(applicationContext);
+    }
+
+    /**
+     * Constructor used to inject a preexisting {@link ApplicationContextBuilder}.
+     * @param applicationContextBuilder the application context builder
+     */
+    public Handler(ApplicationContextBuilder applicationContextBuilder) {
+        super(applicationContextBuilder);
+    }
 
     @Override
     @NonNull
@@ -76,11 +101,14 @@ public class Handler extends AbstractHandler<TelegramBotConfiguration, Update> {
      */
     @NonNull
     protected Optional<String> parseToken(@NonNull APIGatewayProxyRequestEvent request) {
-        String header = request.getHeaders().get(X_TELEGRAM_BOT_API_SECRET_TOKEN);
-        if (header == null) {
-            header = request.getHeaders().get(X_TELEGRAM_BOT_API_SECRET_TOKEN.toLowerCase(Locale.ROOT));
+        if (request.getHeaders() == null) {
+            return Optional.empty();
         }
-        return Optional.ofNullable(header);
+        String header = request.getHeaders().get(X_TELEGRAM_BOT_API_SECRET_TOKEN);
+        if (header != null) {
+            return Optional.of(header);
+        }
+        return Optional.ofNullable(request.getHeaders().get(X_TELEGRAM_BOT_API_SECRET_TOKEN.toLowerCase(Locale.ROOT)));
     }
 
     @Override

@@ -59,4 +59,30 @@ class UserProfilePhotosSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid UserProfilePhotos does not trigger any constraint exception"() {
+        when:
+        UserProfilePhotos el = validUserProfilePhotos()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static UserProfilePhotos validUserProfilePhotos() {
+        UserProfilePhotos el = new UserProfilePhotos()
+        el.totalCount = 1
+        el.photos = []
+        el
+    }
+
+    void "snake case is used for Json serialization"() {
+        given:
+        UserProfilePhotos el = validUserProfilePhotos()
+
+        when:
+        String json = objectMapper.writeValueAsString(el)
+
+        then:
+        json.contains('total_count')
+    }
 }

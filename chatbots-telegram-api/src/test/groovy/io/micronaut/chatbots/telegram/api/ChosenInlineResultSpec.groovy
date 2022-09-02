@@ -52,9 +52,9 @@ class ChosenInlineResultSpec extends Specification {
         noExceptionThrown()
     }
 
-    void "Invoice::toString() does not throw NPE"() {
+    void "ChosenInlineResult::toString() does not throw NPE"() {
         when:
-        new Invoice().toString()
+        new ChosenInlineResult().toString()
 
         then:
         noExceptionThrown()
@@ -73,6 +73,8 @@ class ChosenInlineResultSpec extends Specification {
         el.resultId = "x"
         el.from = validUser()
         el.query = "foo"
+        el.inlineMessageId = null
+        el.location = null
         el
     }
 
@@ -82,6 +84,19 @@ class ChosenInlineResultSpec extends Specification {
         el.bot = false
         el.firstName = "foo"
         el
+    }
+
+    void "snake case is used for Json serialization"() {
+        given:
+        ChosenInlineResult el = validChosenInlineResult()
+
+        when:
+        String json = objectMapper.writeValueAsString(el)
+
+        then:
+        json.contains('result_id')
+        json.contains('from')
+        json.contains('query')
     }
 }
 

@@ -1,4 +1,4 @@
-package io.micronaut.chatbots.telegram.api
+package io.micronaut.chatbots.telegram.api.send
 
 import io.micronaut.context.BeanContext
 import io.micronaut.core.beans.BeanIntrospection
@@ -12,7 +12,7 @@ import spock.lang.Specification
 import javax.validation.Validator
 
 @MicronautTest(startApplication = false)
-class InlineQuerySpec extends Specification {
+class SendChatActionSpec extends Specification {
     @Inject
     ObjectMapper objectMapper
 
@@ -22,81 +22,67 @@ class InlineQuerySpec extends Specification {
     @Inject
     BeanContext beanContext
 
-    void "InlineQuery is annotated with @Serdeable.Deserializable"() {
+    void "SendChatAction is annotated with @Serdeable.Deserializable"() {
         given:
         SerdeIntrospections serdeIntrospections = beanContext.getBean(SerdeIntrospections)
 
         when:
-        serdeIntrospections.getDeserializableIntrospection(Argument.of(InlineQuery))
+        serdeIntrospections.getDeserializableIntrospection(Argument.of(SendChatAction))
 
         then:
         noExceptionThrown()
     }
 
-    void "InlineQuery is annotated with @Serdeable.Serializable"() {
+    void "SendChatAction is annotated with @Serdeable.Serializable"() {
         given:
         SerdeIntrospections serdeIntrospections = beanContext.getBean(SerdeIntrospections)
 
         when:
-        serdeIntrospections.getSerializableIntrospection(Argument.of(InlineQuery))
+        serdeIntrospections.getSerializableIntrospection(Argument.of(SendChatAction))
 
         then:
         noExceptionThrown()
     }
 
-    void "InlineQuery is annotated with Introspected"() {
+    void "SendChatAction is annotated with Introspected"() {
         when:
-        BeanIntrospection.getIntrospection(InlineQuery)
+        BeanIntrospection.getIntrospection(SendChatAction)
 
         then:
         noExceptionThrown()
     }
 
-    void "InlineQuery::toString() does not throw NPE"() {
+    void "SendChatAction::toString() does not throw NPE"() {
         when:
-        new InlineQuery().toString()
+        new SendChatAction().toString()
 
         then:
         noExceptionThrown()
     }
 
-    void "valid InlineQuery does not trigger any constraint exception"() {
+    void "valid SendChatAction does not trigger any constraint exception"() {
         when:
-        InlineQuery el = validInlineQuery()
+        SendChatAction el = validSendChatAction()
 
         then:
         validator.validate(el).isEmpty()
     }
 
-    static InlineQuery validInlineQuery() {
-        InlineQuery el = new InlineQuery()
-        el.id = "x"
-        el.from = validUser()
-        el.query = "foo"
-        el.offset = "f"
-        el.chatType = null
-        el.location = null
-        el
-    }
-
-    static User validUser() {
-        User el = new User()
-        el.id = 1L
-        el.bot = false
-        el.firstName = "foo"
+    static SendChatAction validSendChatAction() {
+        SendChatAction el = new SendChatAction()
+        el.chatId = "xx"
+        el.action = "y"
         el
     }
 
     void "snake case is used for Json serialization"() {
         given:
-        InlineQuery el = validInlineQuery()
+        SendChatAction el = validSendChatAction()
 
         when:
         String json = objectMapper.writeValueAsString(el)
 
         then:
-        json.contains('id')
-        json.contains('bot')
-        json.contains('first_name')
+        json.contains('chat_id')
     }
 }

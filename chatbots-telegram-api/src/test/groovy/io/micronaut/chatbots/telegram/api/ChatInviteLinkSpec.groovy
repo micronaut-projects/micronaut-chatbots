@@ -1,6 +1,6 @@
 package io.micronaut.chatbots.telegram.api
 
-import com.fasterxml.jackson.annotation.JsonProperty
+
 import io.micronaut.context.BeanContext
 import io.micronaut.core.beans.BeanIntrospection
 import io.micronaut.core.type.Argument
@@ -10,9 +10,7 @@ import io.micronaut.test.extensions.spock.annotation.MicronautTest
 import jakarta.inject.Inject
 import spock.lang.Specification
 
-import javax.validation.Valid
 import javax.validation.Validator
-import javax.validation.constraints.NotNull
 
 @MicronautTest(startApplication = false)
 class ChatInviteLinkSpec extends Specification {
@@ -78,6 +76,10 @@ class ChatInviteLinkSpec extends Specification {
         el.createsJoinRequest = false
         el.primary = false
         el.revoked = false
+        el.pendingJoinRequestCount = null
+        el.memberLimit = null
+        el.expireDate = null
+        el.name = null
         el
     }
 
@@ -87,5 +89,19 @@ class ChatInviteLinkSpec extends Specification {
         el.bot = false
         el.firstName = "foo"
         el
+    }
+
+    void "snake case is used for Json serialization"() {
+        given:
+        ChatInviteLink el = validChatInviteLink()
+
+        when:
+        String json = objectMapper.writeValueAsString(el)
+
+        then:
+        json.contains('invite_link')
+        json.contains('creates_join_request')
+        json.contains('primary')
+        json.contains('revoked')
     }
 }

@@ -59,4 +59,29 @@ class VideoChatScheduledSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid VideoChatScheduled does not trigger any constraint exception"() {
+        when:
+        VideoChatScheduled el = validVideoChatScheduled()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static VideoChatScheduled validVideoChatScheduled() {
+        VideoChatScheduled el = new VideoChatScheduled()
+        el.startDate = 12
+        el
+    }
+
+    void "snake case is used for Json serialization"() {
+        given:
+        VideoChatScheduled el = validVideoChatScheduled()
+
+        when:
+        String json = objectMapper.writeValueAsString(el)
+
+        then:
+        json.contains('start_date')
+    }
 }

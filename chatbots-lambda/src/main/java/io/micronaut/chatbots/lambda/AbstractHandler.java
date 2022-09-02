@@ -19,6 +19,8 @@ import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 import io.micronaut.chatbots.core.BotConfiguration;
 import io.micronaut.chatbots.core.Dispatcher;
+import io.micronaut.context.ApplicationContext;
+import io.micronaut.context.ApplicationContextBuilder;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.core.reflect.GenericTypeUtils;
 import io.micronaut.core.util.ArrayUtils;
@@ -47,6 +49,29 @@ public abstract class AbstractHandler<Bot extends BotConfiguration, Input>
 
     @SuppressWarnings("unchecked")
     private final Class<Input> inputType = initTypeArgument(1);
+
+    /**
+     * Default constructor; will initialize a suitable ApplicationContext for Lambda deployment.
+     */
+    public AbstractHandler() {
+        super();
+    }
+
+    /**
+     * Constructor used to inject a preexisting {@link ApplicationContext}.
+     * @param applicationContext the application context
+     */
+    public AbstractHandler(ApplicationContext applicationContext) {
+        super(applicationContext);
+    }
+
+    /**
+     * Constructor used to inject a preexisting {@link ApplicationContextBuilder}.
+     * @param applicationContextBuilder the application context builder
+     */
+    public AbstractHandler(ApplicationContextBuilder applicationContextBuilder) {
+        super(applicationContextBuilder);
+    }
 
     @Override
     public APIGatewayProxyResponseEvent execute(APIGatewayProxyRequestEvent request) {

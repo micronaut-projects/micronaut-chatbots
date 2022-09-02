@@ -59,5 +59,30 @@ class MessageAutoDeleteTimerChangedSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid MessageAutoDeleteTimerChanged does not trigger any constraint exception"() {
+        when:
+        MessageAutoDeleteTimerChanged el = validMessageAutoDeleteTimerChanged()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static MessageAutoDeleteTimerChanged validMessageAutoDeleteTimerChanged() {
+        MessageAutoDeleteTimerChanged el = new MessageAutoDeleteTimerChanged()
+        el.messageAutoDeleteTime = 12
+        el
+    }
+
+    void "snake case is used for Json serialization"() {
+        given:
+        MessageAutoDeleteTimerChanged el = validMessageAutoDeleteTimerChanged()
+
+        when:
+        String json = objectMapper.writeValueAsString(el)
+
+        then:
+        json.contains('message_auto_delete_time')
+    }
 }
 

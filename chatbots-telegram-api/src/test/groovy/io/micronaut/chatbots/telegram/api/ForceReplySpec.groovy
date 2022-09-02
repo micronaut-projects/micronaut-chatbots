@@ -54,7 +54,7 @@ class ForceReplySpec extends Specification {
 
     void "ForceReply::toString() does not throw NPE"() {
         when:
-        new Invoice().toString()
+        new ForceReply().toString()
 
         then:
         noExceptionThrown()
@@ -71,6 +71,20 @@ class ForceReplySpec extends Specification {
     static ForceReply validForceReply() {
         ForceReply el = new ForceReply()
         el.forceReply = false
+        el.inputFieldPlaceholder = null
+        el.selective = null
         el
     }
+
+    void "snake case is used for Json serialization"() {
+        given:
+        ForceReply el = validForceReply()
+
+        when:
+        String json = objectMapper.writeValueAsString(el)
+
+        then:
+        json.contains('force_reply')
+    }
+
 }

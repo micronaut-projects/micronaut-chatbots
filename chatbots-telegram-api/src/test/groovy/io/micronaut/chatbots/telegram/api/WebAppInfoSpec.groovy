@@ -59,4 +59,29 @@ class WebAppInfoSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid WebAppInfo does not trigger any constraint exception"() {
+        when:
+        WebAppInfo el = validWebAppInfo()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static WebAppInfo validWebAppInfo() {
+        WebAppInfo el = new WebAppInfo()
+        el.url = "x"
+        el
+    }
+
+    void "snake case is used for Json serialization"() {
+        given:
+        WebAppInfo el = validWebAppInfo()
+
+        when:
+        String json = objectMapper.writeValueAsString(el)
+
+        then:
+        json.contains('url')
+    }
 }

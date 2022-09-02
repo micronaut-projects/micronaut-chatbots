@@ -54,7 +54,7 @@ class PassportFileSpec extends Specification {
 
     void "PassportFile::toString() does not throw NPE"() {
         when:
-        new Invoice().toString()
+        new PassportFile().toString()
 
         then:
         noExceptionThrown()

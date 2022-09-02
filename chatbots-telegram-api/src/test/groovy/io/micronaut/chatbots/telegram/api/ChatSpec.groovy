@@ -59,4 +59,19 @@ class ChatSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid Chat does not trigger any constraint exception"() {
+        when:
+        Chat el = validChat()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static Chat validChat() {
+        Chat el = new Chat()
+        el.id = 123
+        el.type = "private"
+        el
+    }
 }

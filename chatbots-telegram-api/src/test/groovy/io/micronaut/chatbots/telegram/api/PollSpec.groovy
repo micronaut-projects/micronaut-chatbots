@@ -1,6 +1,8 @@
 package io.micronaut.chatbots.telegram.api
 
+import com.fasterxml.jackson.annotation.JsonProperty
 import io.micronaut.context.BeanContext
+import io.micronaut.core.annotation.NonNull
 import io.micronaut.core.beans.BeanIntrospection
 import io.micronaut.core.type.Argument
 import io.micronaut.serde.ObjectMapper
@@ -10,6 +12,9 @@ import jakarta.inject.Inject
 import spock.lang.Specification
 
 import javax.validation.Validator
+import javax.validation.constraints.NotBlank
+import javax.validation.constraints.NotNull
+import javax.validation.constraints.Pattern
 
 @MicronautTest(startApplication = false)
 class PollSpec extends Specification {
@@ -59,4 +64,45 @@ class PollSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+
+
+    void "valid Poll does not trigger any constraint exception"() {
+        when:
+        Poll el = validPoll()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static Poll validPoll() {
+        Poll el = new Poll()
+        el.id = 'x'
+        el.question = 'x'
+        el.options = []
+        el.totalVoterCount = 1
+        el.closed = false
+        el.anonymous = false
+        el.type = 'regular'
+        el.allowsMultipleAnswers = false
+        el
+    }
+
+    void "snake case is used for Json serialization"() {
+        given:
+        Poll el = validPoll()
+
+        when:
+        String json = objectMapper.writeValueAsString(el)
+
+        then:
+        json.contains('question')
+        json.contains('total_voter_count')
+        json.contains('id')
+        json.contains('is_closed')
+        json.contains('is_anonymous')
+        json.contains('type')
+        json.contains('allows_multiple_answers')
+    }
+
 }
