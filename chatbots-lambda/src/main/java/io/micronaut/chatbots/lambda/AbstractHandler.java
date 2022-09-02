@@ -39,16 +39,16 @@ import java.util.Optional;
 /**
  * Abstract class to handle a Chatbots webhook in an AWS Lambda Handler.
  * @author Sergio del Amo
- * @param <Bot> The Bot configuration
- * @param <Input> input type.
+ * @param <B> The Bot configuration
+ * @param <I> input type.
  * @since 1.0.0
  */
-public abstract class AbstractHandler<Bot extends BotConfiguration, Input>
+public abstract class AbstractHandler<B extends BotConfiguration, I>
     extends MicronautRequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
     private static final Logger LOG = LoggerFactory.getLogger(AbstractHandler.class);
 
     @SuppressWarnings("unchecked")
-    private final Class<Input> inputType = initTypeArgument(1);
+    private final Class<I> inputType = initTypeArgument(1);
 
     /**
      * Default constructor; will initialize a suitable ApplicationContext for Lambda deployment.
@@ -99,7 +99,7 @@ public abstract class AbstractHandler<Bot extends BotConfiguration, Input>
      * @return The Bot associated to the request
      */
     @NonNull
-    protected abstract Optional<Bot> validate(@NonNull APIGatewayProxyRequestEvent request);
+    protected abstract Optional<B> validate(@NonNull APIGatewayProxyRequestEvent request);
 
     /**
      *
@@ -113,7 +113,7 @@ public abstract class AbstractHandler<Bot extends BotConfiguration, Input>
      * @return The Dispatcher
      */
     @NonNull
-    protected abstract Dispatcher<Bot, Input, ?> getDispatcher();
+    protected abstract Dispatcher<B, I, ?> getDispatcher();
 
     /**
      *

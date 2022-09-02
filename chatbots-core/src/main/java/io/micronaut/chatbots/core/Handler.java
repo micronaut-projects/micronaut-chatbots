@@ -24,21 +24,21 @@ import java.util.Optional;
 
 /**
  * Request handlers are responsible for handling one or more types of incoming requests.
- * @param <Bot> The Bot configuration
- * @param <Input> input type.
- * @param <Output> output type.
+ * @param <B> The Bot configuration
+ * @param <I> input type.
+ * @param <O> output type.
  * @author Sergio del Amo
  * @since 1.0.0
  */
-public interface Handler<Bot extends BotConfiguration, Input, Output> extends Ordered {
+public interface Handler<B extends BotConfiguration, I, O> extends Ordered {
     /**
      * Returns true if the handler can dispatch the current request.
      * @param bot bot being asked to handle this command
      * @param input input to the request handler
      * @return true if the handler is capable of handling the current request
      */
-    boolean canHandle(@NonNull @NotNull @Valid Bot bot,
-                      @NonNull @NotNull @Valid Input input);
+    boolean canHandle(@NonNull @NotNull @Valid B bot,
+                      @NonNull @NotNull @Valid I input);
 
     /**
      * Handles the request.
@@ -47,6 +47,6 @@ public interface Handler<Bot extends BotConfiguration, Input, Output> extends Or
      * @return output from the handler. Empty if you want to respond asynchronously.
      */
     @NonNull
-    Optional<Output> handle(@NonNull @NotNull @Valid Bot bot,
-                            @NonNull @NotNull @Valid Input input);
+    Optional<O> handle(@NonNull @NotNull @Valid B bot,
+                            @NonNull @NotNull @Valid I input);
 }
