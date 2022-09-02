@@ -20,6 +20,7 @@ import io.micronaut.core.annotation.NonNull;
 import io.micronaut.serde.annotation.Serdeable;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 /**
  * This object represents a file uploaded to Telegram Passport. Currently all Telegram Passport files are in JPEG format when decrypted and don't exceed 10MB.
@@ -46,13 +47,15 @@ public class PassportFile {
     /**
      * File size.
      */
-    @JsonProperty("file_size;")
+    @JsonProperty("file_size")
+    @NotNull
     private Integer fileSize;
 
     /**
      * Unix time when the file was uploaded.
      */
-    @JsonProperty("file_date;")
+    @JsonProperty("file_date")
+    @NotNull
     private Integer fileDate;
 
     public PassportFile() {

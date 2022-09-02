@@ -52,11 +52,28 @@ class ChatPhotoSpec extends Specification {
         noExceptionThrown()
     }
 
-    void "Invoice::toString() does not throw NPE"() {
+    void "ChatPhoto::toString() does not throw NPE"() {
         when:
-        new Invoice().toString()
+        new ChatPhoto().toString()
 
         then:
         noExceptionThrown()
+    }
+
+    void "valid ChatPhoto does not trigger any constraint exception"() {
+        when:
+        ChatPhoto el = validChatPhoto()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static ChatPhoto validChatPhoto() {
+        ChatPhoto el = new ChatPhoto()
+        el.smallFileId = "x"
+        el.smallFileUniqueId = "y"
+        el.bigFileUniqueId = "x"
+        el.bigFileId = "y"
+        el
     }
 }

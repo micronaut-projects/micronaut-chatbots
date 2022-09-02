@@ -59,4 +59,19 @@ class FileSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid File does not trigger any constraint exception"() {
+        when:
+        File el = validFile()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static File validFile() {
+        File el = new File()
+        el.fileId = "x"
+        el.fileUniqueId = "y"
+        el
+    }
 }

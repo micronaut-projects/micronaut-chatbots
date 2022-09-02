@@ -59,5 +59,29 @@ class ProximityAlertTriggeredSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid ProximityAlertTriggered does not trigger any constraint exception"() {
+        when:
+        ProximityAlertTriggered el = validProximityAlertTriggered()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static ProximityAlertTriggered validProximityAlertTriggered() {
+        ProximityAlertTriggered el = new ProximityAlertTriggered()
+        el.distance = 12
+        el.watcher = validUser()
+        el.traveler = validUser()
+        el
+    }
+
+    static User validUser() {
+        User el = new User()
+        el.id = 1L
+        el.bot = false
+        el.firstName = "foo"
+        el
+    }
 }
 

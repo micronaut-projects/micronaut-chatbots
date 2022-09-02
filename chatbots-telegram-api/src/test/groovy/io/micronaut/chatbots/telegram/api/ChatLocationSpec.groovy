@@ -59,4 +59,26 @@ class ChatLocationSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid ChatLocation does not trigger any constraint exception"() {
+        when:
+        ChatLocation el = validChatLocation()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static ChatLocation validChatLocation() {
+        ChatLocation el = new ChatLocation()
+        el.location = validLocation()
+        el.address = "home"
+        el
+    }
+
+    static Location validLocation() {
+        Location el = new Location()
+        el.longitude = 1.2
+        el.latitude = 2.5
+        el
+    }
 }

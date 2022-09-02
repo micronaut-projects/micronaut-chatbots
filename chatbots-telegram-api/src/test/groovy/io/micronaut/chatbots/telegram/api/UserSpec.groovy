@@ -1,6 +1,8 @@
 package io.micronaut.chatbots.telegram.api
 
+import com.fasterxml.jackson.annotation.JsonProperty
 import io.micronaut.context.BeanContext
+import io.micronaut.core.annotation.NonNull
 import io.micronaut.core.beans.BeanIntrospection
 import io.micronaut.core.type.Argument
 import io.micronaut.serde.ObjectMapper
@@ -10,6 +12,8 @@ import jakarta.inject.Inject
 import spock.lang.Specification
 
 import javax.validation.Validator
+import javax.validation.constraints.NotBlank
+import javax.validation.constraints.NotNull
 
 @MicronautTest(startApplication = false)
 class UserSpec extends Specification {
@@ -58,5 +62,29 @@ class UserSpec extends Specification {
 
         then:
         noExceptionThrown()
+    }
+
+    void "User::toString() does not throw NPE"() {
+        when:
+        new User().toString()
+
+        then:
+        noExceptionThrown()
+    }
+
+    void "valid User does not trigger any constraint exception"() {
+        when:
+        User el = validUser()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static User validUser() {
+        User el = new User()
+        el.id = 1L
+        el.bot = false
+        el.firstName = "foo"
+        el
     }
 }

@@ -59,4 +59,29 @@ class InlineQuerySpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid InlineQuery does not trigger any constraint exception"() {
+        when:
+        InlineQuery el = validInlineQuery()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static InlineQuery validInlineQuery() {
+        InlineQuery el = new InlineQuery()
+        el.id = "x"
+        el.from = validUser()
+        el.query = "foo"
+        el.offset = "f"
+        el
+    }
+
+    static User validUser() {
+        User el = new User()
+        el.id = 1L
+        el.bot = false
+        el.firstName = "foo"
+        el
+    }
 }

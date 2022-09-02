@@ -59,5 +59,29 @@ class ChosenInlineResultSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid ChosenInlineResult does not trigger any constraint exception"() {
+        when:
+        ChosenInlineResult el = validChosenInlineResult()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static ChosenInlineResult validChosenInlineResult() {
+        ChosenInlineResult el = new ChosenInlineResult()
+        el.resultId = "x"
+        el.from = validUser()
+        el.query = "foo"
+        el
+    }
+
+    static User validUser() {
+        User el = new User()
+        el.id = 1L
+        el.bot = false
+        el.firstName = "foo"
+        el
+    }
 }
 

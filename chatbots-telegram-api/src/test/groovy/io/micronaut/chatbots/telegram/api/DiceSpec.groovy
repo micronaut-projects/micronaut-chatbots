@@ -59,4 +59,19 @@ class DiceSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid Dice does not trigger any constraint exception"() {
+        when:
+        Dice el = validDice()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static Dice validDice() {
+        Dice el = new Dice()
+        el.emoji = "x"
+        el.value = 1
+        el
+    }
 }

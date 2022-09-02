@@ -59,4 +59,19 @@ class WebAppDataSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid WebAppData does not trigger any constraint exception"() {
+        when:
+        WebAppData el = validWebAppData()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static WebAppData validWebAppData() {
+        WebAppData el = new WebAppData()
+        el.data = "1"
+        el.buttonText = "2"
+        el
+    }
 }

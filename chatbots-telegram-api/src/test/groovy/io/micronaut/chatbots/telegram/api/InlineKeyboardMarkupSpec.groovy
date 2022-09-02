@@ -59,4 +59,18 @@ class InlineKeyboardMarkupSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid InlineKeyboardMarkup does not trigger any constraint exception"() {
+        when:
+        InlineKeyboardMarkup el = validInlineKeyboardMarkup()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static InlineKeyboardMarkup validInlineKeyboardMarkup() {
+        InlineKeyboardMarkup el = new InlineKeyboardMarkup()
+        el.inlineKeyboard = []
+        el
+    }
 }

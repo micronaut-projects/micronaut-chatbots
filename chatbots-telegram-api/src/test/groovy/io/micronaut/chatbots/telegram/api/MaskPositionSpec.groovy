@@ -59,4 +59,21 @@ class MaskPositionSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid MaskPosition does not trigger any constraint exception"() {
+        when:
+        MaskPosition el = validMaskPosition()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static MaskPosition validMaskPosition() {
+        MaskPosition el = new MaskPosition()
+        el.point = MaskPositionPoint.CHIN
+        el.xshift = 1f
+        el.yshift = 2f
+        el.scale  = 1f
+        el
+    }
 }

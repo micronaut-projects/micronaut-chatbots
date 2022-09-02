@@ -1,6 +1,8 @@
 package io.micronaut.chatbots.telegram.api
 
+import com.fasterxml.jackson.annotation.JsonProperty
 import io.micronaut.context.BeanContext
+import io.micronaut.core.annotation.NonNull
 import io.micronaut.core.beans.BeanIntrospection
 import io.micronaut.core.type.Argument
 import io.micronaut.serde.ObjectMapper
@@ -10,6 +12,7 @@ import jakarta.inject.Inject
 import spock.lang.Specification
 
 import javax.validation.Validator
+import javax.validation.constraints.NotNull
 
 @MicronautTest(startApplication = false)
 class ChatAdministratorRightsSpec extends Specification {
@@ -58,5 +61,26 @@ class ChatAdministratorRightsSpec extends Specification {
 
         then:
         noExceptionThrown()
+    }
+
+    void "valid ChatAdministratorRights does not trigger any constraint exception"() {
+        when:
+        ChatAdministratorRights el = validChatAdministratorRights()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static ChatAdministratorRights validChatAdministratorRights() {
+        ChatAdministratorRights el = new ChatAdministratorRights()
+        el.isAnonymous = false
+        el.canManageChat = false
+        el.canDeleteMessages = false
+        el.canManageVideoChats = false
+        el.canRestrictMembers = false
+        el.canPromoteMembers = false
+        el.canChangeInfo = false
+        el.canInviteUsers = false
+        el
     }
 }

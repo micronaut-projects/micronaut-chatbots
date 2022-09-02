@@ -59,4 +59,21 @@ class PassportFileSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid PassportFile does not trigger any constraint exception"() {
+        when:
+        PassportFile el = validPassportFile()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static PassportFile validPassportFile() {
+        PassportFile el = new PassportFile()
+        el.fileId = "xxx"
+        el.fileUniqueId = "xxx.yyy"
+        el.fileSize = 20
+        el.fileDate = 20
+        el
+    }
 }

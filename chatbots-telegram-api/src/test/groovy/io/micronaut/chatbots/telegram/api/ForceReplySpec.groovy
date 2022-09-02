@@ -59,4 +59,18 @@ class ForceReplySpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid ForceReply does not trigger any constraint exception"() {
+        when:
+        ForceReply el = validForceReply()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static ForceReply validForceReply() {
+        ForceReply el = new ForceReply()
+        el.forceReply = false
+        el
+    }
 }

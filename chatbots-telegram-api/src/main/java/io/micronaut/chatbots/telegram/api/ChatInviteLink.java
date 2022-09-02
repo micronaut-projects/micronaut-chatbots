@@ -19,6 +19,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.micronaut.core.annotation.Nullable;
 import io.micronaut.serde.annotation.Serdeable;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
 /**
  * Represents an invite link for a chat.
  * <a href="https://core.telegram.org/bots/api#chatinvitelink">ChatInviteLink</a>
@@ -37,6 +40,8 @@ public class ChatInviteLink {
     /**
      * Creator of the link.
      */
+    @NotNull
+    @Valid
     private User creator;
 
     /**
@@ -49,12 +54,14 @@ public class ChatInviteLink {
      * True, if the link is primary.
      */
     @JsonProperty("is_primary")
+    @NotNull
     private Boolean isPrimary;
 
     /**
      * True, if the link is revoked.
      */
     @JsonProperty("is_revoked")
+    @NotNull
     private Boolean isRevoked;
 
     /**
