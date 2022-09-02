@@ -23,7 +23,7 @@ import io.micronaut.serde.annotation.Serdeable;
 import javax.validation.constraints.NotBlank;
 
 /**
- * <a href="https://core.telegram.org/bots/api#sendanimation">SendAnimation</a>
+ * <a href="https://core.telegram.org/bots/api#sendanimation">SendAnimation</a>.
  * @author Sergio del Amo
  * @since 1.0.0
  */

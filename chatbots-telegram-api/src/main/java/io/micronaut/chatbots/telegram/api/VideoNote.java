@@ -19,9 +19,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.core.annotation.Nullable;
 import io.micronaut.serde.annotation.Serdeable;
-
 import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -29,24 +27,7 @@ import javax.validation.constraints.NotNull;
  * @see <a href="https://core.telegram.org/bots/api#videonote">VideoNote</a>
  */
 @Serdeable
-public class VideoNote {
-
-    /**
-     * Identifier for this file.
-     */
-    @JsonProperty("file_id")
-    @NonNull
-    @NotBlank
-    private String fileId;
-
-    /**
-     * Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file.
-     */
-    @JsonProperty("file_unique_id")
-    @NonNull
-    @NotBlank
-    private String fileUniqueId;
-
+public class VideoNote extends AbstractFile {
     /**
      * Video width and height (diameter of the video message) as defined by sender.
      */
@@ -74,44 +55,6 @@ public class VideoNote {
     @Nullable
     @JsonProperty("file_size")
     private Integer fileSize;
-
-    public VideoNote() {
-
-    }
-
-    /**
-     *
-     * @return Identifier for this file.
-     */
-    @NonNull
-    public String getFileId() {
-        return fileId;
-    }
-
-    /**
-     *
-     * @param fileId Identifier for this file.
-     */
-    public void setFileId(@NonNull String fileId) {
-        this.fileId = fileId;
-    }
-
-    /**
-     *
-     * @return Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file.
-     */
-    @NonNull
-    public String getFileUniqueId() {
-        return fileUniqueId;
-    }
-
-    /**
-     *
-     * @param fileUniqueId Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file.
-     */
-    public void setFileUniqueId(@NonNull String fileUniqueId) {
-        this.fileUniqueId = fileUniqueId;
-    }
 
     /**
      *
@@ -184,8 +127,8 @@ public class VideoNote {
     @Override
     public String toString() {
         return "VideoNote{" +
-                "fileId='" + fileId + '\'' +
-                ", fileUniqueId='" + fileUniqueId + '\'' +
+                "fileId='" + getFileId() + '\'' +
+                ", fileUniqueId='" + getFileUniqueId() + '\'' +
                 ", length=" + length +
                 ", duration=" + duration +
                 ", thumb=" + (thumb != null ? thumb.toString() : "") +

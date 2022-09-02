@@ -19,7 +19,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.core.annotation.Nullable;
 import io.micronaut.serde.annotation.Serdeable;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -27,23 +26,7 @@ import javax.validation.constraints.NotNull;
  * This object represents a sticker.
  */
 @Serdeable
-public class Sticker {
-    /**
-     * Identifier for this file, which can be used to download or reuse the file.
-     */
-    @NonNull
-    @NotBlank
-    @JsonProperty("file_id")
-    private String fileId;
-
-    /**
-     * Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file.
-     */
-    @NonNull
-    @NotBlank
-    @JsonProperty("file_unique_id")
-    private String fileUniqueId;
-
+public class Sticker extends AbstractFile {
     /**
      * Sticker width.
      */
@@ -98,40 +81,6 @@ public class Sticker {
     @JsonProperty("file_size")
     @Nullable
     private Integer fileSize;
-
-    /**
-     *
-     * @return Identifier for this file, which can be used to download or reuse the file.
-     */
-    @NonNull
-    public String getFileId() {
-        return fileId;
-    }
-
-    /**
-     *
-     * @param fileId Identifier for this file, which can be used to download or reuse the file.
-     */
-    public void setFileId(@NonNull String fileId) {
-        this.fileId = fileId;
-    }
-
-    /**
-     *
-     * @return Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file.
-     */
-    @NonNull
-    public String getFileUniqueId() {
-        return fileUniqueId;
-    }
-
-    /**
-     *
-     * @param fileUniqueId Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file.
-     */
-    public void setFileUniqueId(@NonNull String fileUniqueId) {
-        this.fileUniqueId = fileUniqueId;
-    }
 
     /**
      *
@@ -272,8 +221,8 @@ public class Sticker {
     @Override
     public String toString() {
         return "Sticker{" +
-                "fileId='" + fileId + '\'' +
-                ", fileUniqueId='" + fileUniqueId + '\'' +
+                "fileId='" + getFileId() + '\'' +
+                ", fileUniqueId='" + getFileUniqueId() + '\'' +
                 ", width=" + width +
                 ", height=" + height +
                 ", isAnimated=" + animated +
