@@ -59,4 +59,26 @@ class InlineKeyboardButtonSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid InlineKeyboardButton does not trigger any constraint exception"() {
+        when:
+        InlineKeyboardButton el = validInlineKeyboardButton()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static InlineKeyboardButton validInlineKeyboardButton() {
+        InlineKeyboardButton el = new InlineKeyboardButton()
+        el.text = "x"
+        el.url = null
+        el.callbackData = null
+        el.webApp = null
+        el.loginUrl = null
+        el.switchInlineQuery = null
+        el.switchInlineQueryCurrentChat = null
+        el.callbackGame = null
+        el.pay = null
+        el
+    }
 }

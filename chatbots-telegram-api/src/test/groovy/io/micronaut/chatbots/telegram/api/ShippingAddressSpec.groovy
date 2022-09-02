@@ -59,4 +59,23 @@ class ShippingAddressSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid ShippingAddress does not trigger any constraint exception"() {
+        when:
+        ShippingAddress el = validShippingAddress()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static ShippingAddress validShippingAddress() {
+        ShippingAddress el = new ShippingAddress()
+        el.countryCode = "es"
+        el.state = "es"
+        el.city = "x"
+        el.streetLine1 = "x"
+        el.streetLine2 = "x"
+        el.postCode = "x"
+        el
+    }
 }

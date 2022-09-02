@@ -59,5 +59,20 @@ class ResponseParametersSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid ResponseParameters does not trigger any constraint exception"() {
+        when:
+        ResponseParameters el = validResponseParameters()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static ResponseParameters validResponseParameters() {
+        ResponseParameters el = new ResponseParameters()
+        el.migrateToChatId = null
+        el.retryAfter = null
+        el
+    }
 }
 

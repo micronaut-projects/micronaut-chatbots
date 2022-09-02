@@ -59,4 +59,19 @@ class BotCommandSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid BotCommand does not trigger any constraint exception"() {
+        when:
+        BotCommand el = validBotCommand()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static BotCommand validBotCommand() {
+        BotCommand el = new BotCommand()
+        el.command = 'a'
+        el.description = 'aaa'
+        el
+    }
 }

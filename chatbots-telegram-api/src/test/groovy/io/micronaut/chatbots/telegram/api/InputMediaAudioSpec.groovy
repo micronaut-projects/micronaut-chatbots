@@ -59,4 +59,21 @@ class InputMediaAudioSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid InputMediaAudio does not trigger any constraint exception"() {
+        when:
+        InputMediaAudio el = validInputMediaAudio()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static InputMediaAudio validInputMediaAudio() {
+        InputMediaAudio el = new InputMediaAudio()
+        el.performer = null
+        el.title = null
+        el.duration = null
+        el.media = 'x'
+        el
+    }
 }

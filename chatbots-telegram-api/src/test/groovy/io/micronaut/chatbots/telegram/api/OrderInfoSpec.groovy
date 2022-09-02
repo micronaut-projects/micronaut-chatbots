@@ -59,4 +59,21 @@ class OrderInfoSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid OrderInfo does not trigger any constraint exception"() {
+        when:
+        OrderInfo el = validOrderInfo()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static OrderInfo validOrderInfo() {
+        OrderInfo el = new OrderInfo()
+        el.name = null
+        el.phoneNumber = null
+        el.email = null
+        el.shippingAddress = null
+        el
+    }
 }

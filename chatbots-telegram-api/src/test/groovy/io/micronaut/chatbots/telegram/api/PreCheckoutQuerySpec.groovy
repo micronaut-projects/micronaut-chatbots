@@ -59,4 +59,32 @@ class PreCheckoutQuerySpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid PreCheckoutQuery does not trigger any constraint exception"() {
+        when:
+        PreCheckoutQuery el = validPreCheckoutQuery()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static PreCheckoutQuery validPreCheckoutQuery() {
+        PreCheckoutQuery el = new PreCheckoutQuery()
+        el.id = 'x'
+        el.from = validUser()
+        el.currency = 'USD'
+        el.totalAmount = 1
+        el.invoicePayload = 'x'
+        el.shippingOptionId = null
+        el.orderInfo = null
+        el
+    }
+
+    static User validUser() {
+        User el = new User()
+        el.id = 1L
+        el.bot = false
+        el.firstName = "foo"
+        el
+    }
 }

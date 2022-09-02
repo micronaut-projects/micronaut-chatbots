@@ -59,4 +59,24 @@ class InputMediaVideoSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid InputMediaVideo does not trigger any constraint exception"() {
+        when:
+        InputMediaVideo el = validInputMediaVideo()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static InputMediaVideo validInputMediaVideo() {
+        InputMediaVideo el = new InputMediaVideo()
+        el.thumb = null
+        el.media = 'x'
+        el.disableContentTypeDetection = null
+        el.width = null
+        el.height = null
+        el.duration = null
+        el.supportsStreaming = null
+        el
+    }
 }

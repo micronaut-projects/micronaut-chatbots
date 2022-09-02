@@ -59,5 +59,41 @@ class ShippingQuerySpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid ShippingQuery does not trigger any constraint exception"() {
+        when:
+        ShippingQuery el = validShippingQuery()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static ShippingQuery validShippingQuery() {
+        ShippingQuery el = new ShippingQuery()
+        el.id = "user"
+        el.from = validUser()
+        el.invoicePayload = 'z'
+        el.shippingAddress = validShippingAddress()
+        el
+    }
+
+    static User validUser() {
+        User el = new User()
+        el.id = 1L
+        el.bot = false
+        el.firstName = "foo"
+        el
+    }
+
+    static ShippingAddress validShippingAddress() {
+        ShippingAddress el = new ShippingAddress()
+        el.countryCode = "es"
+        el.state = "es"
+        el.city = "x"
+        el.streetLine1 = "x"
+        el.streetLine2 = "x"
+        el.postCode = "x"
+        el
+    }
 }
 

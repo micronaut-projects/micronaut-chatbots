@@ -59,4 +59,22 @@ class InvoiceSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid Invoice does not trigger any constraint exception"() {
+        when:
+        Invoice el = validInvoice()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static Invoice validInvoice() {
+        Invoice el = new Invoice()
+        el.title = "x"
+        el.description = "x"
+        el.startParameter = "x"
+        el.currency = "USD"
+        el.totalAmount = 1
+        el
+    }
 }

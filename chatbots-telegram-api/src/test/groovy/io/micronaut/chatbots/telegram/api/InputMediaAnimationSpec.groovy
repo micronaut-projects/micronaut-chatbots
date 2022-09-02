@@ -59,4 +59,21 @@ class InputMediaAnimationSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid InputMediaAnimation does not trigger any constraint exception"() {
+        when:
+        InputMediaAnimation el = validInputMediaAnimation()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static InputMediaAnimation validInputMediaAnimation() {
+        InputMediaAnimation el = new InputMediaAnimation()
+        el.width = null
+        el.height = null
+        el.duration = null
+        el.media = 'x'
+        el
+    }
 }

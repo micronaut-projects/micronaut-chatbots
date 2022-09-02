@@ -59,4 +59,24 @@ class SuccessfulPaymentSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid SuccessfulPayment does not trigger any constraint exception"() {
+        when:
+        SuccessfulPayment el = validSuccessfulPayment()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static SuccessfulPayment validSuccessfulPayment() {
+        SuccessfulPayment el = new SuccessfulPayment()
+        el.currency = "USD"
+        el.totalAmount = 1
+        el.invoicePayload = "x"
+        el.shippingOptionId = null
+        el.orderInfo = null
+        el.telegramPaymentChargeId = "1"
+        el.providerPaymentChargeId = "1"
+        el
+    }
 }

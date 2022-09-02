@@ -59,4 +59,28 @@ class PollAnswerSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid PollAnswer does not trigger any constraint exception"() {
+        when:
+        PollAnswer el = validPollAnswer()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static PollAnswer validPollAnswer() {
+        PollAnswer el = new PollAnswer()
+        el.pollId = "user"
+        el.user = validUser()
+        el.optionIds = [1]
+        el
+    }
+
+    static User validUser() {
+        User el = new User()
+        el.id = 1L
+        el.bot = false
+        el.firstName = "foo"
+        el
+    }
 }

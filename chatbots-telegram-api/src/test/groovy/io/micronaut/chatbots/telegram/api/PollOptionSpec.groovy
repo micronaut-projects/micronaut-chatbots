@@ -59,4 +59,19 @@ class PollOptionSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid PollOption does not trigger any constraint exception"() {
+        when:
+        PollOption el = validPollOption()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static PollOption validPollOption() {
+        PollOption el = new PollOption()
+        el.text = 'a'
+        el.voterCount = 1
+        el
+    }
 }
