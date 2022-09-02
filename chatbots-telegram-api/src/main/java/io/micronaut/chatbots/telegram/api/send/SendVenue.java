@@ -26,21 +26,7 @@ import javax.validation.constraints.NotNull;
  * @see <a href="https://core.telegram.org/bots/api#sendvenue">SendVenue</a>
  */
 @Serdeable
-public class SendVenue extends Send {
-    /**
-     * Latitude of the venue.
-     */
-    @NonNull
-    @NotNull
-    private Float latitude;
-
-    /**
-     * Longitude of the venue.
-     */
-    @NonNull
-    @NotNull
-    private Float longitude;
-
+public class SendVenue extends SendCoordinates {
     /**
      * Name of the venue.
      */
@@ -71,40 +57,6 @@ public class SendVenue extends Send {
 
     public SendVenue() {
         super("sendVenue");
-    }
-
-    /**
-     *
-     * @return Latitude of the venue
-     */
-    @NonNull
-    public Float getLatitude() {
-        return latitude;
-    }
-
-    /**
-     *
-     * @param latitude Latitude of the venue
-     */
-    public void setLatitude(@NonNull Float latitude) {
-        this.latitude = latitude;
-    }
-
-    /**
-     *
-     * @return Longitude of the venue
-     */
-    @NonNull
-    public Float getLongitude() {
-        return longitude;
-    }
-
-    /**
-     *
-     * @param longitude Longitude of the venue
-     */
-    public void setLongitude(@NonNull Float longitude) {
-        this.longitude = longitude;
     }
 
     /**

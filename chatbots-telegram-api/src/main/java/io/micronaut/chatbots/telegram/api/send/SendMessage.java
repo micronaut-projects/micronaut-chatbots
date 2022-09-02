@@ -28,7 +28,7 @@ import javax.validation.constraints.NotBlank;
  * @since 1.0.0
  */
 @Serdeable
-public class SendMessage extends Send {
+public class SendMessage extends SendText {
 
     public static final String METHOD_SENDMESSAGE = "sendMessage";
 
@@ -38,13 +38,6 @@ public class SendMessage extends Send {
     @NonNull
     @NotBlank
     private String text;
-
-    /**
-     * Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.
-     */
-    @JsonProperty("parse_mode")
-    @Nullable
-    private String parseMode;
 
     /**
      * Disables link previews for links in this message.
@@ -76,23 +69,6 @@ public class SendMessage extends Send {
 
     /**
      *
-     * @return Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.
-     */
-    @Nullable
-    public String getParseMode() {
-        return parseMode;
-    }
-
-    /**
-     *
-     * @param parseMode Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.
-     */
-    public void setParseMode(@Nullable String parseMode) {
-        this.parseMode = parseMode;
-    }
-
-    /**
-     *
      * @return Disables link previews for links in this message.
      */
     @Nullable
@@ -113,7 +89,7 @@ public class SendMessage extends Send {
         return "SendMessage{" +
                 "method='" + method + '\'' +
                 ", text='" + text + '\'' +
-                ", parseMode='" + parseMode + '\'' +
+                ", parseMode='" + getParseMode() + '\'' +
                 ", disableWebPagePreview=" + disableWebPagePreview +
                 '}';
     }

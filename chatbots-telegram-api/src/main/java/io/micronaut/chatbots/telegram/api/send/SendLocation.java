@@ -25,24 +25,9 @@ import javax.validation.constraints.NotNull;
  * @see <a href="https://core.telegram.org/bots/api#sendlocation">SendAudio</a>
  */
 @Serdeable
-public class SendLocation extends Send {
+public class SendLocation extends SendCoordinates {
 
     public static final String SEND_LOCATION = "sendLocation";
-
-    /**
-     * Longitude of the location.
-     */
-    @NonNull
-    @NotNull
-    private Float longitude;
-
-    /**
-     * Latitude of the location.
-     *
-     */
-    @NonNull
-    @NotNull
-    private Float latitude;
 
     /**
      * Period in seconds for which the location will be updated.
@@ -53,40 +38,6 @@ public class SendLocation extends Send {
 
     public SendLocation() {
         super(SEND_LOCATION);
-    }
-
-    /**
-     *
-     * @return Longitude of the location
-     */
-    @NonNull
-    public Float getLongitude() {
-        return longitude;
-    }
-
-    /**
-     *
-     * @param longitude Longitude of the location
-     */
-    public void setLongitude(@NonNull Float longitude) {
-        this.longitude = longitude;
-    }
-
-    /**
-     *
-     * @return Latitude of the location.
-     */
-    @NonNull
-    public Float getLatitude() {
-        return latitude;
-    }
-
-    /**
-     *
-     * @param latitude Latitude of the location.
-     */
-    public void setLatitude(@NonNull Float latitude) {
-        this.latitude = latitude;
     }
 
     /**

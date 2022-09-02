@@ -60,7 +60,7 @@ public abstract class Send {
     @JsonProperty("reply_markup")
     private String replyMarkup;
 
-    public Send(String method) {
+    protected Send(String method) {
         this.method = method;
     }
 

@@ -27,7 +27,7 @@ import javax.validation.constraints.NotBlank;
  * @since 1.0.0
  */
 @Serdeable
-public class SendVoice extends Send {
+public class SendVoice extends SendCaption {
 
     public static final String SEND_VOICE = "sendVoice";
 
@@ -37,19 +37,6 @@ public class SendVoice extends Send {
     @NonNull
     @NotBlank
     private String voice;
-
-    /**
-     * Photo caption (may also be used when resending photos by file_id), 0-1024 characters.
-     */
-    @Nullable
-    private String caption;
-
-    /**
-     * Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.
-     */
-    @JsonProperty("parse_mode")
-    @Nullable
-    private String parseMode;
 
     /**
      * Duration of the voice message in seconds.
@@ -79,40 +66,6 @@ public class SendVoice extends Send {
      */
     public void setVoice(@NonNull String voice) {
         this.voice = voice;
-    }
-
-    /**
-     *
-     * @return Photo caption (may also be used when resending photos by file_id), 0-1024 characters.
-     */
-    @Nullable
-    public String getCaption() {
-        return caption;
-    }
-
-    /**
-     *
-     * @param caption Photo caption (may also be used when resending photos by file_id), 0-1024 characters.
-     */
-    public void setCaption(@Nullable String caption) {
-        this.caption = caption;
-    }
-
-    /**
-     *
-     * @return Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.
-     */
-    @Nullable
-    public String getParseMode() {
-        return parseMode;
-    }
-
-    /**
-     *
-     * @param parseMode Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption.
-     */
-    public void setParseMode(@Nullable String parseMode) {
-        this.parseMode = parseMode;
     }
 
     /**
