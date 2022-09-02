@@ -1,18 +1,12 @@
 plugins {
-    id("io.micronaut.build.internal.module")
+    id("io.micronaut.build.internal.chatbots-module")
 }
 dependencies {
     implementation(libs.micronaut.serde.jackson)
-    implementation(libs.micronaut.validation)
     implementation(project(":chatbots-lambda"))
     api(project(":chatbots-telegram-core"))
 }
 
-micronautBuild {
-    binaryCompatibility {
-        enabled.set(false)
-    }
-}
 
 configurations.all {
     resolutionStrategy.dependencySubstitution {
