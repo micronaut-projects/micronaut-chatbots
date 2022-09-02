@@ -18,47 +18,18 @@ import spock.lang.Unroll
 import javax.validation.Valid
 import javax.validation.constraints.NotNull
 
-class HandlerSpec extends Specification {
+class HandlerInternalServerErrorSpec extends Specification {
 
     private static Map<String, String> PROPS = [
     "micronaut.chatbots.telegram.bots.mn-bot.token": "xxx",
     "micronaut.chatbots.telegram.bots.mn-bot.at-username": "@MnBot",
     ]
 
-    void "Handler has empty constructor"() {
-        when:
-        new Handler()
-
-        then:
-        noExceptionThrown()
-    }
-
-    void "Handler responds 401 if HTTP Header X-Telegram-Bot-Api-Secret-Token is not present"() {
-        given:
-        Handler handler = new Handler(ApplicationContext.builder().properties(PROPS))
-
-        File f = new File('src/test/resources/text.json')
-
-        expect:
-        f.exists()
-
-        when:
-        APIGatewayProxyRequestEvent request = new APIGatewayProxyRequestEvent()
-        request.body = f.text
-        APIGatewayProxyResponseEvent response = handler.handleRequest(request, null)
-
-        then:
-        401  == response.statusCode
-
-        cleanup:
-        handler.close()
-    }
-
     @Unroll
-    void "Handler responds 200 and message is not present"(String header, String value) {
+    void "Handler responds 500 and no exception message is leaked"(String header, String value) {
         given:
         Map<String, Object> properties = new HashMap<>(PROPS)
-        properties.put("spec.name", "Handler200Spec")
+        properties.put("spec.name", "HandlerInternalServerErrorSpec")
         Handler handler = new Handler(ApplicationContext.builder().properties(properties))
         File f = new File('src/test/resources/text.json')
 
@@ -72,8 +43,8 @@ class HandlerSpec extends Specification {
         APIGatewayProxyResponseEvent response = handler.handleRequest(request, null)
 
         then:
-        200  == response.statusCode
-        '{"text":"Hello World","method":"sendMessage","chat_id":718265379}' == response.body
+        500  == response.statusCode
+        !response.body
 
         cleanup:
         handler.close()
@@ -81,10 +52,9 @@ class HandlerSpec extends Specification {
         where:
         header                             | value
         'X-Telegram-Bot-Api-Secret-Token'  | 'xxx'
-        'x-telegram-bot-api-secret-token'  | 'xxx'
     }
 
-    @Requires(property = "spec.name", value = "Handler200Spec")
+    @Requires(property = "spec.name", value = "HandlerInternalServerErrorSpec")
     @Singleton
     static class HelloWorld implements TelegramHandler<SendMessage> {
 
@@ -102,13 +72,7 @@ class HandlerSpec extends Specification {
 
         @Override
         Optional<SendMessage> handle(@NonNull @NotNull @Valid TelegramBotConfiguration telegramBotConfiguration, @NonNull @NotNull @Valid Update update) {
-            spaceParser.parse(update)
-                    .map(space -> {
-                        SendMessage message = new SendMessage()
-                        message.setText("Hello World")
-                        message.chatId = space.id
-                        message
-                    })
+            throw new RuntimeException("foo")
         }
     }
 }

@@ -120,7 +120,7 @@ public class Message {
      */
     @JsonProperty("is_automatic_forward")
     @Nullable
-    private Boolean isAutomaticForward;
+    private Boolean automaticForward;
 
     /**
      * For replies, the original message. Note that the Message object in this field will not contain further reply_to_message fields even if it itself is a reply.
@@ -1253,8 +1253,8 @@ public class Message {
      * @return True, if the message is a channel post that was automatically forwarded to the connected discussion group
      */
     @Nullable
-    public Boolean getAutomaticForward() {
-        return isAutomaticForward;
+    public Boolean isAutomaticForward() {
+        return automaticForward;
     }
 
     /**
@@ -1262,7 +1262,7 @@ public class Message {
      * @param automaticForward True, if the message is a channel post that was automatically forwarded to the connected discussion group
      */
     public void setAutomaticForward(@Nullable Boolean automaticForward) {
-        isAutomaticForward = automaticForward;
+        this.automaticForward = automaticForward;
     }
 
     /**

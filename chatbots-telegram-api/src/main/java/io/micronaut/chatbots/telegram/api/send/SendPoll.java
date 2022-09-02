@@ -50,7 +50,7 @@ public class SendPoll extends Send {
      */
     @JsonProperty("is_anonymous")
     @Nullable
-    private Boolean isAnonymous;
+    private Boolean anonymous;
 
     /**
      * Poll type, “quiz” or “regular”, defaults to “regular”.
@@ -77,7 +77,7 @@ public class SendPoll extends Send {
      */
     @Nullable
     @JsonProperty("is_closed")
-    private Boolean isClosed;
+    private Boolean closed;
 
     public SendPoll() {
         super("sendPoll");
@@ -122,8 +122,8 @@ public class SendPoll extends Send {
      * @return True, if the poll needs to be anonymous, defaults to True.
      */
     @Nullable
-    public Boolean getAnonymous() {
-        return isAnonymous;
+    public Boolean isAnonymous() {
+        return anonymous;
     }
 
     /**
@@ -131,7 +131,7 @@ public class SendPoll extends Send {
      * @param anonymous True, if the poll needs to be anonymous, defaults to True.
      */
     public void setAnonymous(@Nullable Boolean anonymous) {
-        isAnonymous = anonymous;
+        this.anonymous = anonymous;
     }
 
     /**
@@ -190,8 +190,8 @@ public class SendPoll extends Send {
      * @return True if the poll needs to be immediately closed.
      */
     @Nullable
-    public Boolean getClosed() {
-        return isClosed;
+    public Boolean isClosed() {
+        return closed;
     }
 
     /**
@@ -199,6 +199,6 @@ public class SendPoll extends Send {
      * @param closed Pass True, if the poll needs to be immediately closed.
      */
     public void setClosed(@Nullable Boolean closed) {
-        isClosed = closed;
+        this.closed = closed;
     }
 }

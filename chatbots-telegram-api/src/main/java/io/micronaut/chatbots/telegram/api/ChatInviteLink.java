@@ -55,14 +55,14 @@ public class ChatInviteLink {
      */
     @JsonProperty("is_primary")
     @NotNull
-    private Boolean isPrimary;
+    private Boolean primary;
 
     /**
      * True, if the link is revoked.
      */
     @JsonProperty("is_revoked")
     @NotNull
-    private Boolean isRevoked;
+    private Boolean revoked;
 
     /**
      * Invite link name.
@@ -143,8 +143,8 @@ public class ChatInviteLink {
      *
      * @return True, if the link is primary.
      */
-    public Boolean getPrimary() {
-        return isPrimary;
+    public Boolean isPrimary() {
+        return primary;
     }
 
     /**
@@ -152,15 +152,15 @@ public class ChatInviteLink {
      * @param primary True, if the link is primary.
      */
     public void setPrimary(Boolean primary) {
-        isPrimary = primary;
+        this.primary = primary;
     }
 
     /**
      *
      * @return True, if the link is revoked.
      */
-    public Boolean getRevoked() {
-        return isRevoked;
+    public Boolean isRevoked() {
+        return revoked;
     }
 
     /**
@@ -168,7 +168,7 @@ public class ChatInviteLink {
      * @param revoked True, if the link is revoked.
      */
     public void setRevoked(Boolean revoked) {
-        isRevoked = revoked;
+        this.revoked = revoked;
     }
 
     /**

@@ -59,4 +59,25 @@ class VideoSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid Video does not trigger any constraint exception"() {
+        when:
+        Video el = validVideo()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static Video validVideo() {
+        Video el = new Video()
+        el.fileId = "xxx"
+        el.fileUniqueId = "xxx.yyy"
+        el.width = 1
+        el.height = 1
+        el.duration = 1
+        el.thumb = null
+        el.mimeType = null
+        el.fileSize = null
+        el
+    }
 }

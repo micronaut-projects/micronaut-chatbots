@@ -59,4 +59,23 @@ class GameSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid Game does not trigger any constraint exception"() {
+        when:
+        Game el = validGame()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static Game validGame() {
+        Game el = new Game()
+        el.title = "x"
+        el.description = "x"
+        el.photo = []
+        el.text = null
+        el.textEntities = null
+        el.animation = null
+        el
+    }
 }

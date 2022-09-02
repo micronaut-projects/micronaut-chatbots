@@ -73,7 +73,7 @@ class ChatAdministratorRightsSpec extends Specification {
 
     static ChatAdministratorRights validChatAdministratorRights() {
         ChatAdministratorRights el = new ChatAdministratorRights()
-        el.isAnonymous = false
+        el.anonymous = false
         el.canManageChat = false
         el.canDeleteMessages = false
         el.canManageVideoChats = false

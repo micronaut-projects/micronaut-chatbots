@@ -21,10 +21,12 @@ import io.micronaut.core.annotation.Nullable;
 import io.micronaut.serde.annotation.Serdeable;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 import java.util.stream.Collectors;
 
 /**
+ * @see <a href="https://core.telegram.org/bots/api#encryptedpassportelement">EncryptedPassportElement</a>
  * @author Sergio del Amo
  * @since 1.0.0
  */
@@ -36,6 +38,7 @@ public class EncryptedPassportElement {
      */
     @NonNull
     @NotBlank
+    @Pattern(regexp = "personal_details|passport|driver_license|identity_card|internal_passport|address|utility_bill|bank_statement|rental_agreement|passport_registration|temporary_registration|phone_number|email")
     private String type;
 
     /**

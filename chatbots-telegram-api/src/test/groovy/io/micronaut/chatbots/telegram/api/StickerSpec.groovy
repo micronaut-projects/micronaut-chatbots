@@ -59,4 +59,27 @@ class StickerSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid Sticker does not trigger any constraint exception"() {
+        when:
+        Sticker el = validSticker()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static Sticker validSticker() {
+        Sticker el = new Sticker()
+        el.fileId = "xxx"
+        el.fileUniqueId = "xxx.yyy"
+        el.width = 1
+        el.height = 1
+        el.animated = true
+        el.thumb = null
+        el.emoji = null
+        el.name = null
+        el.maskPosition = null
+        el.fileSize = null
+        el
+    }
 }

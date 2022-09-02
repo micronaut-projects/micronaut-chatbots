@@ -81,7 +81,7 @@ public class User {
      */
     @Nullable
     @JsonProperty("is_premium")
-    private Boolean isPremium;
+    private Boolean premium;
 
     /**
      * True, if this user added the bot to the attachment menu.
@@ -288,8 +288,8 @@ public class User {
      * @return True, if this user is a Telegram Premium user
      */
     @Nullable
-    public Boolean getPremium() {
-        return isPremium;
+    public Boolean isPremium() {
+        return premium;
     }
 
     /**
@@ -297,7 +297,7 @@ public class User {
      * @param premium True, if this user is a Telegram Premium user
      */
     public void setPremium(@Nullable Boolean premium) {
-        isPremium = premium;
+        this.premium = premium;
     }
 
     /**

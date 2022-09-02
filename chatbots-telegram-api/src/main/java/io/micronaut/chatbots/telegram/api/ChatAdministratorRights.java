@@ -37,7 +37,7 @@ public class ChatAdministratorRights {
     @NonNull
     @NotNull
     @JsonProperty("is_anonymous")
-    private Boolean isAnonymous;
+    private Boolean anonymous;
 
     /**
      * True, if the administrator can access the chat event log, chat statistics, message statistics in channels, see channel members, see anonymous administrators in supergroups and ignore slow mode. Implied by any other administrator privilege.
@@ -121,8 +121,8 @@ public class ChatAdministratorRights {
      * @return True, if the user's presence in the chat is hidden
      */
     @NonNull
-    public Boolean getAnonymous() {
-        return isAnonymous;
+    public Boolean isAnonymous() {
+        return anonymous;
     }
 
     /**
@@ -130,7 +130,7 @@ public class ChatAdministratorRights {
      * @param anonymous True, if the user's presence in the chat is hidden
      */
     public void setAnonymous(@NonNull Boolean anonymous) {
-        isAnonymous = anonymous;
+        this.anonymous = anonymous;
     }
 
     /**

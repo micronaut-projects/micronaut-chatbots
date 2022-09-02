@@ -1,5 +1,6 @@
 package io.micronaut.chatbots.telegram.api
 
+import io.micronaut.chatbots.telegram.api.send.SendMessage
 import io.micronaut.context.BeanContext
 import io.micronaut.core.beans.BeanIntrospection
 import io.micronaut.core.type.Argument
@@ -58,5 +59,25 @@ class MessageEntitySpec extends Specification {
 
         then:
         noExceptionThrown()
+    }
+
+    void "valid MessageEntity does not trigger any constraint exception"() {
+        when:
+        MessageEntity el = validMessageEntity()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static MessageEntity validMessageEntity() {
+        MessageEntity el = new MessageEntity()
+        el.type = "x"
+        el.offset = 1
+        el.length = 1
+        el.url = null
+        el.user = null
+        el.language= null
+        el.customEmojiId = null
+        el
     }
 }

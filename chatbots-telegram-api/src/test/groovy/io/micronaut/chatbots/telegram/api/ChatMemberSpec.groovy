@@ -59,4 +59,44 @@ class ChatMemberSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid ChatMember does not trigger any constraint exception"() {
+        when:
+        ChatMember el = validChatMember()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static ChatMember validChatMember() {
+        ChatMember el = new ChatMember()
+        el.user = validUser()
+        el.status = "member"
+        el.customTitle = null
+        el.untilDate = null
+        el.canBeEdited = null
+        el.canPostMessages = null
+        el.canEditMessages = null
+        el.canDeleteMessages = null
+        el.canRestrictMembers = null
+        el.canPromoteMembers = null
+        el.canChangeInfo = null
+        el.canInviteUsers = null
+        el.canPinMessages = null
+        el.member = null
+        el.canSendMessages = null
+        el.canSendMediaMessages = null
+        el.canSendPolls = null
+        el.canSendOtherMessages = null
+        el.canAddWebPagePreviews = null
+        el
+    }
+
+    static User validUser() {
+        User el = new User()
+        el.id = 1L
+        el.bot = false
+        el.firstName = "foo"
+        el
+    }
 }

@@ -22,6 +22,7 @@ import io.micronaut.serde.annotation.Serdeable;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 /**
  * This object contains information about one member of a chat.
@@ -40,6 +41,9 @@ public class ChatMember {
     /**
      * The member's status in the chat. Can be “creator”, “administrator”, “member”, “restricted”, “left” or “kicked”.
      */
+    @NonNull
+    @NotNull
+    @Pattern(regexp = "administrator|member|restricted|left|kicked")
     private String status;
 
     /**
@@ -123,7 +127,7 @@ public class ChatMember {
      */
     @Nullable
     @JsonProperty("is_member")
-    private Boolean isMember;
+    private Boolean member;
 
     /**
      * Restricted only. True, if the user is allowed to send text messages, contacts, locations and venues.
@@ -388,8 +392,8 @@ public class ChatMember {
      * @return True, if the user is a member of the chat at the moment of the request.
      */
     @Nullable
-    public Boolean getMember() {
-        return isMember;
+    public Boolean isMember() {
+        return member;
     }
 
     /**
@@ -397,7 +401,7 @@ public class ChatMember {
      * @param member True, if the user is a member of the chat at the moment of the request.
      */
     public void setMember(@Nullable Boolean member) {
-        isMember = member;
+        this.member = member;
     }
 
     /**
@@ -501,7 +505,7 @@ public class ChatMember {
                 ", canChangeInfo=" + canChangeInfo +
                 ", canInviteUsers=" + canInviteUsers +
                 ", canPinMessages=" + canPinMessages +
-                ", isMember=" + isMember +
+                ", isMember=" + member +
                 ", canSendMessages=" + canSendMessages +
                 ", canSendMediaMessages=" + canSendMediaMessages +
                 ", canSendPolls=" + canSendPolls +

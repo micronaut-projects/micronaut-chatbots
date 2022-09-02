@@ -83,7 +83,7 @@ public class Sticker {
      */
     @Nullable
     @JsonProperty("set_name")
-    private String setName;
+    private String name;
 
     /**
      * For mask stickers, the position where the mask should be placed.
@@ -226,16 +226,16 @@ public class Sticker {
      * @return Name of the sticker set to which the sticker belongs.
      */
     @Nullable
-    public String getSetName() {
-        return setName;
+    public String getName() {
+        return name;
     }
 
     /**
      *
-     * @param setName Name of the sticker set to which the sticker belongs.
+     * @param name setName of the sticker set to which the sticker belongs.
      */
-    public void setSetName(@Nullable String setName) {
-        this.setName = setName;
+    public void setName(@Nullable String name) {
+        this.name = name;
     }
 
     /**
@@ -282,7 +282,7 @@ public class Sticker {
                 ", isAnimated=" + animated +
                 ", thumb=" + (thumb != null ? thumb.toString() : "") +
                 ", emoji='" + emoji  + '\'' +
-                ", setName='" + setName + '\'' +
+                ", setName='" + name + '\'' +
                 ", maskPosition=" + (maskPosition != null ? maskPosition.toString() : "") +
                 ", fileSize=" + fileSize +
                 '}';

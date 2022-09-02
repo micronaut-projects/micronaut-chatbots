@@ -59,4 +59,27 @@ class EncryptedPassportElementSpec extends Specification {
         then:
         noExceptionThrown()
     }
+
+    void "valid EncryptedPassportElement does not trigger any constraint exception"() {
+        when:
+        EncryptedPassportElement el = validEncryptedPassportElement()
+
+        then:
+        validator.validate(el).isEmpty()
+    }
+
+    static EncryptedPassportElement validEncryptedPassportElement() {
+        EncryptedPassportElement el = new EncryptedPassportElement()
+        el.type = "passport"
+        el.data = null
+        el.phoneNumber = null
+        el.email = null
+        el.files = null
+        el.frontSide = null
+        el.reverseSide = null
+        el.selfie = null
+        el.translation = null
+        el.hash = "x"
+        el
+    }
 }

@@ -83,7 +83,7 @@ public abstract class AbstractHandler<Bot extends BotConfiguration, Input>
                 return getDispatcher().dispatch(bot, getObjectMapper().readValue(request.getBody(), inputType))
                     .map(this::okJson)
                     .orElseGet(this::ok);
-            } catch (IOException e) {
+            } catch (Exception e) {
                 if (LOG.isErrorEnabled()) {
                     LOG.error("{}", e);
                 }

@@ -72,8 +72,8 @@ class PassportFileSpec extends Specification {
         PassportFile el = new PassportFile()
         el.fileId = "xxx"
         el.fileUniqueId = "xxx.yyy"
-        el.fileSize = 20
-        el.fileDate = 20
+        el.fileSize = 1
+        el.fileDate = 1
         el
     }
 }
