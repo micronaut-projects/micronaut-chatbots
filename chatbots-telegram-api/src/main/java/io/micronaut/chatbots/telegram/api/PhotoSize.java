@@ -16,10 +16,8 @@
 package io.micronaut.chatbots.telegram.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.micronaut.core.annotation.NonNull;
 import io.micronaut.core.annotation.Nullable;
 import io.micronaut.serde.annotation.Serdeable;
-import javax.validation.constraints.NotNull;
 
 /**
  * This object represents one size of a photo or a file / sticker thumbnail.
@@ -28,20 +26,7 @@ import javax.validation.constraints.NotNull;
  * @since 1.0.0
  */
 @Serdeable
-public class PhotoSize extends AbstractFile {
-    /**
-     * Photo width.
-     */
-    @NonNull
-    @NotNull
-    private Integer width;
-
-    /**
-     * Photo height.
-     */
-    @NonNull
-    @NotNull
-    private Integer height;
+public class PhotoSize extends AbstractFileWithDimensions {
 
     /**
      * File size.
@@ -49,40 +34,6 @@ public class PhotoSize extends AbstractFile {
     @JsonProperty("file_size")
     @Nullable
     private Integer fileSize;
-
-    /**
-     *
-     * @return Photo width.
-     */
-    @NonNull
-    public Integer getWidth() {
-        return width;
-    }
-
-    /**
-     *
-     * @param width Photo width.
-     */
-    public void setWidth(@NonNull Integer width) {
-        this.width = width;
-    }
-
-    /**
-     *
-     * @return Photo height.
-     */
-    @NonNull
-    public Integer getHeight() {
-        return height;
-    }
-
-    /**
-     *
-     * @param height Photo height.
-     */
-    public void setHeight(@NonNull Integer height) {
-        this.height = height;
-    }
 
     /**
      *
@@ -106,8 +57,8 @@ public class PhotoSize extends AbstractFile {
         return "PhotoSize{" +
                 "fileId='" + getFileId() + '\'' +
                 ", fileUniqueId='" + getFileUniqueId() + '\'' +
-                ", width=" + width +
-                ", height=" + height +
+                ", width=" + getWidth() +
+                ", height=" + getHeight() +
                 ", fileSize=" + fileSize +
                 '}';
     }

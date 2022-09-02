@@ -27,21 +27,7 @@ import javax.validation.constraints.NotNull;
  * @see <a href="https://core.telegram.org/bots/api#video">Video</a>
  */
 @Serdeable
-public class Video extends AbstractFile {
-    /**
-     * Video width as defined by sender.
-     */
-    @NonNull
-    @NotNull
-    private Integer width;
-
-    /**
-     * Video height as defined by sender.
-     */
-    @NonNull
-    @NotNull
-    private Integer height;
-
+public class Video extends AbstractFileWithDimensions {
     /**
      * Duration of the video in seconds as defined by sender.
      */
@@ -69,40 +55,6 @@ public class Video extends AbstractFile {
     @Nullable
     @JsonProperty("file_size")
     private Integer fileSize;
-
-    /**
-     *
-     * @return Video width as defined by sender.
-     */
-    @NonNull
-    public Integer getWidth() {
-        return width;
-    }
-
-    /**
-     *
-     * @param width Video width as defined by sender.
-     */
-    public void setWidth(@NonNull Integer width) {
-        this.width = width;
-    }
-
-    /**
-     *
-     * @return Video height as defined by sender.
-     */
-    @NonNull
-    public Integer getHeight() {
-        return height;
-    }
-
-    /**
-     *
-     * @param height Video height as defined by sender.
-     */
-    public void setHeight(@NonNull Integer height) {
-        this.height = height;
-    }
 
     /**
      *
@@ -177,8 +129,8 @@ public class Video extends AbstractFile {
         return "Video{" +
                 "fileId='" + getFileId() + '\'' +
                 ", fileUniqueId='" + getFileUniqueId() + '\'' +
-                ", width=" + width +
-                ", height=" + height +
+                ", width=" + getWidth() +
+                ", height=" + getHeight() +
                 ", duration=" + duration +
                 ", thumb=" + (thumb != null ? thumb.toString() : "") +
                 ", mimeType='" + mimeType + '\'' +

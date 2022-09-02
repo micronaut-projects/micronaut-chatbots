@@ -19,6 +19,7 @@ import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import io.micronaut.chatbots.core.Dispatcher;
 import io.micronaut.chatbots.lambda.AbstractHandler;
 import io.micronaut.chatbots.telegram.api.Update;
+import io.micronaut.chatbots.telegram.api.send.Send;
 import io.micronaut.chatbots.telegram.core.TelegramBotConfiguration;
 import io.micronaut.chatbots.telegram.core.TokenValidator;
 import io.micronaut.context.ApplicationContext;
@@ -37,7 +38,7 @@ import java.util.Optional;
  * @author Sergio del Amo
  * @since 1.0.0
  */
-public class Handler extends AbstractHandler<TelegramBotConfiguration, Update> {
+public class Handler extends AbstractHandler<TelegramBotConfiguration, Update, Send> {
     private static final Logger LOG = LoggerFactory.getLogger(Handler.class);
     private static final String X_TELEGRAM_BOT_API_SECRET_TOKEN = "X-Telegram-Bot-Api-Secret-Token";
 
@@ -48,7 +49,7 @@ public class Handler extends AbstractHandler<TelegramBotConfiguration, Update> {
     ObjectMapper objectMapper;
 
     @Inject
-    Dispatcher<TelegramBotConfiguration, Update, ?> dispatcher;
+    Dispatcher<TelegramBotConfiguration, Update, Send> dispatcher;
 
     /**
      * Default constructor; will initialize a suitable ApplicationContext for Lambda deployment.
@@ -119,7 +120,7 @@ public class Handler extends AbstractHandler<TelegramBotConfiguration, Update> {
 
     @Override
     @NonNull
-    protected Dispatcher<TelegramBotConfiguration, Update, ?> getDispatcher() {
+    protected Dispatcher<TelegramBotConfiguration, Update, Send> getDispatcher() {
         return this.dispatcher;
     }
 

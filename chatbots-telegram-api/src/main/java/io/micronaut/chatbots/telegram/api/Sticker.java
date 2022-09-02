@@ -26,21 +26,7 @@ import javax.validation.constraints.NotNull;
  * This object represents a sticker.
  */
 @Serdeable
-public class Sticker extends AbstractFile {
-    /**
-     * Sticker width.
-     */
-    @NonNull
-    @NotNull
-    private Integer width;
-
-    /**
-     * Sticker height.
-     */
-    @NonNull
-    @NotNull
-    private Integer height;
-
+public class Sticker extends AbstractFileWithDimensions {
     /**
      * True, if the sticker is animated.
      */
@@ -81,40 +67,6 @@ public class Sticker extends AbstractFile {
     @JsonProperty("file_size")
     @Nullable
     private Integer fileSize;
-
-    /**
-     *
-     * @return Sticker width.
-     */
-    @NonNull
-    public Integer getWidth() {
-        return width;
-    }
-
-    /**
-     *
-     * @param width Sticker width.
-     */
-    public void setWidth(@NonNull Integer width) {
-        this.width = width;
-    }
-
-    /**
-     *
-     * @return Sticker height.
-     */
-    @NonNull
-    public Integer getHeight() {
-        return height;
-    }
-
-    /**
-     *
-     * @param height Sticker height.
-     */
-    public void setHeight(@NonNull Integer height) {
-        this.height = height;
-    }
 
     /**
      *
@@ -223,8 +175,8 @@ public class Sticker extends AbstractFile {
         return "Sticker{" +
                 "fileId='" + getFileId() + '\'' +
                 ", fileUniqueId='" + getFileUniqueId() + '\'' +
-                ", width=" + width +
-                ", height=" + height +
+                ", width=" + getWidth() +
+                ", height=" + getHeight() +
                 ", isAnimated=" + animated +
                 ", thumb=" + (thumb != null ? thumb.toString() : "") +
                 ", emoji='" + emoji  + '\'' +
