@@ -7,8 +7,8 @@ plugins {
 if (System.getenv("SONAR_TOKEN") != null) {
     sonarqube {
         properties {
-            // Ignore the api classes as they are DTOs for Serde serialization
-            property "sonar.cpd.exclusions", "io/micronaut/chatbots/telegram/api/**"
+            // Ignore duplication on the api classes as they are DTOs for Serde serialization
+            property("sonar.cpd.exclusions", "io/micronaut/chatbots/telegram/api/**")
         }
     }
 }
