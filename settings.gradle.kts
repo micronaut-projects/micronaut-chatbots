@@ -11,5 +11,13 @@ plugins {
 
 rootProject.name = "chatbots-parent"
 
-include("chatbots-telegram-http-client")
+include("chatbots-telegram-api")
+include("chatbots-telegram-core")
+include("chatbots-telegram-lambda")
+include("chatbots-lambda")
+include("chatbots-core")
 include("chatbots-bom")
+
+configure<io.micronaut.build.MicronautBuildSettingsExtension> {
+    importMicronautCatalog()
+}

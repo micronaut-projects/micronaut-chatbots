@@ -1,0 +1,14 @@
+plugins {
+    id "io.micronaut.build.internal.module"
+}
+dependencies {
+    implementation(mn.micronaut.validation)
+}
+
+micronautBuild {
+    binaryCompatibility {
+        enabled.set(false)
+    }
+}
+
+
