@@ -1415,6 +1415,7 @@ public class Message {
     }
 
     @Override
+    @SuppressWarnings("java:S3776") // Suppress high Cognitive Complexity warning
     public String toString() {
         return "Message{" +
                 "messageId=" + messageId +

@@ -23,7 +23,6 @@ import io.micronaut.serde.annotation.Serdeable;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import java.io.Serializable;
 
 /**
  * This object represents a chat.
