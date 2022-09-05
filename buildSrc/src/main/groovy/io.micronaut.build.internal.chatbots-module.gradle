@@ -2,7 +2,7 @@ plugins {
     id "io.micronaut.build.internal.module"
 }
 dependencies {
-    implementation(libs.micronaut.validation)
+    implementation(mn.micronaut.validation)
 }
 
 micronautBuild {

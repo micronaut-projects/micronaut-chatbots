@@ -3,10 +3,10 @@ plugins {
 }
 
 dependencies {
-    annotationProcessor(libs.micronaut.serde.processor)
-    api(libs.micronaut.serde.api)
+    annotationProcessor(mn.micronaut.serde.processor)
+    api(mn.micronaut.serde.api)
     api(libs.jackson.annotations)
-    implementation(libs.micronaut.validation)
+    implementation(mn.micronaut.validation)
 }
 
 configurations.all {

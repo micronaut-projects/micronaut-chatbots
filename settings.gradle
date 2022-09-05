@@ -17,3 +17,7 @@ include("chatbots-telegram-lambda")
 include("chatbots-lambda")
 include("chatbots-core")
 include("chatbots-bom")
+
+micronautBuild {
+    importMicronautCatalog()
+}

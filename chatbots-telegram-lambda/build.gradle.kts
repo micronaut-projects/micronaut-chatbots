@@ -2,7 +2,7 @@ plugins {
     id("io.micronaut.build.internal.chatbots-module")
 }
 dependencies {
-    implementation(libs.micronaut.serde.jackson)
+    implementation(mn.micronaut.serde.jackson)
     implementation(project(":chatbots-lambda"))
     api(project(":chatbots-telegram-core"))
 }
