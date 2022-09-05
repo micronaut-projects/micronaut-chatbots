@@ -18,9 +18,9 @@ package io.micronaut.chatbots.telegram.core;
 import io.micronaut.chatbots.core.Handler;
 import io.micronaut.chatbots.telegram.api.Update;
 /**
- * @param <Output> output type.
+ * @param <O> output type.
  * @author Sergio del Amo
  * @since 1.0.0
  */
-public interface TelegramHandler<Output> extends Handler<TelegramBotConfiguration, Update, Output> {
+public interface TelegramHandler<O> extends Handler<TelegramBotConfiguration, Update, O> {
 }
