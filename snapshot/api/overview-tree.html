@@ -30,7 +30,8 @@
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
-<li><a href="io/micronaut/chatbots/telegram/core/package-summary.html">Package</a></li>
+<li><a href="overview-summary.html">Overview</a></li>
+<li>Package</li>
 <li>Class</li>
 <li class="navBarCell1Rev">Tree</li>
 <li><a href="deprecated-list.html">Deprecated</a></li>
@@ -70,7 +71,12 @@
 <h1 class="title">Hierarchy For All Packages</h1>
 <span class="packageHierarchyLabel">Package Hierarchies:</span>
 <ul class="horizontal">
-<li><a href="io/micronaut/chatbots/telegram/core/package-tree.html">io.micronaut.chatbots.telegram.core</a></li>
+<li><a href="io/micronaut/chatbots/core/package-tree.html">io.micronaut.chatbots.core</a>, </li>
+<li><a href="io/micronaut/chatbots/lambda/package-tree.html">io.micronaut.chatbots.lambda</a>, </li>
+<li><a href="io/micronaut/chatbots/telegram/api/package-tree.html">io.micronaut.chatbots.telegram.api</a>, </li>
+<li><a href="io/micronaut/chatbots/telegram/api/send/package-tree.html">io.micronaut.chatbots.telegram.api.send</a>, </li>
+<li><a href="io/micronaut/chatbots/telegram/core/package-tree.html">io.micronaut.chatbots.telegram.core</a>, </li>
+<li><a href="io/micronaut/chatbots/telegram/lambda/package-tree.html">io.micronaut.chatbots.telegram.lambda</a></li>
 </ul>
 </div>
 <div class="contentContainer">
@@ -78,10 +84,187 @@
 <ul>
 <li type="circle">java.lang.Object
 <ul>
-<li type="circle">io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/Animation.html" title="class in io.micronaut.chatbots.telegram.core"><span class="typeNameLink">Animation</span></a></li>
-<li type="circle">io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/Audio.html" title="class in io.micronaut.chatbots.telegram.core"><span class="typeNameLink">Audio</span></a></li>
-<li type="circle">io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/Contact.html" title="class in io.micronaut.chatbots.telegram.core"><span class="typeNameLink">Contact</span></a></li>
-<li type="circle">io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/PhotoSize.html" title="class in io.micronaut.chatbots.telegram.core"><span class="typeNameLink">PhotoSize</span></a></li>
+<li type="circle">io.micronaut.function.executor.AbstractExecutor&lt;C&gt; (implements io.micronaut.context.ApplicationContextProvider, java.lang.AutoCloseable, java.io.Closeable)
+<ul>
+<li type="circle">io.micronaut.function.executor.AbstractFunctionExecutor&lt;I,O,C&gt; (implements io.micronaut.function.executor.FunctionExecutor&lt;I,O&gt;)
+<ul>
+<li type="circle">io.micronaut.function.aws.MicronautRequestHandler&lt;I,O&gt; (implements io.micronaut.function.aws.MicronautLambdaContext, com.amazonaws.services.lambda.runtime.RequestHandler&lt;I,O&gt;)
+<ul>
+<li type="circle">io.micronaut.chatbots.lambda.<a href="io/micronaut/chatbots/lambda/AbstractHandler.html" title="class in io.micronaut.chatbots.lambda"><span class="typeNameLink">AbstractHandler</span></a>&lt;B,I,O&gt;
+<ul>
+<li type="circle">io.micronaut.chatbots.telegram.lambda.<a href="io/micronaut/chatbots/telegram/lambda/Handler.html" title="class in io.micronaut.chatbots.telegram.lambda"><span class="typeNameLink">Handler</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/AbstractFile.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">AbstractFile</span></a>
+<ul>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/AbstractFileWithDimensions.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">AbstractFileWithDimensions</span></a>
+<ul>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Animation.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">Animation</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/PhotoSize.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">PhotoSize</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Sticker.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">Sticker</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Video.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">Video</span></a></li>
+</ul>
+</li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Audio.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">Audio</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Document.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">Document</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/File.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">File</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/PassportFile.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">PassportFile</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/VideoNote.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">VideoNote</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Voice.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">Voice</span></a></li>
+</ul>
+</li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/BotCommand.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">BotCommand</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/CallbackGame.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">CallbackGame</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/CallbackQuery.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">CallbackQuery</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Chat.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">Chat</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/ChatAdministratorRights.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">ChatAdministratorRights</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/ChatInviteLink.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">ChatInviteLink</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/ChatLocation.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">ChatLocation</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/ChatMember.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">ChatMember</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/ChatPermissions.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">ChatPermissions</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/ChatPhoto.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">ChatPhoto</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/ChosenInlineResult.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">ChosenInlineResult</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Contact.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">Contact</span></a></li>
+<li type="circle">io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/DefaultDispatcher.html" title="class in io.micronaut.chatbots.core"><span class="typeNameLink">DefaultDispatcher</span></a>&lt;B,I,O&gt; (implements io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/Dispatcher.html" title="interface in io.micronaut.chatbots.core">Dispatcher</a>&lt;B,I,O&gt;)</li>
+<li type="circle">io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/DefaultTokenValidator.html" title="class in io.micronaut.chatbots.telegram.core"><span class="typeNameLink">DefaultTokenValidator</span></a> (implements io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/TokenValidator.html" title="interface in io.micronaut.chatbots.telegram.core">TokenValidator</a>)</li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Dice.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">Dice</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/EncryptedCredentials.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">EncryptedCredentials</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/EncryptedPassportElement.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">EncryptedPassportElement</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/ForceReply.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">ForceReply</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Game.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">Game</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/InlineKeyboardButton.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">InlineKeyboardButton</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/InlineKeyboardMarkup.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">InlineKeyboardMarkup</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/InlineQuery.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">InlineQuery</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/InputMedia.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">InputMedia</span></a>
+<ul>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/InputMediaDocument.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">InputMediaDocument</span></a>
+<ul>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/InputMediaAnimation.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">InputMediaAnimation</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/InputMediaAudio.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">InputMediaAudio</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/InputMediaVideo.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">InputMediaVideo</span></a></li>
+</ul>
+</li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/InputMediaPhoto.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">InputMediaPhoto</span></a></li>
+</ul>
+</li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Invoice.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">Invoice</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/KeyboardButton.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">KeyboardButton</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/KeyboardButtonPollType.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">KeyboardButtonPollType</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Location.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">Location</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/LoginUrl.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">LoginUrl</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/MaskPosition.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">MaskPosition</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Message.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">Message</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/MessageAutoDeleteTimerChanged.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">MessageAutoDeleteTimerChanged</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/MessageEntity.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">MessageEntity</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/MessageId.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">MessageId</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/OrderInfo.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">OrderInfo</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/PassportData.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">PassportData</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Poll.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">Poll</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/PollAnswer.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">PollAnswer</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/PollOption.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">PollOption</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/PreCheckoutQuery.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">PreCheckoutQuery</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/ProximityAlertTriggered.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">ProximityAlertTriggered</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/ReplyKeyboardMarkup.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">ReplyKeyboardMarkup</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/ReplyKeyboardRemove.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">ReplyKeyboardRemove</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/ResponseParameters.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">ResponseParameters</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.send.<a href="io/micronaut/chatbots/telegram/api/send/Send.html" title="class in io.micronaut.chatbots.telegram.api.send"><span class="typeNameLink">Send</span></a>
+<ul>
+<li type="circle">io.micronaut.chatbots.telegram.api.send.<a href="io/micronaut/chatbots/telegram/api/send/SendAnimation.html" title="class in io.micronaut.chatbots.telegram.api.send"><span class="typeNameLink">SendAnimation</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.send.<a href="io/micronaut/chatbots/telegram/api/send/SendAudio.html" title="class in io.micronaut.chatbots.telegram.api.send"><span class="typeNameLink">SendAudio</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.send.<a href="io/micronaut/chatbots/telegram/api/send/SendChatAction.html" title="class in io.micronaut.chatbots.telegram.api.send"><span class="typeNameLink">SendChatAction</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.send.<a href="io/micronaut/chatbots/telegram/api/send/SendContact.html" title="class in io.micronaut.chatbots.telegram.api.send"><span class="typeNameLink">SendContact</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.send.<a href="io/micronaut/chatbots/telegram/api/send/SendCoordinates.html" title="class in io.micronaut.chatbots.telegram.api.send"><span class="typeNameLink">SendCoordinates</span></a>
+<ul>
+<li type="circle">io.micronaut.chatbots.telegram.api.send.<a href="io/micronaut/chatbots/telegram/api/send/SendLocation.html" title="class in io.micronaut.chatbots.telegram.api.send"><span class="typeNameLink">SendLocation</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.send.<a href="io/micronaut/chatbots/telegram/api/send/SendVenue.html" title="class in io.micronaut.chatbots.telegram.api.send"><span class="typeNameLink">SendVenue</span></a></li>
+</ul>
+</li>
+<li type="circle">io.micronaut.chatbots.telegram.api.send.<a href="io/micronaut/chatbots/telegram/api/send/SendDocument.html" title="class in io.micronaut.chatbots.telegram.api.send"><span class="typeNameLink">SendDocument</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.send.<a href="io/micronaut/chatbots/telegram/api/send/SendPoll.html" title="class in io.micronaut.chatbots.telegram.api.send"><span class="typeNameLink">SendPoll</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.send.<a href="io/micronaut/chatbots/telegram/api/send/SendText.html" title="class in io.micronaut.chatbots.telegram.api.send"><span class="typeNameLink">SendText</span></a>
+<ul>
+<li type="circle">io.micronaut.chatbots.telegram.api.send.<a href="io/micronaut/chatbots/telegram/api/send/SendCaption.html" title="class in io.micronaut.chatbots.telegram.api.send"><span class="typeNameLink">SendCaption</span></a>
+<ul>
+<li type="circle">io.micronaut.chatbots.telegram.api.send.<a href="io/micronaut/chatbots/telegram/api/send/SendPhoto.html" title="class in io.micronaut.chatbots.telegram.api.send"><span class="typeNameLink">SendPhoto</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.send.<a href="io/micronaut/chatbots/telegram/api/send/SendVideo.html" title="class in io.micronaut.chatbots.telegram.api.send"><span class="typeNameLink">SendVideo</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.send.<a href="io/micronaut/chatbots/telegram/api/send/SendVoice.html" title="class in io.micronaut.chatbots.telegram.api.send"><span class="typeNameLink">SendVoice</span></a></li>
+</ul>
+</li>
+<li type="circle">io.micronaut.chatbots.telegram.api.send.<a href="io/micronaut/chatbots/telegram/api/send/SendMessage.html" title="class in io.micronaut.chatbots.telegram.api.send"><span class="typeNameLink">SendMessage</span></a></li>
+</ul>
+</li>
+<li type="circle">io.micronaut.chatbots.telegram.api.send.<a href="io/micronaut/chatbots/telegram/api/send/SendVideoNote.html" title="class in io.micronaut.chatbots.telegram.api.send"><span class="typeNameLink">SendVideoNote</span></a></li>
+</ul>
+</li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/ShippingAddress.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">ShippingAddress</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/ShippingQuery.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">ShippingQuery</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/StickerSet.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">StickerSet</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/SuccessfulPayment.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">SuccessfulPayment</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/TelegramBotConfigurationProperties.html" title="class in io.micronaut.chatbots.telegram.core"><span class="typeNameLink">TelegramBotConfigurationProperties</span></a> (implements io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/TelegramBotConfiguration.html" title="interface in io.micronaut.chatbots.telegram.core">TelegramBotConfiguration</a>)</li>
+<li type="circle">io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/TelegramSpaceParser.html" title="class in io.micronaut.chatbots.telegram.core"><span class="typeNameLink">TelegramSpaceParser</span></a> (implements io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/SpaceParser.html" title="interface in io.micronaut.chatbots.core">SpaceParser</a>&lt;I,S&gt;)</li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Update.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">Update</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/User.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">User</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/UserProfilePhotos.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">UserProfilePhotos</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Venue.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">Venue</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/VideoChatEnded.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">VideoChatEnded</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/VideoChatParticipantsInvited.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">VideoChatParticipantsInvited</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/VideoChatScheduled.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">VideoChatScheduled</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/VideoChatStarted.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">VideoChatStarted</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/WebAppData.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">WebAppData</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/WebAppInfo.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">WebAppInfo</span></a></li>
+</ul>
+</li>
+</ul>
+<h2 title="Interface Hierarchy">Interface Hierarchy</h2>
+<ul>
+<li type="circle">io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/Dispatcher.html" title="interface in io.micronaut.chatbots.core"><span class="typeNameLink">Dispatcher</span></a>&lt;B,I,O&gt;</li>
+<li type="circle">io.micronaut.core.naming.Named
+<ul>
+<li type="circle">io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/BotConfiguration.html" title="interface in io.micronaut.chatbots.core"><span class="typeNameLink">BotConfiguration</span></a> (also extends io.micronaut.core.util.Toggleable)
+<ul>
+<li type="circle">io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/TelegramBotConfiguration.html" title="interface in io.micronaut.chatbots.telegram.core"><span class="typeNameLink">TelegramBotConfiguration</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li type="circle">io.micronaut.core.order.Ordered
+<ul>
+<li type="circle">io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/Handler.html" title="interface in io.micronaut.chatbots.core"><span class="typeNameLink">Handler</span></a>&lt;B,I,O&gt;
+<ul>
+<li type="circle">io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/TelegramHandler.html" title="interface in io.micronaut.chatbots.telegram.core"><span class="typeNameLink">TelegramHandler</span></a>&lt;O&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li type="circle">io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/SpaceParser.html" title="interface in io.micronaut.chatbots.core"><span class="typeNameLink">SpaceParser</span></a>&lt;I,S&gt;</li>
+<li type="circle">io.micronaut.core.util.Toggleable
+<ul>
+<li type="circle">io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/BotConfiguration.html" title="interface in io.micronaut.chatbots.core"><span class="typeNameLink">BotConfiguration</span></a> (also extends io.micronaut.core.naming.Named)
+<ul>
+<li type="circle">io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/TelegramBotConfiguration.html" title="interface in io.micronaut.chatbots.telegram.core"><span class="typeNameLink">TelegramBotConfiguration</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li type="circle">io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/TokenValidator.html" title="interface in io.micronaut.chatbots.telegram.core"><span class="typeNameLink">TokenValidator</span></a></li>
+</ul>
+<h2 title="Enum Hierarchy">Enum Hierarchy</h2>
+<ul>
+<li type="circle">java.lang.Object
+<ul>
+<li type="circle">java.lang.Enum&lt;E&gt; (implements java.lang.Comparable&lt;T&gt;, java.io.Serializable)
+<ul>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/MaskPositionPoint.html" title="enum in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">MaskPositionPoint</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.send.<a href="io/micronaut/chatbots/telegram/api/send/ParseMode.html" title="enum in io.micronaut.chatbots.telegram.api.send"><span class="typeNameLink">ParseMode</span></a></li>
+<li type="circle">io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/ChatType.html" title="enum in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">ChatType</span></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -95,7 +278,8 @@
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
-<li><a href="io/micronaut/chatbots/telegram/core/package-summary.html">Package</a></li>
+<li><a href="overview-summary.html">Overview</a></li>
+<li>Package</li>
 <li>Class</li>
 <li class="navBarCell1Rev">Tree</li>
 <li><a href="deprecated-list.html">Deprecated</a></li>
