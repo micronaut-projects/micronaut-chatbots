@@ -67,7 +67,7 @@ public abstract class InputMedia {
     @JsonProperty("caption_entities")
     private List<MessageEntity> captionEntities;
 
-    public InputMedia(@NonNull String type) {
+    protected InputMedia(@NonNull String type) {
         this.type = type;
     }
 
