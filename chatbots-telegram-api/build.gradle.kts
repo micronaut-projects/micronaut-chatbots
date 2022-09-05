@@ -1,5 +1,5 @@
 plugins {
-    id 'io.micronaut.build.internal.chatbots-module'
+    id("io.micronaut.build.internal.chatbots-module")
 }
 
 dependencies {
