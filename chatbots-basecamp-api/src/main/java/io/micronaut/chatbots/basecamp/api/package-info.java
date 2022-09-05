@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 /**
- * Classes related to Basecamp 3 interactive Chatbot API
+ * Classes related to Basecamp 3 interactive Chatbot API.
  * <a href="https://github.com/basecamp/bc3-api/blob/master/sections/chatbots.md#chatbots">Chatbots</a>
  * @author Sergio del Amo
  * @since 1.0.0
