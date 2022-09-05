@@ -75,7 +75,7 @@ class HandlerSpec extends Specification {
 
         then:
         200  == response.statusCode
-        'HELLO <b>WORLD</b>' == response.body
+        'John Snow: HELLO <b>WORLD</b>' == response.body
         MediaType.TEXT_HTML == response.headers.get(HttpHeaders.CONTENT_TYPE)
 
         cleanup:
@@ -100,7 +100,7 @@ class HandlerSpec extends Specification {
         @Override
         Optional<String> handle(@Nullable BasecampBotConfiguration bot,
                                 @NonNull @NotNull @Valid Query query) {
-            Optional.of(query.getCommand().toUpperCase() + " <b>WORLD</b>")
+            Optional.of("${query.creator.name}: ${query.command.toUpperCase()} <b>WORLD</b>".toString())
         }
     }
 }

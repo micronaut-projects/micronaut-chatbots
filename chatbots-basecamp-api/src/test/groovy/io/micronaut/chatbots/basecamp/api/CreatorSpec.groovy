@@ -99,7 +99,7 @@ class CreatorSpec extends Specification {
         json.contains("avatar_kind")
     }
 
-    static Creator validCreator() {
+    public static Creator validCreator() {
         Creator el = new Creator()
         el.id = 2975233
         el.name = "GoT"

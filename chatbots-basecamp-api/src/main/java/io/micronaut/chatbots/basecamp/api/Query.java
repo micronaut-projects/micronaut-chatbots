@@ -18,7 +18,10 @@ package io.micronaut.chatbots.basecamp.api;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.serde.annotation.Serdeable;
+
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 /**
  * Message directed to a Basecamp 3 interactive Chatbot.
@@ -32,6 +35,11 @@ public class Query {
     @NonNull
     @NotBlank
     private String command;
+
+    @NonNull
+    @NotNull
+    @Valid
+    private Creator creator;
 
     @NonNull
     @NotBlank
@@ -70,5 +78,22 @@ public class Query {
      */
     public void setCommand(@NonNull String command) {
         this.command = command;
+    }
+
+    /**
+     *
+     * @return Person who prompt the Bot
+     */
+    @NonNull
+    public Creator getCreator() {
+        return creator;
+    }
+
+    /**
+     *
+     * @param creator Person who prompt the Bot
+     */
+    public void setCreator(@NonNull Creator creator) {
+        this.creator = creator;
     }
 }

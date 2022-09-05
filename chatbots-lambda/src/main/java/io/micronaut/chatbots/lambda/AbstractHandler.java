@@ -182,7 +182,7 @@ public abstract class AbstractHandler<B extends BotConfiguration, I, O>
      */
     @NonNull
     protected APIGatewayProxyResponseEvent okJson(@NonNull Object body) {
-        return okJson(body, MediaType.APPLICATION_JSON);
+        return ok(body, MediaType.APPLICATION_JSON);
     }
 
     /**
@@ -192,7 +192,7 @@ public abstract class AbstractHandler<B extends BotConfiguration, I, O>
      */
     @NonNull
     protected APIGatewayProxyResponseEvent okHtml(@NonNull Object body) {
-        return okJson(body, MediaType.TEXT_HTML);
+        return ok(body, MediaType.TEXT_HTML);
     }
 
     /**
@@ -202,8 +202,8 @@ public abstract class AbstractHandler<B extends BotConfiguration, I, O>
      * @return Returns a 200 response with the supplied content type and body
      */
     @NonNull
-    protected APIGatewayProxyResponseEvent okJson(@NonNull Object body,
-                                                  @NonNull String contentType) {
+    protected APIGatewayProxyResponseEvent ok(@NonNull Object body,
+                                              @NonNull String contentType) {
         try {
             APIGatewayProxyResponseEvent response = response(HttpStatus.OK);
             response.setHeaders(Collections.singletonMap(HttpHeaders.CONTENT_TYPE, contentType));

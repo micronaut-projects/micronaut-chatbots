@@ -107,6 +107,7 @@ class QuerySpec extends Specification {
     static Query validQuery() {
         Query el = new Query()
         el.command = 'Hello World'
+        el.creator = CreatorSpec.validCreator()
         el.callbackUrl =  "https://3.basecamp.com/5317339/integrations/3QpCCCnvQzDbW6VBByq3Y87o/buckets/26555285/chats/4701195812/lines"
         el
     }
