@@ -18,6 +18,6 @@ include("chatbots-lambda")
 include("chatbots-core")
 include("chatbots-bom")
 
-micronautBuild {
+configure<io.micronaut.build.MicronautBuildSettingsExtension> {
     importMicronautCatalog()
 }
