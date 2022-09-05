@@ -13,79 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.micronaut.chatbots.telegram.core;
+package io.micronaut.chatbots.basecamp.core;
 
 import io.micronaut.context.annotation.EachProperty;
 import io.micronaut.context.annotation.Parameter;
 import io.micronaut.core.annotation.NonNull;
 
-import javax.validation.constraints.NotBlank;
-import java.util.HashMap;
-import java.util.Map;
-
 /**
- * {@link EachProperty} implementation of {@link TelegramBotConfiguration}.
+ * {@link EachProperty} implementation of {@link BasecampBotConfiguration}.
  * @author Sergio del Amo
  * @since 1.0.0
  *  */
-@EachProperty(TelegramBotConfigurationProperties.PREFIX)
-public class TelegramBotConfigurationProperties implements TelegramBotConfiguration {
-    public static final String PREFIX = "micronaut.chatbots.telegram.bots";
+@EachProperty(BasecampBotConfigurationProperties.PREFIX)
+public class BasecampBotConfigurationProperties implements BasecampBotConfiguration {
+    public static final String PREFIX = "micronaut.chatbots.bascamp.bots";
     private static final boolean DEFAULT_ENABLED = true;
 
     @NonNull
-    @NotBlank
-    private String token;
-
-    @NonNull
     private final String name;
-
-    @NotBlank
-    @NonNull
-    private String atUsername;
-
     private boolean enabled = DEFAULT_ENABLED;
 
-    @NonNull
-    private Map<String, String> commands = new HashMap<>();
-
-    public TelegramBotConfigurationProperties(@Parameter String name) {
+    public BasecampBotConfigurationProperties(@Parameter String name) {
         this.name = name;
-    }
-
-    /**
-     *
-     * @return bot username prefixed with @
-     */
-    @NonNull
-    public String getAtUsername() {
-        return atUsername;
-    }
-
-    /**
-     *
-     * @param atUsername bot username prefixed with @
-     */
-    public void setAtUsername(@NonNull String atUsername) {
-        this.atUsername = atUsername;
-    }
-
-    /**
-     *
-     * @return Telegram's token
-     */
-    @NonNull
-    @Override
-    public String getToken() {
-        return token;
-    }
-
-    /**
-     *
-     * @param token Telegram's token
-     */
-    public void setToken(@NonNull String token) {
-        this.token = token;
     }
 
     @Override

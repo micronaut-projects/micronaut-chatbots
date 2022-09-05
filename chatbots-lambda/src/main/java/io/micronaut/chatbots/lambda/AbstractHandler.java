@@ -22,6 +22,7 @@ import io.micronaut.chatbots.core.Dispatcher;
 import io.micronaut.context.ApplicationContext;
 import io.micronaut.context.ApplicationContextBuilder;
 import io.micronaut.core.annotation.NonNull;
+import io.micronaut.core.annotation.Nullable;
 import io.micronaut.core.reflect.GenericTypeUtils;
 import io.micronaut.core.util.ArrayUtils;
 import io.micronaut.function.aws.MicronautRequestHandler;
@@ -34,6 +35,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.Collections;
+import java.util.Locale;
 import java.util.Optional;
 
 /**
@@ -79,20 +81,37 @@ public abstract class AbstractHandler<B extends BotConfiguration, I, O>
         if (LOG.isTraceEnabled()) {
             LOG.trace("{}", request);
         }
-        return validate(request).map(bot -> {
-            try {
-                return getDispatcher().dispatch(bot, getObjectMapper().readValue(request.getBody(), inputType))
-                    .map(this::okJson)
-                    .orElseGet(this::ok);
-            } catch (Exception e) {
-                if (LOG.isErrorEnabled()) {
-                    LOG.error("exception dispatching update", e);
+        return parseBot(request)
+            .map(bot -> dispatch(bot, request))
+            .orElseGet(() -> {
+                if (!validate(request)) {
+                    return unauthorized();
                 }
-                return serverError();
-            }
-        }).orElseGet(this::unauthorized);
-
+                return dispatch(null, request);
+            });
     }
+
+    private APIGatewayProxyResponseEvent dispatch(@Nullable B bot,
+                                                  @NonNull APIGatewayProxyRequestEvent request) {
+        try {
+            return getDispatcher().dispatch(bot, getObjectMapper().readValue(request.getBody(), inputType))
+                .map(this::okSerializer)
+                .orElseGet(this::ok);
+        } catch (Exception e) {
+            if (LOG.isErrorEnabled()) {
+                LOG.error("exception dispatching update", e);
+            }
+            return serverError();
+        }
+    }
+
+    /**
+     *
+     * @param request API Gateway Request
+     * @return Whether the request is valid or not
+     */
+    @NonNull
+    protected abstract boolean validate(@NonNull APIGatewayProxyRequestEvent request);
 
     /**
      *
@@ -100,7 +119,7 @@ public abstract class AbstractHandler<B extends BotConfiguration, I, O>
      * @return The Bot associated to the request
      */
     @NonNull
-    protected abstract Optional<B> validate(@NonNull APIGatewayProxyRequestEvent request);
+    protected abstract Optional<B> parseBot(@NonNull APIGatewayProxyRequestEvent request);
 
     /**
      *
@@ -153,6 +172,9 @@ public abstract class AbstractHandler<B extends BotConfiguration, I, O>
         return apiGatewayProxyResponseEvent;
     }
 
+    @NonNull
+    protected abstract APIGatewayProxyResponseEvent okSerializer(@NonNull Object body);
+
     /**
      *
      * @param body The Body to be serialized as JSoN
@@ -160,17 +182,62 @@ public abstract class AbstractHandler<B extends BotConfiguration, I, O>
      */
     @NonNull
     protected APIGatewayProxyResponseEvent okJson(@NonNull Object body) {
+        return okJson(body, MediaType.APPLICATION_JSON);
+    }
+
+    /**
+     *
+     * @param body The Body as an HTML String
+     * @return Returns a 200 response with HTML content type
+     */
+    @NonNull
+    protected APIGatewayProxyResponseEvent okHtml(@NonNull Object body) {
+        return okJson(body, MediaType.TEXT_HTML);
+    }
+
+    /**
+     *
+     * @param body The Body to respond
+     * @param contentType Content Type of the resonse
+     * @return Returns a 200 response with the supplied content type and body
+     */
+    @NonNull
+    protected APIGatewayProxyResponseEvent okJson(@NonNull Object body,
+                                                  @NonNull String contentType) {
         try {
             APIGatewayProxyResponseEvent response = response(HttpStatus.OK);
-            response.setHeaders(Collections.singletonMap(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON));
-            response.setBody(getObjectMapper().writeValueAsString(body));
+            response.setHeaders(Collections.singletonMap(HttpHeaders.CONTENT_TYPE, contentType));
+            if (body instanceof String) {
+                response.setBody((String) body);
+            } else {
+                response.setBody(getObjectMapper().writeValueAsString(body));
+            }
             return response;
         } catch (IOException e) {
             if (LOG.isErrorEnabled()) {
-                LOG.error("Error serializing response to JSON", e);
+                LOG.error("Error serializing response", e);
             }
             return serverError();
         }
+    }
+
+    /**
+     *
+     * @param request The API Gateway Request
+     * @param headerName HTTP Header Name
+     * @return The Token
+     */
+    @NonNull
+    protected Optional<String> parseHeader(@NonNull APIGatewayProxyRequestEvent request,
+                                           @NonNull String headerName) {
+        if (request.getHeaders() == null) {
+            return Optional.empty();
+        }
+        String header = request.getHeaders().get(headerName);
+        if (header != null) {
+            return Optional.of(header);
+        }
+        return Optional.ofNullable(request.getHeaders().get(headerName.toLowerCase(Locale.ROOT)));
     }
 
     @NonNull

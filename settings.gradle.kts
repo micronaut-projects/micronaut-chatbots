@@ -10,7 +10,9 @@ plugins {
 }
 
 rootProject.name = "chatbots-parent"
-
+include("chatbots-basecamp-api")
+include("chatbots-basecamp-core")
+include("chatbots-basecamp-lambda")
 include("chatbots-telegram-api")
 include("chatbots-telegram-core")
 include("chatbots-telegram-lambda")
