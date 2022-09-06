@@ -13,23 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.micronaut.chatbots.telegram.lambda;
+package io.micronaut.chatbots.basecamp.lambda;
 
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
+import io.micronaut.chatbots.basecamp.api.Query;
+import io.micronaut.chatbots.basecamp.core.BasecampBotConfiguration;
 import io.micronaut.chatbots.core.Dispatcher;
 import io.micronaut.chatbots.lambda.AbstractHandler;
-import io.micronaut.chatbots.telegram.api.Update;
-import io.micronaut.chatbots.telegram.api.send.Send;
-import io.micronaut.chatbots.telegram.core.TelegramBotConfiguration;
-import io.micronaut.chatbots.telegram.core.TokenValidator;
 import io.micronaut.context.ApplicationContext;
 import io.micronaut.context.ApplicationContextBuilder;
 import io.micronaut.core.annotation.NonNull;
+import io.micronaut.http.HttpHeaders;
 import io.micronaut.serde.ObjectMapper;
 import jakarta.inject.Inject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import java.util.Optional;
 
 /**
@@ -37,18 +34,12 @@ import java.util.Optional;
  * @author Sergio del Amo
  * @since 1.0.0
  */
-public class Handler extends AbstractHandler<TelegramBotConfiguration, Update, Send> {
-    private static final Logger LOG = LoggerFactory.getLogger(Handler.class);
-    private static final String X_TELEGRAM_BOT_API_SECRET_TOKEN = "X-Telegram-Bot-Api-Secret-Token";
-
-    @Inject
-    TokenValidator tokenValidator;
-
+public class Handler extends AbstractHandler<BasecampBotConfiguration, Query, String> {
     @Inject
     ObjectMapper objectMapper;
 
     @Inject
-    Dispatcher<TelegramBotConfiguration, Update, Send> dispatcher;
+    Dispatcher<BasecampBotConfiguration, Query, String> dispatcher;
 
     /**
      * Default constructor; will initialize a suitable ApplicationContext for Lambda deployment.
@@ -76,44 +67,21 @@ public class Handler extends AbstractHandler<TelegramBotConfiguration, Update, S
     @Override
     @NonNull
     protected boolean validate(@NonNull APIGatewayProxyRequestEvent request) {
-        return parseBot(request).isPresent();
+        return parseHeader(request, HttpHeaders.USER_AGENT)
+            .map(value -> value.equalsIgnoreCase("Basecamp 3 Integration Command"))
+            .orElse(false);
     }
 
     @Override
     @NonNull
-    protected Optional<TelegramBotConfiguration> parseBot(@NonNull APIGatewayProxyRequestEvent request) {
-        Optional<String> tokenOptional = parseToken(request);
-        if (!tokenOptional.isPresent()) {
-            if (LOG.isTraceEnabled()) {
-                LOG.trace("not token found");
-            }
-            return Optional.empty();
-        }
-        String token = tokenOptional.get();
-        Optional<TelegramBotConfiguration> botOptional = tokenValidator.validate(token);
-        if (!botOptional.isPresent()) {
-            if (LOG.isTraceEnabled()) {
-                LOG.trace("not bot with token that matches token {}", token);
-            }
-            return Optional.empty();
-        }
-        return botOptional;
+    protected Optional<BasecampBotConfiguration> parseBot(@NonNull APIGatewayProxyRequestEvent request) {
+        return Optional.empty();
     }
 
     @NonNull
     @Override
     protected APIGatewayProxyResponseEvent okSerializer(@NonNull Object body) {
-        return okJson(body);
-    }
-
-    /**
-     *
-     * @param request The API Gateway Request
-     * @return The Token
-     */
-    @NonNull
-    protected Optional<String> parseToken(@NonNull APIGatewayProxyRequestEvent request) {
-        return parseHeader(request, X_TELEGRAM_BOT_API_SECRET_TOKEN);
+        return okHtml(body);
     }
 
     @Override
@@ -124,7 +92,7 @@ public class Handler extends AbstractHandler<TelegramBotConfiguration, Update, S
 
     @Override
     @NonNull
-    protected Dispatcher<TelegramBotConfiguration, Update, Send> getDispatcher() {
+    protected Dispatcher<BasecampBotConfiguration, Query, String> getDispatcher() {
         return this.dispatcher;
     }
 

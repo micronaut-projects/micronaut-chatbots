@@ -13,27 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.micronaut.chatbots.core;
-
-import io.micronaut.context.annotation.DefaultImplementation;
-import io.micronaut.core.annotation.NonNull;
-import io.micronaut.core.annotation.Nullable;
-
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
-import java.util.Optional;
-
 /**
+ * Classes related to Basecamp 3 interactive Chatbot API.
+ * <a href="https://github.com/basecamp/bc3-api/blob/master/sections/chatbots.md#chatbots">Chatbots</a>
  * @author Sergio del Amo
  * @since 1.0.0
- * @param <B> The Bot configuration
- * @param <I> input type.
- * @param <O> output type.
  */
-@DefaultImplementation(DefaultDispatcher.class)
-@FunctionalInterface
-public interface Dispatcher<B extends BotConfiguration, I, O> {
-    @NonNull
-    Optional<O> dispatch(@Nullable @Valid B bot,
-                         @NonNull @NotNull @Valid I input);
-}
+package io.micronaut.chatbots.basecamp.api;

@@ -10,5 +10,4 @@
     <root level="info">
         <appender-ref ref="STDOUT" />
     </root>
-    <logger name="io.micronaut.crac" level="debug"/>
 </configuration>
