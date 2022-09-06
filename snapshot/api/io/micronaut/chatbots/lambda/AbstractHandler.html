@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":6,"i2":6,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":6};
+var methods = {"i0":10,"i1":6,"i2":6,"i3":10,"i4":10,"i5":10,"i6":10,"i7":6,"i8":6,"i9":10,"i10":10,"i11":10,"i12":10,"i13":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -132,7 +132,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><a href="../../../../io/micronaut/chatbots/telegram/lambda/Handler.html" title="class in io.micronaut.chatbots.telegram.lambda">Handler</a></dd>
+<dd><a href="../../../../io/micronaut/chatbots/basecamp/lambda/Handler.html" title="class in io.micronaut.chatbots.basecamp.lambda">Handler</a>, <a href="../../../../io/micronaut/chatbots/telegram/lambda/Handler.html" title="class in io.micronaut.chatbots.telegram.lambda">Handler</a></dd>
 </dl>
 <hr>
 <br>
@@ -243,22 +243,44 @@ extends io.micronaut.function.aws.MicronautRequestHandler&lt;com.amazonaws.servi
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>protected com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#okJson-java.lang.Object-">okJson</a></span>(java.lang.Object&nbsp;body)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#ok-java.lang.Object-java.lang.String-">ok</a></span>(java.lang.Object&nbsp;body,
+  java.lang.String&nbsp;contentType)</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>protected com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#response-io.micronaut.http.HttpStatus-">response</a></span>(io.micronaut.http.HttpStatus&nbsp;httpStatus)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#okHtml-java.lang.Object-">okHtml</a></span>(java.lang.Object&nbsp;body)</code>&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>protected com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#serverError--">serverError</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#okJson-java.lang.Object-">okJson</a></span>(java.lang.Object&nbsp;body)</code>&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code>protected com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#unauthorized--">unauthorized</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code>protected abstract com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#okSerializer-java.lang.Object-">okSerializer</a></span>(java.lang.Object&nbsp;body)</code>&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>protected abstract java.util.Optional&lt;<a href="../../../../io/micronaut/chatbots/lambda/AbstractHandler.html" title="type parameter in AbstractHandler">B</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#parseBot-com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent-">parseBot</a></span>(com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent&nbsp;request)</code>&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>protected java.util.Optional&lt;java.lang.String&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#parseHeader-com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent-java.lang.String-">parseHeader</a></span>(com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent&nbsp;request,
+           java.lang.String&nbsp;headerName)</code>&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>protected com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#response-io.micronaut.http.HttpStatus-">response</a></span>(io.micronaut.http.HttpStatus&nbsp;httpStatus)</code>&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>protected com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#serverError--">serverError</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>protected com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#unauthorized--">unauthorized</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>protected abstract boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#validate-com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent-">validate</a></span>(com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent&nbsp;request)</code>&nbsp;</td>
 </tr>
 </table>
@@ -359,7 +381,24 @@ extends io.micronaut.function.aws.MicronautRequestHandler&lt;com.amazonaws.servi
 <li class="blockList">
 <h4>validate</h4>
 <pre>@NonNull
-protected abstract&nbsp;java.util.Optional&lt;<a href="../../../../io/micronaut/chatbots/lambda/AbstractHandler.html" title="type parameter in AbstractHandler">B</a>&gt;&nbsp;validate(@NonNull
+protected abstract&nbsp;boolean&nbsp;validate(@NonNull
+                                             com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent&nbsp;request)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>request</code> - API Gateway Request</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Whether the request is valid or not</dd>
+</dl>
+</li>
+</ul>
+<a name="parseBot-com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>parseBot</h4>
+<pre>@NonNull
+protected abstract&nbsp;java.util.Optional&lt;<a href="../../../../io/micronaut/chatbots/lambda/AbstractHandler.html" title="type parameter in AbstractHandler">B</a>&gt;&nbsp;parseBot(@NonNull
                                                            com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent&nbsp;request)</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -454,10 +493,21 @@ protected&nbsp;com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRespo
 </dl>
 </li>
 </ul>
+<a name="okSerializer-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>okSerializer</h4>
+<pre>@NonNull
+protected abstract&nbsp;com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent&nbsp;okSerializer(@NonNull
+                                                                                                                   java.lang.Object&nbsp;body)</pre>
+</li>
+</ul>
 <a name="okJson-java.lang.Object-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>okJson</h4>
 <pre>@NonNull
@@ -468,6 +518,63 @@ protected&nbsp;com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRespo
 <dd><code>body</code> - The Body to be serialized as JSoN</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Returns a 200 response</dd>
+</dl>
+</li>
+</ul>
+<a name="okHtml-java.lang.Object-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>okHtml</h4>
+<pre>@NonNull
+protected&nbsp;com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent&nbsp;okHtml(@NonNull
+                                                                                                    java.lang.Object&nbsp;body)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>body</code> - The Body as an HTML String</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Returns a 200 response with HTML content type</dd>
+</dl>
+</li>
+</ul>
+<a name="ok-java.lang.Object-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ok</h4>
+<pre>@NonNull
+protected&nbsp;com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent&nbsp;ok(@NonNull
+                                                                                                java.lang.Object&nbsp;body,
+                                                                                                @NonNull
+                                                                                                java.lang.String&nbsp;contentType)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>body</code> - The Body to respond</dd>
+<dd><code>contentType</code> - Content Type of the resonse</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Returns a 200 response with the supplied content type and body</dd>
+</dl>
+</li>
+</ul>
+<a name="parseHeader-com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>parseHeader</h4>
+<pre>@NonNull
+protected&nbsp;java.util.Optional&lt;java.lang.String&gt;&nbsp;parseHeader(@NonNull
+                                                                    com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent&nbsp;request,
+                                                                    @NonNull
+                                                                    java.lang.String&nbsp;headerName)</pre>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>request</code> - The API Gateway Request</dd>
+<dd><code>headerName</code> - HTTP Header Name</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The Token</dd>
 </dl>
 </li>
 </ul>

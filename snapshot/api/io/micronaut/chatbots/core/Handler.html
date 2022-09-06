@@ -109,7 +109,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <dl>
 <dt>All Known Subinterfaces:</dt>
-<dd><a href="../../../../io/micronaut/chatbots/telegram/core/TelegramHandler.html" title="interface in io.micronaut.chatbots.telegram.core">TelegramHandler</a>&lt;O&gt;</dd>
+<dd><a href="../../../../io/micronaut/chatbots/basecamp/core/BasecampHandler.html" title="interface in io.micronaut.chatbots.basecamp.core">BasecampHandler</a>, <a href="../../../../io/micronaut/chatbots/telegram/core/TelegramHandler.html" title="interface in io.micronaut.chatbots.telegram.core">TelegramHandler</a>&lt;O&gt;</dd>
 </dl>
 <hr>
 <br>
@@ -199,7 +199,7 @@ extends io.micronaut.core.order.Ordered</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>canHandle</h4>
-<pre>boolean&nbsp;canHandle(@NonNull @NotNull @Valid
+<pre>boolean&nbsp;canHandle(@Nullable
                   <a href="../../../../io/micronaut/chatbots/core/Handler.html" title="type parameter in Handler">B</a>&nbsp;bot,
                   @NonNull @NotNull @Valid
                   <a href="../../../../io/micronaut/chatbots/core/Handler.html" title="type parameter in Handler">I</a>&nbsp;input)</pre>
@@ -222,7 +222,7 @@ extends io.micronaut.core.order.Ordered</pre>
 <li class="blockList">
 <h4>handle</h4>
 <pre>@NonNull
-java.util.Optional&lt;<a href="../../../../io/micronaut/chatbots/core/Handler.html" title="type parameter in Handler">O</a>&gt;&nbsp;handle(@NonNull @NotNull @Valid
+java.util.Optional&lt;<a href="../../../../io/micronaut/chatbots/core/Handler.html" title="type parameter in Handler">O</a>&gt;&nbsp;handle(@Nullable
                                       <a href="../../../../io/micronaut/chatbots/core/Handler.html" title="type parameter in Handler">B</a>&nbsp;bot,
                                       @NonNull @NotNull @Valid
                                       <a href="../../../../io/micronaut/chatbots/core/Handler.html" title="type parameter in Handler">I</a>&nbsp;input)</pre>

@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -51,7 +51,7 @@ var activeTableTab = "activeTableTab";
 <li>Next&nbsp;Class</li>
 </ul>
 <ul class="navList">
-<li><a href="../../../../../index.html?io/micronaut/chatbots/telegram/lambda/Handler.html" target="_top">Frames</a></li>
+<li><a href="../../../../../index.html?io/micronaut/chatbots/basecamp/lambda/Handler.html" target="_top">Frames</a></li>
 <li><a href="Handler.html" target="_top">No&nbsp;Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_top">
@@ -90,7 +90,7 @@ var activeTableTab = "activeTableTab";
 <!-- ========= END OF TOP NAVBAR ========= -->
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="subTitle">io.micronaut.chatbots.telegram.lambda</div>
+<div class="subTitle">io.micronaut.chatbots.basecamp.lambda</div>
 <h2 title="Class Handler" class="title">Class Handler</h2>
 </div>
 <div class="contentContainer">
@@ -107,10 +107,10 @@ var activeTableTab = "activeTableTab";
 <li>io.micronaut.function.aws.MicronautRequestHandler&lt;com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent,com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent&gt;</li>
 <li>
 <ul class="inheritance">
-<li><a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html" title="class in io.micronaut.chatbots.lambda">io.micronaut.chatbots.lambda.AbstractHandler</a>&lt;<a href="../../../../../io/micronaut/chatbots/telegram/core/TelegramBotConfiguration.html" title="interface in io.micronaut.chatbots.telegram.core">TelegramBotConfiguration</a>,<a href="../../../../../io/micronaut/chatbots/telegram/api/Update.html" title="class in io.micronaut.chatbots.telegram.api">Update</a>,<a href="../../../../../io/micronaut/chatbots/telegram/api/send/Send.html" title="class in io.micronaut.chatbots.telegram.api.send">Send</a>&gt;</li>
+<li><a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html" title="class in io.micronaut.chatbots.lambda">io.micronaut.chatbots.lambda.AbstractHandler</a>&lt;<a href="../../../../../io/micronaut/chatbots/basecamp/core/BasecampBotConfiguration.html" title="interface in io.micronaut.chatbots.basecamp.core">BasecampBotConfiguration</a>,<a href="../../../../../io/micronaut/chatbots/basecamp/api/Query.html" title="class in io.micronaut.chatbots.basecamp.api">Query</a>,java.lang.String&gt;</li>
 <li>
 <ul class="inheritance">
-<li>io.micronaut.chatbots.telegram.lambda.Handler</li>
+<li>io.micronaut.chatbots.basecamp.lambda.Handler</li>
 </ul>
 </li>
 </ul>
@@ -132,7 +132,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">Handler</span>
-extends <a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html" title="class in io.micronaut.chatbots.lambda">AbstractHandler</a>&lt;<a href="../../../../../io/micronaut/chatbots/telegram/core/TelegramBotConfiguration.html" title="interface in io.micronaut.chatbots.telegram.core">TelegramBotConfiguration</a>,<a href="../../../../../io/micronaut/chatbots/telegram/api/Update.html" title="class in io.micronaut.chatbots.telegram.api">Update</a>,<a href="../../../../../io/micronaut/chatbots/telegram/api/send/Send.html" title="class in io.micronaut.chatbots.telegram.api.send">Send</a>&gt;</pre>
+extends <a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html" title="class in io.micronaut.chatbots.lambda">AbstractHandler</a>&lt;<a href="../../../../../io/micronaut/chatbots/basecamp/core/BasecampBotConfiguration.html" title="interface in io.micronaut.chatbots.basecamp.core">BasecampBotConfiguration</a>,<a href="../../../../../io/micronaut/chatbots/basecamp/api/Query.html" title="class in io.micronaut.chatbots.basecamp.api">Query</a>,java.lang.String&gt;</pre>
 <div class="block">AWS Lambda Handler for a Telegram Bot Webhook.</div>
 <dl>
 <dt><span class="simpleTagLabel">Since:</span></dt>
@@ -187,17 +187,17 @@ extends <a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.htm
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../io/micronaut/chatbots/telegram/lambda/Handler.html#Handler--">Handler</a></span>()</code>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../io/micronaut/chatbots/basecamp/lambda/Handler.html#Handler--">Handler</a></span>()</code>
 <div class="block">Default constructor; will initialize a suitable ApplicationContext for Lambda deployment.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../io/micronaut/chatbots/telegram/lambda/Handler.html#Handler-io.micronaut.context.ApplicationContext-">Handler</a></span>(io.micronaut.context.ApplicationContext&nbsp;applicationContext)</code>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../io/micronaut/chatbots/basecamp/lambda/Handler.html#Handler-io.micronaut.context.ApplicationContext-">Handler</a></span>(io.micronaut.context.ApplicationContext&nbsp;applicationContext)</code>
 <div class="block">Constructor used to inject a preexisting <code>ApplicationContext</code>.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../io/micronaut/chatbots/telegram/lambda/Handler.html#Handler-io.micronaut.context.ApplicationContextBuilder-">Handler</a></span>(io.micronaut.context.ApplicationContextBuilder&nbsp;applicationContextBuilder)</code>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../io/micronaut/chatbots/basecamp/lambda/Handler.html#Handler-io.micronaut.context.ApplicationContextBuilder-">Handler</a></span>(io.micronaut.context.ApplicationContextBuilder&nbsp;applicationContextBuilder)</code>
 <div class="block">Constructor used to inject a preexisting <code>ApplicationContextBuilder</code>.</div>
 </td>
 </tr>
@@ -217,28 +217,24 @@ extends <a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.htm
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>protected <a href="../../../../../io/micronaut/chatbots/core/Dispatcher.html" title="interface in io.micronaut.chatbots.core">Dispatcher</a>&lt;<a href="../../../../../io/micronaut/chatbots/telegram/core/TelegramBotConfiguration.html" title="interface in io.micronaut.chatbots.telegram.core">TelegramBotConfiguration</a>,<a href="../../../../../io/micronaut/chatbots/telegram/api/Update.html" title="class in io.micronaut.chatbots.telegram.api">Update</a>,<a href="../../../../../io/micronaut/chatbots/telegram/api/send/Send.html" title="class in io.micronaut.chatbots.telegram.api.send">Send</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/micronaut/chatbots/telegram/lambda/Handler.html#getDispatcher--">getDispatcher</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code>protected <a href="../../../../../io/micronaut/chatbots/core/Dispatcher.html" title="interface in io.micronaut.chatbots.core">Dispatcher</a>&lt;<a href="../../../../../io/micronaut/chatbots/basecamp/core/BasecampBotConfiguration.html" title="interface in io.micronaut.chatbots.basecamp.core">BasecampBotConfiguration</a>,<a href="../../../../../io/micronaut/chatbots/basecamp/api/Query.html" title="class in io.micronaut.chatbots.basecamp.api">Query</a>,java.lang.String&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/micronaut/chatbots/basecamp/lambda/Handler.html#getDispatcher--">getDispatcher</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>protected io.micronaut.serde.ObjectMapper</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/micronaut/chatbots/telegram/lambda/Handler.html#getObjectMapper--">getObjectMapper</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/micronaut/chatbots/basecamp/lambda/Handler.html#getObjectMapper--">getObjectMapper</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>protected com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/micronaut/chatbots/telegram/lambda/Handler.html#okSerializer-java.lang.Object-">okSerializer</a></span>(java.lang.Object&nbsp;body)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/micronaut/chatbots/basecamp/lambda/Handler.html#okSerializer-java.lang.Object-">okSerializer</a></span>(java.lang.Object&nbsp;body)</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code>protected java.util.Optional&lt;<a href="../../../../../io/micronaut/chatbots/telegram/core/TelegramBotConfiguration.html" title="interface in io.micronaut.chatbots.telegram.core">TelegramBotConfiguration</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/micronaut/chatbots/telegram/lambda/Handler.html#parseBot-com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent-">parseBot</a></span>(com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent&nbsp;request)</code>&nbsp;</td>
+<td class="colFirst"><code>protected java.util.Optional&lt;<a href="../../../../../io/micronaut/chatbots/basecamp/core/BasecampBotConfiguration.html" title="interface in io.micronaut.chatbots.basecamp.core">BasecampBotConfiguration</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/micronaut/chatbots/basecamp/lambda/Handler.html#parseBot-com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent-">parseBot</a></span>(com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent&nbsp;request)</code>&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code>protected java.util.Optional&lt;java.lang.String&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/micronaut/chatbots/telegram/lambda/Handler.html#parseToken-com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent-">parseToken</a></span>(com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent&nbsp;request)</code>&nbsp;</td>
-</tr>
-<tr id="i5" class="rowColor">
 <td class="colFirst"><code>protected boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/micronaut/chatbots/telegram/lambda/Handler.html#validate-com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent-">validate</a></span>(com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent&nbsp;request)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../io/micronaut/chatbots/basecamp/lambda/Handler.html#validate-com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent-">validate</a></span>(com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent&nbsp;request)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -340,7 +336,7 @@ protected&nbsp;boolean&nbsp;validate(@NonNull
                                     com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent&nbsp;request)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#validate-com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent-">validate</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html" title="class in io.micronaut.chatbots.lambda">AbstractHandler</a>&lt;<a href="../../../../../io/micronaut/chatbots/telegram/core/TelegramBotConfiguration.html" title="interface in io.micronaut.chatbots.telegram.core">TelegramBotConfiguration</a>,<a href="../../../../../io/micronaut/chatbots/telegram/api/Update.html" title="class in io.micronaut.chatbots.telegram.api">Update</a>,<a href="../../../../../io/micronaut/chatbots/telegram/api/send/Send.html" title="class in io.micronaut.chatbots.telegram.api.send">Send</a>&gt;</code></dd>
+<dd><code><a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#validate-com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent-">validate</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html" title="class in io.micronaut.chatbots.lambda">AbstractHandler</a>&lt;<a href="../../../../../io/micronaut/chatbots/basecamp/core/BasecampBotConfiguration.html" title="interface in io.micronaut.chatbots.basecamp.core">BasecampBotConfiguration</a>,<a href="../../../../../io/micronaut/chatbots/basecamp/api/Query.html" title="class in io.micronaut.chatbots.basecamp.api">Query</a>,java.lang.String&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>request</code> - API Gateway Request</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -355,11 +351,11 @@ protected&nbsp;boolean&nbsp;validate(@NonNull
 <li class="blockList">
 <h4>parseBot</h4>
 <pre>@NonNull
-protected&nbsp;java.util.Optional&lt;<a href="../../../../../io/micronaut/chatbots/telegram/core/TelegramBotConfiguration.html" title="interface in io.micronaut.chatbots.telegram.core">TelegramBotConfiguration</a>&gt;&nbsp;parseBot(@NonNull
+protected&nbsp;java.util.Optional&lt;<a href="../../../../../io/micronaut/chatbots/basecamp/core/BasecampBotConfiguration.html" title="interface in io.micronaut.chatbots.basecamp.core">BasecampBotConfiguration</a>&gt;&nbsp;parseBot(@NonNull
                                                                          com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent&nbsp;request)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#parseBot-com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent-">parseBot</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html" title="class in io.micronaut.chatbots.lambda">AbstractHandler</a>&lt;<a href="../../../../../io/micronaut/chatbots/telegram/core/TelegramBotConfiguration.html" title="interface in io.micronaut.chatbots.telegram.core">TelegramBotConfiguration</a>,<a href="../../../../../io/micronaut/chatbots/telegram/api/Update.html" title="class in io.micronaut.chatbots.telegram.api">Update</a>,<a href="../../../../../io/micronaut/chatbots/telegram/api/send/Send.html" title="class in io.micronaut.chatbots.telegram.api.send">Send</a>&gt;</code></dd>
+<dd><code><a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#parseBot-com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent-">parseBot</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html" title="class in io.micronaut.chatbots.lambda">AbstractHandler</a>&lt;<a href="../../../../../io/micronaut/chatbots/basecamp/core/BasecampBotConfiguration.html" title="interface in io.micronaut.chatbots.basecamp.core">BasecampBotConfiguration</a>,<a href="../../../../../io/micronaut/chatbots/basecamp/api/Query.html" title="class in io.micronaut.chatbots.basecamp.api">Query</a>,java.lang.String&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>request</code> - API Gateway Request</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -378,24 +374,7 @@ protected&nbsp;com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRespo
                                                                                                           java.lang.Object&nbsp;body)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#okSerializer-java.lang.Object-">okSerializer</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html" title="class in io.micronaut.chatbots.lambda">AbstractHandler</a>&lt;<a href="../../../../../io/micronaut/chatbots/telegram/core/TelegramBotConfiguration.html" title="interface in io.micronaut.chatbots.telegram.core">TelegramBotConfiguration</a>,<a href="../../../../../io/micronaut/chatbots/telegram/api/Update.html" title="class in io.micronaut.chatbots.telegram.api">Update</a>,<a href="../../../../../io/micronaut/chatbots/telegram/api/send/Send.html" title="class in io.micronaut.chatbots.telegram.api.send">Send</a>&gt;</code></dd>
-</dl>
-</li>
-</ul>
-<a name="parseToken-com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>parseToken</h4>
-<pre>@NonNull
-protected&nbsp;java.util.Optional&lt;java.lang.String&gt;&nbsp;parseToken(@NonNull
-                                                                   com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent&nbsp;request)</pre>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>request</code> - The API Gateway Request</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>The Token</dd>
+<dd><code><a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#okSerializer-java.lang.Object-">okSerializer</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html" title="class in io.micronaut.chatbots.lambda">AbstractHandler</a>&lt;<a href="../../../../../io/micronaut/chatbots/basecamp/core/BasecampBotConfiguration.html" title="interface in io.micronaut.chatbots.basecamp.core">BasecampBotConfiguration</a>,<a href="../../../../../io/micronaut/chatbots/basecamp/api/Query.html" title="class in io.micronaut.chatbots.basecamp.api">Query</a>,java.lang.String&gt;</code></dd>
 </dl>
 </li>
 </ul>
@@ -409,7 +388,7 @@ protected&nbsp;java.util.Optional&lt;java.lang.String&gt;&nbsp;parseToken(@NonNu
 protected&nbsp;io.micronaut.serde.ObjectMapper&nbsp;getObjectMapper()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#getObjectMapper--">getObjectMapper</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html" title="class in io.micronaut.chatbots.lambda">AbstractHandler</a>&lt;<a href="../../../../../io/micronaut/chatbots/telegram/core/TelegramBotConfiguration.html" title="interface in io.micronaut.chatbots.telegram.core">TelegramBotConfiguration</a>,<a href="../../../../../io/micronaut/chatbots/telegram/api/Update.html" title="class in io.micronaut.chatbots.telegram.api">Update</a>,<a href="../../../../../io/micronaut/chatbots/telegram/api/send/Send.html" title="class in io.micronaut.chatbots.telegram.api.send">Send</a>&gt;</code></dd>
+<dd><code><a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#getObjectMapper--">getObjectMapper</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html" title="class in io.micronaut.chatbots.lambda">AbstractHandler</a>&lt;<a href="../../../../../io/micronaut/chatbots/basecamp/core/BasecampBotConfiguration.html" title="interface in io.micronaut.chatbots.basecamp.core">BasecampBotConfiguration</a>,<a href="../../../../../io/micronaut/chatbots/basecamp/api/Query.html" title="class in io.micronaut.chatbots.basecamp.api">Query</a>,java.lang.String&gt;</code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The Object Mapper</dd>
 </dl>
@@ -422,10 +401,10 @@ protected&nbsp;io.micronaut.serde.ObjectMapper&nbsp;getObjectMapper()</pre>
 <li class="blockList">
 <h4>getDispatcher</h4>
 <pre>@NonNull
-protected&nbsp;<a href="../../../../../io/micronaut/chatbots/core/Dispatcher.html" title="interface in io.micronaut.chatbots.core">Dispatcher</a>&lt;<a href="../../../../../io/micronaut/chatbots/telegram/core/TelegramBotConfiguration.html" title="interface in io.micronaut.chatbots.telegram.core">TelegramBotConfiguration</a>,<a href="../../../../../io/micronaut/chatbots/telegram/api/Update.html" title="class in io.micronaut.chatbots.telegram.api">Update</a>,<a href="../../../../../io/micronaut/chatbots/telegram/api/send/Send.html" title="class in io.micronaut.chatbots.telegram.api.send">Send</a>&gt;&nbsp;getDispatcher()</pre>
+protected&nbsp;<a href="../../../../../io/micronaut/chatbots/core/Dispatcher.html" title="interface in io.micronaut.chatbots.core">Dispatcher</a>&lt;<a href="../../../../../io/micronaut/chatbots/basecamp/core/BasecampBotConfiguration.html" title="interface in io.micronaut.chatbots.basecamp.core">BasecampBotConfiguration</a>,<a href="../../../../../io/micronaut/chatbots/basecamp/api/Query.html" title="class in io.micronaut.chatbots.basecamp.api">Query</a>,java.lang.String&gt;&nbsp;getDispatcher()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#getDispatcher--">getDispatcher</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html" title="class in io.micronaut.chatbots.lambda">AbstractHandler</a>&lt;<a href="../../../../../io/micronaut/chatbots/telegram/core/TelegramBotConfiguration.html" title="interface in io.micronaut.chatbots.telegram.core">TelegramBotConfiguration</a>,<a href="../../../../../io/micronaut/chatbots/telegram/api/Update.html" title="class in io.micronaut.chatbots.telegram.api">Update</a>,<a href="../../../../../io/micronaut/chatbots/telegram/api/send/Send.html" title="class in io.micronaut.chatbots.telegram.api.send">Send</a>&gt;</code></dd>
+<dd><code><a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html#getDispatcher--">getDispatcher</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../io/micronaut/chatbots/lambda/AbstractHandler.html" title="class in io.micronaut.chatbots.lambda">AbstractHandler</a>&lt;<a href="../../../../../io/micronaut/chatbots/basecamp/core/BasecampBotConfiguration.html" title="interface in io.micronaut.chatbots.basecamp.core">BasecampBotConfiguration</a>,<a href="../../../../../io/micronaut/chatbots/basecamp/api/Query.html" title="class in io.micronaut.chatbots.basecamp.api">Query</a>,java.lang.String&gt;</code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The Dispatcher</dd>
 </dl>
@@ -462,7 +441,7 @@ protected&nbsp;<a href="../../../../../io/micronaut/chatbots/core/Dispatcher.htm
 <li>Next&nbsp;Class</li>
 </ul>
 <ul class="navList">
-<li><a href="../../../../../index.html?io/micronaut/chatbots/telegram/lambda/Handler.html" target="_top">Frames</a></li>
+<li><a href="../../../../../index.html?io/micronaut/chatbots/basecamp/lambda/Handler.html" target="_top">Frames</a></li>
 <li><a href="Handler.html" target="_top">No&nbsp;Frames</a></li>
 </ul>
 <ul class="navList" id="allclasses_navbar_bottom">

@@ -1,3 +1,6 @@
+io.micronaut.chatbots.basecamp.api
+io.micronaut.chatbots.basecamp.core
+io.micronaut.chatbots.basecamp.lambda
 io.micronaut.chatbots.core
 io.micronaut.chatbots.lambda
 io.micronaut.chatbots.telegram.api
