@@ -63,7 +63,7 @@ public class TelegramController {
      * @return HTTP Response. It could 200 OK with an empty body if the request is handle asynchronously or a 200 with the response payload if the request is handled synchronously.
      */
     @Post
-    public HttpResponse<?> callback(@Header(TokenValidator.X_TELEGRAM_BOT_API_SECRET_TOKEN) String apiSecretToken,
+    public HttpResponse callback(@Header(TokenValidator.X_TELEGRAM_BOT_API_SECRET_TOKEN) String apiSecretToken,
                                     @Body Update update) {
         Optional<TelegramBotConfiguration> botOptional = tokenValidator.validate(apiSecretToken);
         if (!botOptional.isPresent()) {
