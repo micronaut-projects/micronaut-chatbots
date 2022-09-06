@@ -68,7 +68,7 @@ class UserSpec extends Specification {
         validator.validate(el).isEmpty()
     }
 
-    void "lower Kebap case is used in Json serialization"() {
+    void "lower Kebab case is used in Json serialization"() {
         given:
         User el = validUser()
 
