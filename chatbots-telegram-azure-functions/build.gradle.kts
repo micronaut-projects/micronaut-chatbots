@@ -1,10 +1,10 @@
 plugins {
-    id("io.micronaut.build.internal.chatbots-module")
+    id("io.micronaut.build.internal.chatbots-azure-functions")
 }
 dependencies {
     implementation(mn.micronaut.serde.jackson)
     implementation(project(":chatbots-lambda"))
-    api(project(":chatbots-basecamp-core"))
+    api(project(":chatbots-telegram-core"))
 }
 
 configurations.all {
@@ -13,4 +13,3 @@ configurations.all {
             .using(module("io.micronaut.serde:micronaut-serde-jackson:1.3.0"))
     }
 }
-

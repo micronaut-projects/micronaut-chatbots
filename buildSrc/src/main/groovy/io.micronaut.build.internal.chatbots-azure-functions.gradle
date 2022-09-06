@@ -1,0 +1,9 @@
+plugins {
+    id 'io.micronaut.build.internal.chatbots-module'
+}
+
+dependencies {
+    api(mn.micronaut.azure.function)
+    api(libs.azure.functions.java.library)
+}
+

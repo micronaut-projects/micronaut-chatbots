@@ -1,3 +1,5 @@
 [libraries]
 aws-lambda-java-events = { module = 'com.amazonaws:aws-lambda-java-events' }
 jackson-annotations = { module = 'com.fasterxml.jackson.core:jackson-annotations' }
+azure-functions-java-library = { module = 'com.microsoft.azure.functions:azure-functions-java-library' }
+
