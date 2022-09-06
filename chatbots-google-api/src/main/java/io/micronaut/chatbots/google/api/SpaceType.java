@@ -38,5 +38,5 @@ public enum SpaceType {
     /**
      * 1:1 messages between two humans or a human and a Chat app.
      */
-    DIRECT_MESSAGE;
+    DIRECT_MESSAGE
 }

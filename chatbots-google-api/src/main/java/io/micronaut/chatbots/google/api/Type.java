@@ -30,5 +30,5 @@ public enum Type {
     /**
      * 1:1 Direct Message between a human and a Chat app, where all messages are flat. Note that this does not include direct messages between two humans.
      */
-    DM;
+    DM
 }
