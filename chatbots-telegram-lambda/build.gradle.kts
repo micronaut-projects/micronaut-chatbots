@@ -3,7 +3,7 @@ plugins {
 }
 dependencies {
     implementation(mn.micronaut.serde.jackson)
-    implementation(project(":chatbots-lambda"))
+    api(project(":chatbots-lambda"))
     api(project(":chatbots-telegram-core"))
 }
 
