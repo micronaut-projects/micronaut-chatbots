@@ -2,10 +2,10 @@ plugins {
     id("io.micronaut.build.internal.module")
 }
 dependencies {
-    implementation(mn.micronaut.validation)
-    implementation(project(":chatbots-core"))
+    api(project(":chatbots-core"))
     api(mn.micronaut.function.aws)
     api(libs.aws.lambda.java.events)
+    implementation(mn.micronaut.validation)
 }
 
 micronautBuild {
