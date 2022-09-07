@@ -1,0 +1,10 @@
+plugins {
+    id 'io.micronaut.build.internal.chatbots-module'
+}
+
+dependencies {
+    implementation(mn.micronaut.http)
+    testImplementation(mn.micronaut.http.server.netty)
+    testImplementation(mn.micronaut.http.client)
+}
+
