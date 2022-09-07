@@ -39,8 +39,6 @@ import java.util.Optional;
  */
 public class Handler extends AbstractHandler<TelegramBotConfiguration, Update, Send> {
     private static final Logger LOG = LoggerFactory.getLogger(Handler.class);
-    private static final String X_TELEGRAM_BOT_API_SECRET_TOKEN = "X-Telegram-Bot-Api-Secret-Token";
-
     @Inject
     TokenValidator tokenValidator;
 
@@ -113,7 +111,7 @@ public class Handler extends AbstractHandler<TelegramBotConfiguration, Update, S
      */
     @NonNull
     protected Optional<String> parseToken(@NonNull APIGatewayProxyRequestEvent request) {
-        return parseHeader(request, X_TELEGRAM_BOT_API_SECRET_TOKEN);
+        return parseHeader(request, TokenValidator.X_TELEGRAM_BOT_API_SECRET_TOKEN);
     }
 
     @Override
