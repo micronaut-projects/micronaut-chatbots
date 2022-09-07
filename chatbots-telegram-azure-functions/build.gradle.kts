@@ -1,17 +1,10 @@
 plugins {
-    id("io.micronaut.build.internal.module")
+    id("io.micronaut.build.internal.chatbots-azure-functions")
 }
 dependencies {
-    api(project(":chatbots-core"))
-    api(mn.micronaut.function.aws)
-    api(libs.aws.lambda.java.events)
-    implementation(mn.micronaut.validation)
-}
-
-micronautBuild {
-    binaryCompatibility {
-        enabled.set(false)
-    }
+    implementation(mn.micronaut.serde.jackson)
+    implementation(project(":chatbots-lambda"))
+    api(project(":chatbots-telegram-core"))
 }
 
 configurations.all {
@@ -20,4 +13,3 @@ configurations.all {
             .using(module("io.micronaut.serde:micronaut-serde-jackson:${mn.versions.micronaut.serialization.get()}"))
     }
 }
-

@@ -29,6 +29,7 @@ import java.util.Optional;
 @DefaultImplementation(DefaultTokenValidator.class)
 @FunctionalInterface
 public interface TokenValidator {
+
     String X_TELEGRAM_BOT_API_SECRET_TOKEN = "X-Telegram-Bot-Api-Secret-Token";
 
     /**
