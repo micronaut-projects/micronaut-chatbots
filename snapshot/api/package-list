@@ -8,6 +8,7 @@ io.micronaut.chatbots.http
 io.micronaut.chatbots.lambda
 io.micronaut.chatbots.telegram.api
 io.micronaut.chatbots.telegram.api.send
+io.micronaut.chatbots.telegram.azurefunctions
 io.micronaut.chatbots.telegram.core
 io.micronaut.chatbots.telegram.http
 io.micronaut.chatbots.telegram.lambda
