@@ -4,4 +4,7 @@ plugins {
 dependencies {
     api(project(":chatbots-core"))
     api(project(":chatbots-telegram-api"))
+
+    testImplementation(mn.micronaut.serde.jackson)
 }
+

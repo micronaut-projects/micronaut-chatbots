@@ -1,0 +1,29 @@
+{
+  "update_id": 952034420,
+  "message": {
+    "message_id": 449,
+    "from": {
+      "id": 613021175,
+      "is_bot": false,
+      "first_name": "John",
+      "last_name": "Del Amo",
+      "username": "johnsnow",
+      "language_code": "en"
+    },
+    "chat": {
+      "id": -745125341,
+      "title": "John & Bots",
+      "type": "group",
+      "all_members_are_administrators": true
+    },
+    "date": 1662545619,
+    "text": "/help@L337DroidBot",
+    "entities": [
+      {
+        "offset": 0,
+        "length": 18,
+        "type": "bot_command"
+      }
+    ]
+  }
+}
