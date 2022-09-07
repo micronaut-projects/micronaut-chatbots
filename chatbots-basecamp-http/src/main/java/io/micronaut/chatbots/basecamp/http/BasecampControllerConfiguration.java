@@ -33,7 +33,7 @@ public class BasecampControllerConfiguration extends ControllerConfigurationProp
     /**
      * The default path.
      */
-    @SuppressWarnings("WeakerAccess")
+    @SuppressWarnings({"WeakerAccess", "java:S1075"}) // Sonar sees this as unconfigurable, which is wrong
     public static final String DEFAULT_PATH = "/basecamp";
 
     public BasecampControllerConfiguration() {

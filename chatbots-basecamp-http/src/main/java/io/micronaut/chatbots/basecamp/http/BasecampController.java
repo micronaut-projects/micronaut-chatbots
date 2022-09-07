@@ -52,7 +52,7 @@ public class BasecampController {
      */
     @Produces(MediaType.TEXT_HTML)
     @Post
-    public HttpResponse callback(@Body Query update) {
+    public HttpResponse<String> callback(@Body Query update) {
         return dispatcher.dispatch(null, update)
             .map(HttpResponse::ok)
             .orElseGet(HttpResponse::ok);
