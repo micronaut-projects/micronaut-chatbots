@@ -15,6 +15,7 @@
  */
 package io.micronaut.chatbots.telegram.http;
 
+import io.micronaut.chatbots.core.ChatbotsConfiguration;
 import io.micronaut.chatbots.http.ControllerConfigurationProperties;
 import io.micronaut.context.annotation.ConfigurationProperties;
 import io.micronaut.context.annotation.Requires;
@@ -28,7 +29,7 @@ import io.micronaut.core.util.StringUtils;
 @Requires(property = TelegramControllerConfiguration.PREFIX + ".enabled", notEquals = StringUtils.FALSE, defaultValue = StringUtils.TRUE)
 @ConfigurationProperties(TelegramControllerConfiguration.PREFIX)
 public class TelegramControllerConfiguration extends ControllerConfigurationProperties {
-    public static final String PREFIX = "micronaut.chatbots.telegram.endpoint";
+    public static final String PREFIX = ChatbotsConfiguration.PREFIX + ".telegram.endpoint";
 
     /**
      * The default path.
@@ -38,5 +39,25 @@ public class TelegramControllerConfiguration extends ControllerConfigurationProp
 
     public TelegramControllerConfiguration() {
         super(DEFAULT_PATH);
+    }
+
+    /**
+     * Enables the controller. Default value true .
+     * @param enabled True if it is enabled
+     */
+    @Override
+    @SuppressWarnings("java:S1185") // This method is overridden to appear in configuration reference documentation
+    public void setEnabled(boolean enabled) {
+        super.setEnabled(enabled);
+    }
+
+    /**
+     * Path to the controller. Default value {@value #DEFAULT_PATH} .
+     * @param path The path
+     */
+    @Override
+    @SuppressWarnings("java:S1185") // This method is overridden to appear in configuration reference documentation
+    public void setPath(String path) {
+        super.setPath(path);
     }
 }

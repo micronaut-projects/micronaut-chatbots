@@ -15,6 +15,8 @@
  */
 package io.micronaut.chatbots.telegram.core;
 
+import io.micronaut.chatbots.core.ChatbotsConfiguration;
+
 import io.micronaut.context.annotation.EachProperty;
 import io.micronaut.context.annotation.Parameter;
 import io.micronaut.core.annotation.NonNull;
@@ -30,7 +32,7 @@ import java.util.Map;
  *  */
 @EachProperty(TelegramBotConfigurationProperties.PREFIX)
 public class TelegramBotConfigurationProperties implements TelegramBotConfiguration {
-    public static final String PREFIX = "micronaut.chatbots.telegram.bots";
+    public static final String PREFIX = ChatbotsConfiguration.PREFIX + ".telegram.bots";
     private static final boolean DEFAULT_ENABLED = true;
 
     @NonNull

@@ -13,26 +13,38 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.micronaut.chatbots.core;
+package io.micronaut.chatbots.telegram.core;
 
+import io.micronaut.chatbots.core.FileExtension;
+import io.micronaut.chatbots.telegram.api.send.ParseMode;
 import io.micronaut.core.annotation.NonNull;
-import javax.validation.constraints.NotNull;
+
 import java.util.Optional;
 
 /**
- * Api to retrieve the space associated with the message.
- * @param <I> input type.
- * @param <S> The Space
+ * Utility methods for {@link ParseMode}.
  * @author Sergio del Amo
  * @since 1.0.0
  */
-@FunctionalInterface
-public interface SpaceParser<I, S> {
+public final class ParseModeUtils {
+    private ParseModeUtils() {
+
+    }
+
     /**
-     *
-     * @param input The message
-     * @return retrieves the space associated with the message
+     * Returns a ParseMode for a FileExtension.
+     * @param fileExtension File Extension
+     * @return a Telegram ParseMode
      */
     @NonNull
-    Optional<S> parse(@NonNull @NotNull I input);
+    public static Optional<ParseMode> parseModeOfFileExtension(@NonNull FileExtension fileExtension) {
+        switch (fileExtension) {
+            case HTML:
+                return Optional.of(ParseMode.HTML);
+            case TXT:
+            case MARKDOWN:
+            default:
+                return Optional.of(ParseMode.MARKDOWN);
+        }
+    }
 }

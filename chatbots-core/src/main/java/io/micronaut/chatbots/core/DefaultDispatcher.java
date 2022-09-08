@@ -18,8 +18,6 @@ package io.micronaut.chatbots.core;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.core.annotation.Nullable;
 import jakarta.inject.Singleton;
-
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.Optional;
@@ -43,8 +41,8 @@ public class DefaultDispatcher<B extends BotConfiguration, I, O> implements Disp
 
     @Override
     @NonNull
-    public Optional<O> dispatch(@Nullable @Valid B bot,
-                                @NonNull @NotNull @Valid I input) {
+    public Optional<O> dispatch(@Nullable B bot,
+                                @NonNull @NotNull I input) {
         return handlers.stream()
             .filter(handler -> handler.canHandle(bot, input))
             .findFirst()

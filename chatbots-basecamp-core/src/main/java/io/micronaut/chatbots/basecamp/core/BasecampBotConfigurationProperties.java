@@ -18,6 +18,7 @@ package io.micronaut.chatbots.basecamp.core;
 import io.micronaut.context.annotation.EachProperty;
 import io.micronaut.context.annotation.Parameter;
 import io.micronaut.core.annotation.NonNull;
+import io.micronaut.chatbots.core.ChatbotsConfiguration;
 
 /**
  * {@link EachProperty} implementation of {@link BasecampBotConfiguration}.
@@ -26,7 +27,7 @@ import io.micronaut.core.annotation.NonNull;
  *  */
 @EachProperty(BasecampBotConfigurationProperties.PREFIX)
 public class BasecampBotConfigurationProperties implements BasecampBotConfiguration {
-    public static final String PREFIX = "micronaut.chatbots.bascamp.bots";
+    public static final String PREFIX = ChatbotsConfiguration.PREFIX + ".basecamp.bots";
     private static final boolean DEFAULT_ENABLED = true;
 
     @NonNull
