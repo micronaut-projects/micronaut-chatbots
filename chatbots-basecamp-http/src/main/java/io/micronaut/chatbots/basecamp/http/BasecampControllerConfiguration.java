@@ -41,22 +41,22 @@ public class BasecampControllerConfiguration extends ControllerConfigurationProp
         super(DEFAULT_PATH);
     }
 
-    // This method is Overriden to appear in configuration reference documentation
     /**
      * Enables the controller. Default value true.
      * @param enabled True if it is enabled
      */
     @Override
+    @SuppressWarnings("java:S1185") // This method is overridden to appear in configuration reference documentation
     public void setEnabled(boolean enabled) {
         super.setEnabled(enabled);
     }
 
-    // This method is Overriden to appear in configuration reference documentation
     /**
      * Path to the controller. Default value {@value #DEFAULT_PATH}.
      * @param path The path
      */
     @Override
+    @SuppressWarnings("java:S1185") // This method is overridden to appear in configuration reference documentation
     public void setPath(String path) {
         super.setPath(path);
     }

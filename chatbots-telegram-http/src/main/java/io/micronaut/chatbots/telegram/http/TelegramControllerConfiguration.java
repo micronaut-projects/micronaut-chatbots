@@ -41,13 +41,12 @@ public class TelegramControllerConfiguration extends ControllerConfigurationProp
         super(DEFAULT_PATH);
     }
 
-
-    // This method is Overriden to appear in configuration reference documentation
     /**
      * Enables the controller. Default value true .
      * @param enabled True if it is enabled
      */
     @Override
+    @SuppressWarnings("java:S1185") // This method is overridden to appear in configuration reference documentation
     public void setEnabled(boolean enabled) {
         super.setEnabled(enabled);
     }
@@ -57,6 +56,7 @@ public class TelegramControllerConfiguration extends ControllerConfigurationProp
      * @param path The path
      */
     @Override
+    @SuppressWarnings("java:S1185") // This method is overridden to appear in configuration reference documentation
     public void setPath(String path) {
         super.setPath(path);
     }
