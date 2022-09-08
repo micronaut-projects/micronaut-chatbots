@@ -16,23 +16,31 @@
 package io.micronaut.chatbots.core;
 
 import io.micronaut.core.annotation.NonNull;
-import javax.validation.constraints.NotNull;
-import java.util.Optional;
+import io.micronaut.core.annotation.Nullable;
+import io.micronaut.core.util.Toggleable;
+
+import java.util.List;
 
 /**
- * Api to retrieve the space associated with the message.
- * @param <I> input type.
- * @param <S> The Space
  * @author Sergio del Amo
  * @since 1.0.0
  */
-@FunctionalInterface
-public interface SpaceParser<I, S> {
+public interface ChatbotsConfiguration extends Toggleable {
     /**
-     *
-     * @param input The message
-     * @return retrieves the space associated with the message
+     * The prefix for chatbots configuration.
+     */
+    String PREFIX = "micronaut.chatbots";
+
+    /**
+     * @return the command file extensions candidates for static resource. For a command such as {@code /help} and extensions HTML and MARKDOWN, possible files are  {@code help.md}, {@code help.markdown}, and {@code help.html}
+     */
+    @Nullable
+    List<FileExtension> getPossibleStaticCommandExtensions();
+
+    /**
+     * @return The resources' folder where static commands should be searched for.
      */
     @NonNull
-    Optional<S> parse(@NonNull @NotNull I input);
+    String getFolder();
+
 }

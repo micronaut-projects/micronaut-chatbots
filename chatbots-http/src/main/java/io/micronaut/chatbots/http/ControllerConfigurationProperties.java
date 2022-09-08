@@ -60,7 +60,7 @@ public class ControllerConfigurationProperties implements ControllerConfiguratio
     }
 
     /**
-     * Path to the controller. Default value {@value #DEFAULT_PATH}
+     * Path to the controller.
      * @param path The path
      */
     public void setPath(String path) {

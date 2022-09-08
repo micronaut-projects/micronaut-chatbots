@@ -18,8 +18,6 @@ package io.micronaut.chatbots.core;
 import io.micronaut.context.annotation.DefaultImplementation;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.core.annotation.Nullable;
-
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.Optional;
 
@@ -34,6 +32,6 @@ import java.util.Optional;
 @FunctionalInterface
 public interface Dispatcher<B extends BotConfiguration, I, O> {
     @NonNull
-    Optional<O> dispatch(@Nullable @Valid B bot,
-                         @NonNull @NotNull @Valid I input);
+    Optional<O> dispatch(@Nullable B bot,
+                         @NonNull @NotNull I input);
 }

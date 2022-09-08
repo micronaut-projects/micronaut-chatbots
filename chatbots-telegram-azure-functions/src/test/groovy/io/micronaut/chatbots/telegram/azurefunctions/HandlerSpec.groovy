@@ -9,6 +9,7 @@ import io.micronaut.chatbots.core.SpaceParser
 import io.micronaut.chatbots.telegram.api.Chat
 import io.micronaut.chatbots.telegram.api.Update
 import io.micronaut.chatbots.telegram.api.send.SendMessage
+import io.micronaut.chatbots.telegram.core.SendMessageUtils
 import io.micronaut.chatbots.telegram.core.TelegramBotConfiguration
 import io.micronaut.chatbots.telegram.core.TelegramHandler
 import io.micronaut.chatbots.telegram.core.TokenValidator
@@ -162,13 +163,7 @@ class HandlerSpec extends Specification {
         @Override
         Optional<SendMessage> handle(@Nullable TelegramBotConfiguration telegramBotConfiguration,
                                      @NonNull @NotNull @Valid Update update) {
-            spaceParser.parse(update)
-                    .map(space -> {
-                        SendMessage message = new SendMessage()
-                        message.setText("Hello World")
-                        message.chatId = space.id
-                        message
-                    })
+            SendMessageUtils.compose(spaceParser, update, "Hello World")
         }
     }
 

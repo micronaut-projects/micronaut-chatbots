@@ -18,8 +18,6 @@ package io.micronaut.chatbots.core;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.core.annotation.Nullable;
 import io.micronaut.core.order.Ordered;
-
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.Optional;
 
@@ -39,7 +37,7 @@ public interface Handler<B extends BotConfiguration, I, O> extends Ordered {
      * @return true if the handler is capable of handling the current request
      */
     boolean canHandle(@Nullable B bot,
-                      @NonNull @NotNull @Valid I input);
+                      @NonNull @NotNull I input);
 
     /**
      * Handles the request.
@@ -49,5 +47,5 @@ public interface Handler<B extends BotConfiguration, I, O> extends Ordered {
      */
     @NonNull
     Optional<O> handle(@Nullable B bot,
-                       @NonNull @NotNull @Valid I input);
+                       @NonNull @NotNull I input);
 }

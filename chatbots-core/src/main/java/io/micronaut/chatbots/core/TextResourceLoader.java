@@ -15,24 +15,26 @@
  */
 package io.micronaut.chatbots.core;
 
+import io.micronaut.context.annotation.DefaultImplementation;
 import io.micronaut.core.annotation.NonNull;
-import javax.validation.constraints.NotNull;
+
+import javax.validation.constraints.NotBlank;
 import java.util.Optional;
 
 /**
- * Api to retrieve the space associated with the message.
- * @param <I> input type.
- * @param <S> The Space
+ * Composes a static command response for a given command.
  * @author Sergio del Amo
  * @since 1.0.0
  */
+@DefaultImplementation(DefaultTextResourceLoader.class)
 @FunctionalInterface
-public interface SpaceParser<I, S> {
+public interface TextResourceLoader {
+
     /**
-     *
-     * @param input The message
-     * @return retrieves the space associated with the message
+     * Composes a static command response for a given command.
+     * @param command Command
+     * @return static command response.
      */
     @NonNull
-    Optional<S> parse(@NonNull @NotNull I input);
+    Optional<CommandResponse> composeCommandResponse(@NonNull @NotBlank String command);
 }

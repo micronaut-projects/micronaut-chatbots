@@ -60,13 +60,13 @@ class BasecampControllerSpec extends Specification {
 
         @Override
         boolean canHandle(@Nullable BasecampBotConfiguration bot,
-                          @NonNull @NotNull @Valid Query query) {
+                          @NonNull @NotNull Query query) {
             true
         }
 
         @Override
         Optional<String> handle(@Nullable BasecampBotConfiguration bot,
-                                @NonNull @NotNull @Valid Query query) {
+                                @NonNull @NotNull Query query) {
             Optional.of("${query.creator.name}: ${query.command.toUpperCase()} <b>WORLD</b>".toString())
         }
     }

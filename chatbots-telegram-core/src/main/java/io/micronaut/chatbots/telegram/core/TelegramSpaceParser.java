@@ -20,8 +20,6 @@ import io.micronaut.chatbots.telegram.api.Chat;
 import io.micronaut.chatbots.telegram.api.Update;
 import io.micronaut.core.annotation.NonNull;
 import jakarta.inject.Singleton;
-
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.Optional;
 
@@ -33,7 +31,7 @@ import java.util.Optional;
 public class TelegramSpaceParser implements SpaceParser<Update, Chat> {
     @Override
     @NonNull
-    public Optional<Chat> parse(@NonNull @NotNull @Valid Update update) {
+    public Optional<Chat> parse(@NonNull @NotNull Update update) {
         if (update.getEditedMessage() != null) {
             return Optional.of(update.getEditedMessage().getChat());
         }

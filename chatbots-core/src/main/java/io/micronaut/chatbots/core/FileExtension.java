@@ -16,23 +16,23 @@
 package io.micronaut.chatbots.core;
 
 import io.micronaut.core.annotation.NonNull;
-import javax.validation.constraints.NotNull;
-import java.util.Optional;
 
 /**
- * Api to retrieve the space associated with the message.
- * @param <I> input type.
- * @param <S> The Space
+ * File extensions for Static Bot Commands.
  * @author Sergio del Amo
  * @since 1.0.0
  */
-@FunctionalInterface
-public interface SpaceParser<I, S> {
-    /**
-     *
-     * @param input The message
-     * @return retrieves the space associated with the message
-     */
+public enum FileExtension {
+    MARKDOWN("md", "markdown"),
+    HTML("html"),
+    TXT("txt");
+    private final String[] extensions;
+    FileExtension(String... extensions) {
+        this.extensions = extensions;
+    }
+
     @NonNull
-    Optional<S> parse(@NonNull @NotNull I input);
+    public String[] getExtensions() {
+        return extensions;
+    }
 }

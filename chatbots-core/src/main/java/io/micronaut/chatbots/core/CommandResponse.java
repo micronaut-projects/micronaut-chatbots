@@ -16,23 +16,46 @@
 package io.micronaut.chatbots.core;
 
 import io.micronaut.core.annotation.NonNull;
-import javax.validation.constraints.NotNull;
-import java.util.Optional;
+
 
 /**
- * Api to retrieve the space associated with the message.
- * @param <I> input type.
- * @param <S> The Space
+ * Static Response for a Slash command.
  * @author Sergio del Amo
  * @since 1.0.0
  */
-@FunctionalInterface
-public interface SpaceParser<I, S> {
+public class CommandResponse {
+    @NonNull
+    private final FileExtension extension;
+
+    @NonNull
+    private final String text;
+
     /**
      *
-     * @param input The message
-     * @return retrieves the space associated with the message
+     * @param extension Extension
+     * @param text response Text
+     */
+    public CommandResponse(@NonNull FileExtension extension,
+                           @NonNull String text) {
+        this.extension = extension;
+        this.text = text;
+    }
+
+    /**
+     *
+     * @return File extension
      */
     @NonNull
-    Optional<S> parse(@NonNull @NotNull I input);
+    public FileExtension getExtension() {
+        return extension;
+    }
+
+    /**
+     *
+     * @return response Text
+     */
+    @NonNull
+    public String getText() {
+        return text;
+    }
 }
