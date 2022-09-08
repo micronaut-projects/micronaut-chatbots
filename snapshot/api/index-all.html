@@ -186,6 +186,8 @@
 <dd>
 <div class="block">Returns true if the handler can dispatch the current request.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/core/CommandHandler.html#canHandle-io.micronaut.chatbots.telegram.core.TelegramBotConfiguration-io.micronaut.chatbots.telegram.api.Update-">canHandle(TelegramBotConfiguration, Update)</a></span> - Method in class io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/CommandHandler.html" title="class in io.micronaut.chatbots.telegram.core">CommandHandler</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="io/micronaut/chatbots/telegram/api/Chat.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">Chat</span></a> - Class in <a href="io/micronaut/chatbots/telegram/api/package-summary.html">io.micronaut.chatbots.telegram.api</a></dt>
 <dd>
 <div class="block">This object represents a chat.</div>
@@ -197,6 +199,14 @@
 <div class="block">Represents the rights of an administrator in a chat.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/ChatAdministratorRights.html#ChatAdministratorRights--">ChatAdministratorRights()</a></span> - Constructor for class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/ChatAdministratorRights.html" title="class in io.micronaut.chatbots.telegram.api">ChatAdministratorRights</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="io/micronaut/chatbots/core/ChatbotsConfiguration.html" title="interface in io.micronaut.chatbots.core"><span class="typeNameLink">ChatbotsConfiguration</span></a> - Interface in <a href="io/micronaut/chatbots/core/package-summary.html">io.micronaut.chatbots.core</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html" title="class in io.micronaut.chatbots.core"><span class="typeNameLink">ChatbotsConfigurationProperties</span></a> - Class in <a href="io/micronaut/chatbots/core/package-summary.html">io.micronaut.chatbots.core</a></dt>
+<dd>
+<div class="block"><code>ConfigurationProperties</code> implementation of <a href="io/micronaut/chatbots/core/ChatbotsConfiguration.html" title="interface in io.micronaut.chatbots.core"><code>ChatbotsConfiguration</code></a>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html#ChatbotsConfigurationProperties--">ChatbotsConfigurationProperties()</a></span> - Constructor for class io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html" title="class in io.micronaut.chatbots.core">ChatbotsConfigurationProperties</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="io/micronaut/chatbots/telegram/api/ChatInviteLink.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">ChatInviteLink</span></a> - Class in <a href="io/micronaut/chatbots/telegram/api/package-summary.html">io.micronaut.chatbots.telegram.api</a></dt>
 <dd>
@@ -242,10 +252,34 @@
 <dd>
 <div class="block">The canonical error codes for gRPC APIs.</div>
 </dd>
+<dt><a href="io/micronaut/chatbots/telegram/core/CommandHandler.html" title="class in io.micronaut.chatbots.telegram.core"><span class="typeNameLink">CommandHandler</span></a> - Class in <a href="io/micronaut/chatbots/telegram/core/package-summary.html">io.micronaut.chatbots.telegram.core</a></dt>
+<dd>
+<div class="block">Abstract class to make easy to respond static content for a Telegram Bot command.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/core/CommandHandler.html#CommandHandler-io.micronaut.chatbots.telegram.core.TelegramSlashCommandParser-io.micronaut.chatbots.core.TextResourceLoader-io.micronaut.chatbots.core.SpaceParser-">CommandHandler(TelegramSlashCommandParser, TextResourceLoader, SpaceParser&lt;Update, Chat&gt;)</a></span> - Constructor for class io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/CommandHandler.html" title="class in io.micronaut.chatbots.telegram.core">CommandHandler</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="io/micronaut/chatbots/core/CommandResponse.html" title="class in io.micronaut.chatbots.core"><span class="typeNameLink">CommandResponse</span></a> - Class in <a href="io/micronaut/chatbots/core/package-summary.html">io.micronaut.chatbots.core</a></dt>
+<dd>
+<div class="block">Static Response for a Slash command.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/CommandResponse.html#CommandResponse-io.micronaut.chatbots.core.FileExtension-java.lang.String-">CommandResponse(FileExtension, String)</a></span> - Constructor for class io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/CommandResponse.html" title="class in io.micronaut.chatbots.core">CommandResponse</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="io/micronaut/chatbots/basecamp/api/Company.html" title="class in io.micronaut.chatbots.basecamp.api"><span class="typeNameLink">Company</span></a> - Class in <a href="io/micronaut/chatbots/basecamp/api/package-summary.html">io.micronaut.chatbots.basecamp.api</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/basecamp/api/Company.html#Company--">Company()</a></span> - Constructor for class io.micronaut.chatbots.basecamp.api.<a href="io/micronaut/chatbots/basecamp/api/Company.html" title="class in io.micronaut.chatbots.basecamp.api">Company</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/core/SendMessageUtils.html#compose-io.micronaut.chatbots.core.SpaceParser-io.micronaut.chatbots.telegram.api.Update-java.lang.String-">compose(SpaceParser&lt;Update, Chat&gt;, Update, String)</a></span> - Static method in class io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/SendMessageUtils.html" title="class in io.micronaut.chatbots.telegram.core">SendMessageUtils</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/core/SendMessageUtils.html#compose-io.micronaut.chatbots.core.SpaceParser-io.micronaut.chatbots.telegram.api.Update-java.lang.String-io.micronaut.chatbots.telegram.api.send.ParseMode-">compose(SpaceParser&lt;Update, Chat&gt;, Update, String, ParseMode)</a></span> - Static method in class io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/SendMessageUtils.html" title="class in io.micronaut.chatbots.telegram.core">SendMessageUtils</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/core/SendMessageUtils.html#compose-io.micronaut.chatbots.telegram.api.Chat-java.lang.String-io.micronaut.chatbots.telegram.api.send.ParseMode-">compose(Chat, String, ParseMode)</a></span> - Static method in class io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/SendMessageUtils.html" title="class in io.micronaut.chatbots.telegram.core">SendMessageUtils</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/DefaultTextResourceLoader.html#composeCommandResponse-java.lang.String-">composeCommandResponse(String)</a></span> - Method in class io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/DefaultTextResourceLoader.html" title="class in io.micronaut.chatbots.core">DefaultTextResourceLoader</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/TextResourceLoader.html#composeCommandResponse-java.lang.String-">composeCommandResponse(String)</a></span> - Method in interface io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/TextResourceLoader.html" title="interface in io.micronaut.chatbots.core">TextResourceLoader</a></dt>
+<dd>
+<div class="block">Composes a static command response for a given command.</div>
+</dd>
 <dt><a href="io/micronaut/chatbots/telegram/api/Contact.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">Contact</span></a> - Class in <a href="io/micronaut/chatbots/telegram/api/package-summary.html">io.micronaut.chatbots.telegram.api</a></dt>
 <dd>
 <div class="block">This object represents a phone contact.</div>
@@ -274,9 +308,17 @@
 </a>
 <h2 class="title">D</h2>
 <dl>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html#DEFAULT_ENABLED">DEFAULT_ENABLED</a></span> - Static variable in class io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html" title="class in io.micronaut.chatbots.core">ChatbotsConfigurationProperties</a></dt>
+<dd>
+<div class="block">The default enable value.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/http/ControllerConfigurationProperties.html#DEFAULT_ENABLED">DEFAULT_ENABLED</a></span> - Static variable in class io.micronaut.chatbots.http.<a href="io/micronaut/chatbots/http/ControllerConfigurationProperties.html" title="class in io.micronaut.chatbots.http">ControllerConfigurationProperties</a></dt>
 <dd>
 <div class="block">The default enable value.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html#DEFAULT_FOLDER">DEFAULT_FOLDER</a></span> - Static variable in class io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html" title="class in io.micronaut.chatbots.core">ChatbotsConfigurationProperties</a></dt>
+<dd>
+<div class="block">The default BOT commands folder.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/basecamp/http/BasecampControllerConfiguration.html#DEFAULT_PATH">DEFAULT_PATH</a></span> - Static variable in class io.micronaut.chatbots.basecamp.http.<a href="io/micronaut/chatbots/basecamp/http/BasecampControllerConfiguration.html" title="class in io.micronaut.chatbots.basecamp.http">BasecampControllerConfiguration</a></dt>
 <dd>
@@ -291,6 +333,12 @@
 <div class="block">Iterates through every <a href="io/micronaut/chatbots/core/Handler.html" title="interface in io.micronaut.chatbots.core"><code>Handler</code></a> in odered and dispatch the message to the first which can handle the request.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/DefaultDispatcher.html#DefaultDispatcher-java.util.List-">DefaultDispatcher(List&lt;Handler&lt;B, I, O&gt;&gt;)</a></span> - Constructor for class io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/DefaultDispatcher.html" title="class in io.micronaut.chatbots.core">DefaultDispatcher</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="io/micronaut/chatbots/core/DefaultTextResourceLoader.html" title="class in io.micronaut.chatbots.core"><span class="typeNameLink">DefaultTextResourceLoader</span></a> - Class in <a href="io/micronaut/chatbots/core/package-summary.html">io.micronaut.chatbots.core</a></dt>
+<dd>
+<div class="block">Users <code>ResourceLoader</code> to load a static resource associated with a command.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/DefaultTextResourceLoader.html#DefaultTextResourceLoader-io.micronaut.chatbots.core.ChatbotsConfiguration-io.micronaut.core.io.ResourceResolver-">DefaultTextResourceLoader(ChatbotsConfiguration, ResourceResolver)</a></span> - Constructor for class io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/DefaultTextResourceLoader.html" title="class in io.micronaut.chatbots.core">DefaultTextResourceLoader</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="io/micronaut/chatbots/telegram/core/DefaultTokenValidator.html" title="class in io.micronaut.chatbots.telegram.core"><span class="typeNameLink">DefaultTokenValidator</span></a> - Class in <a href="io/micronaut/chatbots/telegram/core/package-summary.html">io.micronaut.chatbots.telegram.core</a></dt>
 <dd>&nbsp;</dd>
@@ -344,6 +392,10 @@
 </dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/File.html#File--">File()</a></span> - Constructor for class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/File.html" title="class in io.micronaut.chatbots.telegram.api">File</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="io/micronaut/chatbots/core/FileExtension.html" title="enum in io.micronaut.chatbots.core"><span class="typeNameLink">FileExtension</span></a> - Enum in <a href="io/micronaut/chatbots/core/package-summary.html">io.micronaut.chatbots.core</a></dt>
+<dd>
+<div class="block">File extensions for Static Bot Commands.</div>
+</dd>
 <dt><a href="io/micronaut/chatbots/telegram/api/ForceReply.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">ForceReply</span></a> - Class in <a href="io/micronaut/chatbots/telegram/api/package-summary.html">io.micronaut.chatbots.telegram.api</a></dt>
 <dd>
 <div class="block">Upon receiving a message with this object, Telegram clients will display a reply interface to the user (act as if the user has selected the bot‘s message and tapped ’Reply').</div>
@@ -544,6 +596,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/BotCommand.html#getCommand--">getCommand()</a></span> - Method in class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/BotCommand.html" title="class in io.micronaut.chatbots.telegram.api">BotCommand</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/core/CommandHandler.html#getCommand--">getCommand()</a></span> - Method in class io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/CommandHandler.html" title="class in io.micronaut.chatbots.telegram.core">CommandHandler</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/google/api/SlashCommand.html#getCommandId--">getCommandId()</a></span> - Method in class io.micronaut.chatbots.google.api.<a href="io/micronaut/chatbots/google/api/SlashCommand.html" title="class in io.micronaut.chatbots.google.api">SlashCommand</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/basecamp/api/Creator.html#getCompany--">getCompany()</a></span> - Method in class io.micronaut.chatbots.basecamp.api.<a href="io/micronaut/chatbots/basecamp/api/Creator.html" title="class in io.micronaut.chatbots.basecamp.api">Creator</a></dt>
@@ -684,6 +738,10 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/Poll.html#getExplanationEntities--">getExplanationEntities()</a></span> - Method in class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Poll.html" title="class in io.micronaut.chatbots.telegram.api">Poll</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/CommandResponse.html#getExtension--">getExtension()</a></span> - Method in class io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/CommandResponse.html" title="class in io.micronaut.chatbots.core">CommandResponse</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/FileExtension.html#getExtensions--">getExtensions()</a></span> - Method in enum io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/FileExtension.html" title="enum in io.micronaut.chatbots.core">FileExtension</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/PassportFile.html#getFileDate--">getFileDate()</a></span> - Method in class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/PassportFile.html" title="class in io.micronaut.chatbots.telegram.api">PassportFile</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/AbstractFile.html#getFileId--">getFileId()</a></span> - Method in class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/AbstractFile.html" title="class in io.micronaut.chatbots.telegram.api">AbstractFile</a></dt>
@@ -727,6 +785,10 @@
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/send/SendContact.html#getFirstName--">getFirstName()</a></span> - Method in class io.micronaut.chatbots.telegram.api.send.<a href="io/micronaut/chatbots/telegram/api/send/SendContact.html" title="class in io.micronaut.chatbots.telegram.api.send">SendContact</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/User.html#getFirstName--">getFirstName()</a></span> - Method in class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/User.html" title="class in io.micronaut.chatbots.telegram.api">User</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/ChatbotsConfiguration.html#getFolder--">getFolder()</a></span> - Method in interface io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/ChatbotsConfiguration.html" title="interface in io.micronaut.chatbots.core">ChatbotsConfiguration</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html#getFolder--">getFolder()</a></span> - Method in class io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html" title="class in io.micronaut.chatbots.core">ChatbotsConfigurationProperties</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/ForceReply.html#getForceReply--">getForceReply()</a></span> - Method in class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/ForceReply.html" title="class in io.micronaut.chatbots.telegram.api">ForceReply</a></dt>
 <dd>&nbsp;</dd>
@@ -990,6 +1052,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/send/SendPoll.html#getOptions--">getOptions()</a></span> - Method in class io.micronaut.chatbots.telegram.api.send.<a href="io/micronaut/chatbots/telegram/api/send/SendPoll.html" title="class in io.micronaut.chatbots.telegram.api.send">SendPoll</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/core/CommandHandler.html#getOrder--">getOrder()</a></span> - Method in class io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/CommandHandler.html" title="class in io.micronaut.chatbots.telegram.core">CommandHandler</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/PreCheckoutQuery.html#getOrderInfo--">getOrderInfo()</a></span> - Method in class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/PreCheckoutQuery.html" title="class in io.micronaut.chatbots.telegram.api">PreCheckoutQuery</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/SuccessfulPayment.html#getOrderInfo--">getOrderInfo()</a></span> - Method in class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/SuccessfulPayment.html" title="class in io.micronaut.chatbots.telegram.api">SuccessfulPayment</a></dt>
@@ -1059,6 +1123,10 @@
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/Update.html#getPollAnswer--">getPollAnswer()</a></span> - Method in class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Update.html" title="class in io.micronaut.chatbots.telegram.api">Update</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/PollAnswer.html#getPollId--">getPollId()</a></span> - Method in class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/PollAnswer.html" title="class in io.micronaut.chatbots.telegram.api">PollAnswer</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/ChatbotsConfiguration.html#getPossibleStaticCommandExtensions--">getPossibleStaticCommandExtensions()</a></span> - Method in interface io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/ChatbotsConfiguration.html" title="interface in io.micronaut.chatbots.core">ChatbotsConfiguration</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html#getPossibleStaticCommandExtensions--">getPossibleStaticCommandExtensions()</a></span> - Method in class io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html" title="class in io.micronaut.chatbots.core">ChatbotsConfigurationProperties</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/ShippingAddress.html#getPostCode--">getPostCode()</a></span> - Method in class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/ShippingAddress.html" title="class in io.micronaut.chatbots.telegram.api">ShippingAddress</a></dt>
 <dd>&nbsp;</dd>
@@ -1171,6 +1239,8 @@
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/InlineKeyboardButton.html#getSwitchInlineQueryCurrentChat--">getSwitchInlineQueryCurrentChat()</a></span> - Method in class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/InlineKeyboardButton.html" title="class in io.micronaut.chatbots.telegram.api">InlineKeyboardButton</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/SuccessfulPayment.html#getTelegramPaymentChargeId--">getTelegramPaymentChargeId()</a></span> - Method in class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/SuccessfulPayment.html" title="class in io.micronaut.chatbots.telegram.api">SuccessfulPayment</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/CommandResponse.html#getText--">getText()</a></span> - Method in class io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/CommandResponse.html" title="class in io.micronaut.chatbots.core">CommandResponse</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/Game.html#getText--">getText()</a></span> - Method in class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Game.html" title="class in io.micronaut.chatbots.telegram.api">Game</a></dt>
 <dd>&nbsp;</dd>
@@ -1370,6 +1440,8 @@
 </dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/azurefunctions/Handler.html#handle-com.microsoft.azure.functions.HttpRequestMessage-com.microsoft.azure.functions.ExecutionContext-">handle(HttpRequestMessage&lt;Update&gt;, ExecutionContext)</a></span> - Method in class io.micronaut.chatbots.telegram.azurefunctions.<a href="io/micronaut/chatbots/telegram/azurefunctions/Handler.html" title="class in io.micronaut.chatbots.telegram.azurefunctions">Handler</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/core/CommandHandler.html#handle-io.micronaut.chatbots.telegram.core.TelegramBotConfiguration-io.micronaut.chatbots.telegram.api.Update-">handle(TelegramBotConfiguration, Update)</a></span> - Method in class io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/CommandHandler.html" title="class in io.micronaut.chatbots.telegram.core">CommandHandler</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="io/micronaut/chatbots/basecamp/lambda/Handler.html" title="class in io.micronaut.chatbots.basecamp.lambda"><span class="typeNameLink">Handler</span></a> - Class in <a href="io/micronaut/chatbots/basecamp/lambda/package-summary.html">io.micronaut.chatbots.basecamp.lambda</a></dt>
 <dd>
 <div class="block">AWS Lambda Handler for a Telegram Bot Webhook.</div>
@@ -1528,6 +1600,10 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/basecamp/core/BasecampBotConfigurationProperties.html#isEnabled--">isEnabled()</a></span> - Method in class io.micronaut.chatbots.basecamp.core.<a href="io/micronaut/chatbots/basecamp/core/BasecampBotConfigurationProperties.html" title="class in io.micronaut.chatbots.basecamp.core">BasecampBotConfigurationProperties</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html#isEnabled--">isEnabled()</a></span> - Method in class io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html" title="class in io.micronaut.chatbots.core">ChatbotsConfigurationProperties</a></dt>
+<dd>
+<div class="block">enabled getter.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/http/ControllerConfigurationProperties.html#isEnabled--">isEnabled()</a></span> - Method in class io.micronaut.chatbots.http.<a href="io/micronaut/chatbots/http/ControllerConfigurationProperties.html" title="class in io.micronaut.chatbots.http">ControllerConfigurationProperties</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/core/TelegramBotConfigurationProperties.html#isEnabled--">isEnabled()</a></span> - Method in class io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/TelegramBotConfigurationProperties.html" title="class in io.micronaut.chatbots.telegram.core">TelegramBotConfigurationProperties</a></dt>
@@ -1660,7 +1736,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/SpaceParser.html#parse-I-">parse(I)</a></span> - Method in interface io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/SpaceParser.html" title="interface in io.micronaut.chatbots.core">SpaceParser</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/core/TelegramSlashCommandPaser.html#parse-io.micronaut.chatbots.telegram.api.Update-">parse(Update)</a></span> - Method in class io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/TelegramSlashCommandPaser.html" title="class in io.micronaut.chatbots.telegram.core">TelegramSlashCommandPaser</a></dt>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/core/TelegramSlashCommandParser.html#parse-io.micronaut.chatbots.telegram.api.Update-">parse(Update)</a></span> - Method in class io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/TelegramSlashCommandParser.html" title="class in io.micronaut.chatbots.telegram.core">TelegramSlashCommandParser</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/core/TelegramSpaceParser.html#parse-io.micronaut.chatbots.telegram.api.Update-">parse(Update)</a></span> - Method in class io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/TelegramSpaceParser.html" title="class in io.micronaut.chatbots.telegram.core">TelegramSpaceParser</a></dt>
 <dd>&nbsp;</dd>
@@ -1674,6 +1750,14 @@
 <dd>&nbsp;</dd>
 <dt><a href="io/micronaut/chatbots/telegram/api/send/ParseMode.html" title="enum in io.micronaut.chatbots.telegram.api.send"><span class="typeNameLink">ParseMode</span></a> - Enum in <a href="io/micronaut/chatbots/telegram/api/send/package-summary.html">io.micronaut.chatbots.telegram.api.send</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/core/ParseModeUtils.html#parseModeOfFileExtension-io.micronaut.chatbots.core.FileExtension-">parseModeOfFileExtension(FileExtension)</a></span> - Static method in class io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/ParseModeUtils.html" title="class in io.micronaut.chatbots.telegram.core">ParseModeUtils</a></dt>
+<dd>
+<div class="block">Returns a ParseMode for a FileExtension.</div>
+</dd>
+<dt><a href="io/micronaut/chatbots/telegram/core/ParseModeUtils.html" title="class in io.micronaut.chatbots.telegram.core"><span class="typeNameLink">ParseModeUtils</span></a> - Class in <a href="io/micronaut/chatbots/telegram/core/package-summary.html">io.micronaut.chatbots.telegram.core</a></dt>
+<dd>
+<div class="block">Utility methods for <a href="io/micronaut/chatbots/telegram/api/send/ParseMode.html" title="enum in io.micronaut.chatbots.telegram.api.send"><code>ParseMode</code></a>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/lambda/Handler.html#parseToken-com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent-">parseToken(APIGatewayProxyRequestEvent)</a></span> - Method in class io.micronaut.chatbots.telegram.lambda.<a href="io/micronaut/chatbots/telegram/lambda/Handler.html" title="class in io.micronaut.chatbots.telegram.lambda">Handler</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="io/micronaut/chatbots/telegram/api/PassportData.html" title="class in io.micronaut.chatbots.telegram.api"><span class="typeNameLink">PassportData</span></a> - Class in <a href="io/micronaut/chatbots/telegram/api/package-summary.html">io.micronaut.chatbots.telegram.api</a></dt>
@@ -1722,6 +1806,10 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/basecamp/http/BasecampControllerConfiguration.html#PREFIX">PREFIX</a></span> - Static variable in class io.micronaut.chatbots.basecamp.http.<a href="io/micronaut/chatbots/basecamp/http/BasecampControllerConfiguration.html" title="class in io.micronaut.chatbots.basecamp.http">BasecampControllerConfiguration</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/ChatbotsConfiguration.html#PREFIX">PREFIX</a></span> - Static variable in interface io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/ChatbotsConfiguration.html" title="interface in io.micronaut.chatbots.core">ChatbotsConfiguration</a></dt>
+<dd>
+<div class="block">The prefix for chatbots configuration.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/core/TelegramBotConfigurationProperties.html#PREFIX">PREFIX</a></span> - Static variable in class io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/TelegramBotConfigurationProperties.html" title="class in io.micronaut.chatbots.telegram.core">TelegramBotConfigurationProperties</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/http/TelegramControllerConfiguration.html#PREFIX">PREFIX</a></span> - Static variable in class io.micronaut.chatbots.telegram.http.<a href="io/micronaut/chatbots/telegram/http/TelegramControllerConfiguration.html" title="class in io.micronaut.chatbots.telegram.http">TelegramControllerConfiguration</a></dt>
@@ -1833,6 +1921,8 @@
 <dt><a href="io/micronaut/chatbots/telegram/api/send/SendMessage.html" title="class in io.micronaut.chatbots.telegram.api.send"><span class="typeNameLink">SendMessage</span></a> - Class in <a href="io/micronaut/chatbots/telegram/api/send/package-summary.html">io.micronaut.chatbots.telegram.api.send</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/send/SendMessage.html#SendMessage--">SendMessage()</a></span> - Constructor for class io.micronaut.chatbots.telegram.api.send.<a href="io/micronaut/chatbots/telegram/api/send/SendMessage.html" title="class in io.micronaut.chatbots.telegram.api.send">SendMessage</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="io/micronaut/chatbots/telegram/core/SendMessageUtils.html" title="class in io.micronaut.chatbots.telegram.core"><span class="typeNameLink">SendMessageUtils</span></a> - Class in <a href="io/micronaut/chatbots/telegram/core/package-summary.html">io.micronaut.chatbots.telegram.core</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="io/micronaut/chatbots/telegram/api/send/SendPhoto.html" title="class in io.micronaut.chatbots.telegram.api.send"><span class="typeNameLink">SendPhoto</span></a> - Class in <a href="io/micronaut/chatbots/telegram/api/send/package-summary.html">io.micronaut.chatbots.telegram.api.send</a></dt>
 <dd>&nbsp;</dd>
@@ -2184,6 +2274,14 @@
 <dd>
 <div class="block">Sets whether this configuration is enabled.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/basecamp/http/BasecampControllerConfiguration.html#setEnabled-boolean-">setEnabled(boolean)</a></span> - Method in class io.micronaut.chatbots.basecamp.http.<a href="io/micronaut/chatbots/basecamp/http/BasecampControllerConfiguration.html" title="class in io.micronaut.chatbots.basecamp.http">BasecampControllerConfiguration</a></dt>
+<dd>
+<div class="block">Enables the controller.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html#setEnabled-boolean-">setEnabled(boolean)</a></span> - Method in class io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html" title="class in io.micronaut.chatbots.core">ChatbotsConfigurationProperties</a></dt>
+<dd>
+<div class="block">Whether chatbots is enabled.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/http/ControllerConfigurationProperties.html#setEnabled-boolean-">setEnabled(boolean)</a></span> - Method in class io.micronaut.chatbots.http.<a href="io/micronaut/chatbots/http/ControllerConfigurationProperties.html" title="class in io.micronaut.chatbots.http">ControllerConfigurationProperties</a></dt>
 <dd>
 <div class="block">Enables the controller.</div>
@@ -2191,6 +2289,10 @@
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/core/TelegramBotConfigurationProperties.html#setEnabled-boolean-">setEnabled(boolean)</a></span> - Method in class io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/TelegramBotConfigurationProperties.html" title="class in io.micronaut.chatbots.telegram.core">TelegramBotConfigurationProperties</a></dt>
 <dd>
 <div class="block">Sets whether this configuration is enabled.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/http/TelegramControllerConfiguration.html#setEnabled-boolean-">setEnabled(boolean)</a></span> - Method in class io.micronaut.chatbots.telegram.http.<a href="io/micronaut/chatbots/telegram/http/TelegramControllerConfiguration.html" title="class in io.micronaut.chatbots.telegram.http">TelegramControllerConfiguration</a></dt>
+<dd>
+<div class="block">Enables the controller.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/Message.html#setEntities-java.util.List-">setEntities(List&lt;MessageEntity&gt;)</a></span> - Method in class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Message.html" title="class in io.micronaut.chatbots.telegram.api">Message</a></dt>
 <dd>&nbsp;</dd>
@@ -2244,6 +2346,10 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/User.html#setFirstName-java.lang.String-">setFirstName(String)</a></span> - Method in class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/User.html" title="class in io.micronaut.chatbots.telegram.api">User</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html#setFolder-java.lang.String-">setFolder(String)</a></span> - Method in class io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html" title="class in io.micronaut.chatbots.core">ChatbotsConfigurationProperties</a></dt>
+<dd>
+<div class="block">The folder to look for bot commands.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/ForceReply.html#setForceReply-java.lang.Boolean-">setForceReply(Boolean)</a></span> - Method in class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/ForceReply.html" title="class in io.micronaut.chatbots.telegram.api">ForceReply</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/Message.html#setForwardDate-java.lang.Integer-">setForwardDate(Integer)</a></span> - Method in class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Message.html" title="class in io.micronaut.chatbots.telegram.api">Message</a></dt>
@@ -2516,7 +2622,15 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/Message.html#setPassportData-io.micronaut.chatbots.telegram.api.PassportData-">setPassportData(PassportData)</a></span> - Method in class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Message.html" title="class in io.micronaut.chatbots.telegram.api">Message</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/basecamp/http/BasecampControllerConfiguration.html#setPath-java.lang.String-">setPath(String)</a></span> - Method in class io.micronaut.chatbots.basecamp.http.<a href="io/micronaut/chatbots/basecamp/http/BasecampControllerConfiguration.html" title="class in io.micronaut.chatbots.basecamp.http">BasecampControllerConfiguration</a></dt>
+<dd>
+<div class="block">Path to the controller.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/http/ControllerConfigurationProperties.html#setPath-java.lang.String-">setPath(String)</a></span> - Method in class io.micronaut.chatbots.http.<a href="io/micronaut/chatbots/http/ControllerConfigurationProperties.html" title="class in io.micronaut.chatbots.http">ControllerConfigurationProperties</a></dt>
+<dd>
+<div class="block">Path to the controller.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/http/TelegramControllerConfiguration.html#setPath-java.lang.String-">setPath(String)</a></span> - Method in class io.micronaut.chatbots.telegram.http.<a href="io/micronaut/chatbots/telegram/http/TelegramControllerConfiguration.html" title="class in io.micronaut.chatbots.telegram.http">TelegramControllerConfiguration</a></dt>
 <dd>
 <div class="block">Path to the controller.</div>
 </dd>
@@ -2566,6 +2680,10 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/PollAnswer.html#setPollId-java.lang.String-">setPollId(String)</a></span> - Method in class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/PollAnswer.html" title="class in io.micronaut.chatbots.telegram.api">PollAnswer</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html#setPossibleStaticCommandExtensions-java.util.List-">setPossibleStaticCommandExtensions(List&lt;FileExtension&gt;)</a></span> - Method in class io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html" title="class in io.micronaut.chatbots.core">ChatbotsConfigurationProperties</a></dt>
+<dd>
+<div class="block">Possible static command file extensions.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/ShippingAddress.html#setPostCode-java.lang.String-">setPostCode(String)</a></span> - Method in class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/ShippingAddress.html" title="class in io.micronaut.chatbots.telegram.api">ShippingAddress</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/Update.html#setPreCheckoutQuery-io.micronaut.chatbots.telegram.api.PreCheckoutQuery-">setPreCheckoutQuery(PreCheckoutQuery)</a></span> - Method in class io.micronaut.chatbots.telegram.api.<a href="io/micronaut/chatbots/telegram/api/Update.html" title="class in io.micronaut.chatbots.telegram.api">Update</a></dt>
@@ -2954,16 +3072,20 @@
 <dd>&nbsp;</dd>
 <dt><a href="io/micronaut/chatbots/telegram/core/TelegramHandler.html" title="interface in io.micronaut.chatbots.telegram.core"><span class="typeNameLink">TelegramHandler</span></a>&lt;<a href="io/micronaut/chatbots/telegram/core/TelegramHandler.html" title="type parameter in TelegramHandler">O</a>&gt; - Interface in <a href="io/micronaut/chatbots/telegram/core/package-summary.html">io.micronaut.chatbots.telegram.core</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="io/micronaut/chatbots/telegram/core/TelegramSlashCommandPaser.html" title="class in io.micronaut.chatbots.telegram.core"><span class="typeNameLink">TelegramSlashCommandPaser</span></a> - Class in <a href="io/micronaut/chatbots/telegram/core/package-summary.html">io.micronaut.chatbots.telegram.core</a></dt>
+<dt><a href="io/micronaut/chatbots/telegram/core/TelegramSlashCommandParser.html" title="class in io.micronaut.chatbots.telegram.core"><span class="typeNameLink">TelegramSlashCommandParser</span></a> - Class in <a href="io/micronaut/chatbots/telegram/core/package-summary.html">io.micronaut.chatbots.telegram.core</a></dt>
 <dd>
 <div class="block"><a href="io/micronaut/chatbots/core/SlashCommandParser.html" title="interface in io.micronaut.chatbots.core"><code>SlashCommandParser</code></a> for Telegram.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/core/TelegramSlashCommandPaser.html#TelegramSlashCommandPaser--">TelegramSlashCommandPaser()</a></span> - Constructor for class io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/TelegramSlashCommandPaser.html" title="class in io.micronaut.chatbots.telegram.core">TelegramSlashCommandPaser</a></dt>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/core/TelegramSlashCommandParser.html#TelegramSlashCommandParser--">TelegramSlashCommandParser()</a></span> - Constructor for class io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/TelegramSlashCommandParser.html" title="class in io.micronaut.chatbots.telegram.core">TelegramSlashCommandParser</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="io/micronaut/chatbots/telegram/core/TelegramSpaceParser.html" title="class in io.micronaut.chatbots.telegram.core"><span class="typeNameLink">TelegramSpaceParser</span></a> - Class in <a href="io/micronaut/chatbots/telegram/core/package-summary.html">io.micronaut.chatbots.telegram.core</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/core/TelegramSpaceParser.html#TelegramSpaceParser--">TelegramSpaceParser()</a></span> - Constructor for class io.micronaut.chatbots.telegram.core.<a href="io/micronaut/chatbots/telegram/core/TelegramSpaceParser.html" title="class in io.micronaut.chatbots.telegram.core">TelegramSpaceParser</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="io/micronaut/chatbots/core/TextResourceLoader.html" title="interface in io.micronaut.chatbots.core"><span class="typeNameLink">TextResourceLoader</span></a> - Interface in <a href="io/micronaut/chatbots/core/package-summary.html">io.micronaut.chatbots.core</a></dt>
+<dd>
+<div class="block">Composes a static command response for a given command.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/google/api/Code.html#toHttpStatusCode--">toHttpStatusCode()</a></span> - Method in enum io.micronaut.chatbots.google.api.<a href="io/micronaut/chatbots/google/api/Code.html" title="enum in io.micronaut.chatbots.google.api">Code</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="io/micronaut/chatbots/telegram/core/TokenValidator.html" title="interface in io.micronaut.chatbots.telegram.core"><span class="typeNameLink">TokenValidator</span></a> - Interface in <a href="io/micronaut/chatbots/telegram/core/package-summary.html">io.micronaut.chatbots.telegram.core</a></dt>
@@ -3156,6 +3278,10 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/lambda/Handler.html#validate-com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent-">validate(APIGatewayProxyRequestEvent)</a></span> - Method in class io.micronaut.chatbots.telegram.lambda.<a href="io/micronaut/chatbots/telegram/lambda/Handler.html" title="class in io.micronaut.chatbots.telegram.lambda">Handler</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/FileExtension.html#valueOf-java.lang.String-">valueOf(String)</a></span> - Static method in enum io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/FileExtension.html" title="enum in io.micronaut.chatbots.core">FileExtension</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this type with the specified name.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/google/api/Code.html#valueOf-java.lang.String-">valueOf(String)</a></span> - Static method in enum io.micronaut.chatbots.google.api.<a href="io/micronaut/chatbots/google/api/Code.html" title="enum in io.micronaut.chatbots.google.api">Code</a></dt>
 <dd>
 <div class="block">Returns the enum constant of this type with the specified name.</div>
@@ -3183,6 +3309,11 @@
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/telegram/api/send/ParseMode.html#valueOf-java.lang.String-">valueOf(String)</a></span> - Static method in enum io.micronaut.chatbots.telegram.api.send.<a href="io/micronaut/chatbots/telegram/api/send/ParseMode.html" title="enum in io.micronaut.chatbots.telegram.api.send">ParseMode</a></dt>
 <dd>
 <div class="block">Returns the enum constant of this type with the specified name.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="io/micronaut/chatbots/core/FileExtension.html#values--">values()</a></span> - Static method in enum io.micronaut.chatbots.core.<a href="io/micronaut/chatbots/core/FileExtension.html" title="enum in io.micronaut.chatbots.core">FileExtension</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum type, in
+the order they are declared.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="io/micronaut/chatbots/google/api/Code.html#values--">values()</a></span> - Static method in enum io.micronaut.chatbots.google.api.<a href="io/micronaut/chatbots/google/api/Code.html" title="enum in io.micronaut.chatbots.google.api">Code</a></dt>
 <dd>

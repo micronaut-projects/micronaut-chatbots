@@ -87,25 +87,35 @@
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="../../../../io/micronaut/chatbots/core/Dispatcher.html" title="interface in io.micronaut.chatbots.core">Dispatcher</a>&lt;B extends <a href="../../../../io/micronaut/chatbots/core/BotConfiguration.html" title="interface in io.micronaut.chatbots.core">BotConfiguration</a>,I,O&gt;</td>
+<td class="colFirst"><a href="../../../../io/micronaut/chatbots/core/ChatbotsConfiguration.html" title="interface in io.micronaut.chatbots.core">ChatbotsConfiguration</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><a href="../../../../io/micronaut/chatbots/core/Dispatcher.html" title="interface in io.micronaut.chatbots.core">Dispatcher</a>&lt;B extends <a href="../../../../io/micronaut/chatbots/core/BotConfiguration.html" title="interface in io.micronaut.chatbots.core">BotConfiguration</a>,I,O&gt;</td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../io/micronaut/chatbots/core/Handler.html" title="interface in io.micronaut.chatbots.core">Handler</a>&lt;B extends <a href="../../../../io/micronaut/chatbots/core/BotConfiguration.html" title="interface in io.micronaut.chatbots.core">BotConfiguration</a>,I,O&gt;</td>
 <td class="colLast">
 <div class="block">Request handlers are responsible for handling one or more types of incoming requests.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../io/micronaut/chatbots/core/SlashCommandParser.html" title="interface in io.micronaut.chatbots.core">SlashCommandParser</a>&lt;I&gt;</td>
 <td class="colLast">
 <div class="block">Attempts to parser a Slash command from a message.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../io/micronaut/chatbots/core/SpaceParser.html" title="interface in io.micronaut.chatbots.core">SpaceParser</a>&lt;I,S&gt;</td>
 <td class="colLast">
 <div class="block">Api to retrieve the space associated with the message.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../io/micronaut/chatbots/core/TextResourceLoader.html" title="interface in io.micronaut.chatbots.core">TextResourceLoader</a></td>
+<td class="colLast">
+<div class="block">Composes a static command response for a given command.</div>
 </td>
 </tr>
 </tbody>
@@ -120,9 +130,44 @@
 </tr>
 <tbody>
 <tr class="altColor">
+<td class="colFirst"><a href="../../../../io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html" title="class in io.micronaut.chatbots.core">ChatbotsConfigurationProperties</a></td>
+<td class="colLast">
+<div class="block"><code>ConfigurationProperties</code> implementation of <a href="../../../../io/micronaut/chatbots/core/ChatbotsConfiguration.html" title="interface in io.micronaut.chatbots.core"><code>ChatbotsConfiguration</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../io/micronaut/chatbots/core/CommandResponse.html" title="class in io.micronaut.chatbots.core">CommandResponse</a></td>
+<td class="colLast">
+<div class="block">Static Response for a Slash command.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../io/micronaut/chatbots/core/DefaultDispatcher.html" title="class in io.micronaut.chatbots.core">DefaultDispatcher</a>&lt;B extends <a href="../../../../io/micronaut/chatbots/core/BotConfiguration.html" title="interface in io.micronaut.chatbots.core">BotConfiguration</a>,I,O&gt;</td>
 <td class="colLast">
 <div class="block">Iterates through every <a href="../../../../io/micronaut/chatbots/core/Handler.html" title="interface in io.micronaut.chatbots.core"><code>Handler</code></a> in odered and dispatch the message to the first which can handle the request.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../io/micronaut/chatbots/core/DefaultTextResourceLoader.html" title="class in io.micronaut.chatbots.core">DefaultTextResourceLoader</a></td>
+<td class="colLast">
+<div class="block">Users <code>ResourceLoader</code> to load a static resource associated with a command.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList">
+<table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Enum Summary table, listing enums, and an explanation">
+<caption><span>Enum Summary</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Enum</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../io/micronaut/chatbots/core/FileExtension.html" title="enum in io.micronaut.chatbots.core">FileExtension</a></td>
+<td class="colLast">
+<div class="block">File extensions for Static Bot Commands.</div>
 </td>
 </tr>
 </tbody>
