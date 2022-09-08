@@ -9,7 +9,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 @MicronautTest(startApplication = false)
-class TelegramSlashCommandPaserSpec extends Specification {
+class TelegramSlashCommandParserSpec extends Specification {
 
     @Inject
     SlashCommandParser<Update> slashCommandParser

@@ -8,15 +8,11 @@ import io.micronaut.chatbots.telegram.api.send.Send
 import io.micronaut.chatbots.telegram.api.send.SendMessage
 import io.micronaut.context.annotation.Property
 import io.micronaut.context.annotation.Requires
-import io.micronaut.core.annotation.NonNull
-import io.micronaut.core.annotation.Nullable
 import io.micronaut.serde.ObjectMapper
 import io.micronaut.test.extensions.spock.annotation.MicronautTest
 import jakarta.inject.Inject
 import jakarta.inject.Singleton
 import spock.lang.Specification
-
-import javax.validation.constraints.NotNull
 
 @Property(name = "spec.name", value = "CommandSpec")
 @MicronautTest(startApplication = false)
@@ -66,7 +62,7 @@ class CommandSpec extends Specification {
     @Requires(property = "spec.name", value = "CommandSpec")
     @Singleton
     static class AboutHandler extends CommandHandler {
-        protected AboutHandler(TelegramSlashCommandPaser slashCommandParser,
+        protected AboutHandler(TelegramSlashCommandParser slashCommandParser,
                                TextResourceLoader textResourceLoader,
                                SpaceParser<Update, Chat> spaceParser) {
             super(slashCommandParser, textResourceLoader, spaceParser)

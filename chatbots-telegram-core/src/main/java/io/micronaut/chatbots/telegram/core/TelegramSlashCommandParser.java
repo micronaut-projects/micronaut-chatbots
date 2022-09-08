@@ -30,7 +30,7 @@ import java.util.Optional;
  * @since 1.0.0
  */
 @Singleton
-public class TelegramSlashCommandPaser implements SlashCommandParser<Update> {
+public class TelegramSlashCommandParser implements SlashCommandParser<Update> {
     @Override
     @NonNull
     public Optional<String> parse(@NonNull Update input) {

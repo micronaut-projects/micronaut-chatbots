@@ -32,13 +32,13 @@ import java.util.Optional;
  */
 public abstract class CommandHandler implements TelegramHandler<SendMessage> {
 
-    private final TelegramSlashCommandPaser slashCommandParser;
+    private final TelegramSlashCommandParser slashCommandParser;
     private final TextResourceLoader textResourceLoader;
     private final SpaceParser<Update, Chat> spaceParser;
 
-    protected CommandHandler(TelegramSlashCommandPaser slashCommandParser,
-                          TextResourceLoader textResourceLoader,
-                          SpaceParser<Update, Chat> spaceParser) {
+    protected CommandHandler(TelegramSlashCommandParser slashCommandParser,
+                             TextResourceLoader textResourceLoader,
+                             SpaceParser<Update, Chat> spaceParser) {
         this.slashCommandParser = slashCommandParser;
         this.textResourceLoader = textResourceLoader;
         this.spaceParser = spaceParser;
