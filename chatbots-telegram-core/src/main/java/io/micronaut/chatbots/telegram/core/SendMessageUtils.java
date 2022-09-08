@@ -30,7 +30,10 @@ import java.util.Optional;
  * @author Sergio del Amo
  * @since 1.0.0
  */
-public class SendMessageUtils {
+public final class SendMessageUtils {
+
+    private SendMessageUtils() {
+    }
 
     @NonNull
     public static Optional<SendMessage> compose(@NonNull SpaceParser<Update, Chat> spaceParser,
