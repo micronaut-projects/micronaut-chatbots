@@ -42,8 +42,18 @@ public class TelegramControllerConfiguration extends ControllerConfigurationProp
     }
 
 
+    // This method is Overriden to appear in configuration reference documentation
     /**
-     * Path to the controller. Default value {@value #DEFAULT_PATH}
+     * Enables the controller. Default value true .
+     * @param enabled True if it is enabled
+     */
+    @Override
+    public void setEnabled(boolean enabled) {
+        super.setEnabled(enabled);
+    }
+
+    /**
+     * Path to the controller. Default value {@value #DEFAULT_PATH} .
      * @param path The path
      */
     @Override
