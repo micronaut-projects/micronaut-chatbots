@@ -29,7 +29,7 @@ import java.util.List;
  * @author Sergio del Amo
  * @since 1.0.0
  */
-@ConfigurationProperties(ChatbotsConfigurationProperties.PREFIX)
+@ConfigurationProperties(ChatbotsConfiguration.PREFIX)
 public class ChatbotsConfigurationProperties implements ChatbotsConfiguration {
     /**
      * The default BOT commands folder.
