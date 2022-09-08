@@ -102,7 +102,7 @@ public class DefaultTextResourceLoader implements TextResourceLoader {
         if (path == null) {
             path = "";
         }
-        path = path.replace( "\\", SLASH);
+        path = path.replace("\\", SLASH);
         path = removeLeadingSlash(path);
         if (!path.endsWith(SLASH)) {
             path = path + SLASH;
