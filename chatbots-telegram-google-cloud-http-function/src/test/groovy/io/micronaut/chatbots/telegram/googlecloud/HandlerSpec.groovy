@@ -27,10 +27,10 @@ class HandlerSpec extends Specification {
     @AutoCleanup
     Handler function = new Handler()
 
-    void "Handler responds 401 if HTTP Header X-Telegram-Bot-Api-Secret-Token is not present"() {
+    void "Handler responds 401 if HTTP Header X-Telegram-Bot-Api-Secret-Token is #description"() {
         given:
         File f = new File('src/test/resources/text.json')
-        HttpRequest request = createRequest(f.text, ['X-Telegram-Bot-Api-Secret-Token': ['yyy']])
+        HttpRequest request = createRequest(f.text, tokens)
         HttpResponse response = createResponse()
 
         when:
@@ -38,6 +38,11 @@ class HandlerSpec extends Specification {
 
         then:
         response.status == HttpStatus.UNAUTHORIZED.code
+
+        where:
+        description   | tokens
+        'not present' | [:]
+        'incorrect'   | ['X-Telegram-Bot-Api-Secret-Token': ['yyy']]
     }
 
     void "test function"() {
@@ -73,6 +78,7 @@ class HandlerSpec extends Specification {
             int status
             String contentType
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream()
+
             @Override
             void setStatusCode(int code) {
                 this.status = code
