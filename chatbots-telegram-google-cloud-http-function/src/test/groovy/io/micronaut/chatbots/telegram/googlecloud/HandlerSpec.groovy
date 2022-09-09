@@ -11,6 +11,7 @@ import io.micronaut.chatbots.telegram.core.TelegramBotConfiguration
 import io.micronaut.chatbots.telegram.core.TelegramHandler
 import io.micronaut.core.annotation.NonNull
 import io.micronaut.core.annotation.Nullable
+import io.micronaut.http.HttpStatus
 import jakarta.inject.Singleton
 import spock.lang.AutoCleanup
 import spock.lang.Shared
@@ -34,12 +35,10 @@ class HandlerSpec extends Specification {
 
         when:
         function.service(request, response)
-        String result = ((ByteArrayOutputStream) response.outputStream).toString(StandardCharsets.UTF_8)
 
         then:
-        401 == response.status
+        response.status == HttpStatus.UNAUTHORIZED.code
     }
-
 
     void "test function"() {
         given:
@@ -52,8 +51,20 @@ class HandlerSpec extends Specification {
         String result = ((ByteArrayOutputStream) response.outputStream).toString(StandardCharsets.UTF_8)
 
         then:
-        200 == response.status
-        '{"text":"Hello World","method":"sendMessage","chat_id":718265379}' == result
+        response.status == HttpStatus.OK.code
+        result == '{"text":"Hello World","method":"sendMessage","chat_id":718265379}'
+    }
+
+    void "test null update is unprocessable"() {
+        given:
+        HttpRequest request = createRequest('null', ['X-Telegram-Bot-Api-Secret-Token': ['yyy', 'xxx']])
+        HttpResponse response = createResponse()
+
+        when:
+        function.service(request, response)
+
+        then:
+        response.status == HttpStatus.UNPROCESSABLE_ENTITY.code
     }
 
     @NonNull
