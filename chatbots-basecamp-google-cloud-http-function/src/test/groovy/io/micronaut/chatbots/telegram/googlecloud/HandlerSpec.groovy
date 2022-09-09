@@ -25,8 +25,7 @@ class HandlerSpec extends Specification {
 
     void "test function"() {
         given:
-        File f = new File('src/test/resources/test.json')
-        HttpRequest request = createRequest(f.text)
+        HttpRequest request = createRequest(HandlerSpec.getResourceAsStream('/test.json').text)
         HttpResponse response = createResponse()
 
         when:
