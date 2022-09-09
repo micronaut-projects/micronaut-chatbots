@@ -225,7 +225,7 @@ public abstract class AbstractHandler<B extends BotConfiguration, I, O>
      *
      * @param request The API Gateway Request
      * @param headerName HTTP Header Name
-     * @return The Token
+     * @return The HTTP Header Value
      */
     @NonNull
     protected Optional<String> parseHeader(@NonNull APIGatewayProxyRequestEvent request,
