@@ -29,14 +29,11 @@ class HandlerSpec extends Specification {
     @Unroll
     void "Handler responds 200 and message is not present"() {
         given:
-        File f = new File('src/test/resources/test.json')
-
-        expect:
-        f.exists()
+        def body = HandlerSpec.getResourceAsStream('/test.json').text
 
         when:
         ObjectMapper objectMapper = handler.applicationContext.getBean(ObjectMapper)
-        Query input = objectMapper.readValue(f.text, Query)
+        Query input = objectMapper.readValue(body, Query)
 
         HttpRequestMessage request = createRequest(input)
         HttpResponseMessage response = handler.handle(request, null)
