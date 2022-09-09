@@ -16,4 +16,7 @@ configurations.all {
     }
 }
 
-
+micronautBuild {
+    sourceCompatibility = "11"
+    targetCompatibility = "11"
+}
