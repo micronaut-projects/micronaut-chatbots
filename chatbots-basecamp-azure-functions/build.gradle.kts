@@ -3,7 +3,7 @@ plugins {
 }
 dependencies {
     implementation(mn.micronaut.serde.jackson)
-    api(project(":chatbots-telegram-core"))
+    api(project(":chatbots-basecamp-core"))
 }
 
 configurations.all {
