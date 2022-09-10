@@ -1,0 +1,7 @@
+micronaut:
+  chatbots:
+    telegram:
+      bots:
+        mn-bot:
+          token: "xxx"
+          at-username: "@MnBot"
