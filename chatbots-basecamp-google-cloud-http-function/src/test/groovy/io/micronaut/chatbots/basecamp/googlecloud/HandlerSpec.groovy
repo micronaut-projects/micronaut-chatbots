@@ -1,10 +1,11 @@
-package io.micronaut.chatbots.telegram.googlecloud
+package io.micronaut.chatbots.basecamp.googlecloud
 
 import com.google.cloud.functions.HttpRequest
 import com.google.cloud.functions.HttpResponse
 import io.micronaut.chatbots.basecamp.api.Query
 import io.micronaut.chatbots.basecamp.core.BasecampBotConfiguration
 import io.micronaut.chatbots.basecamp.core.BasecampHandler
+import io.micronaut.chatbots.basecamp.googlecloud.Handler
 import io.micronaut.core.annotation.NonNull
 import io.micronaut.core.annotation.Nullable
 import io.micronaut.http.HttpStatus
@@ -35,7 +36,7 @@ class HandlerSpec extends Specification {
         then:
         HttpStatus.OK.code  == response.status
         'John Snow: HELLO <b>WORLD</b>' == result
-        MediaType.TEXT_HTML == response.contentType
+        MediaType.TEXT_HTML == response.contentType.get()
     }
 
     @NonNull

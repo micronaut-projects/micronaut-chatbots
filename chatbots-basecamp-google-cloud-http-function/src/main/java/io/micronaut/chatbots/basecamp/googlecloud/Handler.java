@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.micronaut.chatbots.telegram.googlecloud;
+package io.micronaut.chatbots.basecamp.googlecloud;
 
 import com.google.cloud.functions.HttpFunction;
 import com.google.cloud.functions.HttpRequest;
@@ -28,11 +28,11 @@ import io.micronaut.serde.ObjectMapper;
 import jakarta.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
 /**
- * {@link HttpFunction} for Telegram Bot webhook.
+ * {@link HttpFunction} for Basecamp Bot webhook.
  * @author Sergio del Amo
  * @since 1.0.0
  */
@@ -57,8 +57,7 @@ public class Handler extends FunctionInitializer implements HttpFunction {
             if (htmlOptional.isPresent()) {
                 String html = htmlOptional.get();
                 response.setContentType(MediaType.TEXT_HTML);
-                OutputStream outputStream = response.getOutputStream();
-                objectMapper.writeValue(outputStream, html);
+                response.getOutputStream().write(html.getBytes(StandardCharsets.UTF_8));
             }
             statusCode = HttpStatus.OK.getCode();
         }
