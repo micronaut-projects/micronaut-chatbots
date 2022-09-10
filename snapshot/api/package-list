@@ -1,4 +1,5 @@
 io.micronaut.chatbots.basecamp.api
+io.micronaut.chatbots.basecamp.azurefunctions
 io.micronaut.chatbots.basecamp.core
 io.micronaut.chatbots.basecamp.http
 io.micronaut.chatbots.basecamp.lambda
