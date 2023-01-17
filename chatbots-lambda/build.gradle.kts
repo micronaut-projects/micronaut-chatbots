@@ -4,6 +4,7 @@ plugins {
 
 dependencies {
     api(projects.chatbotsCore)
+    api(mnSerde.micronaut.serde.api)
     api(mnAws.micronaut.function.aws)
     api(mnAws.aws.lambda.events)
     implementation(mn.micronaut.validation)
@@ -12,13 +13,6 @@ dependencies {
 micronautBuild {
     binaryCompatibility {
         enabled.set(false)
-    }
-}
-
-configurations.all {
-    resolutionStrategy.dependencySubstitution {
-        substitute(module("io.micronaut:micronaut-jackson-databind"))
-            .using(module("io.micronaut.serde:micronaut-serde-jackson:${libs.versions.micronaut.serde}"))
     }
 }
 

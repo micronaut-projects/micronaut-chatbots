@@ -4,4 +4,6 @@ plugins {
 
 dependencies {
     api(projects.chatbotsTelegramCore)
+
+    testRuntimeOnly(mn.snakeyaml)
 }

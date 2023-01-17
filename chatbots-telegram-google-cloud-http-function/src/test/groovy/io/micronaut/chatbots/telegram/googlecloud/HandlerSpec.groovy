@@ -57,7 +57,7 @@ class HandlerSpec extends Specification {
 
         then:
         response.status == HttpStatus.OK.code
-        result == '{"text":"Hello World","method":"sendMessage","chat_id":718265379}'
+        result == '{"method":"sendMessage","chat_id":718265379,"text":"Hello World"}'
     }
 
     void "test null update is unprocessable"() {

@@ -75,7 +75,7 @@ class HandlerSpec extends Specification {
 
         then:
         200  == response.statusCode
-        '{"text":"Hello World","method":"sendMessage","chat_id":718265379}' == response.body
+        '{"method":"sendMessage","chat_id":718265379,"text":"Hello World"}' == response.body
 
         cleanup:
         handler.close()

@@ -3,14 +3,7 @@ plugins {
 }
 
 dependencies {
-    implementation(mnSerde.micronaut.serde.jackson)
+    implementation(mnSerde.micronaut.serde.api)
     api(mnGcp.micronaut.gcp.function)
     api(mnGcp.functions.framework.api)
-}
-
-configurations.all {
-    resolutionStrategy.dependencySubstitution {
-        substitute(module("io.micronaut:micronaut-jackson-databind"))
-                .using(module("io.micronaut.serde:micronaut-serde-jackson:${libs.versions.micronaut.serde}"))
-    }
 }

@@ -5,6 +5,6 @@ dependencies {
     api(projects.chatbotsCore)
     api(projects.chatbotsTelegramApi)
 
-    testImplementation(mnSerde.micronaut.serde.jackson)
+    testImplementation(mnSerde.micronaut.serde.api)
 }
 
