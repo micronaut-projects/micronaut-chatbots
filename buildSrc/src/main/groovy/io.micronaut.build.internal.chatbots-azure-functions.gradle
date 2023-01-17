@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    api(mn.micronaut.azure.function)
-    api(libs.azure.functions.java.library)
+    api(mnAzure.micronaut.azure.function)
+    api(mnAzure.azure.functions.java.library)
 }
 
