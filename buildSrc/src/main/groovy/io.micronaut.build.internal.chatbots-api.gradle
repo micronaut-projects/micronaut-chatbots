@@ -3,16 +3,16 @@ plugins {
 }
 
 dependencies {
-    annotationProcessor(mn.micronaut.serde.processor)
-    api(mn.micronaut.serde.api)
-    api(libs.jackson.annotations)
+    annotationProcessor(mnSerde.micronaut.serde.processor)
+    api(mnSerde.micronaut.serde.api)
+    api(mn.jackson.annotations)
     implementation(mn.micronaut.validation)
 }
 
 configurations.all {
     resolutionStrategy.dependencySubstitution {
         substitute(module("io.micronaut:micronaut-jackson-databind"))
-                .using(module("io.micronaut.serde:micronaut-serde-jackson:${mn.versions.micronaut.serialization.get()}"))
+                .using(module("io.micronaut.serde:micronaut-serde-jackson:${libs.versions.micronaut.serde}"))
     }
 }
 
