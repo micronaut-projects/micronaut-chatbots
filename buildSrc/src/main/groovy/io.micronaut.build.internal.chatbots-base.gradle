@@ -2,10 +2,3 @@ repositories {
     mavenCentral()
     maven { url "https://s01.oss.sonatype.org/content/repositories/snapshots/" }
 }
-
-configurations.all {
-    resolutionStrategy.dependencySubstitution {
-        substitute(module("io.micronaut:micronaut-jackson-databind"))
-                .using(module("io.micronaut.serde:micronaut-serde-jackson:${libs.versions.micronaut.serde.get()}"))
-    }
-}

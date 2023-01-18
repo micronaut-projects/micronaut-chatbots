@@ -6,7 +6,7 @@ plugins {
 dependencies {
     implementation(mn.micronaut.validation)
 
-    testImplementation(mn.micronaut.jackson.databind)
+    testImplementation(mnSerde.micronaut.serde.jackson)
 }
 
 micronautBuild {

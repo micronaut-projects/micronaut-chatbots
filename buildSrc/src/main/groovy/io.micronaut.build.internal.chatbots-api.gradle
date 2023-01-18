@@ -5,8 +5,6 @@ plugins {
 dependencies {
     annotationProcessor(mnSerde.micronaut.serde.processor)
     api(mnSerde.micronaut.serde.api)
-    api(mn.jackson.annotations)
+    api(mnSerde.micronaut.serde.jackson)
     implementation(mn.micronaut.validation)
-
-    testImplementation(mnSerde.micronaut.serde.api)
 }
