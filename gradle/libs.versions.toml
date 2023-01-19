@@ -1,5 +1,22 @@
+[versions]
+micronaut = "4.0.0-SNAPSHOT"
+micronaut-docs = "2.0.0"
+micronaut-gradle-plugin = "3.7.0"
+micronaut-test = "4.0.0-SNAPSHOT"
+
+groovy = "4.0.7"
+spock = "2.3-groovy-4.0"
+kotlin = '1.8.0'
+
+micronaut-aws = "4.0.0-SNAPSHOT"
+micronaut-azure = "4.0.0-SNAPSHOT"
+micronaut-gcp = "5.0.0-SNAPSHOT"
+micronaut-serde = "2.0.0-SNAPSHOT"
+
 [libraries]
-aws-lambda-java-events = { module = 'com.amazonaws:aws-lambda-java-events' }
-jackson-annotations = { module = 'com.fasterxml.jackson.core:jackson-annotations' }
-azure-functions-java-library = { module = 'com.microsoft.azure.functions:azure-functions-java-library' }
+micronaut-aws = { module = "io.micronaut.aws:micronaut-aws-bom", version.ref = "micronaut-aws" }
+micronaut-azure = { module = "io.micronaut.azure:micronaut-azure-bom", version.ref = "micronaut-azure" }
+micronaut-gcp = { module = "io.micronaut.gcp:micronaut-gcp-bom", version.ref = "micronaut-gcp" }
+micronaut-serde = { module = "io.micronaut.serde:micronaut-serde-bom", version.ref = "micronaut-serde" }
+
 

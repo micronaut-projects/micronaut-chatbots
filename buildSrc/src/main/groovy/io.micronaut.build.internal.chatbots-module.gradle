@@ -1,8 +1,12 @@
 plugins {
+    id "io.micronaut.build.internal.chatbots-base"
     id "io.micronaut.build.internal.module"
 }
+
 dependencies {
     implementation(mn.micronaut.validation)
+
+    testImplementation(mnSerde.micronaut.serde.jackson)
 }
 
 micronautBuild {
@@ -10,5 +14,3 @@ micronautBuild {
         enabled.set(false)
     }
 }
-
-

@@ -3,5 +3,7 @@ plugins {
 }
 
 dependencies {
-    api(project(":chatbots-telegram-core"))
+    api(projects.chatbotsTelegramCore)
+
+    testRuntimeOnly(mn.snakeyaml)
 }

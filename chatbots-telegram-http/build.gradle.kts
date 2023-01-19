@@ -3,6 +3,6 @@ plugins {
 }
 
 dependencies {
-    api(project(":chatbots-http"))
-    api(project(":chatbots-telegram-core"))
+    api(projects.chatbotsHttp)
+    api(projects.chatbotsTelegramCore)
 }

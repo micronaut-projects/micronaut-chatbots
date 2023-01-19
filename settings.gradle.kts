@@ -6,10 +6,13 @@ pluginManagement {
 }
 
 plugins {
-    id("io.micronaut.build.shared.settings") version "5.3.14"
+    id("io.micronaut.build.shared.settings") version "6.2.0"
 }
 
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 rootProject.name = "chatbots-parent"
+
 include("chatbots-google-api")
 include("chatbots-basecamp-api")
 include("chatbots-basecamp-core")
@@ -28,5 +31,10 @@ include("chatbots-core")
 include("chatbots-bom")
 
 configure<io.micronaut.build.MicronautBuildSettingsExtension> {
+    addSnapshotRepository()
     importMicronautCatalog()
+    importMicronautCatalog("micronaut-aws")
+    importMicronautCatalog("micronaut-azure")
+    importMicronautCatalog("micronaut-gcp")
+    importMicronautCatalog("micronaut-serde")
 }
