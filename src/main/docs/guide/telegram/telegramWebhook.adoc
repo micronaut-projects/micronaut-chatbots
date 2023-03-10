@@ -1,0 +1,10 @@
+You have to set the https://core.telegram.org/bots/api#setwebhook[webhook via the Telegram API].
+
+[source,bash]
+----
+curl -X "POST" "https://api.telegram.org/bot{httpApiToken}/setWebhook?url={webhookUrl}&secret_token={secretToken}"
+----
+
+* `httpApiToken` You obtain this value via the https://telegram.me/BotFather[@BotFather]
+* `webhookUrl` is the endpoint of your Micronaut application.
+* `{secretToken}` - A secret token, Telegram sends in a header `X-Telegram-Bot-Api-Secret-Token` in every webhook request.

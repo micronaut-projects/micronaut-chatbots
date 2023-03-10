@@ -3,5 +3,17 @@ introduction:
 releaseHistory: Release History
 quickStart:
   title: Quick Start
+telegram:
+  title: Telegram
+  telegramWebhook: Telegram Webhook
+  telegramConfiguration: Telegram Bot Configuration
+  telegramHandler: Telegram Bot Handlers
+  telegramLambda: Telegram Chatbots as an AWS Lambda Function
+  telegramHttp: Telegram Chatbots Controller
+basecamp:
+  title: Basecamp
+  basecampHandler: Basecamp Bot Handlers
+  basecampLambda: Basecamp Chatbots as an AWS Lambda Function
+  basecampHttp: Basecamp Chatbots Controller
 repository: Repository
 
