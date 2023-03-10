@@ -27,6 +27,9 @@ import io.micronaut.core.annotation.NonNull;
 import io.micronaut.http.HttpHeaders;
 import io.micronaut.serde.ObjectMapper;
 import jakarta.inject.Inject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Optional;
 
 /**
@@ -35,6 +38,7 @@ import java.util.Optional;
  * @since 1.0.0
  */
 public class Handler extends AbstractHandler<BasecampBotConfiguration, Query, String> {
+    private static final Logger LOG = LoggerFactory.getLogger(Handler.class);
     @Inject
     ObjectMapper objectMapper;
 
@@ -68,8 +72,19 @@ public class Handler extends AbstractHandler<BasecampBotConfiguration, Query, St
     @NonNull
     protected boolean validate(@NonNull APIGatewayProxyRequestEvent request) {
         return parseHeader(request, HttpHeaders.USER_AGENT)
-            .map(value -> value.equalsIgnoreCase("Basecamp 3 Integration Command"))
-            .orElse(false);
+            .map(value -> {
+                boolean result = value.contains("Basecamp");
+                if (result) {
+                    LOG.trace("HTTP Header {}: {}", HttpHeaders.USER_AGENT, value);
+                } else {
+                    LOG.warn("Rejecting request because HTTP Header {}: {} does not contain the word Basecamp", HttpHeaders.USER_AGENT, value);
+                }
+                return result;
+            })
+        .orElseGet( () -> {
+                LOG.warn("Rejecting request because HTTP Header {} not present", HttpHeaders.USER_AGENT);
+                return false;
+            });
     }
 
     @Override
