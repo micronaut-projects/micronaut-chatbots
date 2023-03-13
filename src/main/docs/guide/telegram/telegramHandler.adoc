@@ -1,0 +1,4 @@
+To develop your bot, create beans of type api:chatbots.telegram.core.TelegramHandler[].
+
+To respond to https://core.telegram.org/bots/features#commands[Telegram Bot commands], you can extend from api:chatbots.telegram.core.CommandHandler[].
+

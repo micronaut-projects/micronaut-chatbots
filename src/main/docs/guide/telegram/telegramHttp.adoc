@@ -1,7 +1,7 @@
-If you want to configure one endpoint as the Basecamp chatbot webhook while using a runtime such as Netty or Servlet you can include the following dependency:
+If you want to configure one endpoint as the Telegram chatbot webhook while using a runtime such as Netty or Servlet, you can include the following dependency:
 
-dependency:io.micronaut.chatbots:chatbots-basecamp-http[]
+dependency:io.micronaut.chatbots:chatbots-telegram-http[]
 
-You can configure the path with:
+You can configure the path with the following:
 
-include::{includedir}configurationProperties/io.micronaut.chatbots.basecamp.http.BasecampControllerConfiguration.adoc[]
+include::{includedir}configurationProperties/io.micronaut.chatbots.telegram.http.TelegramControllerConfiguration.adoc[]
