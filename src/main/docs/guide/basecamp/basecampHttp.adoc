@@ -1,6 +1,6 @@
 If you want to configure one endpoint as the Basecamp chatbot webhook while using a runtime such as Netty or Servlet, you can include the following dependency:
 
-dependency:io.micronaut.chatbots:chatbots-basecamp-http[]
+dependency:io.micronaut.chatbots:micronaut-chatbots-basecamp-http[]
 
 You can configure the path with:
 

@@ -9,11 +9,15 @@ telegram:
   telegramConfiguration: Telegram Bot Configuration
   telegramHandler: Telegram Bot Handlers
   telegramLambda: Telegram Chatbots as an AWS Lambda Function
+  telegramGcp: Telegram Chatbots as a Google Cloud Function
+  telegramAzure: Telegram Chatbots as an Azure Function
   telegramHttp: Telegram Chatbots Controller
 basecamp:
   title: Basecamp
   basecampHandler: Basecamp Bot Handlers
   basecampLambda: Basecamp Chatbots as an AWS Lambda Function
+  basecampGcp: Basecamp Chatbots as a Google Cloud Function
+  basecampAzure: Basecamp Chatbots as an Azure Function
   basecampHttp: Basecamp Chatbots Controller
 repository: Repository
 
