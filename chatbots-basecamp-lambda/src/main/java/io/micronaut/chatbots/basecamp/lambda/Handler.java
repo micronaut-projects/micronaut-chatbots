@@ -19,6 +19,7 @@ import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 import io.micronaut.chatbots.basecamp.api.Query;
 import io.micronaut.chatbots.basecamp.core.BasecampBotConfiguration;
+import io.micronaut.chatbots.basecamp.core.BasecampUserAgentValidator;
 import io.micronaut.chatbots.core.Dispatcher;
 import io.micronaut.chatbots.lambda.AbstractHandler;
 import io.micronaut.context.ApplicationContext;
@@ -72,16 +73,8 @@ public class Handler extends AbstractHandler<BasecampBotConfiguration, Query, St
     @NonNull
     protected boolean validate(@NonNull APIGatewayProxyRequestEvent request) {
         return parseHeader(request, HttpHeaders.USER_AGENT)
-            .map(value -> {
-                boolean result = value.contains("Basecamp");
-                if (result) {
-                    LOG.trace("HTTP Header {}: {}", HttpHeaders.USER_AGENT, value);
-                } else {
-                    LOG.warn("Rejecting request because HTTP Header {}: {} does not contain the word Basecamp", HttpHeaders.USER_AGENT, value);
-                }
-                return result;
-            })
-        .orElseGet( () -> {
+            .map(BasecampUserAgentValidator::validateUserAgent)
+            .orElseGet(() -> {
                 LOG.warn("Rejecting request because HTTP Header {} not present", HttpHeaders.USER_AGENT);
                 return false;
             });
