@@ -30,7 +30,7 @@ class HandlerSpec extends Specification {
         noExceptionThrown()
     }
 
-    void "Handler responds 401 if HTTP Header User-agent is not equals Basecamp 3 Integration Command"(String header, String value) {
+    void "Handler responds 401 if HTTP Header User-agent does not contain Basecamp"(String header, String value) {
         given:
         Handler handler = new Handler(ApplicationContext.builder().properties(PROPS))
 
