@@ -11,7 +11,7 @@ import jakarta.inject.Singleton
 import java.util.*
 
 @Singleton
-class HelloWorldHandler(val spaceParser: SpaceParser<Update, Chat>) : TelegramHandler<SendMessage> {
+class HelloWorldHandler(private val spaceParser: SpaceParser<Update, Chat>) : TelegramHandler<SendMessage> {
     override fun canHandle(bot: TelegramBotConfiguration?, input: Update): Boolean = true
 
     override fun handle(bot: TelegramBotConfiguration?, input: Update): Optional<SendMessage> =
