@@ -14,3 +14,8 @@ configurations.all {
                 .using(module("io.micronaut.serde:micronaut-serde-jackson:${mn.versions.micronaut.serialization.get()}"))
     }
 }
+
+micronautBuild {
+    sourceCompatibility.set("11")
+    targetCompatibility.set("11")
+}
