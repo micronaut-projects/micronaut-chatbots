@@ -1,0 +1,27 @@
+plugins {
+    id "groovy"
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    testCompileOnly(mn.micronaut.inject.groovy)
+    testImplementation platform(mn.micronaut.bom)
+    testImplementation(mn.micronaut.validation)
+    testImplementation(mn.spock) {
+        exclude module: "groovy-all"
+    }
+    testImplementation(mn.micronaut.test.spock)
+
+    testImplementation(project(":chatbots-basecamp-core"))
+    testImplementation(project(":chatbots-telegram-core"))
+}
+
+tasks.named("test") {
+    useJUnitPlatform()
+}
+
+java {
+    sourceCompatibility = JavaVersion.toVersion("1.8")
+    targetCompatibility = JavaVersion.toVersion("1.8")
+}
