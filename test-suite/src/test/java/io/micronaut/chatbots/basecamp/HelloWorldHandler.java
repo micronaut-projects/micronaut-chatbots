@@ -12,12 +12,13 @@ import java.util.Optional;
 class HelloWorldHandler implements BasecampHandler {
 
     @Override
-    public boolean canHandle(BasecampBotConfiguration bot, @NotNull Query input) {
+    public boolean canHandle(BasecampBotConfiguration bot, @NonNull @NotNull Query input) {
         return true;
     }
 
+    @NonNull
     @Override
-    public Optional<String> handle(BasecampBotConfiguration bot, @NotNull Query input) {
+    public Optional<String> handle(BasecampBotConfiguration bot, @NonNull @NotNull Query input) {
         return Optional.of("Hello World");
     }
 }
