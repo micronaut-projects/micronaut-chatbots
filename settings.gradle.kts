@@ -27,6 +27,9 @@ include("chatbots-http")
 include("chatbots-lambda")
 include("chatbots-core")
 include("chatbots-bom")
+include("test-suite")
+include("test-suite-groovy")
+include("test-suite-kotlin")
 
 configure<io.micronaut.build.MicronautBuildSettingsExtension> {
     importMicronautCatalog()

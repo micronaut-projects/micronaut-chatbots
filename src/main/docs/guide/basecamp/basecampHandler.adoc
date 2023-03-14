@@ -1,1 +1,3 @@
 To develop your bot, create beans of type api:io.micronaut.chatbots.basecamp.core.BasecampHandler[].
+
+snippet::io.micronaut.chatbots.basecamp.HelloWorldHandler[]
