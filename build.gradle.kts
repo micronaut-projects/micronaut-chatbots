@@ -4,6 +4,11 @@ plugins {
     id("io.micronaut.build.internal.quality-reporting")
 }
 
+micronautBuild {
+    sourceCompatibility.set("11")
+    targetCompatibility.set("11")
+}
+
 if (System.getenv("SONAR_TOKEN") != null) {
     configure<org.sonarqube.gradle.SonarQubeExtension> {
         properties {
