@@ -17,7 +17,7 @@ package io.micronaut.chatbots.telegram.api.send;
 
 import io.micronaut.core.annotation.NonNull;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * Sends latitudes and longitudes.

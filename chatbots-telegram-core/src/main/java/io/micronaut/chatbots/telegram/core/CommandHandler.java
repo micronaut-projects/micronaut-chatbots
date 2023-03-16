@@ -22,7 +22,7 @@ import io.micronaut.chatbots.telegram.api.Update;
 import io.micronaut.chatbots.telegram.api.send.SendMessage;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.core.annotation.Nullable;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 import java.util.Optional;
 
 /**

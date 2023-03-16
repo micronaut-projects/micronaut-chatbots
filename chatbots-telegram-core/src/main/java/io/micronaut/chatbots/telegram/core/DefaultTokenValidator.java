@@ -19,7 +19,7 @@ import io.micronaut.chatbots.core.BotConfiguration;
 import io.micronaut.core.annotation.NonNull;
 import jakarta.inject.Singleton;
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 import java.util.List;
 import java.util.Optional;
 

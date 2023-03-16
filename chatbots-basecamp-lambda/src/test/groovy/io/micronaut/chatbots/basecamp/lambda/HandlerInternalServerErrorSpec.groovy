@@ -12,8 +12,8 @@ import io.micronaut.core.annotation.Nullable
 import jakarta.inject.Singleton
 import spock.lang.Specification
 import spock.lang.Unroll
-import javax.validation.Valid
-import javax.validation.constraints.NotNull
+import jakarta.validation.Valid
+import jakarta.validation.constraints.NotNull
 
 class HandlerInternalServerErrorSpec extends Specification {
 

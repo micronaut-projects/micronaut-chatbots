@@ -18,7 +18,7 @@ package io.micronaut.chatbots.google.api;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.serde.annotation.Serdeable;
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 
 /**
  * A slash command in Google Chat.

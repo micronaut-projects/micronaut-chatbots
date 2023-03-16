@@ -3,7 +3,7 @@ plugins {
 }
 dependencies {
     implementation(mnSerde.micronaut.serde.api)
-    api(projects.chatbotsTelegramCore)
+    api(projects.micronautChatbotsTelegramCore)
 
     testRuntimeOnly(mn.snakeyaml)
 }

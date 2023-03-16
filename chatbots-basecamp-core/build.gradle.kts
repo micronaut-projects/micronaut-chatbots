@@ -2,6 +2,6 @@ plugins {
     id("io.micronaut.build.internal.chatbots-module")
 }
 dependencies {
-    api(projects.chatbotsCore)
-    api(projects.chatbotsBasecampApi)
+    api(projects.micronautChatbotsCore)
+    api(projects.micronautChatbotsBasecampApi)
 }

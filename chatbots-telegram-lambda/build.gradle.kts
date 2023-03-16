@@ -4,7 +4,7 @@ plugins {
 
 dependencies {
     implementation(mnSerde.micronaut.serde.api)
-    api(projects.chatbotsLambda)
-    api(projects.chatbotsTelegramCore)
+    api(projects.micronautChatbotsLambda)
+    api(projects.micronautChatbotsTelegramCore)
 }
 

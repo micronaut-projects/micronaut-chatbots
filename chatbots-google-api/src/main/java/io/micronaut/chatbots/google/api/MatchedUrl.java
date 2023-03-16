@@ -18,7 +18,7 @@ package io.micronaut.chatbots.google.api;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.serde.annotation.Serdeable;
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 
 /**
  * A matched url in a Chat message. Chat apps can preview matched URLs. For more information, refer to Preview links.
