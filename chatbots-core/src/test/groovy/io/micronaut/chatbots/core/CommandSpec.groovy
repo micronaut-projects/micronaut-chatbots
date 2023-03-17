@@ -8,7 +8,7 @@ import io.micronaut.test.extensions.spock.annotation.MicronautTest
 import jakarta.inject.Inject
 import jakarta.inject.Singleton
 import spock.lang.Specification
-import javax.validation.constraints.NotNull
+import jakarta.validation.constraints.NotNull
 
 @Property(name = "spec.name", value = "CommandSpec")
 @MicronautTest(startApplication = false)

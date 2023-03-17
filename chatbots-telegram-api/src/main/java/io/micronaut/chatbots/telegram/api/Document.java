@@ -18,7 +18,7 @@ package io.micronaut.chatbots.telegram.api;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.micronaut.core.annotation.Nullable;
 import io.micronaut.serde.annotation.Serdeable;
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 /**
  * This object represents a general file (as opposed to photos, voice messages and audio files).

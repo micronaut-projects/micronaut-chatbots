@@ -4,7 +4,8 @@ plugins {
 }
 
 dependencies {
-    implementation(mn.micronaut.validation)
+    annotationProcessor(mnValidation.micronaut.validation.processor)
+    implementation(mnValidation.micronaut.validation)
 
     testImplementation(mnSerde.micronaut.serde.jackson)
 }

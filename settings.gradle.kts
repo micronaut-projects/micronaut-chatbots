@@ -32,9 +32,11 @@ include("chatbots-bom")
 
 configure<io.micronaut.build.MicronautBuildSettingsExtension> {
     addSnapshotRepository()
+    useStandardizedProjectNames.set(true)
     importMicronautCatalog()
     importMicronautCatalog("micronaut-aws")
     importMicronautCatalog("micronaut-azure")
     importMicronautCatalog("micronaut-gcp")
     importMicronautCatalog("micronaut-serde")
+    importMicronautCatalog("micronaut-validation")
 }

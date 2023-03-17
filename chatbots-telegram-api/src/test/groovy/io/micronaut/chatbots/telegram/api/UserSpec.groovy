@@ -11,9 +11,9 @@ import io.micronaut.test.extensions.spock.annotation.MicronautTest
 import jakarta.inject.Inject
 import spock.lang.Specification
 
-import javax.validation.Validator
-import javax.validation.constraints.NotBlank
-import javax.validation.constraints.NotNull
+import jakarta.validation.Validator
+import jakarta.validation.constraints.NotBlank
+import jakarta.validation.constraints.NotNull
 
 @MicronautTest(startApplication = false)
 class UserSpec extends Specification {

@@ -18,8 +18,8 @@ package io.micronaut.chatbots.telegram.api;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.serde.annotation.Serdeable;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * This object represents the content of a service message, sent whenever a user in the chat triggers a proximity alert set by another user.

@@ -22,8 +22,8 @@ import io.micronaut.runtime.server.EmbeddedServer
 import jakarta.inject.Singleton
 import spock.lang.Specification
 
-import javax.validation.Valid
-import javax.validation.constraints.NotNull
+import jakarta.validation.Valid
+import jakarta.validation.constraints.NotNull
 
 class TelegramControllerSpec extends Specification {
     void "Verify TelegramController success payload"(String path, Map<String, String> props) {

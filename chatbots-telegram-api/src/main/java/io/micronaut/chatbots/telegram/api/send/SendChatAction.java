@@ -18,7 +18,7 @@ package io.micronaut.chatbots.telegram.api.send;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.serde.annotation.Serdeable;
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 
 /**
  * @author Sergio del Amo

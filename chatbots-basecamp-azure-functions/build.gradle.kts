@@ -3,7 +3,7 @@ plugins {
 }
 dependencies {
     implementation(mnSerde.micronaut.serde.api)
-    api(projects.chatbotsBasecampCore)
+    api(projects.micronautChatbotsBasecampCore)
 
     testRuntimeOnly(mn.snakeyaml)
 }
