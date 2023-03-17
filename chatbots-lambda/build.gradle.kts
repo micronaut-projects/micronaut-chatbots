@@ -6,7 +6,7 @@ dependencies {
     annotationProcessor(mnValidation.micronaut.validation.processor)
     implementation(mnValidation.micronaut.validation)
 
-    api(projects.micronautChatbotsCore)
+    api(project(":micronaut-chatbots-core"))
     api(mnSerde.micronaut.serde.api)
     api(mnAws.micronaut.function.aws)
     api(mnAws.aws.lambda.events)

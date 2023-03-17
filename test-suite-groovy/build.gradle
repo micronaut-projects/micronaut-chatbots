@@ -1,0 +1,21 @@
+plugins {
+    id "groovy"
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    testCompileOnly(mn.micronaut.inject.groovy)
+    testImplementation platform(mn.micronaut.core.bom)
+
+    compileOnly(mnValidation.micronaut.validation.processor)
+    testImplementation(mnValidation.micronaut.validation)
+    testImplementation(mnTest.micronaut.test.spock)
+
+    testImplementation(project(":micronaut-chatbots-basecamp-core"))
+    testImplementation(project(":micronaut-chatbots-telegram-core"))
+}
+
+tasks.named("test") {
+    useJUnitPlatform()
+}

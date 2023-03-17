@@ -9,8 +9,6 @@ plugins {
     id("io.micronaut.build.shared.settings") version "6.3.5"
 }
 
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-
 rootProject.name = "chatbots-parent"
 
 include("chatbots-google-api")
@@ -35,8 +33,8 @@ include("test-suite-groovy")
 include("test-suite-kotlin")
 
 configure<io.micronaut.build.MicronautBuildSettingsExtension> {
-    addSnapshotRepository()
     useStandardizedProjectNames.set(true)
+    addSnapshotRepository()
     importMicronautCatalog()
     importMicronautCatalog("micronaut-aws")
     importMicronautCatalog("micronaut-azure")

@@ -3,7 +3,7 @@ plugins {
 }
 dependencies {
     implementation(mnSerde.micronaut.serde.api)
-    implementation(projects.micronautChatbotsLambda)
-    api(projects.micronautChatbotsBasecampCore)
+    implementation(project(":micronaut-chatbots-lambda"))
+    api(project(":micronaut-chatbots-basecamp-core"))
 }
 

@@ -1,0 +1,30 @@
+plugins {
+    id 'java-library'
+}
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testAnnotationProcessor(platform(mn.micronaut.core.bom))
+    testAnnotationProcessor(mn.micronaut.inject.java)
+
+    testAnnotationProcessor(mnValidation.micronaut.validation.processor)
+    testImplementation(mnValidation.micronaut.validation)
+
+    testImplementation(platform(mn.micronaut.core.bom))
+
+    testRuntimeOnly(mn.logback.classic)
+
+    testRuntimeOnly(libs.junit.jupiter.engine)
+    testImplementation(libs.junit.jupiter.api)
+
+    testImplementation(mnTest.micronaut.test.junit5)
+
+    testImplementation(project(":micronaut-chatbots-basecamp-core"))
+    testImplementation(project(":micronaut-chatbots-telegram-core"))
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

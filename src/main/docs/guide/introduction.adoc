@@ -1,1 +1,1 @@
-TODO
+This module eases the creation of https://core.telegram.org/bots/api[Telegram Bots], https://github.com/basecamp/bc3-api/blob/master/sections/chatbots.md[Basecamp Bots] with the Micronaut Framework.

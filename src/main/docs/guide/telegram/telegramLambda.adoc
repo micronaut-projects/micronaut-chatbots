@@ -1,0 +1,6 @@
+If you want to deploy to https://aws.amazon.com/lambda/[AWS Lambda], you can use the following dependency:
+
+dependency:io.micronaut.chatbots:chatbots-telegram-lambda[]
+
+Use the class `io.micronaut.chatbots.telegram.lambda.Handler`
+as the https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html[AWS Lambda function handler].

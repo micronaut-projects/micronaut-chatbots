@@ -1,0 +1,13 @@
+[configuration]
+----
+micronaut:
+  chatbots:
+    telegram:
+      bots:
+        mnexample:
+          token: 'xxxyyyzzz'
+          at-username: '@MicronautExampleBot'
+
+----
+
+`micronaut.chabots.telegram.bots.*.token` matches the value specified as `secret_token` while setting the webhook.

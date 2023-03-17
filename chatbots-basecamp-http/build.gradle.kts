@@ -3,6 +3,6 @@ plugins {
 }
 
 dependencies {
-    api(projects.micronautChatbotsHttp)
-    api(projects.micronautChatbotsBasecampCore)
+    api(project(":micronaut-chatbots-http"))
+    api(project(":micronaut-chatbots-basecamp-core"))
 }
