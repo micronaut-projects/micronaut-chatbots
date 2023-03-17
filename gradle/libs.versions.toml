@@ -9,7 +9,7 @@ spock = "2.3-groovy-4.0"
 kotlin = '1.8.0'
 
 micronaut-aws = "4.0.0-SNAPSHOT"
-micronaut-azure = "4.0.1"
+micronaut-azure = "5.0.0-SNAPSHOT"
 micronaut-gcp = "5.0.0-SNAPSHOT"
 micronaut-serde = "2.0.0-SNAPSHOT"
 
