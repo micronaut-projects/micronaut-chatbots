@@ -4,6 +4,6 @@ plugins {
 dependencies {
     annotationProcessor(mnSerde.micronaut.serde.processor)
     implementation(mnSerde.micronaut.serde.jackson)
-    api(project(":micronaut-chatbots-basecamp-core"))
+    api(projects.micronautChatbotsBasecampCore)
     testRuntimeOnly(mn.snakeyaml)
 }

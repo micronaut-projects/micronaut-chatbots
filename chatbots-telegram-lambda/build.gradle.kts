@@ -4,7 +4,7 @@ plugins {
 dependencies {
     annotationProcessor(mnSerde.micronaut.serde.processor)
     implementation(mnSerde.micronaut.serde.jackson)
-    api(project(":micronaut-chatbots-lambda"))
-    api(project(":micronaut-chatbots-telegram-core"))
+    api(projects.micronautChatbotsLambda)
+    api(projects.micronautChatbotsTelegramCore)
     testImplementation(libs.jsonassert)
 }

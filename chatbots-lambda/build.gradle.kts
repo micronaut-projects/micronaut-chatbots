@@ -2,7 +2,7 @@ plugins {
     id("io.micronaut.build.internal.module")
 }
 dependencies {
-    api(project(":micronaut-chatbots-core"))
+    api(projects.micronautChatbotsCore)
     api(mnAws.micronaut.function.aws)
     api(mnAws.aws.lambda.events)
 

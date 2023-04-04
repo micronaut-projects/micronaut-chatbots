@@ -3,6 +3,6 @@ plugins {
 }
 
 dependencies {
-    api(project(":micronaut-chatbots-http"))
-    api(project(":micronaut-chatbots-telegram-core"))
+    api(projects.micronautChatbotsHttp)
+    api(projects.micronautChatbotsTelegramCore)
 }
