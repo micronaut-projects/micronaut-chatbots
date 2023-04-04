@@ -46,11 +46,11 @@
         <div class="docs-content">
             <div class="project">
                 <h1>Configuration Reference</h1>
-                <p><strong>Version:</strong>2.0.0-SNAPSHOT</p>
+                <p><strong>Version:</strong>1.0.0-SNAPSHOT</p>
                 <p></p>
             </div>
 <div class="sect2">
-<h3 id="_micronaut_chatbots_basecamp_core_config_properties">Micronaut Chatbots Basecamp Core Config Properties</h3>
+<h3 id="_chatbots_basecamp_core_config_properties">Chatbots Basecamp Core Config Properties</h3>
 <a id="io.micronaut.chatbots.basecamp.core.BasecampBotConfigurationProperties" href="#io.micronaut.chatbots.basecamp.core.BasecampBotConfigurationProperties">&#128279;</a>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Configuration Properties for <a href="../api/io/micronaut/chatbots/basecamp/core/BasecampBotConfigurationProperties.html">BasecampBotConfigurationProperties</a></caption>
@@ -70,14 +70,14 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.basecamp.bots.*.enabled</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sets whether this configuration is enabled. Default .</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets whether this configuration is enabled. Default true.</p></td>
 </tr>
 </tbody>
 </table>
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_micronaut_chatbots_basecamp_http_config_properties">Micronaut Chatbots Basecamp Http Config Properties</h3>
+<h3 id="_chatbots_basecamp_http_config_properties">Chatbots Basecamp Http Config Properties</h3>
 <a id="io.micronaut.chatbots.basecamp.http.BasecampControllerConfiguration" href="#io.micronaut.chatbots.basecamp.http.BasecampControllerConfiguration">&#128279;</a>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. Configuration Properties for <a href="../api/io/micronaut/chatbots/basecamp/http/BasecampControllerConfiguration.html">BasecampControllerConfiguration</a></caption>
@@ -102,14 +102,14 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.basecamp.endpoint.path</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">java.lang.String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Path to the controller. Default value .</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Path to the controller. Default value "/basecamp".</p></td>
 </tr>
 </tbody>
 </table>
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_micronaut_chatbots_core_config_properties">Micronaut Chatbots Core Config Properties</h3>
+<h3 id="_chatbots_core_config_properties">Chatbots Core Config Properties</h3>
 <a id="io.micronaut.chatbots.core.ChatbotsConfigurationProperties" href="#io.micronaut.chatbots.core.ChatbotsConfigurationProperties">&#128279;</a>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 3. Configuration Properties for <a href="../api/io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html">ChatbotsConfigurationProperties</a></caption>
@@ -129,12 +129,12 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.enabled</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enabled getter.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether chatbots is enabled. Default value (true).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.folder</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">java.lang.String</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The folder to look for bot commands.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.possible-static-command-extensions</code></p></td>
@@ -146,7 +146,7 @@
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_micronaut_chatbots_telegram_core_config_properties">Micronaut Chatbots Telegram Core Config Properties</h3>
+<h3 id="_chatbots_telegram_core_config_properties">Chatbots Telegram Core Config Properties</h3>
 <a id="io.micronaut.chatbots.telegram.core.TelegramBotConfigurationProperties" href="#io.micronaut.chatbots.telegram.core.TelegramBotConfigurationProperties">&#128279;</a>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 4. Configuration Properties for <a href="../api/io/micronaut/chatbots/telegram/core/TelegramBotConfigurationProperties.html">TelegramBotConfigurationProperties</a></caption>
@@ -164,26 +164,26 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.telegram.bots.*.at-username</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">java.lang.String</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.telegram.bots.*.token</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">java.lang.String</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Telegram&#8217;s token</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.telegram.bots.*.at-username</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">java.lang.String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bot username prefixed with @</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.telegram.bots.*.enabled</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sets whether this configuration is enabled. Default .</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets whether this configuration is enabled. Default true.</p></td>
 </tr>
 </tbody>
 </table>
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_micronaut_chatbots_telegram_http_config_properties">Micronaut Chatbots Telegram Http Config Properties</h3>
+<h3 id="_chatbots_telegram_http_config_properties">Chatbots Telegram Http Config Properties</h3>
 <a id="io.micronaut.chatbots.telegram.http.TelegramControllerConfiguration" href="#io.micronaut.chatbots.telegram.http.TelegramControllerConfiguration">&#128279;</a>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 5. Configuration Properties for <a href="../api/io/micronaut/chatbots/telegram/http/TelegramControllerConfiguration.html">TelegramControllerConfiguration</a></caption>
@@ -208,7 +208,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.telegram.endpoint.path</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">java.lang.String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Path to the controller. Default value  .</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Path to the controller. Default value "/telegram" .</p></td>
 </tr>
 </tbody>
 </table>
