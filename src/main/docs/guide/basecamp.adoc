@@ -1,0 +1,2 @@
+You can develop https://github.com/basecamp/bc3-api/blob/master/sections/chatbots.md[Basecamp Chatbots] quickly with Micronaut Chatbots.
+

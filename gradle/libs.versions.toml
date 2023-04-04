@@ -1,24 +1,34 @@
 [versions]
-micronaut = "4.0.0-SNAPSHOT"
+micronaut = "4.0.0-M1"
 micronaut-docs = "2.0.0"
-micronaut-gradle-plugin = "4.0.0-SNAPSHOT"
-micronaut-test = "4.0.0-SNAPSHOT"
-
-groovy = "4.0.10"
+groovy = "4.0.11"
 spock = "2.3-groovy-4.0"
-kotlin = '1.8.10'
-
-micronaut-aws = "4.0.0-SNAPSHOT"
-micronaut-azure = "5.0.0-SNAPSHOT"
-micronaut-gcp = "5.0.0-SNAPSHOT"
-micronaut-serde = "2.0.0-SNAPSHOT"
-micronaut-validation = "4.0.0-SNAPSHOT"
+kotlin = "1.8.20"
+micronaut-logging = "1.0.0-M1"
+micronaut-test = "4.0.0-M1"
+micronaut-aws = "4.0.0-M1"
+micronaut-gcp = "5.0.0-M1"
+micronaut-serde = "2.0.0-M1"
+micronaut-validation = "4.0.0-M2"
+micronaut-azure = "5.0.0-M1"
+jsonassert = "1.5.0"
 
 [libraries]
+jsonassert = { module = "org.skyscreamer:jsonassert", version.ref = "jsonassert" }
+micronaut-logging = { module = "io.micronaut.logging:micronaut-logging-bom", version.ref = "micronaut-logging" }
 micronaut-aws = { module = "io.micronaut.aws:micronaut-aws-bom", version.ref = "micronaut-aws" }
-micronaut-azure = { module = "io.micronaut.azure:micronaut-azure-bom", version.ref = "micronaut-azure" }
 micronaut-gcp = { module = "io.micronaut.gcp:micronaut-gcp-bom", version.ref = "micronaut-gcp" }
+micronaut-azure = { module = "io.micronaut.azure:micronaut-azure-bom", version.ref = "micronaut-azure" }
 micronaut-serde = { module = "io.micronaut.serde:micronaut-serde-bom", version.ref = "micronaut-serde" }
 micronaut-validation = { module = "io.micronaut.validation:micronaut-validation-bom", version.ref = "micronaut-validation" }
 
+jackson-annotations = { module = 'com.fasterxml.jackson.core:jackson-annotations' }
+azure-functions-java-library = { module = 'com.microsoft.azure.functions:azure-functions-java-library' }
+kotlin-stdlib-jdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8" }
+junit-api = { module = "org.junit.jupiter:junit-jupiter-api" }
+junit-engine = { module = "org.junit.jupiter:junit-jupiter-engine" }
 
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }

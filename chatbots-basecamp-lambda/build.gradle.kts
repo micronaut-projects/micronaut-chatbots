@@ -2,8 +2,9 @@ plugins {
     id("io.micronaut.build.internal.chatbots-module")
 }
 dependencies {
-    implementation(mnSerde.micronaut.serde.api)
-    implementation(projects.micronautChatbotsLambda)
-    api(projects.micronautChatbotsBasecampCore)
+    annotationProcessor(mnSerde.micronaut.serde.processor)
+    implementation(mnSerde.micronaut.serde.jackson)
+    implementation(project(":micronaut-chatbots-lambda"))
+    api(project(":micronaut-chatbots-basecamp-core"))
 }
 

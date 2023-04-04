@@ -1,10 +1,10 @@
 plugins {
     id("io.micronaut.build.internal.chatbots-module")
 }
-
 dependencies {
-    implementation(mnSerde.micronaut.serde.api)
-    api(projects.micronautChatbotsLambda)
-    api(projects.micronautChatbotsTelegramCore)
+    annotationProcessor(mnSerde.micronaut.serde.processor)
+    implementation(mnSerde.micronaut.serde.jackson)
+    api(project(":micronaut-chatbots-lambda"))
+    api(project(":micronaut-chatbots-telegram-core"))
+    testImplementation(libs.jsonassert)
 }
-

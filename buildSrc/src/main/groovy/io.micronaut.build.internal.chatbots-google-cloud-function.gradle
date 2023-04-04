@@ -3,7 +3,13 @@ plugins {
 }
 
 dependencies {
-    implementation(mnSerde.micronaut.serde.api)
+    annotationProcessor(mnSerde.micronaut.serde.processor)
+    implementation(mnSerde.micronaut.serde.jackson)
     api(mnGcp.micronaut.gcp.function)
-    api(mnGcp.functions.framework.api)
+    api("com.google.cloud.functions:functions-framework-api:1.0.4")
+}
+
+micronautBuild {
+    sourceCompatibility.set("17")
+    targetCompatibility.set("17")
 }

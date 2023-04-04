@@ -29,6 +29,10 @@ import io.micronaut.chatbots.core.ChatbotsConfiguration;
 @Requires(property = BasecampControllerConfiguration.PREFIX + ".enabled", notEquals = StringUtils.FALSE, defaultValue = StringUtils.TRUE)
 @ConfigurationProperties(BasecampControllerConfiguration.PREFIX)
 public class BasecampControllerConfiguration extends ControllerConfigurationProperties {
+
+    /**
+     * Basecamp Controller configuration prefix.
+     */
     public static final String PREFIX = ChatbotsConfiguration.PREFIX + ".basecamp.endpoint";
 
     /**

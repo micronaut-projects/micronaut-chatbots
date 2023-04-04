@@ -1,15 +1,16 @@
 plugins {
-    id("io.micronaut.build.internal.chatbots-module")
+    id("io.micronaut.build.internal.module")
 }
-
 dependencies {
-    annotationProcessor(mnValidation.micronaut.validation.processor)
-    implementation(mnValidation.micronaut.validation)
-
-    api(projects.micronautChatbotsCore)
-    api(mnSerde.micronaut.serde.api)
+    api(project(":micronaut-chatbots-core"))
     api(mnAws.micronaut.function.aws)
     api(mnAws.aws.lambda.events)
+
+    annotationProcessor(mnSerde.micronaut.serde.processor)
+    implementation(mnSerde.micronaut.serde.jackson)
+
+    annotationProcessor(mnValidation.micronaut.validation.processor)
+    implementation(mnValidation.micronaut.validation)
 }
 
 micronautBuild {

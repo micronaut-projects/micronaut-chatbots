@@ -15,6 +15,7 @@
  */
 package io.micronaut.chatbots.core;
 
+import io.micronaut.context.annotation.Requires;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.core.annotation.Nullable;
 import io.micronaut.core.io.ResourceResolver;
@@ -36,6 +37,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author Sergio del Amo
  * @since 1.0.0
  */
+@Requires(beans = {ChatbotsConfiguration.class, ResourceResolver.class})
 @Singleton
 public class DefaultTextResourceLoader implements TextResourceLoader {
     private static final String SLASH = "/";
