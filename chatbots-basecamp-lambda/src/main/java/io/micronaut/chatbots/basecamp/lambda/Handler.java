@@ -19,6 +19,7 @@ import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 import io.micronaut.chatbots.basecamp.api.Query;
 import io.micronaut.chatbots.basecamp.core.BasecampBotConfiguration;
+import io.micronaut.chatbots.basecamp.core.BasecampUserAgentValidator;
 import io.micronaut.chatbots.core.Dispatcher;
 import io.micronaut.chatbots.lambda.AbstractHandler;
 import io.micronaut.context.ApplicationContext;
@@ -27,6 +28,9 @@ import io.micronaut.core.annotation.NonNull;
 import io.micronaut.http.HttpHeaders;
 import io.micronaut.serde.ObjectMapper;
 import jakarta.inject.Inject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Optional;
 
 /**
@@ -35,6 +39,7 @@ import java.util.Optional;
  * @since 1.0.0
  */
 public class Handler extends AbstractHandler<BasecampBotConfiguration, Query, String> {
+    private static final Logger LOG = LoggerFactory.getLogger(Handler.class);
     @Inject
     ObjectMapper objectMapper;
 
@@ -68,8 +73,11 @@ public class Handler extends AbstractHandler<BasecampBotConfiguration, Query, St
     @NonNull
     protected boolean validate(@NonNull APIGatewayProxyRequestEvent request) {
         return parseHeader(request, HttpHeaders.USER_AGENT)
-            .map(value -> value.equalsIgnoreCase("Basecamp 3 Integration Command"))
-            .orElse(false);
+            .map(BasecampUserAgentValidator::validateUserAgent)
+            .orElseGet(() -> {
+                LOG.warn("Rejecting request because HTTP Header {} not present", HttpHeaders.USER_AGENT);
+                return false;
+            });
     }
 
     @Override

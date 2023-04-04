@@ -1,0 +1,26 @@
+{
+  "command": "Hello",
+  "creator": {
+    "id": 38769516,
+    "attachable_sgid": "CCh7CEkiCGdpZAY6BkVUSSIpZ2lkOi8vYmMzL1BlcnNvbi8zODc2OTUxNj9leLLpcmVzX2luBjsAVEkiDHB1cnBvc2UGOwBUSSIPYXR0YWNoYWJsZQY7AFRJIg9leHBpcmVzX2F0BjsAVDA=--4ea255787306c901a68a3365023c6378ac5551bb",
+    "name": "John Snow",
+    "email_address": "johnsnow@example.com",
+    "personable_type": "User",
+    "title": null,
+    "bio": "",
+    "location": "",
+    "created_at": "2022-03-04T16:53:05.749+01:00",
+    "updated_at": "2022-06-16T10:53:51.826+02:00",
+    "admin": true,
+    "owner": true,
+    "client": false,
+    "time_zone": "Europe/Madrid",
+    "avatar_url": "https://bc3-production-assets-cdn.basecamp-static.com/5317339/people/CChpLLyTTwI=--60b1d50b9aed688dd10758ccad51320edcccad3f/avatar-64-x4?v=1",
+    "avatar_kind": "custom",
+    "company": {
+      "id": 2975233,
+      "name": "GoT"
+    }
+  },
+  "callback_url": "https://3.basecamp.com/5317339/integrations/3QpCCCnvQzDbW6VBByq3Y87o/buckets/26555285/chats/4701195812/lines"
+}

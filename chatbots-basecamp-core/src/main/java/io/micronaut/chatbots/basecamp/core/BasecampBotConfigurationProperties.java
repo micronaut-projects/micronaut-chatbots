@@ -27,6 +27,9 @@ import io.micronaut.chatbots.core.ChatbotsConfiguration;
  *  */
 @EachProperty(BasecampBotConfigurationProperties.PREFIX)
 public class BasecampBotConfigurationProperties implements BasecampBotConfiguration {
+    /**
+     * Basecamp Configuration prefix.
+     */
     public static final String PREFIX = ChatbotsConfiguration.PREFIX + ".basecamp.bots";
     private static final boolean DEFAULT_ENABLED = true;
 

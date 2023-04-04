@@ -1,0 +1,7 @@
+If you want to deploy to https://cloud.google.com/functions[Google Cloud Functions], you can use the following dependency:
+
+dependency:io.micronaut.chatbots:micronaut-chatbots-basecamp-gcp-function[]
+
+You can use the following entry point:
+
+`io.micronaut.chatbots.basecamp.googlecloud.Handler`

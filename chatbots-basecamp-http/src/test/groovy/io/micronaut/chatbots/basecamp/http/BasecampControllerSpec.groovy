@@ -16,8 +16,10 @@ import io.micronaut.http.client.BlockingHttpClient
 import io.micronaut.http.client.HttpClient
 import io.micronaut.runtime.server.EmbeddedServer
 import jakarta.inject.Singleton
-import jakarta.validation.constraints.NotNull
 import spock.lang.Specification
+
+import jakarta.validation.Valid
+import jakarta.validation.constraints.NotNull
 
 class BasecampControllerSpec extends Specification {
     void "Verify BasecampController success payload"(String path, Map<String, String> props) {

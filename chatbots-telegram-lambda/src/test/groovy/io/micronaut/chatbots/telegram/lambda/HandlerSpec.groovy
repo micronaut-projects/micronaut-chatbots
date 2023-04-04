@@ -14,6 +14,8 @@ import io.micronaut.context.annotation.Requires
 import io.micronaut.core.annotation.NonNull
 import io.micronaut.core.annotation.Nullable
 import jakarta.inject.Singleton
+import org.skyscreamer.jsonassert.JSONAssert
+import org.skyscreamer.jsonassert.JSONCompareMode
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -75,7 +77,8 @@ class HandlerSpec extends Specification {
 
         then:
         200  == response.statusCode
-        '{"method":"sendMessage","chat_id":718265379,"text":"Hello World"}' == response.body
+        JSONAssert.assertEquals(
+                '{"text":"Hello World","method":"sendMessage","chat_id":718265379}', response.body, JSONCompareMode.LENIENT)
 
         cleanup:
         handler.close()
