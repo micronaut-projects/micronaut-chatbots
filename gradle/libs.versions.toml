@@ -10,7 +10,7 @@ micronaut-gcp = "5.0.0-M2"
 micronaut-serde = "2.0.0-M1"
 micronaut-validation = "4.0.0-M4"
 micronaut-azure = "5.0.0-M1"
-jsonassert = "1.5.0"
+jsonassert = "1.5.1"
 
 [libraries]
 jsonassert = { module = "org.skyscreamer:jsonassert", version.ref = "jsonassert" }
