@@ -1,14 +1,14 @@
 [versions]
-micronaut = "4.0.0-M1"
+micronaut = "4.0.0-M2"
 micronaut-docs = "2.0.0"
 groovy = "4.0.11"
 spock = "2.3-groovy-4.0"
 kotlin = "1.8.20"
 micronaut-test = "4.0.0-M1"
 micronaut-aws = "4.0.0-M1"
-micronaut-gcp = "5.0.0-M1"
+micronaut-gcp = "5.0.0-M2"
 micronaut-serde = "2.0.0-M1"
-micronaut-validation = "4.0.0-M2"
+micronaut-validation = "4.0.0-M4"
 micronaut-azure = "5.0.0-M1"
 jsonassert = "1.5.0"
 
