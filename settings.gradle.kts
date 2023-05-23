@@ -33,11 +33,11 @@ include("test-suite-groovy")
 include("test-suite-kotlin")
 configure<io.micronaut.build.MicronautBuildSettingsExtension> {
     useStandardizedProjectNames.set(true)
-    addSnapshotRepository()
     importMicronautCatalog()
     importMicronautCatalog("micronaut-serde")
     importMicronautCatalog("micronaut-validation")
     importMicronautCatalog("micronaut-azure")
     importMicronautCatalog("micronaut-gcp")
     importMicronautCatalog("micronaut-aws")
+    importMicronautCatalog("micronaut-logging")
 }

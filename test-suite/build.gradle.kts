@@ -6,7 +6,7 @@ repositories {
 }
 
 dependencies {
-    testRuntimeOnly(mn.logback.classic)
+    testRuntimeOnly(mnLogging.logback.classic)
     testRuntimeOnly(libs.junit.engine)
     testAnnotationProcessor(mn.micronaut.inject.java)
     testImplementation(mnTest.micronaut.test.junit5)
