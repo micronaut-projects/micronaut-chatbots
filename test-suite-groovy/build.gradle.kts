@@ -5,7 +5,7 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    testRuntimeOnly(mn.logback.classic)
+    testRuntimeOnly(mnLogging.logback.classic)
     testCompileOnly(mn.micronaut.inject.groovy)
     testAnnotationProcessor(mnValidation.micronaut.validation.processor)
     testImplementation(mnValidation.micronaut.validation)
