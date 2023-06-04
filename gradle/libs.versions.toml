@@ -14,6 +14,9 @@ jsonassert = "1.5.1"
 
 micronaut-logging = "1.0.0-M3"
 [libraries]
+# Core
+micronaut-core = { module = 'io.micronaut:micronaut-core-bom', version.ref = 'micronaut' }
+
 micronaut-logging = { module = "io.micronaut.logging:micronaut-logging-bom", version.ref = "micronaut-logging" }
 jsonassert = { module = "org.skyscreamer:jsonassert", version.ref = "jsonassert" }
 micronaut-aws = { module = "io.micronaut.aws:micronaut-aws-bom", version.ref = "micronaut-aws" }
