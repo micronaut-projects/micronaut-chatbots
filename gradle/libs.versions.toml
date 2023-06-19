@@ -8,7 +8,7 @@ micronaut-test = "4.0.0-M6"
 micronaut-aws = "4.0.0-M10"
 micronaut-gcp = "5.0.0-M7"
 micronaut-serde = "2.0.0-M12"
-micronaut-validation = "4.0.0-M9"
+micronaut-validation = "4.0.0-M11"
 micronaut-azure = "5.0.0-M5"
 jsonassert = "1.5.1"
 
