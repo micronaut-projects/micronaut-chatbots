@@ -10,9 +10,4 @@ dependencies {
     implementation(mnSerde.micronaut.serde.jackson)
 }
 
-micronautBuild {
-    binaryCompatibility {
-        enabled.set(false)
-    }
-}
 
