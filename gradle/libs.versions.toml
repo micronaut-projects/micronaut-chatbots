@@ -9,7 +9,7 @@ micronaut-aws = "4.0.0"
 micronaut-gcp = "5.0.0"
 micronaut-serde = "2.0.0"
 micronaut-validation = "4.0.0"
-micronaut-azure = "5.0.0"
+micronaut-azure = "5.0.1"
 jsonassert = "1.5.1"
 
 micronaut-logging = "1.0.0"
