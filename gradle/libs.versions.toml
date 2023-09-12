@@ -12,7 +12,7 @@ micronaut-validation = "4.0.0"
 micronaut-azure = "5.0.0"
 jsonassert = "1.5.1"
 
-micronaut-logging = "1.0.0"
+micronaut-logging = "1.1.2"
 [libraries]
 # Core
 micronaut-core = { module = 'io.micronaut:micronaut-core-bom', version.ref = 'micronaut' }
