@@ -1,4 +1,3 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.kotlin.kapt)
@@ -24,7 +23,7 @@ dependencies {
     testImplementation(libs.kotlin.stdlib.jdk8)
 }
 
-tasks.named('test') {
+tasks.named<Test>("test") {
     useJUnitPlatform()
 }
 
