@@ -68,7 +68,7 @@ public class ReplyKeyboardMarkup {
 
     /**
      *
-     * @return Array of button rows, each represented by an Array of KeyboardButton objects.
+     * @return List of button rows, each represented by an Array of KeyboardButton objects.
      */
     @NonNull
     public List<KeyboardButton> getKeyboard() {

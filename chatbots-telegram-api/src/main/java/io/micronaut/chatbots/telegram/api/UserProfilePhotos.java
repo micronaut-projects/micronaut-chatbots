@@ -64,7 +64,7 @@ public class UserProfilePhotos {
 
     /**
      *
-     * @return Array of PhotoSize Requested profile pictures (in up to 4 sizes each)
+     * @return List of PhotoSize Requested profile pictures (in up to 4 sizes each)
      */
     @NonNull
     public List<List<PhotoSize>> getPhotos() {

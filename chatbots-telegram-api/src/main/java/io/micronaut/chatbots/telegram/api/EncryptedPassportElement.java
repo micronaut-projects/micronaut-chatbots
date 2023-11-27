@@ -169,7 +169,7 @@ public class EncryptedPassportElement {
 
     /**
      *
-     * @return Array of encrypted files with documents provided by the user
+     * @return List of encrypted files with documents provided by the user
      */
     @Nullable
     public List<PassportFile> getFiles() {
@@ -237,7 +237,7 @@ public class EncryptedPassportElement {
 
     /**
      *
-     * @return Array of encrypted files with translated versions of documents provided by the user.
+     * @return List of encrypted files with translated versions of documents provided by the user.
      */
     @Nullable
     public List<PassportFile> getTranslation() {

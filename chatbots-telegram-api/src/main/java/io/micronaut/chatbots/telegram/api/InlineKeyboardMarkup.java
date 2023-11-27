@@ -38,7 +38,7 @@ public class InlineKeyboardMarkup {
 
     /**
      *
-     * @return Array of button rows, each represented by an Array of InlineKeyboardButton objects.
+     * @return List of button rows, each represented by an Array of InlineKeyboardButton objects.
      */
     @NonNull
     public List<List<InlineKeyboardButton>>  getInlineKeyboard() {
