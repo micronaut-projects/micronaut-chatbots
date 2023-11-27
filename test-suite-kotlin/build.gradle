@@ -28,9 +28,8 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
-compileTestKotlin {
-    compilerOptions {
-        jvmTarget = JvmTarget.JVM_17
-        javaParameters = true
+kotlin {
+    jvmToolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
