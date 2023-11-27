@@ -13,6 +13,7 @@ import jakarta.validation.Validator
 
 @MicronautTest(startApplication = false)
 class CreatorSpec extends Specification {
+
     @Inject
     ObjectMapper objectMapper
 
@@ -99,33 +100,33 @@ class CreatorSpec extends Specification {
         json.contains("avatar_kind")
     }
 
-    public static Creator validCreator() {
-        Creator el = new Creator()
-        el.id = 2975233
-        el.name = "GoT"
-        el.id= 38769516
-        el.attachableSgid= "CCh7CEkiCGdpZAY6BkVUSSIpZ2lkOi8vYmMzL1BlcnNvbi8zODc2OTUxNj9leLLpcmVzX2luBjsAVEkiDHB1cnBvc2UGOwBUSSIPYXR0YWNoYWJsZQY7AFRJIg9leHBpcmVzX2F0BjsAVDA=--4ea255787306c901a68a3365023c6378ac5551bb"
-        el.name= "John Snow"
-        el.emailAddress= "johnsnow@example.com"
-        el.personableType= "User"
-        el.title= null
-        el.bio= ""
-        el.location= ""
-        el.createdAt= "2022-03-04T16:53:05.749+01:00"
-        el.updatedAt= "2022-06-16T10:53:51.826+02:00"
-        el.admin= true
-        el.owner= true
-        el.client= false
-        el.timeZone= "Europe/Madrid"
-        el.avatarUrl= "https://bc3-production-assets-cdn.basecamp-static.com/5317339/people/CChpLLyTTwI=--60b1d50b9aed688dd10758ccad51320edcccad3f/avatar-64-x4?v=1"
-        el.avatarKind = "custom"
-        el.company = validCompany()
-        el
+    static Creator validCreator() {
+        new Creator().tap {
+            id = 2975233
+            name = "GoT"
+            id= 38769516
+            attachableSgid= "CCh7CEkiCGdpZAY6BkVUSSIpZ2lkOi8vYmMzL1BlcnNvbi8zODc2OTUxNj9leLLpcmVzX2luBjsAVEkiDHB1cnBvc2UGOwBUSSIPYXR0YWNoYWJsZQY7AFRJIg9leHBpcmVzX2F0BjsAVDA=--4ea255787306c901a68a3365023c6378ac5551bb"
+            name= "John Snow"
+            emailAddress= "johnsnow@example.com"
+            personableType= "User"
+            title= null
+            bio= ""
+            location= ""
+            createdAt= "2022-03-04T16:53:05.749+01:00"
+            updatedAt= "2022-06-16T10:53:51.826+02:00"
+            admin= true
+            owner= true
+            client= false
+            timeZone= "Europe/Madrid"
+            avatarUrl= "https://bc3-production-assets-cdn.basecamp-static.com/5317339/people/CChpLLyTTwI=--60b1d50b9aed688dd10758ccad51320edcccad3f/avatar-64-x4?v=1"
+            avatarKind = "custom"
+            company = validCompany()
+        }
     }
     static Company validCompany() {
-        Company el = new Company()
-        el.id = 2975233
-        el.name = "GoT"
-        el
+        new Company().tap {
+            id = 2975233
+            name = "GoT"
+        }
     }
 }
