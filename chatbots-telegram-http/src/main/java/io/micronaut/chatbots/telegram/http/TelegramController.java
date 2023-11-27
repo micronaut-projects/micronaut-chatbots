@@ -66,7 +66,7 @@ public class TelegramController {
     public HttpResponse<Send> callback(@Header(TokenValidator.X_TELEGRAM_BOT_API_SECRET_TOKEN) String apiSecretToken,
                                     @Body Update update) {
         Optional<TelegramBotConfiguration> botOptional = tokenValidator.validate(apiSecretToken);
-        if (!botOptional.isPresent()) {
+        if (botOptional.isEmpty()) {
             LOG.trace("not bot with token that matches token");
             return HttpResponse.unauthorized();
         }

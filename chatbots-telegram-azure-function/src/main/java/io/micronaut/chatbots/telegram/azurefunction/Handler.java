@@ -68,7 +68,7 @@ public class Handler extends AzureFunction {
         }
         String token = request.getHeaders().get(TokenValidator.X_TELEGRAM_BOT_API_SECRET_TOKEN);
         Optional<TelegramBotConfiguration> botOptional = tokenValidator.validate(token);
-        if (!botOptional.isPresent()) {
+        if (botOptional.isEmpty()) {
             info("BotConfiguration not found for header " + TokenValidator.X_TELEGRAM_BOT_API_SECRET_TOKEN, context);
             return request.createResponseBuilder(HttpStatus.UNAUTHORIZED).build();
         }
