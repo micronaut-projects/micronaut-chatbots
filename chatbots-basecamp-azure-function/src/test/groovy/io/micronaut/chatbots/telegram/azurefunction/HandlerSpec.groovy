@@ -8,7 +8,7 @@ import com.microsoft.azure.functions.HttpStatusType
 import io.micronaut.chatbots.basecamp.api.Query
 import io.micronaut.chatbots.basecamp.core.BasecampBotConfiguration
 import io.micronaut.chatbots.basecamp.core.BasecampHandler
-import io.micronaut.chatbots.basecamp.azurefunction.Handler;
+import io.micronaut.chatbots.basecamp.azurefunction.Handler
 import io.micronaut.core.annotation.NonNull
 import io.micronaut.core.annotation.Nullable
 import io.micronaut.http.HttpHeaders

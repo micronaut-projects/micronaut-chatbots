@@ -19,7 +19,7 @@ import spock.lang.Specification
 class CommandSpec extends Specification {
 
     @Inject
-    Dispatcher<TelegramBotConfiguration, Update, Send> dispatcher;
+    Dispatcher<TelegramBotConfiguration, Update, Send> dispatcher
 
     @Inject
     ObjectMapper objectMapper
