@@ -1,8 +1,6 @@
 introduction:
   title: Introduction
 releaseHistory: Release History
-quickStart:
-  title: Quick Start
 telegram:
   title: Telegram
   telegramWebhook: Telegram Webhook
