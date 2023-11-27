@@ -27,8 +27,8 @@ import java.util.Optional;
  * @since 1.0.0
  */
 public final class ParseModeUtils {
-    private ParseModeUtils() {
 
+    private ParseModeUtils() {
     }
 
     /**
@@ -38,9 +38,9 @@ public final class ParseModeUtils {
      */
     @NonNull
     public static Optional<ParseMode> parseModeOfFileExtension(@NonNull FileExtension fileExtension) {
-        return switch (fileExtension) {
-            case HTML -> Optional.of(ParseMode.HTML);
-            default -> Optional.of(ParseMode.MARKDOWN);
-        };
+        if (fileExtension == FileExtension.HTML) {
+            return Optional.of(ParseMode.HTML);
+        }
+        return Optional.of(ParseMode.MARKDOWN);
     }
 }
