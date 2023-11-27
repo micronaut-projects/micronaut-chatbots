@@ -81,9 +81,9 @@ class ActionParameterSpec extends Specification {
     }
 
     static ActionParameter validActionParameter() {
-        ActionParameter el = new ActionParameter()
-        el.key = "x"
-        el.value = "v"
-        el
+        new ActionParameter().tap {
+            key = "x"
+            value = "v"
+        }
     }
 }

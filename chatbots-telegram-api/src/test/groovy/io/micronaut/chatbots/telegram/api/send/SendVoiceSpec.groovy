@@ -69,13 +69,13 @@ class SendVoiceSpec extends Specification {
     }
 
     static SendVoice validSendVoice() {
-        SendVoice el = new SendVoice()
-        el.chatId = "xx"
-        el.voice = "x"
-        el.duration = null
-        el.parseMode = null
-        el.caption = null
-        el
+        new SendVoice().tap {
+            chatId = "xx"
+            voice = "x"
+            duration = null
+            parseMode = null
+            caption = null
+        }
     }
 
     void "snake case is used for Json serialization"() {

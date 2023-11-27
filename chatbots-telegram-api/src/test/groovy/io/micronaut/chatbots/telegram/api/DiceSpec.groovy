@@ -69,9 +69,9 @@ class DiceSpec extends Specification {
     }
 
     static Dice validDice() {
-        Dice el = new Dice()
-        el.emoji = "x"
-        el.value = 1
-        el
+        new Dice().tap {
+            emoji = "x"
+            value = 1
+        }
     }
 }

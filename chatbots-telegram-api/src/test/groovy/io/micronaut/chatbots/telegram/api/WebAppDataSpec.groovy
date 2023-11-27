@@ -69,9 +69,9 @@ class WebAppDataSpec extends Specification {
     }
 
     static WebAppData validWebAppData() {
-        WebAppData el = new WebAppData()
-        el.data = "1"
-        el.buttonText = "2"
-        el
+        new WebAppData().tap {
+            data = "1"
+            buttonText = "2"
+        }
     }
 }

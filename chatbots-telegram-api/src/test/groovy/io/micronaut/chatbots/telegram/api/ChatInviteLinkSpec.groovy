@@ -70,25 +70,25 @@ class ChatInviteLinkSpec extends Specification {
     }
 
     static ChatInviteLink validChatInviteLink() {
-        ChatInviteLink el = new ChatInviteLink()
-        el.inviteLink = 'x'
-        el.creator = validUser()
-        el.createsJoinRequest = false
-        el.primary = false
-        el.revoked = false
-        el.pendingJoinRequestCount = null
-        el.memberLimit = null
-        el.expireDate = null
-        el.name = null
-        el
+        new ChatInviteLink().tap {
+            inviteLink = 'x'
+            creator = validUser()
+            createsJoinRequest = false
+            primary = false
+            revoked = false
+            pendingJoinRequestCount = null
+            memberLimit = null
+            expireDate = null
+            name = null
+        }
     }
 
     static User validUser() {
-        User el = new User()
-        el.id = 1L
-        el.bot = false
-        el.firstName = "foo"
-        el
+        new User().tap {
+            id = 1L
+            bot = false
+            firstName = "foo"
+        }
     }
 
     void "snake case is used for Json serialization"() {

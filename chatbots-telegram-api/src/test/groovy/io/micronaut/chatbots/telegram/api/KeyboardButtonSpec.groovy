@@ -69,12 +69,12 @@ class KeyboardButtonSpec extends Specification {
     }
 
     static KeyboardButton validKeyboardButton() {
-        KeyboardButton el = new KeyboardButton()
-        el.text = 'x'
-        el.requestContact = null
-        el.requestLocation = null
-        el.requestPoll = null
-        el.webApp = null
-        el
+        new KeyboardButton().tap {
+            text = 'x'
+            requestContact = null
+            requestLocation = null
+            requestPoll = null
+            webApp = null
+        }
     }
 }

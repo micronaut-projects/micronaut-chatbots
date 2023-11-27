@@ -190,11 +190,11 @@ class VideoNoteSpec extends Specification {
     }
 
     static VideoNote validVideoNote() {
-        VideoNote el = new VideoNote()
-        el.fileId = "xxx"
-        el.fileUniqueId = "xxx.yyy"
-        el.duration = 10
-        el.length = 20
-        el
+        new VideoNote().tap {
+            fileId = "xxx"
+            fileUniqueId = "xxx.yyy"
+            duration = 10
+            length = 20
+        }
     }
 }

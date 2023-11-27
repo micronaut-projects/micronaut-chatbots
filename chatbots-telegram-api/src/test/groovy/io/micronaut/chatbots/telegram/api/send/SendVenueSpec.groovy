@@ -69,15 +69,15 @@ class SendVenueSpec extends Specification {
     }
 
     static SendVenue validSendVenue() {
-        SendVenue el = new SendVenue()
-        el.chatId = "xx"
-        el.latitude = 1f
-        el.longitude = 2f
-        el.address = "x"
-        el.title = "x"
-        el.foursquareId = null
-        el.foursquareType = null
-        el
+        new SendVenue().tap {
+            chatId = "xx"
+            latitude = 1f
+            longitude = 2f
+            address = "x"
+            title = "x"
+            foursquareId = null
+            foursquareType = null
+        }
     }
 
     void "snake case is used for Json serialization"() {

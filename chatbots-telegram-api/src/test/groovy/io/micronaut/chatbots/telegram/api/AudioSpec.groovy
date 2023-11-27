@@ -253,14 +253,14 @@ class AudioSpec extends Specification {
     }
 
     static Audio validAudio() {
-        Audio el = new Audio()
-        el.fileId = "xxx"
-        el.fileUniqueId = "xxx.yyy"
-        el.duration = 2
-        el.performer = 'Norah Jones'
-        el.title = 'Forever young'
-        el.mimeType = "mime"
-        el.fileSize = 120
-        el
+        new Audio().tap {
+            fileId = "xxx"
+            fileUniqueId = "xxx.yyy"
+            duration = 2
+            performer = 'Norah Jones'
+            title = 'Forever young'
+            mimeType = "mime"
+            fileSize = 120
+        }
     }
 }

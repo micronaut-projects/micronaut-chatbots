@@ -69,10 +69,10 @@ class ResponseParametersSpec extends Specification {
     }
 
     static ResponseParameters validResponseParameters() {
-        ResponseParameters el = new ResponseParameters()
-        el.migrateToChatId = null
-        el.retryAfter = null
-        el
+        new ResponseParameters().tap {
+            migrateToChatId = null
+            retryAfter = null
+        }
     }
 }
 

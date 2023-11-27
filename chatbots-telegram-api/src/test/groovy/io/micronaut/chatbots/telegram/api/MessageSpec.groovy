@@ -70,26 +70,26 @@ class MessageSpec extends Specification {
     }
 
     static Message validMessage() {
-        Message el = new Message()
-        el.messageId = 123
-        el.from = validUser()
-        el.date = 123
-        el.chat = validChat()
-        el
+        new Message().tap {
+            messageId = 123
+            from = validUser()
+            date = 123
+            chat = validChat()
+        }
     }
 
     static Chat validChat() {
-        Chat el = new Chat()
-        el.id = 123
-        el.type = "private"
-        el
+        new Chat().tap {
+            id = 123
+            type = "private"
+        }
     }
 
     static User validUser() {
-        User el = new User()
-        el.id = 1L
-        el.bot = false
-        el.firstName = "foo"
-        el
+        new User().tap {
+            id = 1L
+            bot = false
+            firstName = "foo"
+        }
     }
 }

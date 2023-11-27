@@ -69,12 +69,12 @@ class SendMessageSpec extends Specification {
     }
 
     static SendMessage validSendMessage() {
-        SendMessage el = new SendMessage()
-        el.chatId = "xx"
-        el.text = "hello world"
-        el.disableWebPagePreview = null
-        el.parseMode = null
-        el
+        new SendMessage().tap {
+            chatId = "xx"
+            text = "hello world"
+            disableWebPagePreview = null
+            parseMode = null
+        }
     }
 
     void "snake case is used for Json serialization"() {

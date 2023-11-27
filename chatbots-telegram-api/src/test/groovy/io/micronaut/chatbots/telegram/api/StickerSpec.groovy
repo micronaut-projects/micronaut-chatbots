@@ -69,17 +69,17 @@ class StickerSpec extends Specification {
     }
 
     static Sticker validSticker() {
-        Sticker el = new Sticker()
-        el.fileId = "xxx"
-        el.fileUniqueId = "xxx.yyy"
-        el.width = 1
-        el.height = 1
-        el.animated = true
-        el.thumb = null
-        el.emoji = null
-        el.name = null
-        el.maskPosition = null
-        el.fileSize = null
-        el
+        new Sticker().tap {
+            fileId = "xxx"
+            fileUniqueId = "xxx.yyy"
+            width = 1
+            height = 1
+            animated = true
+            thumb = null
+            emoji = null
+            name = null
+            maskPosition = null
+            fileSize = null
+        }
     }
 }

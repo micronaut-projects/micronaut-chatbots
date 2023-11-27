@@ -69,9 +69,9 @@ class VideoChatScheduledSpec extends Specification {
     }
 
     static VideoChatScheduled validVideoChatScheduled() {
-        VideoChatScheduled el = new VideoChatScheduled()
-        el.startDate = 12
-        el
+        new VideoChatScheduled().tap {
+            startDate = 12
+        }
     }
 
     void "snake case is used for Json serialization"() {

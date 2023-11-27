@@ -69,9 +69,9 @@ class CompanySpec extends Specification {
     }
 
     static Company validCompany() {
-        Company el = new Company()
-        el.id = 2975233
-        el.name = "GoT"
-        el
+        new Company().tap {
+            id = 2975233
+            name = "GoT"
+        }
     }
 }

@@ -80,8 +80,8 @@ class SlashCommandSpec extends Specification {
     }
 
     static SlashCommand validSlashCommand() {
-        SlashCommand el = new SlashCommand()
-        el.commandId = "xxxx"
-        el
+        new SlashCommand().tap {
+            commandId = "xxxx"
+        }
     }
 }

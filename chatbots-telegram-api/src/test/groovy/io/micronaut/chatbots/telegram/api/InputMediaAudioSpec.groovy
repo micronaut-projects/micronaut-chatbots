@@ -69,11 +69,11 @@ class InputMediaAudioSpec extends Specification {
     }
 
     static InputMediaAudio validInputMediaAudio() {
-        InputMediaAudio el = new InputMediaAudio()
-        el.performer = null
-        el.title = null
-        el.duration = null
-        el.media = 'x'
-        el
+        new InputMediaAudio().tap {
+            performer = null
+            title = null
+            duration = null
+            media = 'x'
+        }
     }
 }

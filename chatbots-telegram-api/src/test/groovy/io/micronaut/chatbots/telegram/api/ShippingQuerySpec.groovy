@@ -69,31 +69,31 @@ class ShippingQuerySpec extends Specification {
     }
 
     static ShippingQuery validShippingQuery() {
-        ShippingQuery el = new ShippingQuery()
-        el.id = "user"
-        el.from = validUser()
-        el.invoicePayload = 'z'
-        el.shippingAddress = validShippingAddress()
-        el
+        new ShippingQuery().tap {
+            id = "user"
+            from = validUser()
+            invoicePayload = 'z'
+            shippingAddress = validShippingAddress()
+        }
     }
 
     static User validUser() {
-        User el = new User()
-        el.id = 1L
-        el.bot = false
-        el.firstName = "foo"
-        el
+        new User().tap {
+            id = 1L
+            bot = false
+            firstName = "foo"
+        }
     }
 
     static ShippingAddress validShippingAddress() {
-        ShippingAddress el = new ShippingAddress()
-        el.countryCode = "es"
-        el.state = "es"
-        el.city = "x"
-        el.streetLine1 = "x"
-        el.streetLine2 = "x"
-        el.postCode = "x"
-        el
+        new ShippingAddress().tap {
+            countryCode = "es"
+            state = "es"
+            city = "x"
+            streetLine1 = "x"
+            streetLine2 = "x"
+            postCode = "x"
+        }
     }
 }
 

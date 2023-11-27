@@ -69,13 +69,13 @@ class ShippingAddressSpec extends Specification {
     }
 
     static ShippingAddress validShippingAddress() {
-        ShippingAddress el = new ShippingAddress()
-        el.countryCode = "es"
-        el.state = "es"
-        el.city = "x"
-        el.streetLine1 = "x"
-        el.streetLine2 = "x"
-        el.postCode = "x"
-        el
+        new ShippingAddress().tap {
+            countryCode = "es"
+            state = "es"
+            city = "x"
+            streetLine1 = "x"
+            streetLine2 = "x"
+            postCode = "x"
+        }
     }
 }

@@ -69,21 +69,21 @@ class VenueSpec extends Specification {
     }
 
     static Venue validVenue() {
-        Venue el = new Venue()
-        el.location = validLocation()
-        el.title = "xxx.yyy"
-        el.address = "x"
-        el.foursquareId = null
-        el.foursquareType = null
-        el.googlePlaceId = null
-        el.googlePlaceType = null
-        el
+        new Venue().tap {
+            location = validLocation()
+            title = "xxx.yyy"
+            address = "x"
+            foursquareId = null
+            foursquareType = null
+            googlePlaceId = null
+            googlePlaceType = null
+        }
     }
 
     static Location validLocation() {
-        Location el = new Location()
-        el.longitude = 1.2
-        el.latitude = 2.5
-        el
+        new Location().tap {
+            longitude = 1.2
+            latitude = 2.5
+        }
     }
 }

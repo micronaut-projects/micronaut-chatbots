@@ -69,11 +69,11 @@ class ChatPhotoSpec extends Specification {
     }
 
     static ChatPhoto validChatPhoto() {
-        ChatPhoto el = new ChatPhoto()
-        el.smallFileId = "x"
-        el.smallFileUniqueId = "y"
-        el.bigFileUniqueId = "x"
-        el.bigFileId = "y"
-        el
+        new ChatPhoto().tap {
+            smallFileId = "x"
+            smallFileUniqueId = "y"
+            bigFileUniqueId = "x"
+            bigFileId = "y"
+        }
     }
 }

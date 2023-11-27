@@ -69,11 +69,11 @@ class ForceReplySpec extends Specification {
     }
 
     static ForceReply validForceReply() {
-        ForceReply el = new ForceReply()
-        el.forceReply = false
-        el.inputFieldPlaceholder = null
-        el.selective = null
-        el
+        new ForceReply().tap {
+            forceReply = false
+            inputFieldPlaceholder = null
+            selective = null
+        }
     }
 
     void "snake case is used for Json serialization"() {

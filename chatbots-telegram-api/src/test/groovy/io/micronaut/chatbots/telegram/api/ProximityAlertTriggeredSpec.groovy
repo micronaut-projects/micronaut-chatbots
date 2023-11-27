@@ -69,19 +69,19 @@ class ProximityAlertTriggeredSpec extends Specification {
     }
 
     static ProximityAlertTriggered validProximityAlertTriggered() {
-        ProximityAlertTriggered el = new ProximityAlertTriggered()
-        el.distance = 12
-        el.watcher = validUser()
-        el.traveler = validUser()
-        el
+        new ProximityAlertTriggered().tap {
+            distance = 12
+            watcher = validUser()
+            traveler = validUser()
+        }
     }
 
     static User validUser() {
-        User el = new User()
-        el.id = 1L
-        el.bot = false
-        el.firstName = "foo"
-        el
+        new User().tap {
+            id = 1L
+            bot = false
+            firstName = "foo"
+        }
     }
 }
 

@@ -69,11 +69,11 @@ class InputMediaAnimationSpec extends Specification {
     }
 
     static InputMediaAnimation validInputMediaAnimation() {
-        InputMediaAnimation el = new InputMediaAnimation()
-        el.width = null
-        el.height = null
-        el.duration = null
-        el.media = 'x'
-        el
+        new InputMediaAnimation().tap {
+            width = null
+            height = null
+            duration = null
+            media = 'x'
+        }
     }
 }

@@ -80,8 +80,8 @@ class UserSpec extends Specification {
     }
 
     static User validUser() {
-        User el = new User()
-        el.name = "foo"
-        el
+        new User().tap {
+            name = "foo"
+        }
     }
 }

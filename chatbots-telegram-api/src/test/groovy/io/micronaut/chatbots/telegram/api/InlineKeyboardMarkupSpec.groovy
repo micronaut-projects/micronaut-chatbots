@@ -69,8 +69,8 @@ class InlineKeyboardMarkupSpec extends Specification {
     }
 
     static InlineKeyboardMarkup validInlineKeyboardMarkup() {
-        InlineKeyboardMarkup el = new InlineKeyboardMarkup()
-        el.inlineKeyboard = []
-        el
+        new InlineKeyboardMarkup().tap {
+            inlineKeyboard = []
+        }
     }
 }

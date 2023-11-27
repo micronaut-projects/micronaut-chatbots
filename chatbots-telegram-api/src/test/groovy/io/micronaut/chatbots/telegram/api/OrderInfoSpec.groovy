@@ -69,11 +69,11 @@ class OrderInfoSpec extends Specification {
     }
 
     static OrderInfo validOrderInfo() {
-        OrderInfo el = new OrderInfo()
-        el.name = null
-        el.phoneNumber = null
-        el.email = null
-        el.shippingAddress = null
-        el
+        new OrderInfo().tap {
+            name = null
+            phoneNumber = null
+            email = null
+            shippingAddress = null
+        }
     }
 }

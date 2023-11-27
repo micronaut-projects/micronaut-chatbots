@@ -220,9 +220,9 @@ class LocationSpec extends Specification {
     }
 
     static Location validLocation() {
-        Location el = new Location()
-        el.longitude = 1.2
-        el.latitude = 2.5
-        el
+        new Location().tap {
+            longitude = 1.2
+            latitude = 2.5
+        }
     }
 }

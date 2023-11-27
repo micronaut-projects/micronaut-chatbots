@@ -69,8 +69,8 @@ class VideoChatParticipantsInvitedSpec extends Specification {
     }
 
     static VideoChatParticipantsInvited validVideoChatParticipantsInvited() {
-        VideoChatParticipantsInvited el = new VideoChatParticipantsInvited()
-        el.users = []
-        el
+        new VideoChatParticipantsInvited().tap {
+            users = []
+        }
     }
 }

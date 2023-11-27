@@ -72,15 +72,15 @@ class ChatAdministratorRightsSpec extends Specification {
     }
 
     static ChatAdministratorRights validChatAdministratorRights() {
-        ChatAdministratorRights el = new ChatAdministratorRights()
-        el.anonymous = false
-        el.canManageChat = false
-        el.canDeleteMessages = false
-        el.canManageVideoChats = false
-        el.canRestrictMembers = false
-        el.canPromoteMembers = false
-        el.canChangeInfo = false
-        el.canInviteUsers = false
-        el
+        new ChatAdministratorRights().tap {
+            anonymous = false
+            canManageChat = false
+            canDeleteMessages = false
+            canManageVideoChats = false
+            canRestrictMembers = false
+            canPromoteMembers = false
+            canChangeInfo = false
+            canInviteUsers = false
+        }
     }
 }

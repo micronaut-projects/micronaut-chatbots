@@ -69,10 +69,10 @@ class UserProfilePhotosSpec extends Specification {
     }
 
     static UserProfilePhotos validUserProfilePhotos() {
-        UserProfilePhotos el = new UserProfilePhotos()
-        el.totalCount = 1
-        el.photos = []
-        el
+        new UserProfilePhotos().tap {
+            totalCount = 1
+            photos = []
+        }
     }
 
     void "snake case is used for Json serialization"() {

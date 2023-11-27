@@ -69,17 +69,17 @@ class EncryptedPassportElementSpec extends Specification {
     }
 
     static EncryptedPassportElement validEncryptedPassportElement() {
-        EncryptedPassportElement el = new EncryptedPassportElement()
-        el.type = "passport"
-        el.data = null
-        el.phoneNumber = null
-        el.email = null
-        el.files = null
-        el.frontSide = null
-        el.reverseSide = null
-        el.selfie = null
-        el.translation = null
-        el.hash = "x"
-        el
+        new EncryptedPassportElement().tap {
+            type = "passport"
+            data = null
+            phoneNumber = null
+            email = null
+            files = null
+            frontSide = null
+            reverseSide = null
+            selfie = null
+            translation = null
+            hash = "x"
+        }
     }
 }

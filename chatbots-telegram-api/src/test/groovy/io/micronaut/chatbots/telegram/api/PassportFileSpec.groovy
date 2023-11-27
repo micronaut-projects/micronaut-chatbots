@@ -69,11 +69,11 @@ class PassportFileSpec extends Specification {
     }
 
     static PassportFile validPassportFile() {
-        PassportFile el = new PassportFile()
-        el.fileId = "xxx"
-        el.fileUniqueId = "xxx.yyy"
-        el.fileSize = 1
-        el.fileDate = 1
-        el
+        new PassportFile().tap {
+            fileId = "xxx"
+            fileUniqueId = "xxx.yyy"
+            fileSize = 1
+            fileDate = 1
+        }
     }
 }

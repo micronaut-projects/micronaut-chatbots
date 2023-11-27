@@ -69,12 +69,12 @@ class FileSpec extends Specification {
     }
 
     static File validFile() {
-        File el = new File()
-        el.fileId = "x"
-        el.fileUniqueId = "y"
-        el.filePath = null
-        el.fileSize = null
-        el
+        new File().tap {
+            fileId = "x"
+            fileUniqueId = "y"
+            filePath = null
+            fileSize = null
+        }
     }
 
     void "snake case is used for Json serialization"() {

@@ -199,10 +199,10 @@ class VoiceSpec extends Specification {
     }
 
     static Voice validVoice() {
-        Voice el = new Voice()
-        el.fileId = "xxx"
-        el.fileUniqueId = "xxx.yyy"
-        el.duration = 10
-        el
+        new Voice().tap {
+            fileId = "xxx"
+            fileUniqueId = "xxx.yyy"
+            duration = 10
+        }
     }
 }
