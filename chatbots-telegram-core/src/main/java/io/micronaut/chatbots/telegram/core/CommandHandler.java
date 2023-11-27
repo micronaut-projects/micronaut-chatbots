@@ -68,8 +68,8 @@ public abstract class CommandHandler implements TelegramHandler<SendMessage> {
                 .flatMap(commandResponse ->
                     SendMessageUtils.compose(spaceParser,
                         input,
-                        commandResponse.getText(),
-                        ParseModeUtils.parseModeOfFileExtension(commandResponse.getExtension()).orElse(null)));
+                        commandResponse.text(),
+                        ParseModeUtils.parseModeOfFileExtension(commandResponse.extension()).orElse(null)));
     }
 
     @Override
