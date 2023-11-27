@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 original authors
+ * Copyright 2017-2023 original authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,13 +38,9 @@ public final class ParseModeUtils {
      */
     @NonNull
     public static Optional<ParseMode> parseModeOfFileExtension(@NonNull FileExtension fileExtension) {
-        switch (fileExtension) {
-            case HTML:
-                return Optional.of(ParseMode.HTML);
-            case TXT:
-            case MARKDOWN:
-            default:
-                return Optional.of(ParseMode.MARKDOWN);
-        }
+        return switch (fileExtension) {
+            case HTML -> Optional.of(ParseMode.HTML);
+            default -> Optional.of(ParseMode.MARKDOWN);
+        };
     }
 }
