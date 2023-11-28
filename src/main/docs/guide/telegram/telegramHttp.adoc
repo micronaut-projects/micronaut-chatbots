@@ -1,6 +1,6 @@
 If you want to configure one endpoint as the Telegram chatbot webhook while using a runtime such as Netty or Servlet, you can include the following dependency:
 
-dependency:io.micronaut.chatbots:chatbots-telegram-http[]
+dependency:mironaut-chatbots-telegram-http[groupId=io.micronaut.chatbots]
 
 You can configure the path with the following:
 
