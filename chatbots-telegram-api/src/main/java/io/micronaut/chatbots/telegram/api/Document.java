@@ -52,7 +52,7 @@ public class Document extends AbstractFile {
      */
     @JsonProperty("file_size")
     @Nullable
-    private Integer fileSize;
+    private Long fileSize;
 
     /**
      *
@@ -110,7 +110,7 @@ public class Document extends AbstractFile {
      * @return File size.
      */
     @Nullable
-    public Integer getFileSize() {
+    public Long getFileSize() {
         return fileSize;
     }
 
@@ -118,7 +118,7 @@ public class Document extends AbstractFile {
      *
      * @param fileSize File size.
      */
-    public void setFileSize(@Nullable Integer fileSize) {
+    public void setFileSize(@Nullable Long fileSize) {
         this.fileSize = fileSize;
     }
 

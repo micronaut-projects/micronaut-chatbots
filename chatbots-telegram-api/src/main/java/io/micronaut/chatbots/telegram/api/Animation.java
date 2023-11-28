@@ -64,7 +64,7 @@ public class Animation extends AbstractFileWithDimensions {
      */
     @Nullable
     @JsonProperty("file_size")
-    private Integer fileSize;
+    private Long fileSize;
 
     /**
      *
@@ -139,7 +139,7 @@ public class Animation extends AbstractFileWithDimensions {
      * @return File size.
      */
     @Nullable
-    public Integer getFileSize() {
+    public Long getFileSize() {
         return fileSize;
     }
 
@@ -147,7 +147,7 @@ public class Animation extends AbstractFileWithDimensions {
      *
      * @param fileSize File size.
      */
-    public void setFileSize(@Nullable Integer fileSize) {
+    public void setFileSize(@Nullable Long fileSize) {
         this.fileSize = fileSize;
     }
 

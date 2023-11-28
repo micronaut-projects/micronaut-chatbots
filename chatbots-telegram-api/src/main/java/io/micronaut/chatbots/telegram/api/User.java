@@ -37,7 +37,7 @@ public class User {
      */
     @NonNull
     @NotNull
-    private Integer id;
+    private Long id;
 
     /**
      * True, if this user is a bot.
@@ -116,7 +116,7 @@ public class User {
      * @return Unique identifier for this user or bot.
      */
     @NonNull
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
@@ -124,7 +124,7 @@ public class User {
      *
      * @param id Unique identifier for this user or bot.
      */
-    public void setId(@NonNull Integer id) {
+    public void setId(@NonNull Long id) {
         this.id = id;
     }
 

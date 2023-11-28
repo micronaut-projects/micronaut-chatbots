@@ -345,14 +345,14 @@ public class Message {
      */
     @JsonProperty("migrate_to_chat_id")
     @Nullable
-    private Integer migrateToChatId;
+    private Long migrateToChatId;
 
     /**
      * The supergroup has been migrated from a group with the specified identifier. This number may be greater than 32 bits and some programming languages may have difficulty/silent defects in interpreting it. But it is smaller than 52 bits, so a signed 64 bit integer or double-precision float type are safe for storing this identifier.
      */
     @Nullable
     @JsonProperty("migrate_from_chat_id")
-    private Integer migrateFromChatId;
+    private Long migrateFromChatId;
 
     /**
      * Specified message was pinned. Note that the Message object in this field will not contain further reply_to_message fields even if it is itself a reply.
@@ -1096,7 +1096,7 @@ public class Message {
      * @return The group has been migrated to a supergroup with the specified identifier.
      */
     @Nullable
-    public Integer getMigrateToChatId() {
+    public Long getMigrateToChatId() {
         return migrateToChatId;
     }
 
@@ -1104,7 +1104,7 @@ public class Message {
      *
      * @param migrateToChatId The group has been migrated to a supergroup with the specified identifier.
      */
-    public void setMigrateToChatId(@Nullable Integer migrateToChatId) {
+    public void setMigrateToChatId(@Nullable Long migrateToChatId) {
         this.migrateToChatId = migrateToChatId;
     }
 
@@ -1113,7 +1113,7 @@ public class Message {
      * @return The supergroup has been migrated from a group with the specified identifier.
      */
     @Nullable
-    public Integer getMigrateFromChatId() {
+    public Long getMigrateFromChatId() {
         return migrateFromChatId;
     }
 
@@ -1121,7 +1121,7 @@ public class Message {
      *
      * @param migrateFromChatId The supergroup has been migrated from a group with the specified identifier.
      */
-    public void setMigrateFromChatId(@Nullable Integer migrateFromChatId) {
+    public void setMigrateFromChatId(@Nullable Long migrateFromChatId) {
         this.migrateFromChatId = migrateFromChatId;
     }
 

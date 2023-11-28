@@ -30,7 +30,7 @@ public class File extends AbstractFile {
      */
     @JsonProperty("file_size")
     @Nullable
-    private Integer fileSize;
+    private Long fileSize;
 
     /**
      * File path. Use https://api.telegram.org/file/bot<token>/<file_path> to get the file.
@@ -44,7 +44,7 @@ public class File extends AbstractFile {
      * @return File size, if known.
      */
     @Nullable
-    public Integer getFileSize() {
+    public Long getFileSize() {
         return fileSize;
     }
 
@@ -52,7 +52,7 @@ public class File extends AbstractFile {
      *
      * @param fileSize File size, if known.
      */
-    public void setFileSize(@Nullable Integer fileSize) {
+    public void setFileSize(@Nullable Long fileSize) {
         this.fileSize = fileSize;
     }
 
