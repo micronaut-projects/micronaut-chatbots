@@ -2,7 +2,19 @@ To develop your bot, create beans of type api:chatbots.telegram.core.TelegramHan
 
 snippet::io.micronaut.chatbots.telegram.HelloWorldHandler[]
 
-To respond to https://core.telegram.org/bots/features#commands[Telegram Bot commands], you can extend from api:chatbots.telegram.core.CommandHandler[].
+To respond to https://core.telegram.org/bots/features#commands[Telegram Bot commands], with static content, you can extend from api:chatbots.telegram.core.CommandHandler[].
+For example to respond to an `/about` command with a static message, you create a `CommandHandler` bean:
 
+snippet::io.micronaut.chatbots.telegram.AboutCommandHandler[tags=class]
 
+And then create some content with a matching name in the `botcommands` directory:
 
+[source,md]
+.resources/botcommands/about.md
+----
+include::test-suite/src/test/resources/botcommands/about.md[]
+----
+
+The `botcommands` directory may be configured via the `micronaut.chatbots.folder` configuration property.
+
+include::{includedir}configurationProperties/io.micronaut.chatbots.core.ChatbotsConfigurationProperties.adoc[]

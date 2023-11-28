@@ -2,6 +2,6 @@ If you want to configure one endpoint as the Telegram chatbot webhook while usin
 
 dependency:mironaut-chatbots-telegram-http[groupId=io.micronaut.chatbots]
 
-You can configure the path with the following:
+You also need to con configure the path with the following:
 
 include::{includedir}configurationProperties/io.micronaut.chatbots.telegram.http.TelegramControllerConfiguration.adoc[]
