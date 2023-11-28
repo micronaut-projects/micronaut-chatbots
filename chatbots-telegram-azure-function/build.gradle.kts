@@ -4,5 +4,6 @@ plugins {
 dependencies {
     implementation(mnSerde.micronaut.serde.jackson)
     api(projects.micronautChatbotsTelegramCore)
+    testImplementation(libs.groovy.json)
     testRuntimeOnly(mn.snakeyaml)
 }

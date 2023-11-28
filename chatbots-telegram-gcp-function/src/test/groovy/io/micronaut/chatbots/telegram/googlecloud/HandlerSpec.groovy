@@ -2,6 +2,7 @@ package io.micronaut.chatbots.telegram.googlecloud
 
 import com.google.cloud.functions.HttpRequest
 import com.google.cloud.functions.HttpResponse
+import groovy.json.JsonSlurper
 import io.micronaut.chatbots.core.SpaceParser
 import io.micronaut.chatbots.telegram.api.Chat
 import io.micronaut.chatbots.telegram.api.Update
@@ -16,8 +17,6 @@ import jakarta.inject.Singleton
 import spock.lang.AutoCleanup
 import spock.lang.Shared
 import spock.lang.Specification
-import org.skyscreamer.jsonassert.JSONAssert
-import org.skyscreamer.jsonassert.JSONCompareMode
 import jakarta.validation.Valid
 import jakarta.validation.constraints.NotNull
 import java.nio.charset.StandardCharsets
@@ -57,8 +56,11 @@ class HandlerSpec extends Specification {
         String result = ((ByteArrayOutputStream) response.outputStream).toString(StandardCharsets.UTF_8)
 
         then:
-        JSONAssert.assertEquals(
-                '{"text":"Hello World","method":"sendMessage","chat_id":718265379}', result, JSONCompareMode.LENIENT)
+        with(new JsonSlurper().parseText(result)) {
+            method == 'sendMessage'
+            chat_id == 718265379
+            text == 'Hello World'
+        }
     }
 
     void "test null update is unprocessable"() {

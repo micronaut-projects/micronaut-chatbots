@@ -34,7 +34,9 @@ import io.micronaut.json.JsonMapper;
 import jakarta.inject.Inject;
 
 import java.io.IOException;
+import java.util.Map;
 import java.util.Optional;
+import java.util.TreeMap;
 
 import static io.micronaut.http.HttpHeaders.CONTENT_TYPE;
 
@@ -72,7 +74,10 @@ public class Handler extends AzureFunction {
     ) {
         info("Executing Function: " + getClass().getName(), context);
 
-        String token = request.getHeaders().get(TokenValidator.X_TELEGRAM_BOT_API_SECRET_TOKEN.toLowerCase());
+        Map<String, String> headers = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
+        headers.putAll(request.getHeaders());
+
+        String token = headers.get(TokenValidator.X_TELEGRAM_BOT_API_SECRET_TOKEN);
         if (token == null) {
             error("Token not found in header " + TokenValidator.X_TELEGRAM_BOT_API_SECRET_TOKEN, context);
             return request.createResponseBuilder(HttpStatus.UNAUTHORIZED).build();

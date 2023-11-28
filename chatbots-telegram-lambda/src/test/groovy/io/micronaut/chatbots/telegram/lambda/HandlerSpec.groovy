@@ -2,6 +2,7 @@ package io.micronaut.chatbots.telegram.lambda
 
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent
+import groovy.json.JsonSlurper
 import io.micronaut.chatbots.core.SpaceParser
 import io.micronaut.chatbots.telegram.api.Chat
 import io.micronaut.chatbots.telegram.api.Update
@@ -14,8 +15,6 @@ import io.micronaut.context.annotation.Requires
 import io.micronaut.core.annotation.NonNull
 import io.micronaut.core.annotation.Nullable
 import jakarta.inject.Singleton
-import org.skyscreamer.jsonassert.JSONAssert
-import org.skyscreamer.jsonassert.JSONCompareMode
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -77,8 +76,11 @@ class HandlerSpec extends Specification {
 
         then:
         200  == response.statusCode
-        JSONAssert.assertEquals(
-                '{"text":"Hello World","method":"sendMessage","chat_id":718265379}', response.body, JSONCompareMode.LENIENT)
+        with(new JsonSlurper().parseText(response.body)) {
+            method == 'sendMessage'
+            chat_id == 718265379
+            text == 'Hello World'
+        }
 
         cleanup:
         handler.close()
