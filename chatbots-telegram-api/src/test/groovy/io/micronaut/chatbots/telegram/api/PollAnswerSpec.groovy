@@ -69,18 +69,18 @@ class PollAnswerSpec extends Specification {
     }
 
     static PollAnswer validPollAnswer() {
-        PollAnswer el = new PollAnswer()
-        el.pollId = "user"
-        el.user = validUser()
-        el.optionIds = [1]
-        el
+        new PollAnswer().tap {
+            pollId = "user"
+            user = validUser()
+            optionIds = [1]
+        }
     }
 
     static User validUser() {
-        User el = new User()
-        el.id = 1L
-        el.bot = false
-        el.firstName = "foo"
-        el
+        new User().tap {
+            id = 1L
+            bot = false
+            firstName = "foo"
+        }
     }
 }

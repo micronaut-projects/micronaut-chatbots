@@ -69,15 +69,15 @@ class ChatPermissionsSpec extends Specification {
     }
 
     static ChatPermissions validChatPermissions() {
-        ChatPermissions el = new ChatPermissions()
-        el.canSendMessages = null
-        el.canSendMediaMessages = null
-        el.canSendPolls = null
-        el.canSendOtherMessages = null
-        el.canAddWebPagePreviews = null
-        el.canChangeInfo = null
-        el.canInviteUsers = null
-        el.canPinMessages = null
-        el
+        new ChatPermissions().tap {
+            canSendMessages = null
+            canSendMediaMessages = null
+            canSendPolls = null
+            canSendOtherMessages = null
+            canAddWebPagePreviews = null
+            canChangeInfo = null
+            canInviteUsers = null
+            canPinMessages = null
+        }
     }
 }

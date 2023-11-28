@@ -70,14 +70,14 @@ class MessageEntitySpec extends Specification {
     }
 
     static MessageEntity validMessageEntity() {
-        MessageEntity el = new MessageEntity()
-        el.type = "x"
-        el.offset = 1
-        el.length = 1
-        el.url = null
-        el.user = null
-        el.language= null
-        el.customEmojiId = null
-        el
+        new MessageEntity().tap {
+            type = "x"
+            offset = 1
+            length = 1
+            url = null
+            user = null
+            language= null
+            customEmojiId = null
+        }
     }
 }

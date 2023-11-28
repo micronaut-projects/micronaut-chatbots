@@ -69,12 +69,12 @@ class SendLocationSpec extends Specification {
     }
 
     static SendLocation validSendLocation() {
-        SendLocation el = new SendLocation()
-        el.chatId = "xx"
-        el.longitude = 1f
-        el.latitude = 1f
-        el.livePeriod = null
-        el
+        new SendLocation().tap {
+            chatId = "xx"
+            longitude = 1f
+            latitude = 1f
+            livePeriod = null
+        }
     }
 
     void "snake case is used for Json serialization"() {

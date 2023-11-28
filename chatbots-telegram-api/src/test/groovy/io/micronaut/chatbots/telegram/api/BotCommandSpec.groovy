@@ -69,9 +69,9 @@ class BotCommandSpec extends Specification {
     }
 
     static BotCommand validBotCommand() {
-        BotCommand el = new BotCommand()
-        el.command = 'a'
-        el.description = 'aaa'
-        el
+        new BotCommand().tap {
+            command = 'a'
+            description = 'aaa'
+        }
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 original authors
+ * Copyright 2017-2023 original authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,45 +17,14 @@ package io.micronaut.chatbots.core;
 
 import io.micronaut.core.annotation.NonNull;
 
-
 /**
  * Static Response for a Slash command.
+ *
+ * @param extension Extension
+ * @param text      response Text
+ *
  * @author Sergio del Amo
  * @since 1.0.0
  */
-public class CommandResponse {
-    @NonNull
-    private final FileExtension extension;
-
-    @NonNull
-    private final String text;
-
-    /**
-     *
-     * @param extension Extension
-     * @param text response Text
-     */
-    public CommandResponse(@NonNull FileExtension extension,
-                           @NonNull String text) {
-        this.extension = extension;
-        this.text = text;
-    }
-
-    /**
-     *
-     * @return File extension
-     */
-    @NonNull
-    public FileExtension getExtension() {
-        return extension;
-    }
-
-    /**
-     *
-     * @return response Text
-     */
-    @NonNull
-    public String getText() {
-        return text;
-    }
+public record CommandResponse(@NonNull FileExtension extension, @NonNull String text) {
 }

@@ -69,22 +69,22 @@ class PreCheckoutQuerySpec extends Specification {
     }
 
     static PreCheckoutQuery validPreCheckoutQuery() {
-        PreCheckoutQuery el = new PreCheckoutQuery()
-        el.id = 'x'
-        el.from = validUser()
-        el.currency = 'USD'
-        el.totalAmount = 1
-        el.invoicePayload = 'x'
-        el.shippingOptionId = null
-        el.orderInfo = null
-        el
+        new PreCheckoutQuery().tap {
+            id = 'x'
+            from = validUser()
+            currency = 'USD'
+            totalAmount = 1
+            invoicePayload = 'x'
+            shippingOptionId = null
+            orderInfo = null
+        }
     }
 
     static User validUser() {
-        User el = new User()
-        el.id = 1L
-        el.bot = false
-        el.firstName = "foo"
-        el
+        new User().tap {
+            id = 1L
+            bot = false
+            firstName = "foo"
+        }
     }
 }

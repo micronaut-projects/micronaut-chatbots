@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 original authors
+ * Copyright 2017-2023 original authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,7 +68,7 @@ public class Handler extends AzureFunction {
         }
         String token = request.getHeaders().get(TokenValidator.X_TELEGRAM_BOT_API_SECRET_TOKEN);
         Optional<TelegramBotConfiguration> botOptional = tokenValidator.validate(token);
-        if (!botOptional.isPresent()) {
+        if (botOptional.isEmpty()) {
             info("BotConfiguration not found for header " + TokenValidator.X_TELEGRAM_BOT_API_SECRET_TOKEN, context);
             return request.createResponseBuilder(HttpStatus.UNAUTHORIZED).build();
         }

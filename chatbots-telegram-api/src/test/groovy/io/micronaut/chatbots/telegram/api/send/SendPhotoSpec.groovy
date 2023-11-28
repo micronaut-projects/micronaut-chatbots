@@ -69,12 +69,12 @@ class SendPhotoSpec extends Specification {
     }
 
     static SendPhoto validSendPhoto() {
-        SendPhoto el = new SendPhoto()
-        el.chatId = "xx"
-        el.photo = "xx"
-        el.parseMode = null
-        el.caption = null
-        el
+        new SendPhoto().tap {
+            chatId = "xx"
+            photo = "xx"
+            parseMode = null
+            caption = null
+        }
     }
 
     void "snake case is used for Json serialization"() {

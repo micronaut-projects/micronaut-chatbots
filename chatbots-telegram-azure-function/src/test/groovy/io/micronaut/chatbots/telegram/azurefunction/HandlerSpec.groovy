@@ -148,7 +148,7 @@ class HandlerSpec extends Specification {
     @Singleton
     static class HelloWorld implements TelegramHandler<SendMessage> {
 
-        private final SpaceParser<Update, Chat> spaceParser;
+        private final SpaceParser<Update, Chat> spaceParser
 
         HelloWorld(SpaceParser<Update, Chat> spaceParser) {
             this.spaceParser = spaceParser

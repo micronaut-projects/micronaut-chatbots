@@ -69,11 +69,11 @@ class MaskPositionSpec extends Specification {
     }
 
     static MaskPosition validMaskPosition() {
-        MaskPosition el = new MaskPosition()
-        el.point = MaskPositionPoint.CHIN
-        el.xshift = 1f
-        el.yshift = 2f
-        el.scale  = 1f
-        el
+        new MaskPosition().tap {
+            point = MaskPositionPoint.CHIN
+            xshift = 1f
+            yshift = 2f
+            scale  = 1f
+        }
     }
 }

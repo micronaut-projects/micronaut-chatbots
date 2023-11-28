@@ -69,9 +69,9 @@ class PollOptionSpec extends Specification {
     }
 
     static PollOption validPollOption() {
-        PollOption el = new PollOption()
-        el.text = 'a'
-        el.voterCount = 1
-        el
+        new PollOption().tap {
+            text = 'a'
+            voterCount = 1
+        }
     }
 }

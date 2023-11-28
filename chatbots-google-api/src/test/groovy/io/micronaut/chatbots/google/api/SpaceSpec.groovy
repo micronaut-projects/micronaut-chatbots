@@ -80,8 +80,8 @@ class SpaceSpec extends Specification {
     }
 
     static Space validSpace() {
-        Space el = new Space()
-        el.name = "foo"
-        el
+        new Space().tap {
+            name = "foo"
+        }
     }
 }

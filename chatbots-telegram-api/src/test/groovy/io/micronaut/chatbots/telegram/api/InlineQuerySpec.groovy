@@ -69,22 +69,22 @@ class InlineQuerySpec extends Specification {
     }
 
     static InlineQuery validInlineQuery() {
-        InlineQuery el = new InlineQuery()
-        el.id = "x"
-        el.from = validUser()
-        el.query = "foo"
-        el.offset = "f"
-        el.chatType = null
-        el.location = null
-        el
+        new InlineQuery().tap {
+            id = "x"
+            from = validUser()
+            query = "foo"
+            offset = "f"
+            chatType = null
+            location = null
+        }
     }
 
     static User validUser() {
-        User el = new User()
-        el.id = 1L
-        el.bot = false
-        el.firstName = "foo"
-        el
+        new User().tap {
+            id = 1L
+            bot = false
+            firstName = "foo"
+        }
     }
 
     void "snake case is used for Json serialization"() {

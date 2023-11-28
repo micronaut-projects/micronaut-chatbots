@@ -69,14 +69,14 @@ class SuccessfulPaymentSpec extends Specification {
     }
 
     static SuccessfulPayment validSuccessfulPayment() {
-        SuccessfulPayment el = new SuccessfulPayment()
-        el.currency = "USD"
-        el.totalAmount = 1
-        el.invoicePayload = "x"
-        el.shippingOptionId = null
-        el.orderInfo = null
-        el.telegramPaymentChargeId = "1"
-        el.providerPaymentChargeId = "1"
-        el
+        new SuccessfulPayment().tap {
+            currency = "USD"
+            totalAmount = 1
+            invoicePayload = "x"
+            shippingOptionId = null
+            orderInfo = null
+            telegramPaymentChargeId = "1"
+            providerPaymentChargeId = "1"
+        }
     }
 }

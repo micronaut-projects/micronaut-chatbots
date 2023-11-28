@@ -69,9 +69,9 @@ class WebAppInfoSpec extends Specification {
     }
 
     static WebAppInfo validWebAppInfo() {
-        WebAppInfo el = new WebAppInfo()
-        el.url = "x"
-        el
+        new WebAppInfo().tap {
+            url = "x"
+        }
     }
 
     void "snake case is used for Json serialization"() {

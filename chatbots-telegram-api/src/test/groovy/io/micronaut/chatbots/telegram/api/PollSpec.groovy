@@ -76,16 +76,16 @@ class PollSpec extends Specification {
     }
 
     static Poll validPoll() {
-        Poll el = new Poll()
-        el.id = 'x'
-        el.question = 'x'
-        el.options = []
-        el.totalVoterCount = 1
-        el.closed = false
-        el.anonymous = false
-        el.type = 'regular'
-        el.allowsMultipleAnswers = false
-        el
+        new Poll().tap {
+            id = 'x'
+            question = 'x'
+            options = []
+            totalVoterCount = 1
+            closed = false
+            anonymous = false
+            type = 'regular'
+            allowsMultipleAnswers = false
+        }
     }
 
     void "snake case is used for Json serialization"() {

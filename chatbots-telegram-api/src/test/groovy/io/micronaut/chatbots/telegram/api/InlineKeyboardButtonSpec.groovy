@@ -69,16 +69,16 @@ class InlineKeyboardButtonSpec extends Specification {
     }
 
     static InlineKeyboardButton validInlineKeyboardButton() {
-        InlineKeyboardButton el = new InlineKeyboardButton()
-        el.text = "x"
-        el.url = null
-        el.callbackData = null
-        el.webApp = null
-        el.loginUrl = null
-        el.switchInlineQuery = null
-        el.switchInlineQueryCurrentChat = null
-        el.callbackGame = null
-        el.pay = null
-        el
+        new InlineKeyboardButton().tap {
+            text = "x"
+            url = null
+            callbackData = null
+            webApp = null
+            loginUrl = null
+            switchInlineQuery = null
+            switchInlineQueryCurrentChat = null
+            callbackGame = null
+            pay = null
+        }
     }
 }

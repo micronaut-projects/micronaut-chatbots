@@ -69,9 +69,9 @@ class VideoChatEndedSpec extends Specification {
     }
 
     static VideoChatEnded validVideoChatEnded() {
-        VideoChatEnded el = new VideoChatEnded()
-        el.duration = 12
-        el
+        new VideoChatEnded().tap {
+            duration = 12
+        }
     }
 
     void "snake case is used for Json serialization"() {

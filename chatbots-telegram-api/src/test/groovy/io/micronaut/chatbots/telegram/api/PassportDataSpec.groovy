@@ -69,17 +69,17 @@ class PassportDataSpec extends Specification {
     }
 
     static PassportData validPassportData() {
-        PassportData el = new PassportData()
-        el.data = []
-        el.credentials = validEncryptedCredentials()
-        el
+        new PassportData().tap {
+            data = []
+            credentials = validEncryptedCredentials()
+        }
     }
 
     static EncryptedCredentials validEncryptedCredentials() {
-        EncryptedCredentials el = new EncryptedCredentials()
-        el.data = "x"
-        el.hash = "x"
-        el.secret = "x"
-        el
+        new EncryptedCredentials().tap {
+            data = "x"
+            hash = "x"
+            secret = "x"
+        }
     }
 }

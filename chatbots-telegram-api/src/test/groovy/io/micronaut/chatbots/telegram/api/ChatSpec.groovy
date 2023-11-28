@@ -69,9 +69,9 @@ class ChatSpec extends Specification {
     }
 
     static Chat validChat() {
-        Chat el = new Chat()
-        el.id = 123
-        el.type = "private"
-        el
+        new Chat().tap {
+            id = 123
+            type = "private"
+        }
     }
 }

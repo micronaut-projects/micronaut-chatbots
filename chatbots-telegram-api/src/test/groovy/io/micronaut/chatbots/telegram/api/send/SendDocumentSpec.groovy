@@ -69,16 +69,16 @@ class SendDocumentSpec extends Specification {
     }
 
     static SendDocument validSendDocument() {
-        SendDocument el = new SendDocument()
-        el.chatId = "xx"
-        el.document = "xx"
-        el.parseMode = null
-        el.caption = null
-        el.thumb = null
-        el.replyMarkup = null
-        el.disableNotification = null
-        el.replyToMessageId = null
-        el
+        new SendDocument().tap {
+            chatId = "xx"
+            document = "xx"
+            parseMode = null
+            caption = null
+            thumb = null
+            replyMarkup = null
+            disableNotification = null
+            replyToMessageId = null
+        }
     }
 
     void "snake case is used for Json serialization"() {

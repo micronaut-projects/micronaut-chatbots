@@ -69,14 +69,14 @@ class SendVideoNoteSpec extends Specification {
     }
 
     static SendVideoNote validSendVideoNote() {
-        SendVideoNote el = new SendVideoNote()
-        el.chatId = "xx"
-        el.videoNote = "x"
-        el.disableNotification = null
-        el.thumb = null
-        el.length = null
-        el.duration = null
-        el
+        new SendVideoNote().tap {
+            chatId = "xx"
+            videoNote = "x"
+            disableNotification = null
+            thumb = null
+            length = null
+            duration = null
+        }
     }
 
     void "snake case is used for Json serialization"() {

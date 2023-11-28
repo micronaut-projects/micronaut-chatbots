@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2021 original authors
+ * Copyright 2017-2023 original authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,7 +44,7 @@ public class PassportData {
 
     /**
      *
-     * @return Array with information about documents and other Telegram Passport elements that was shared with the bot.
+     * @return List with information about documents and other Telegram Passport elements that was shared with the bot.
      */
     public List<EncryptedPassportElement> getData() {
         return data;

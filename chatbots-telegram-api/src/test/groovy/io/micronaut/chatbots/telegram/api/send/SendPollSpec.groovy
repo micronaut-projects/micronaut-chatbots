@@ -69,16 +69,16 @@ class SendPollSpec extends Specification {
     }
 
     static SendPoll validSendPoll() {
-        SendPoll el = new SendPoll()
-        el.chatId = "xx"
-        el.question = "xx"
-        el.options = []
-        el.closed = null
-        el.correctOptionId = null
-        el.allowsMultipleAnswers = null
-        el.type = null
-        el.anonymous = null
-        el
+        new SendPoll().tap {
+            chatId = "xx"
+            question = "xx"
+            options = []
+            closed = null
+            correctOptionId = null
+            allowsMultipleAnswers = null
+            type = null
+            anonymous = null
+        }
     }
 
     void "snake case is used for Json serialization"() {

@@ -31,6 +31,7 @@ include("chatbots-bom")
 include("test-suite")
 include("test-suite-groovy")
 include("test-suite-kotlin")
+
 configure<io.micronaut.build.MicronautBuildSettingsExtension> {
     useStandardizedProjectNames.set(true)
     importMicronautCatalog()
@@ -39,5 +40,4 @@ configure<io.micronaut.build.MicronautBuildSettingsExtension> {
     importMicronautCatalog("micronaut-azure")
     importMicronautCatalog("micronaut-gcp")
     importMicronautCatalog("micronaut-aws")
-    importMicronautCatalog("micronaut-logging")
 }

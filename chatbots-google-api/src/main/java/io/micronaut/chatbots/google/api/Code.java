@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 original authors
+ * Copyright 2017-2023 original authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import io.micronaut.http.HttpStatus;
  * @since 1.0.0
  */
 public enum Code {
+
     /**
      * Not an error; returned on success.
      * HTTP Mapping: 200 OK
@@ -118,37 +119,19 @@ public enum Code {
     DATA_LOSS;
 
     public int toHttpStatusCode() {
-        switch (this) {
-            case OK:
-                return HttpStatus.OK.getCode();
-            case CANCELLED:
-                return 499;
-            case OUT_OF_RANGE:
-            case FAILED_PRECONDITION:
-            case INVALID_ARGUMENT:
-                return HttpStatus.BAD_REQUEST.getCode();
-            case DEADLINE_EXCEEDED:
-                return HttpStatus.GATEWAY_TIMEOUT.getCode();
-            case NOT_FOUND:
-                return HttpStatus.NOT_FOUND.getCode();
-            case ABORTED:
-            case ALREADY_EXISTS:
-                return HttpStatus.CONFLICT.getCode();
-            case PERMISSION_DENIED:
-                return HttpStatus.FORBIDDEN.getCode();
-            case UNAUTHENTICATED:
-                return HttpStatus.UNAUTHORIZED.getCode();
-            case RESOURCE_EXHAUSTED:
-                return HttpStatus.TOO_MANY_REQUESTS.getCode();
-            case UNIMPLEMENTED:
-                return HttpStatus.NOT_IMPLEMENTED.getCode();
-            case UNAVAILABLE:
-                return HttpStatus.SERVICE_UNAVAILABLE.getCode();
-            case DATA_LOSS:
-            case INTERNAL:
-            case UNKNOWN:
-            default:
-                return HttpStatus.INTERNAL_SERVER_ERROR.getCode();
-        }
+        return switch (this) {
+            case OK -> HttpStatus.OK.getCode();
+            case CANCELLED -> 499;
+            case OUT_OF_RANGE, FAILED_PRECONDITION, INVALID_ARGUMENT -> HttpStatus.BAD_REQUEST.getCode();
+            case DEADLINE_EXCEEDED -> HttpStatus.GATEWAY_TIMEOUT.getCode();
+            case NOT_FOUND -> HttpStatus.NOT_FOUND.getCode();
+            case ABORTED, ALREADY_EXISTS -> HttpStatus.CONFLICT.getCode();
+            case PERMISSION_DENIED -> HttpStatus.FORBIDDEN.getCode();
+            case UNAUTHENTICATED -> HttpStatus.UNAUTHORIZED.getCode();
+            case RESOURCE_EXHAUSTED -> HttpStatus.TOO_MANY_REQUESTS.getCode();
+            case UNIMPLEMENTED -> HttpStatus.NOT_IMPLEMENTED.getCode();
+            case UNAVAILABLE -> HttpStatus.SERVICE_UNAVAILABLE.getCode();
+            default -> HttpStatus.INTERNAL_SERVER_ERROR.getCode();
+        };
     }
 }

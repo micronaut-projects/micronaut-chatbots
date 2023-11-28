@@ -81,9 +81,9 @@ class FormActionSpec extends Specification {
     }
 
     static FormAction validFormAction() {
-        FormAction el = new FormAction()
-        el.actionMethodName = "foo"
-        el.parameters = [ActionParameterSpec.validActionParameter()]
-        el
+        new FormAction().tap {
+            actionMethodName = "foo"
+            parameters = [ActionParameterSpec.validActionParameter()]
+        }
     }
 }

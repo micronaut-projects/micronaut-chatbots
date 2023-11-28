@@ -69,16 +69,16 @@ class SendAudioSpec extends Specification {
     }
 
     static SendAudio validSendAudio() {
-        SendAudio el = new SendAudio()
-        el.chatId = "xx"
-        el.audio = "x"
-        el.thumb = null
-        el.title = null
-        el.performer = null
-        el.duration = null
-        el.parseMode = null
-        el.caption = null
-        el
+        new SendAudio().tap {
+            chatId = "xx"
+            audio = "x"
+            thumb = null
+            title = null
+            performer = null
+            duration = null
+            parseMode = null
+            caption = null
+        }
     }
 
     void "snake case is used for Json serialization"() {

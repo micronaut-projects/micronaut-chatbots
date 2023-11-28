@@ -69,9 +69,9 @@ class MessageAutoDeleteTimerChangedSpec extends Specification {
     }
 
     static MessageAutoDeleteTimerChanged validMessageAutoDeleteTimerChanged() {
-        MessageAutoDeleteTimerChanged el = new MessageAutoDeleteTimerChanged()
-        el.messageAutoDeleteTime = 12
-        el
+        new MessageAutoDeleteTimerChanged().tap {
+            messageAutoDeleteTime = 12
+        }
     }
 
     void "snake case is used for Json serialization"() {

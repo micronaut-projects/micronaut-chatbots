@@ -69,12 +69,12 @@ class InvoiceSpec extends Specification {
     }
 
     static Invoice validInvoice() {
-        Invoice el = new Invoice()
-        el.title = "x"
-        el.description = "x"
-        el.startParameter = "x"
-        el.currency = "USD"
-        el.totalAmount = 1
-        el
+        new Invoice().tap {
+            title = "x"
+            description = "x"
+            startParameter = "x"
+            currency = "USD"
+            totalAmount = 1
+        }
     }
 }

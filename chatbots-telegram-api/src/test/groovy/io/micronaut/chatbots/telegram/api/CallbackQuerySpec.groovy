@@ -69,23 +69,23 @@ class CallbackQuerySpec extends Specification {
     }
 
     static CallbackQuery validCallbackQuery() {
-        CallbackQuery el = new CallbackQuery()
-        el.id = "1"
-        el.from = validUser()
-        el.chatInstance = "1"
-        el.message = null
-        el.inlineMessageId = null
-        el.data = null
-        el.data = null
-        el.gameShortName = null
-        el
+        new CallbackQuery().tap {
+            id = "1"
+            from = validUser()
+            chatInstance = "1"
+            message = null
+            inlineMessageId = null
+            data = null
+            data = null
+            gameShortName = null
+        }
     }
 
     static User validUser() {
-        User el = new User()
-        el.id = 1L
-        el.bot = false
-        el.firstName = "foo"
-        el
+        new User().tap {
+            id = 1L
+            bot = false
+            firstName = "foo"
+        }
     }
 }

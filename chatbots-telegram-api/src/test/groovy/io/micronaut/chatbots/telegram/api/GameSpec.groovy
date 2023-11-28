@@ -69,13 +69,13 @@ class GameSpec extends Specification {
     }
 
     static Game validGame() {
-        Game el = new Game()
-        el.title = "x"
-        el.description = "x"
-        el.photo = []
-        el.text = null
-        el.textEntities = null
-        el.animation = null
-        el
+        new Game().tap {
+            title = "x"
+            description = "x"
+            photo = []
+            text = null
+            textEntities = null
+            animation = null
+        }
     }
 }

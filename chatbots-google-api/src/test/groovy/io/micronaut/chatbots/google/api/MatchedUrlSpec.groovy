@@ -80,8 +80,8 @@ class MatchedUrlSpec extends Specification {
     }
 
     static MatchedUrl validMatchedUrl() {
-        MatchedUrl el = new MatchedUrl()
-        el.url = "https://micronaut.io"
-        el
+        new MatchedUrl().tap {
+            url = "https://micronaut.io"
+        }
     }
 }

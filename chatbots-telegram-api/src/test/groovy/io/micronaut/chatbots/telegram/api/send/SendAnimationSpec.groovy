@@ -69,16 +69,16 @@ class SendAnimationSpec extends Specification {
     }
 
     static SendAnimation validSendAnimation() {
-        SendAnimation el = new SendAnimation()
-        el.chatId = "xx"
-        el.animation = "hello world"
-        el.parseMode = null
-        el.caption = null
-        el.thumb = null
-        el.height = null
-        el.width = null
-        el.duration = null
-        el
+        new SendAnimation().tap {
+            chatId = "xx"
+            animation = "hello world"
+            parseMode = null
+            caption = null
+            thumb = null
+            height = null
+            width = null
+            duration = null
+        }
     }
 
     void "snake case is used for Json serialization"() {

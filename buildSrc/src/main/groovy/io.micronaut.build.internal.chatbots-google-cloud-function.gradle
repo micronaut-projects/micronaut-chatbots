@@ -10,6 +10,5 @@ dependencies {
 }
 
 micronautBuild {
-    sourceCompatibility.set("17")
-    targetCompatibility.set("17")
+    javaVersion.set(17)
 }

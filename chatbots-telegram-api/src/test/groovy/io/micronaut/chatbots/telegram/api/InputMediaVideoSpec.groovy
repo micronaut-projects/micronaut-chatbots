@@ -69,14 +69,14 @@ class InputMediaVideoSpec extends Specification {
     }
 
     static InputMediaVideo validInputMediaVideo() {
-        InputMediaVideo el = new InputMediaVideo()
-        el.thumb = null
-        el.media = 'x'
-        el.disableContentTypeDetection = null
-        el.width = null
-        el.height = null
-        el.duration = null
-        el.supportsStreaming = null
-        el
+        new InputMediaVideo().tap {
+            thumb = null
+            media = 'x'
+            disableContentTypeDetection = null
+            width = null
+            height = null
+            duration = null
+            supportsStreaming = null
+        }
     }
 }

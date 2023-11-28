@@ -75,13 +75,13 @@ class StickerSetSpec extends Specification {
     }
 
     static StickerSet validStickerSet() {
-        StickerSet el = new StickerSet()
-        el.name = 'x'
-        el.title = 'x'
-        el.animated = false
-        el.containsMasks = false
-        el.stickers = []
-        el.thumb = null
-        el
+        new StickerSet().tap {
+            name = 'x'
+            title = 'x'
+            animated = false
+            containsMasks = false
+            stickers = []
+            thumb = null
+        }
     }
 }

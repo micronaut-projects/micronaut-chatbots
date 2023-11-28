@@ -69,13 +69,13 @@ class SendContactSpec extends Specification {
     }
 
     static SendContact validSendContact() {
-        SendContact el = new SendContact()
-        el.chatId = "xx"
-        el.firstName = "xx"
-        el.phoneNumber = "12345"
-        el.vcard = null
-        el.lastName = null
-        el
+        new SendContact().tap {
+            chatId = "xx"
+            firstName = "xx"
+            phoneNumber = "12345"
+            vcard = null
+            lastName = null
+        }
     }
 
     void "snake case is used for Json serialization"() {

@@ -70,17 +70,17 @@ class SendVideoSpec extends Specification {
     }
 
     static SendVideo validSendVideo() {
-        SendVideo el = new SendVideo()
-        el.chatId = "xx"
-        el.video = "x"
-        el.supportsStreaming = null
-        el.parseMode = null
-        el.caption = null
-        el.thumb = null
-        el.height = null
-        el.width = null
-        el.duration = null
-        el
+        new SendVideo().tap {
+            chatId = "xx"
+            video = "x"
+            supportsStreaming = null
+            parseMode = null
+            caption = null
+            thumb = null
+            height = null
+            width = null
+            duration = null
+        }
     }
 
     void "snake case is used for Json serialization"() {

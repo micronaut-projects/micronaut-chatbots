@@ -69,21 +69,21 @@ class ChosenInlineResultSpec extends Specification {
     }
 
     static ChosenInlineResult validChosenInlineResult() {
-        ChosenInlineResult el = new ChosenInlineResult()
-        el.resultId = "x"
-        el.from = validUser()
-        el.query = "foo"
-        el.inlineMessageId = null
-        el.location = null
-        el
+        new ChosenInlineResult().tap {
+            resultId = "x"
+            from = validUser()
+            query = "foo"
+            inlineMessageId = null
+            location = null
+        }
     }
 
     static User validUser() {
-        User el = new User()
-        el.id = 1L
-        el.bot = false
-        el.firstName = "foo"
-        el
+        new User().tap {
+            id = 1L
+            bot = false
+            firstName = "foo"
+        }
     }
 
     void "snake case is used for Json serialization"() {

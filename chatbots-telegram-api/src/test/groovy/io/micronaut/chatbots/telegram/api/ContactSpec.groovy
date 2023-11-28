@@ -202,9 +202,9 @@ class ContactSpec extends Specification {
     }
 
     static Contact validContact() {
-        Contact el = new Contact()
-        el.phoneNumber = '+34630444444'
-        el.firstName = 'Sergio'
-        el
+        new Contact().tap {
+            phoneNumber = '+34630444444'
+            firstName = 'Sergio'
+        }
     }
 }

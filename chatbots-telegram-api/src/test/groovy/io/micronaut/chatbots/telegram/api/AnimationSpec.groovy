@@ -263,12 +263,12 @@ class AnimationSpec extends Specification {
     }
 
     static Animation validAnimation() {
-        Animation el = new Animation()
-        el.fileId = "xxx"
-        el.fileUniqueId = "xxx.yyy"
-        el.width = 200
-        el.height = 300
-        el.duration = 10
-        el
+        new Animation().tap {
+            fileId = "xxx"
+            fileUniqueId = "xxx.yyy"
+            width = 200
+            height = 300
+            duration = 10
+        }
     }
 }

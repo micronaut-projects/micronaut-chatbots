@@ -69,15 +69,15 @@ class VideoSpec extends Specification {
     }
 
     static Video validVideo() {
-        Video el = new Video()
-        el.fileId = "xxx"
-        el.fileUniqueId = "xxx.yyy"
-        el.width = 1
-        el.height = 1
-        el.duration = 1
-        el.thumb = null
-        el.mimeType = null
-        el.fileSize = null
-        el
+        new Video().tap {
+            fileId = "xxx"
+            fileUniqueId = "xxx.yyy"
+            width = 1
+            height = 1
+            duration = 1
+            thumb = null
+            mimeType = null
+            fileSize = null
+        }
     }
 }

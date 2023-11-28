@@ -69,16 +69,16 @@ class ChatLocationSpec extends Specification {
     }
 
     static ChatLocation validChatLocation() {
-        ChatLocation el = new ChatLocation()
-        el.location = validLocation()
-        el.address = "home"
-        el
+        new ChatLocation().tap {
+            location = validLocation()
+            address = "home"
+        }
     }
 
     static Location validLocation() {
-        Location el = new Location()
-        el.longitude = 1.2
-        el.latitude = 2.5
-        el
+        new Location().tap {
+            longitude = 1.2
+            latitude = 2.5
+        }
     }
 }

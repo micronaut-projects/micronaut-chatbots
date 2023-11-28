@@ -69,34 +69,34 @@ class ChatMemberSpec extends Specification {
     }
 
     static ChatMember validChatMember() {
-        ChatMember el = new ChatMember()
-        el.user = validUser()
-        el.status = "member"
-        el.customTitle = null
-        el.untilDate = null
-        el.canBeEdited = null
-        el.canPostMessages = null
-        el.canEditMessages = null
-        el.canDeleteMessages = null
-        el.canRestrictMembers = null
-        el.canPromoteMembers = null
-        el.canChangeInfo = null
-        el.canInviteUsers = null
-        el.canPinMessages = null
-        el.member = null
-        el.canSendMessages = null
-        el.canSendMediaMessages = null
-        el.canSendPolls = null
-        el.canSendOtherMessages = null
-        el.canAddWebPagePreviews = null
-        el
+        new ChatMember().tap {
+            user = validUser()
+            status = "member"
+            customTitle = null
+            untilDate = null
+            canBeEdited = null
+            canPostMessages = null
+            canEditMessages = null
+            canDeleteMessages = null
+            canRestrictMembers = null
+            canPromoteMembers = null
+            canChangeInfo = null
+            canInviteUsers = null
+            canPinMessages = null
+            member = null
+            canSendMessages = null
+            canSendMediaMessages = null
+            canSendPolls = null
+            canSendOtherMessages = null
+            canAddWebPagePreviews = null
+        }
     }
 
     static User validUser() {
-        User el = new User()
-        el.id = 1L
-        el.bot = false
-        el.firstName = "foo"
-        el
+        new User().tap {
+            id = 1L
+            bot = false
+            firstName = "foo"
+        }
     }
 }

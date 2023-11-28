@@ -81,9 +81,9 @@ class SpaceDetailsSpec extends Specification {
     }
 
     static SpaceDetails validSpaceDetails() {
-        SpaceDetails el = new SpaceDetails()
-        el.description = "x"
-        el.guidelines = "v"
-        el
+        new SpaceDetails().tap {
+            description = "x"
+            guidelines = "v"
+        }
     }
 }

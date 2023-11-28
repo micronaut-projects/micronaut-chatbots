@@ -6,3 +6,7 @@ repositories {
     gradlePluginPortal()
     mavenCentral()
 }
+
+dependencies {
+    implementation(libs.gradle.kotlin)
+}

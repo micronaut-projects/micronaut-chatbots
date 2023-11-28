@@ -69,10 +69,10 @@ class SendChatActionSpec extends Specification {
     }
 
     static SendChatAction validSendChatAction() {
-        SendChatAction el = new SendChatAction()
-        el.chatId = "xx"
-        el.action = "y"
-        el
+        new SendChatAction().tap {
+            chatId = "xx"
+            action = "y"
+        }
     }
 
     void "snake case is used for Json serialization"() {

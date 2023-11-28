@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 original authors
+ * Copyright 2017-2023 original authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,7 +81,7 @@ public class Handler extends AbstractHandler<TelegramBotConfiguration, Update, S
     @NonNull
     protected Optional<TelegramBotConfiguration> parseBot(@NonNull APIGatewayProxyRequestEvent request) {
         Optional<String> tokenOptional = parseToken(request);
-        if (!tokenOptional.isPresent()) {
+        if (tokenOptional.isEmpty()) {
             if (LOG.isTraceEnabled()) {
                 LOG.trace("not token found");
             }
@@ -89,7 +89,7 @@ public class Handler extends AbstractHandler<TelegramBotConfiguration, Update, S
         }
         String token = tokenOptional.get();
         Optional<TelegramBotConfiguration> botOptional = tokenValidator.validate(token);
-        if (!botOptional.isPresent()) {
+        if (botOptional.isEmpty()) {
             if (LOG.isTraceEnabled()) {
                 LOG.trace("not bot with token that matches token {}", token);
             }

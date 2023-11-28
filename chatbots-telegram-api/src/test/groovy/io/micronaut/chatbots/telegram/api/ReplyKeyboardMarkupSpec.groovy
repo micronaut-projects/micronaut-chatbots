@@ -69,9 +69,9 @@ class ReplyKeyboardMarkupSpec extends Specification {
     }
 
     static ReplyKeyboardMarkup validReplyKeyboardMarkup() {
-        ReplyKeyboardMarkup el = new ReplyKeyboardMarkup()
-        el.keyboard = []
-        el
+        new ReplyKeyboardMarkup().tap {
+            keyboard = []
+        }
     }
 
     void "snake case is used for Json serialization"() {

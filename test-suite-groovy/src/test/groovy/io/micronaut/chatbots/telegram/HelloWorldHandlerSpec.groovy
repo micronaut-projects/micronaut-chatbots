@@ -1,7 +1,7 @@
-package io.micronaut.chatbots.telegram;
+package io.micronaut.chatbots.telegram
 
-import io.micronaut.context.ApplicationContext;
-import spock.lang.Specification;
+import io.micronaut.context.ApplicationContext
+import spock.lang.Specification
 
 class HelloWorldHandlerSpec extends Specification {
 

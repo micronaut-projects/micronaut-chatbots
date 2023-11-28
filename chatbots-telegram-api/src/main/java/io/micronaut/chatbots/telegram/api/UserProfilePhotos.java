@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2021 original authors
+ * Copyright 2017-2023 original authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,7 +64,7 @@ public class UserProfilePhotos {
 
     /**
      *
-     * @return Array of PhotoSize Requested profile pictures (in up to 4 sizes each)
+     * @return List of PhotoSize Requested profile pictures (in up to 4 sizes each)
      */
     @NonNull
     public List<List<PhotoSize>> getPhotos() {

@@ -198,11 +198,11 @@ class PhotoSizeSpec extends Specification {
     }
 
     static PhotoSize validPhotoSize() {
-        PhotoSize el = new PhotoSize()
-        el.fileId = "xxx"
-        el.fileUniqueId = "xxx.yyy"
-        el.width = 200
-        el.height = 300
-        el
+        new PhotoSize().tap {
+            fileId = "xxx"
+            fileUniqueId = "xxx.yyy"
+            width = 200
+            height = 300
+        }
     }
 }
