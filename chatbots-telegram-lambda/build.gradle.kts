@@ -6,5 +6,5 @@ dependencies {
     implementation(mnSerde.micronaut.serde.jackson)
     api(projects.micronautChatbotsLambda)
     api(projects.micronautChatbotsTelegramCore)
-    testImplementation(libs.jsonassert)
+    testImplementation(libs.groovy.json)
 }

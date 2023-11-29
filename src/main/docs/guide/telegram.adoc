@@ -1,6 +1,6 @@
-You can develop https://core.telegram.org/bots/api[Telegram Bot] quickly with Micronaut Chatbots.
+You can develop a https://core.telegram.org/bots/api[Telegram Bot] quickly with Micronaut Chatbots.
 
-First, create a Telegram Bot by talking with the https://telegram.me/BotFather[@BotFather].
+Create a Telegram Bot by talking with the https://telegram.me/BotFather[@BotFather].
 
 NOTE: To see what actions the BotFather can perform for you, send `/help` in the chat.
 

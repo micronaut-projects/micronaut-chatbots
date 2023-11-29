@@ -35,7 +35,7 @@ public class Chat {
      */
     @NonNull
     @NotNull
-    private Integer id;
+    private Long id;
 
     /**
      * Type of chat, can be either “private”, “group”, “supergroup” or “channel”.
@@ -192,7 +192,7 @@ public class Chat {
      * @return Unique identifier for this chat.
      */
     @NonNull
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
@@ -200,7 +200,7 @@ public class Chat {
      *
      * @param id Unique identifier for this chat.
      */
-    public void setId(@NonNull Integer id) {
+    public void setId(@NonNull Long id) {
         this.id = id;
     }
 

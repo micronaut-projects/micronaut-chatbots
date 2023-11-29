@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 original authors
+ * Copyright 2017-2023 original authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,13 +19,14 @@ import io.micronaut.context.annotation.ConfigurationProperties;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.core.annotation.Nullable;
 import io.micronaut.core.util.StringUtils;
-
 import jakarta.validation.constraints.NotBlank;
+
 import java.util.Arrays;
 import java.util.List;
 
 /**
  * {@link ConfigurationProperties} implementation of {@link ChatbotsConfiguration}.
+ *
  * @author Sergio del Amo
  * @since 1.0.0
  */
@@ -51,23 +52,9 @@ public class ChatbotsConfigurationProperties implements ChatbotsConfiguration {
     @Nullable
     private List<FileExtension> possibleStaticCommandExtensions = Arrays.asList(FileExtension.values());
 
-    /**
-     * enabled getter.
-     *
-     * @return boolean flag indicating whether the chatbots features are enabled.
-     */
     @Override
     public boolean isEnabled() {
         return this.enabled;
-    }
-
-    /**
-     * @return The Bot Commands' folder where views should be searched for. By default {@value #DEFAULT_FOLDER}
-     */
-    @Override
-    @NonNull
-    public String getFolder() {
-        return folder;
     }
 
     /**
@@ -77,6 +64,12 @@ public class ChatbotsConfigurationProperties implements ChatbotsConfiguration {
      */
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    @Override
+    @NonNull
+    public String getFolder() {
+        return folder;
     }
 
     /**
@@ -97,7 +90,8 @@ public class ChatbotsConfigurationProperties implements ChatbotsConfiguration {
     }
 
     /**
-     * Possible static command file extensions. Default values MARKDOWN HTML TXT
+     * Possible static command file extensions. Default values MARKDOWN, HTML, TXT
+     *
      * @param possibleStaticCommandExtensions Possible static command file extensions.
      */
     public void setPossibleStaticCommandExtensions(@Nullable List<FileExtension> possibleStaticCommandExtensions) {

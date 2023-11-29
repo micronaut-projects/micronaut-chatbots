@@ -59,7 +59,7 @@ public class Contact {
      */
     @Nullable
     @JsonProperty("user_id")
-    private Integer userId;
+    private Long userId;
 
     /**
      * Additional data about the contact in the form of a vCard.
@@ -123,7 +123,7 @@ public class Contact {
      * @return Contact's user identifier in Telegram
      */
     @Nullable
-    public Integer getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
@@ -131,7 +131,7 @@ public class Contact {
      *
      * @param userId Contact's user identifier in Telegram
      */
-    public void setUserId(@Nullable Integer userId) {
+    public void setUserId(@Nullable Long userId) {
         this.userId = userId;
     }
 

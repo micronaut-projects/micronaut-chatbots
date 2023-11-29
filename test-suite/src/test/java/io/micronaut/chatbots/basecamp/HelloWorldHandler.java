@@ -3,11 +3,14 @@ package io.micronaut.chatbots.basecamp;
 import io.micronaut.chatbots.basecamp.api.Query;
 import io.micronaut.chatbots.basecamp.core.BasecampBotConfiguration;
 import io.micronaut.chatbots.basecamp.core.BasecampHandler;
+import io.micronaut.context.annotation.Requires;
 import jakarta.inject.Singleton;
 import io.micronaut.core.annotation.NonNull;
 import jakarta.validation.constraints.NotNull;
 import java.util.Optional;
 
+@Requires(property = "spec.name", value = "basecamp")
+// tag::class[]
 @Singleton
 class HelloWorldHandler implements BasecampHandler {
 
@@ -22,3 +25,4 @@ class HelloWorldHandler implements BasecampHandler {
         return Optional.of("Hello World");
     }
 }
+// end::class[]

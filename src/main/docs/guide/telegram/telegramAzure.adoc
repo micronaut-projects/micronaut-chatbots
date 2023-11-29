@@ -1,0 +1,5 @@
+If you want to deploy to an https://docs.microsoft.com/azure[Azure] function, you can use the following dependency:
+
+dependency:micronaut-chatbots-telegram-azure-function[groupId=io.micronaut.chatbots]
+
+This adds an `AzureFunction` with the name `TelegramTrigger` via the class `io.micronaut.chatbots.telegram.azurefunction.Handler`

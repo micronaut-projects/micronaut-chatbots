@@ -10,7 +10,6 @@ micronaut-gcp = "5.3.0"
 micronaut-serde = "2.4.0"
 micronaut-validation = "4.2.0"
 micronaut-azure = "5.1.0"
-jsonassert = "1.5.1"
 
 micronaut-logging = "1.1.2"
 [libraries]
@@ -18,12 +17,14 @@ micronaut-logging = "1.1.2"
 micronaut-core = { module = 'io.micronaut:micronaut-core-bom', version.ref = 'micronaut' }
 
 micronaut-logging = { module = "io.micronaut.logging:micronaut-logging-bom", version.ref = "micronaut-logging" }
-jsonassert = { module = "org.skyscreamer:jsonassert", version.ref = "jsonassert" }
+
 micronaut-aws = { module = "io.micronaut.aws:micronaut-aws-bom", version.ref = "micronaut-aws" }
 micronaut-gcp = { module = "io.micronaut.gcp:micronaut-gcp-bom", version.ref = "micronaut-gcp" }
 micronaut-azure = { module = "io.micronaut.azure:micronaut-azure-bom", version.ref = "micronaut-azure" }
 micronaut-serde = { module = "io.micronaut.serde:micronaut-serde-bom", version.ref = "micronaut-serde" }
 micronaut-validation = { module = "io.micronaut.validation:micronaut-validation-bom", version.ref = "micronaut-validation" }
+
+groovy-json = { module = "org.apache.groovy:groovy-json" }
 
 jackson-annotations = { module = 'com.fasterxml.jackson.core:jackson-annotations' }
 azure-functions-java-library = { module = 'com.microsoft.azure.functions:azure-functions-java-library' }

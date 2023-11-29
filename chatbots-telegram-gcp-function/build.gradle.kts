@@ -5,5 +5,5 @@ plugins {
 dependencies {
     api(projects.micronautChatbotsTelegramCore)
     testRuntimeOnly(mn.snakeyaml)
-    testImplementation(libs.jsonassert)
+    testImplementation(libs.groovy.json)
 }

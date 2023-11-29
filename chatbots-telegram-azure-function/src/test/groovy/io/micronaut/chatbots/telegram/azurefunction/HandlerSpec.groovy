@@ -5,6 +5,7 @@ import com.microsoft.azure.functions.HttpRequestMessage
 import com.microsoft.azure.functions.HttpResponseMessage
 import com.microsoft.azure.functions.HttpStatus
 import com.microsoft.azure.functions.HttpStatusType
+import groovy.json.JsonSlurper
 import io.micronaut.chatbots.core.SpaceParser
 import io.micronaut.chatbots.telegram.api.Chat
 import io.micronaut.chatbots.telegram.api.Update
@@ -20,17 +21,16 @@ import jakarta.inject.Singleton
 import spock.lang.AutoCleanup
 import spock.lang.Shared
 import spock.lang.Specification
-import spock.lang.Unroll
 
 import jakarta.validation.Valid
 import jakarta.validation.constraints.NotNull
 
 class HandlerSpec extends Specification {
+
     @AutoCleanup
     @Shared
     Handler handler = new Handler()
 
-    @Unroll
     void "Handler responds 401 if header does not match not present"() {
         given:
         File f = new File('src/test/resources/text.json')
@@ -48,7 +48,6 @@ class HandlerSpec extends Specification {
         401  == response.statusCode
     }
 
-    @Unroll
     void "Handler responds 401 if header not present"() {
         given:
         File f = new File('src/test/resources/text.json')
@@ -67,7 +66,6 @@ class HandlerSpec extends Specification {
     }
 
 
-    @Unroll
     void "Handler responds 200 and message is not present"(String header, String value) {
         given:
         File f = new File('src/test/resources/text.json')
@@ -79,26 +77,16 @@ class HandlerSpec extends Specification {
         ObjectMapper objectMapper = handler.applicationContext.getBean(ObjectMapper)
         Update update = objectMapper.readValue(f.text, Update)
 
-        Map expected = [
-                "text":"Hello World",
-                "method":"sendMessage",
-                "chat_id":718265379
-        ]
-
         HttpRequestMessage request = createRequest(Collections.singletonMap(TokenValidator.X_TELEGRAM_BOT_API_SECRET_TOKEN, "xxx"), update)
         HttpResponseMessage response = handler.handle(request, null)
 
         then:
-        200  == response.statusCode
-        response.body instanceof SendMessage
-
-        when:
-        SendMessage sendMessage = (SendMessage) response.body
-
-        then:
-        expected.text == sendMessage.text
-        expected.chat_id == sendMessage.chatId
-        expected.method == sendMessage.method
+        response.statusCode == 200
+        with(new JsonSlurper().parseText(response.body)) {
+            method == 'sendMessage'
+            chat_id == 718265379
+            text == 'Hello World'
+        }
 
         where:
         header                             | value

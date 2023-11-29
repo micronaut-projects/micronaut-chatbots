@@ -3,9 +3,10 @@ introduction:
 releaseHistory: Release History
 telegram:
   title: Telegram
-  telegramWebhook: Telegram Webhook
   telegramConfiguration: Telegram Bot Configuration
+  telegramWebhook: Telegram Webhook
   telegramHandler: Telegram Bot Handlers
+  telegramOrder: Ordering Handlers
   telegramLambda: Telegram Chatbots as an AWS Lambda Function
   telegramGcp: Telegram Chatbots as a Google Cloud Function
   telegramAzure: Telegram Chatbots as an Azure Function

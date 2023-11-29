@@ -46,7 +46,7 @@ public class Voice extends AbstractFile {
      */
     @Nullable
     @JsonProperty("file_size")
-    private Integer fileSize;
+    private Long fileSize;
 
     /**
      *
@@ -87,7 +87,7 @@ public class Voice extends AbstractFile {
      * @return File size.
      */
     @Nullable
-    public Integer getFileSize() {
+    public Long getFileSize() {
         return fileSize;
     }
 
@@ -95,7 +95,7 @@ public class Voice extends AbstractFile {
      *
      * @param fileSize File size.
      */
-    public void setFileSize(@Nullable Integer fileSize) {
+    public void setFileSize(@Nullable Long fileSize) {
         this.fileSize = fileSize;
     }
 
