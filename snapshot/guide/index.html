@@ -89,19 +89,21 @@
         
         <div class="toc-item" style="margin-left:0px" id="toc-item-telegram"><a href="#telegram"><strong>3</strong><span>Telegram</span></a></div>
         
-        <div class="toc-item" style="margin-left:10px" id="toc-item-telegramWebhook"><a href="#telegramWebhook"><strong>3.1</strong><span>Telegram Webhook</span></a></div>
+        <div class="toc-item" style="margin-left:10px" id="toc-item-telegramConfiguration"><a href="#telegramConfiguration"><strong>3.1</strong><span>Telegram Bot Configuration</span></a></div>
         
-        <div class="toc-item" style="margin-left:10px" id="toc-item-telegramConfiguration"><a href="#telegramConfiguration"><strong>3.2</strong><span>Telegram Bot Configuration</span></a></div>
+        <div class="toc-item" style="margin-left:10px" id="toc-item-telegramWebhook"><a href="#telegramWebhook"><strong>3.2</strong><span>Telegram Webhook</span></a></div>
         
         <div class="toc-item" style="margin-left:10px" id="toc-item-telegramHandler"><a href="#telegramHandler"><strong>3.3</strong><span>Telegram Bot Handlers</span></a></div>
         
-        <div class="toc-item" style="margin-left:10px" id="toc-item-telegramLambda"><a href="#telegramLambda"><strong>3.4</strong><span>Telegram Chatbots as an AWS Lambda Function</span></a></div>
+        <div class="toc-item" style="margin-left:10px" id="toc-item-telegramOrder"><a href="#telegramOrder"><strong>3.4</strong><span>Ordering Handlers</span></a></div>
         
-        <div class="toc-item" style="margin-left:10px" id="toc-item-telegramGcp"><a href="#telegramGcp"><strong>3.5</strong><span>Telegram Chatbots as a Google Cloud Function</span></a></div>
+        <div class="toc-item" style="margin-left:10px" id="toc-item-telegramLambda"><a href="#telegramLambda"><strong>3.5</strong><span>Telegram Chatbots as an AWS Lambda Function</span></a></div>
         
-        <div class="toc-item" style="margin-left:10px" id="toc-item-telegramAzure"><a href="#telegramAzure"><strong>3.6</strong><span>Telegram Chatbots as an Azure Function</span></a></div>
+        <div class="toc-item" style="margin-left:10px" id="toc-item-telegramGcp"><a href="#telegramGcp"><strong>3.6</strong><span>Telegram Chatbots as a Google Cloud Function</span></a></div>
         
-        <div class="toc-item" style="margin-left:10px" id="toc-item-telegramHttp"><a href="#telegramHttp"><strong>3.7</strong><span>Telegram Chatbots Controller</span></a></div>
+        <div class="toc-item" style="margin-left:10px" id="toc-item-telegramAzure"><a href="#telegramAzure"><strong>3.7</strong><span>Telegram Chatbots as an Azure Function</span></a></div>
+        
+        <div class="toc-item" style="margin-left:10px" id="toc-item-telegramHttp"><a href="#telegramHttp"><strong>3.8</strong><span>Telegram Chatbots Controller</span></a></div>
         
         <div class="toc-item" style="margin-left:0px" id="toc-item-basecamp"><a href="#basecamp"><strong>4</strong><span>Basecamp</span></a></div>
         
@@ -124,7 +126,7 @@
     <div class="project">
         <h1>Micronaut Chatbots</h1>
         <p></p>
-        <p>Ease the creation of Telegram, Google Chat, Discord chatbots with the Micronaut Framework</p>
+        <p>Ease the creation of Telegram and Basecamp chatbots with the Micronaut Framework</p>
         <p><strong>Version:</strong> <select style='max-width: 200px' onChange='window.document.location.href=this.options[this.selectedIndex].value;'><option selected='selected' value='https://micronaut-projects.github.io/micronaut-chatbots/snapshot/guide/index.html'>SNAPSHOT</option><option value='https://micronaut-projects.github.io/micronaut-chatbots/latest/guide/index.html'>LATEST</option><option value='https://micronaut-projects.github.io/micronaut-chatbots/2.0.0-M6/guide/index.html'>2.0.0-M6</option><option value='https://micronaut-projects.github.io/micronaut-chatbots/2.0.0-M5/guide/index.html'>2.0.0-M5</option><option value='https://micronaut-projects.github.io/micronaut-chatbots/2.0.0-M4/guide/index.html'>2.0.0-M4</option><option value='https://micronaut-projects.github.io/micronaut-chatbots/2.0.0-M3/guide/index.html'>2.0.0-M3</option><option value='https://micronaut-projects.github.io/micronaut-chatbots/2.0.0-M2/guide/index.html'>2.0.0-M2</option><option value='https://micronaut-projects.github.io/micronaut-chatbots/2.0.0-M1/guide/index.html'>2.0.0-M1</option><option value='https://micronaut-projects.github.io/micronaut-chatbots/1.0.0-M1/guide/index.html'>1.0.0-M1</option></select> </p>
     </div>
     
@@ -167,10 +169,10 @@
 
 
 <div class="paragraph">
-<p>You can develop <a href="https://core.telegram.org/bots/api">Telegram Bot</a> quickly with Micronaut Chatbots.</p>
+<p>You can develop a <a href="https://core.telegram.org/bots/api">Telegram Bot</a> quickly with Micronaut Chatbots.</p>
 </div>
 <div class="paragraph">
-<p>First, create a Telegram Bot by talking with the <a href="https://telegram.me/BotFather">@BotFather</a>.</p>
+<p>Create a Telegram Bot by talking with the <a href="https://telegram.me/BotFather">@BotFather</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -189,38 +191,7 @@ To see what actions the BotFather can perform for you, send <code>/help</code> i
 At the end of this process, you will receive a token to access the HTTP API.</p>
 </div>
 
-<h2 id="telegramWebhook"><a class="anchor" href="#telegramWebhook"></a>3.1 Telegram Webhook</h2>
-
-<div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/master/src/main/docs/guide/telegram/telegramWebhook.adoc"'>
-        <i class='fa fa-pencil-square-o'></i> Improve this doc
-    </button>
-</div>
-
-
-<div class="paragraph">
-<p>You have to set the <a href="https://core.telegram.org/bots/api#setwebhook">webhook via the Telegram API</a>.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -X "POST" "https://api.telegram.org/bot{httpApiToken}/setWebhook?url={webhookUrl}&amp;secret_token={secretToken}"</code></pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>httpApiToken</code> You obtain this value via the <a href="https://telegram.me/BotFather">@BotFather</a></p>
-</li>
-<li>
-<p><code>webhookUrl</code> is the endpoint of your Micronaut application.</p>
-</li>
-<li>
-<p><code>{secretToken}</code> - A secret token, Telegram sends in a header <code>X-Telegram-Bot-Api-Secret-Token</code> in every webhook request.</p>
-</li>
-</ul>
-</div>
-
-<h2 id="telegramConfiguration"><a class="anchor" href="#telegramConfiguration"></a>3.2 Telegram Bot Configuration</h2>
+<h2 id="telegramConfiguration"><a class="anchor" href="#telegramConfiguration"></a>3.1 Telegram Bot Configuration</h2>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/master/src/main/docs/guide/telegram/telegramConfiguration.adoc"'>
@@ -317,6 +288,37 @@ micronaut.chatbots.telegram.bots.mnexample.at-username=@MicronautExampleBot</cod
 <p><code>micronaut.chabots.telegram.bots.*.token</code> matches the value specified as <code>secret_token</code> while setting the webhook.</p>
 </div>
 
+<h2 id="telegramWebhook"><a class="anchor" href="#telegramWebhook"></a>3.2 Telegram Webhook</h2>
+
+<div class='contribute-btn'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/master/src/main/docs/guide/telegram/telegramWebhook.adoc"'>
+        <i class='fa fa-pencil-square-o'></i> Improve this doc
+    </button>
+</div>
+
+
+<div class="paragraph">
+<p>You have to set the <a href="https://core.telegram.org/bots/api#setwebhook">webhook via the Telegram API</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -X "POST" "https://api.telegram.org/bot{httpApiToken}/setWebhook?url={webhookUrl}&amp;secret_token={secretToken}"</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>httpApiToken</code> You obtain this value via the <a href="https://telegram.me/BotFather">@BotFather</a></p>
+</li>
+<li>
+<p><code>webhookUrl</code> is the endpoint of your Micronaut application.</p>
+</li>
+<li>
+<p><code>{secretToken}</code> - A secret token, Telegram sends in a header <code>X-Telegram-Bot-Api-Secret-Token</code> in every webhook request.</p>
+</li>
+</ul>
+</div>
+
 <h2 id="telegramHandler"><a class="anchor" href="#telegramHandler"></a>3.3 Telegram Bot Handlers</h2>
 
 <div class='contribute-btn'>
@@ -340,11 +342,15 @@ import io.micronaut.chatbots.telegram.api.send.SendMessage;
 import io.micronaut.chatbots.telegram.core.SendMessageUtils;
 import io.micronaut.chatbots.telegram.core.TelegramBotConfiguration;
 import io.micronaut.chatbots.telegram.core.TelegramHandler;
+import io.micronaut.context.annotation.Requires;
+import io.micronaut.core.annotation.Nullable;
 import jakarta.inject.Singleton;
 
 import jakarta.validation.constraints.NotNull;
 import java.util.Optional;
 
+@Requires(property = "spec.name", value = "telegram")
+// tag::class[]
 @Singleton
 class HelloWorldHandler implements TelegramHandler&lt;SendMessage&gt; {
 
@@ -355,15 +361,16 @@ class HelloWorldHandler implements TelegramHandler&lt;SendMessage&gt; {
     }
 
     @Override
-    public boolean canHandle(TelegramBotConfiguration bot, @NotNull Update input) {
-        return true;
+    public boolean canHandle(@Nullable TelegramBotConfiguration bot, @NotNull Update input) {
+        return input.getMessage().getText().contains("hello");
     }
 
     @Override
-    public Optional&lt;SendMessage&gt; handle(TelegramBotConfiguration bot, @NotNull Update input) {
+    public Optional&lt;SendMessage&gt; handle(@Nullable TelegramBotConfiguration bot, @NotNull Update input) {
         return SendMessageUtils.compose(spaceParser, input, "Hello World");
     }
-}</code></pre>
+}
+// end::class[]</code></pre>
 </div>
 </div>
 <div class="listingblock multi-language-sample">
@@ -377,11 +384,14 @@ import io.micronaut.chatbots.telegram.api.send.SendMessage
 import io.micronaut.chatbots.telegram.core.SendMessageUtils
 import io.micronaut.chatbots.telegram.core.TelegramBotConfiguration
 import io.micronaut.chatbots.telegram.core.TelegramHandler
+import io.micronaut.context.annotation.Requires
+import io.micronaut.core.annotation.Nullable
 import jakarta.inject.Singleton
 
 import jakarta.validation.constraints.NotNull
 
 @Singleton
+@Requires(property = "spec.name", value = "telegram")
 class HelloWorldHandler implements TelegramHandler&lt;SendMessage&gt; {
 
     private final SpaceParser&lt;Update, Chat&gt; spaceParser
@@ -391,12 +401,12 @@ class HelloWorldHandler implements TelegramHandler&lt;SendMessage&gt; {
     }
 
     @Override
-    boolean canHandle(TelegramBotConfiguration bot, @NotNull Update input) {
-        true
+    boolean canHandle(@Nullable TelegramBotConfiguration bot, @NotNull Update input) {
+        input.message.text.contains("hello")
     }
 
     @Override
-    Optional&lt;SendMessage&gt; handle(TelegramBotConfiguration bot, @NotNull Update input) {
+    Optional&lt;SendMessage&gt; handle(@Nullable TelegramBotConfiguration bot, @NotNull Update input) {
         SendMessageUtils.compose(spaceParser, input, "Hello World")
     }
 }</code></pre>
@@ -413,23 +423,239 @@ import io.micronaut.chatbots.telegram.api.send.SendMessage
 import io.micronaut.chatbots.telegram.core.SendMessageUtils
 import io.micronaut.chatbots.telegram.core.TelegramBotConfiguration
 import io.micronaut.chatbots.telegram.core.TelegramHandler
+import io.micronaut.context.annotation.Requires
 import jakarta.inject.Singleton
 import java.util.*
 
+@Requires(property = "spec.name", value = "telegram")
+// tag::class[]
 @Singleton
 class HelloWorldHandler(private val spaceParser: SpaceParser&lt;Update, Chat&gt;) : TelegramHandler&lt;SendMessage&gt; {
-    override fun canHandle(bot: TelegramBotConfiguration?, input: Update): Boolean = true
+
+    override fun canHandle(bot: TelegramBotConfiguration?, input: Update): Boolean = input.message.text.contains("hello")
 
     override fun handle(bot: TelegramBotConfiguration?, input: Update): Optional&lt;SendMessage&gt; =
         SendMessageUtils.compose(spaceParser, input, "Hello World")
+}
+// end::class[]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To respond to <a href="https://core.telegram.org/bots/features#commands">Telegram Bot commands</a>, with static content, you can extend from <a href="../api/io/micronaut/chatbots/telegram/core/CommandHandler.html">CommandHandler</a>.
+For example to respond to an <code>/about</code> command with a static message, you create a <code>CommandHandler</code> bean:</p>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Singleton
+class AboutCommandHandler extends CommandHandler {
+
+    private static final String COMMAND_ABOUT = "/about";
+
+    AboutCommandHandler(
+        TelegramSlashCommandParser slashCommandParser,
+        TextResourceLoader textResourceLoader,
+        SpaceParser&lt;Update, Chat&gt; spaceParser
+    ) {
+        super(slashCommandParser, textResourceLoader, spaceParser);
+    }
+
+    @Override
+    @NonNull
+    public String getCommand() {
+        return COMMAND_ABOUT;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">@Singleton
+class AboutCommandHandler extends CommandHandler {
+
+    private static final String COMMAND_ABOUT = "/about"
+
+    AboutCommandHandler(
+            TelegramSlashCommandParser slashCommandParser,
+            TextResourceLoader textResourceLoader,
+            SpaceParser&lt;Update, Chat&gt; spaceParser
+    ) {
+        super(slashCommandParser, textResourceLoader, spaceParser)
+    }
+
+    @Override
+    @NonNull
+    String getCommand() {
+        COMMAND_ABOUT
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
+class AboutCommandHandler(
+    slashCommandParser: TelegramSlashCommandParser,
+    textResourceLoader: TextResourceLoader,
+    spaceParser: SpaceParser&lt;Update, Chat&gt;
+) : CommandHandler(slashCommandParser, textResourceLoader, spaceParser) {
+
+    override fun getCommand() = COMMAND_ABOUT
+
+    companion object {
+        private const val COMMAND_ABOUT = "/about"
+    }
 }</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>To respond to <a href="https://core.telegram.org/bots/features#commands">Telegram Bot commands</a>, you can extend from <a href="../api/io/micronaut/chatbots/telegram/core/CommandHandler.html">CommandHandler</a>.</p>
+<p>And then create some content with a matching name in the <code>botcommands</code> directory:</p>
+</div>
+<div class="listingblock">
+<div class="title">resources/botcommands/about.md</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-md hljs" data-lang="md">Bot developed with 💙 using [Micronaut](https://micronaut.io)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>botcommands</code> directory may be configured via the <code>micronaut.chatbots.folder</code> configuration property.</p>
+</div>
+<a id="io.micronaut.chatbots.core.ChatbotsConfigurationProperties" href="#io.micronaut.chatbots.core.ChatbotsConfigurationProperties">&#128279;</a>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Configuration Properties for <a href="../api/io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html">ChatbotsConfigurationProperties</a></caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.enabled</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether chatbots is enabled. Default value (true).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.folder</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">java.lang.String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The folder to look for bot commands.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.possible-static-command-extensions</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">java.util.List</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Possible static command file extensions. Default values MARKDOWN, HTML, TXT</p></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="telegramOrder"><a class="anchor" href="#telegramOrder"></a>3.4 Ordering Handlers</h2>
+
+<div class='contribute-btn'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/master/src/main/docs/guide/telegram/telegramOrder.adoc"'>
+        <i class='fa fa-pencil-square-o'></i> Improve this doc
+    </button>
 </div>
 
-<h2 id="telegramLambda"><a class="anchor" href="#telegramLambda"></a>3.4 Telegram Chatbots as an AWS Lambda Function</h2>
+
+<div class="paragraph">
+<p>Chatbot handlers have order, and the first handler to support a command is the one used.</p>
+</div>
+<div class="paragraph">
+<p>To change the order of handlers, you can override the <code>getOrder</code> method in your handler.</p>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Singleton
+class UnknownCommandHandler implements TelegramHandler&lt;SendMessage&gt; {
+
+    private final SpaceParser&lt;Update, Chat&gt; spaceParser;
+
+    UnknownCommandHandler(SpaceParser&lt;Update, Chat&gt; spaceParser) {
+        this.spaceParser = spaceParser;
+    }
+
+    @Override
+    public boolean canHandle(@Nullable TelegramBotConfiguration bot, @NotNull Update input) {
+        return true; // <b class="conum">(1)</b>
+    }
+
+    @Override
+    public Optional&lt;SendMessage&gt; handle(@Nullable TelegramBotConfiguration bot, @NotNull Update input) {
+        return SendMessageUtils.compose(spaceParser, input, "I don't how to handle your query: %s".formatted(input.getMessage().getText()));
+    }
+
+    @Override
+    public int getOrder() {
+        return Ordered.LOWEST_PRECEDENCE; // <b class="conum">(2)</b>
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">@Singleton
+class UnknownCommandHandler implements TelegramHandler&lt;SendMessage&gt; {
+
+    private final SpaceParser&lt;Update, Chat&gt; spaceParser
+
+    UnknownCommandHandler(SpaceParser&lt;Update, Chat&gt; spaceParser) {
+        this.spaceParser = spaceParser
+    }
+
+    @Override
+    boolean canHandle(@Nullable TelegramBotConfiguration bot, @NotNull Update input) {
+        true // <b class="conum">(1)</b>
+    }
+
+    @Override
+    Optional&lt;SendMessage&gt; handle(@Nullable TelegramBotConfiguration bot, @NotNull Update input) {
+        return SendMessageUtils.compose(spaceParser, input, "I don't how to handle your query: ${input.message.text}")
+    }
+
+    @Override
+    int getOrder() {
+        Ordered.LOWEST_PRECEDENCE // <b class="conum">(2)</b>
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
+class UnknownCommandHandler(private val spaceParser: SpaceParser&lt;Update, Chat&gt;) : TelegramHandler&lt;SendMessage&gt; {
+
+    override fun canHandle(bot: TelegramBotConfiguration?, input: Update) = true // <b class="conum">(1)</b>
+
+    override fun handle(bot: TelegramBotConfiguration?, input: Update): Optional&lt;SendMessage&gt; =
+        SendMessageUtils.compose(
+            spaceParser,
+            input,
+            "I don't how to handle your query: ${input.message.text}"
+        )
+
+    override fun getOrder() = Ordered.LOWEST_PRECEDENCE // <b class="conum">(2)</b>
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>This handler will handle any message.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Ensure this handler is last in the list of handlers.</td>
+</tr>
+</table>
+</div>
+
+<h2 id="telegramLambda"><a class="anchor" href="#telegramLambda"></a>3.5 Telegram Chatbots as an AWS Lambda Function</h2>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/master/src/main/docs/guide/telegram/telegramLambda.adoc"'>
@@ -462,7 +688,7 @@ class HelloWorldHandler(private val spaceParser: SpaceParser&lt;Update, Chat&gt;
 as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">AWS Lambda function handler</a>.</p>
 </div>
 
-<h2 id="telegramGcp"><a class="anchor" href="#telegramGcp"></a>3.5 Telegram Chatbots as a Google Cloud Function</h2>
+<h2 id="telegramGcp"><a class="anchor" href="#telegramGcp"></a>3.6 Telegram Chatbots as a Google Cloud Function</h2>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/master/src/main/docs/guide/telegram/telegramGcp.adoc"'>
@@ -494,10 +720,11 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
 <p>You can use the following entry point:</p>
 </div>
 <div class="paragraph">
-<p><code>io.micronaut.chatbots.telegram.googlecloud.Handler</code></p>
+<p>Use the class <code>io.micronaut.chatbots.telegram.googlecloud.Handler</code>
+as the <a href="https://cloud.google.com/functions/docs/writing/write-http-functions#http-example-java">Http Function entrypoint</a>.</p>
 </div>
 
-<h2 id="telegramAzure"><a class="anchor" href="#telegramAzure"></a>3.6 Telegram Chatbots as an Azure Function</h2>
+<h2 id="telegramAzure"><a class="anchor" href="#telegramAzure"></a>3.7 Telegram Chatbots as an Azure Function</h2>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/master/src/main/docs/guide/telegram/telegramAzure.adoc"'>
@@ -506,9 +733,30 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
 </div>
 
 
+<div class="paragraph">
+<p>If you want to deploy to an <a href="https://docs.microsoft.com/azure">Azure</a> function, you can use the following dependency:</p>
+</div>
+<div class="paragraph">
+<p>        <div class="listingblock multi-language-sample">
+<div class="title"></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="gradle">implementation(<span class="hljs-string">"io.micronaut.chatbots:micronaut-chatbots-telegram-azure-function")</span></code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="maven">&lt;dependency&gt;
+    &lt;groupId&gt;io.micronaut.chatbots&lt;/groupId&gt;
+    &lt;artifactId&gt;micronaut-chatbots-telegram-azure-function&lt;/artifactId&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div></p>
+</div>
+<div class="paragraph">
+<p>This adds an <code>AzureFunction</code> with the name <code>TelegramTrigger</code> via the class <code>io.micronaut.chatbots.telegram.azurefunction.Handler</code></p>
+</div>
 
-
-<h2 id="telegramHttp"><a class="anchor" href="#telegramHttp"></a>3.7 Telegram Chatbots Controller</h2>
+<h2 id="telegramHttp"><a class="anchor" href="#telegramHttp"></a>3.8 Telegram Chatbots Controller</h2>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/master/src/main/docs/guide/telegram/telegramHttp.adoc"'>
@@ -537,7 +785,7 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
 </div></p>
 </div>
 <div class="paragraph">
-<p>You can configure the path with the following:</p>
+<p>You also need to con configure the path with the following:</p>
 </div>
 <a id="io.micronaut.chatbots.telegram.http.TelegramControllerConfiguration" href="#io.micronaut.chatbots.telegram.http.TelegramControllerConfiguration">&#128279;</a>
 <table class="tableblock frame-all grid-all stretch">
@@ -600,11 +848,14 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
 import io.micronaut.chatbots.basecamp.api.Query;
 import io.micronaut.chatbots.basecamp.core.BasecampBotConfiguration;
 import io.micronaut.chatbots.basecamp.core.BasecampHandler;
+import io.micronaut.context.annotation.Requires;
 import jakarta.inject.Singleton;
 import io.micronaut.core.annotation.NonNull;
 import jakarta.validation.constraints.NotNull;
 import java.util.Optional;
 
+@Requires(property = "spec.name", value = "basecamp")
+// tag::class[]
 @Singleton
 class HelloWorldHandler implements BasecampHandler {
 
@@ -618,7 +869,8 @@ class HelloWorldHandler implements BasecampHandler {
     public Optional&lt;String&gt; handle(BasecampBotConfiguration bot, @NonNull @NotNull Query input) {
         return Optional.of("Hello World");
     }
-}</code></pre>
+}
+// end::class[]</code></pre>
 </div>
 </div>
 <div class="listingblock multi-language-sample">
@@ -628,11 +880,13 @@ class HelloWorldHandler implements BasecampHandler {
 import io.micronaut.chatbots.basecamp.api.Query
 import io.micronaut.chatbots.basecamp.core.BasecampBotConfiguration
 import io.micronaut.chatbots.basecamp.core.BasecampHandler
+import io.micronaut.context.annotation.Requires
 import jakarta.inject.Singleton
 
 import jakarta.validation.constraints.NotNull
 
 @Singleton
+@Requires(property = "spec.name", value = "basecamp")
 class HelloWorldHandler implements BasecampHandler {
 
     @Override
@@ -654,14 +908,19 @@ class HelloWorldHandler implements BasecampHandler {
 import io.micronaut.chatbots.basecamp.api.Query
 import io.micronaut.chatbots.basecamp.core.BasecampBotConfiguration
 import io.micronaut.chatbots.basecamp.core.BasecampHandler
+import io.micronaut.context.annotation.Requires
 import jakarta.inject.Singleton
-import java.util.*
+import java.util.Optional
 
+@Requires(property = "spec.name", value = "basecamp")
+// tag::class[]
 @Singleton
 class HelloWorldHandler : BasecampHandler {
+
     override fun canHandle(bot: BasecampBotConfiguration, input: Query): Boolean = true
     override fun handle(bot: BasecampBotConfiguration, input: Query): Optional&lt;String&gt; = Optional.of("Hello World")
-}</code></pre>
+}
+// end::class[]</code></pre>
 </div>
 </div>
 
@@ -743,7 +1002,7 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
 
 
 <div class="paragraph">
-<p>If you want to deploy to an [<a href="https://docs.microsoft.com/azure" class="bare">https://docs.microsoft.com/azure</a>](Azure) function, you can use the following dependency:</p>
+<p>If you want to deploy to an <a href="https://docs.microsoft.com/azure">Azure</a> function, you can use the following dependency:</p>
 </div>
 <div class="paragraph">
 <p>        <div class="listingblock multi-language-sample">
