@@ -107,15 +107,19 @@
         
         <div class="toc-item" style="margin-left:0px" id="toc-item-basecamp"><a href="#basecamp"><strong>4</strong><span>Basecamp</span></a></div>
         
-        <div class="toc-item" style="margin-left:10px" id="toc-item-basecampHandler"><a href="#basecampHandler"><strong>4.1</strong><span>Basecamp Bot Handlers</span></a></div>
+        <div class="toc-item" style="margin-left:10px" id="toc-item-basecampWebhook"><a href="#basecampWebhook"><strong>4.1</strong><span>Basecamp Webhook</span></a></div>
         
-        <div class="toc-item" style="margin-left:10px" id="toc-item-basecampLambda"><a href="#basecampLambda"><strong>4.2</strong><span>Basecamp Chatbots as an AWS Lambda Function</span></a></div>
+        <div class="toc-item" style="margin-left:10px" id="toc-item-basecampHandler"><a href="#basecampHandler"><strong>4.2</strong><span>Basecamp Bot Handlers</span></a></div>
         
-        <div class="toc-item" style="margin-left:10px" id="toc-item-basecampGcp"><a href="#basecampGcp"><strong>4.3</strong><span>Basecamp Chatbots as a Google Cloud Function</span></a></div>
+        <div class="toc-item" style="margin-left:10px" id="toc-item-basecampOrder"><a href="#basecampOrder"><strong>4.3</strong><span>Ordering Handlers</span></a></div>
         
-        <div class="toc-item" style="margin-left:10px" id="toc-item-basecampAzure"><a href="#basecampAzure"><strong>4.4</strong><span>Basecamp Chatbots as an Azure Function</span></a></div>
+        <div class="toc-item" style="margin-left:10px" id="toc-item-basecampLambda"><a href="#basecampLambda"><strong>4.4</strong><span>Basecamp Chatbots as an AWS Lambda Function</span></a></div>
         
-        <div class="toc-item" style="margin-left:10px" id="toc-item-basecampHttp"><a href="#basecampHttp"><strong>4.5</strong><span>Basecamp Chatbots Controller</span></a></div>
+        <div class="toc-item" style="margin-left:10px" id="toc-item-basecampGcp"><a href="#basecampGcp"><strong>4.5</strong><span>Basecamp Chatbots as a Google Cloud Function</span></a></div>
+        
+        <div class="toc-item" style="margin-left:10px" id="toc-item-basecampAzure"><a href="#basecampAzure"><strong>4.6</strong><span>Basecamp Chatbots as an Azure Function</span></a></div>
+        
+        <div class="toc-item" style="margin-left:10px" id="toc-item-basecampHttp"><a href="#basecampHttp"><strong>4.7</strong><span>Basecamp Chatbots Controller</span></a></div>
         
         <div class="toc-item" style="margin-left:0px" id="toc-item-repository"><a href="#repository"><strong>5</strong><span>Repository</span></a></div>
         
@@ -333,25 +337,7 @@ micronaut.chatbots.telegram.bots.mnexample.at-username=@MicronautExampleBot</cod
 </div>
 <div class="listingblock multi-language-sample">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package io.micronaut.chatbots.telegram;
-
-import io.micronaut.chatbots.core.SpaceParser;
-import io.micronaut.chatbots.telegram.api.Chat;
-import io.micronaut.chatbots.telegram.api.Update;
-import io.micronaut.chatbots.telegram.api.send.SendMessage;
-import io.micronaut.chatbots.telegram.core.SendMessageUtils;
-import io.micronaut.chatbots.telegram.core.TelegramBotConfiguration;
-import io.micronaut.chatbots.telegram.core.TelegramHandler;
-import io.micronaut.context.annotation.Requires;
-import io.micronaut.core.annotation.Nullable;
-import jakarta.inject.Singleton;
-
-import jakarta.validation.constraints.NotNull;
-import java.util.Optional;
-
-@Requires(property = "spec.name", value = "telegram")
-// tag::class[]
-@Singleton
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Singleton
 class HelloWorldHandler implements TelegramHandler&lt;SendMessage&gt; {
 
     private final SpaceParser&lt;Update, Chat&gt; spaceParser;
@@ -369,75 +355,24 @@ class HelloWorldHandler implements TelegramHandler&lt;SendMessage&gt; {
     public Optional&lt;SendMessage&gt; handle(@Nullable TelegramBotConfiguration bot, @NotNull Update input) {
         return SendMessageUtils.compose(spaceParser, input, "Hello World");
     }
-}
-// end::class[]</code></pre>
-</div>
-</div>
-<div class="listingblock multi-language-sample">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">package io.micronaut.chatbots.telegram
-
-import io.micronaut.chatbots.core.SpaceParser
-import io.micronaut.chatbots.telegram.api.Chat
-import io.micronaut.chatbots.telegram.api.Update
-import io.micronaut.chatbots.telegram.api.send.SendMessage
-import io.micronaut.chatbots.telegram.core.SendMessageUtils
-import io.micronaut.chatbots.telegram.core.TelegramBotConfiguration
-import io.micronaut.chatbots.telegram.core.TelegramHandler
-import io.micronaut.context.annotation.Requires
-import io.micronaut.core.annotation.Nullable
-import jakarta.inject.Singleton
-
-import jakarta.validation.constraints.NotNull
-
-@Singleton
-@Requires(property = "spec.name", value = "telegram")
-class HelloWorldHandler implements TelegramHandler&lt;SendMessage&gt; {
-
-    private final SpaceParser&lt;Update, Chat&gt; spaceParser
-
-    HelloWorldHandler(SpaceParser&lt;Update, Chat&gt; spaceParser) {
-        this.spaceParser = spaceParser
-    }
-
-    @Override
-    boolean canHandle(@Nullable TelegramBotConfiguration bot, @NotNull Update input) {
-        input.message.text.contains("hello")
-    }
-
-    @Override
-    Optional&lt;SendMessage&gt; handle(@Nullable TelegramBotConfiguration bot, @NotNull Update input) {
-        SendMessageUtils.compose(spaceParser, input, "Hello World")
-    }
 }</code></pre>
 </div>
 </div>
 <div class="listingblock multi-language-sample">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">package io.micronaut.chatbots.telegram
-
-import io.micronaut.chatbots.core.SpaceParser
-import io.micronaut.chatbots.telegram.api.Chat
-import io.micronaut.chatbots.telegram.api.Update
-import io.micronaut.chatbots.telegram.api.send.SendMessage
-import io.micronaut.chatbots.telegram.core.SendMessageUtils
-import io.micronaut.chatbots.telegram.core.TelegramBotConfiguration
-import io.micronaut.chatbots.telegram.core.TelegramHandler
-import io.micronaut.context.annotation.Requires
-import jakarta.inject.Singleton
-import java.util.*
-
-@Requires(property = "spec.name", value = "telegram")
-// tag::class[]
-@Singleton
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy"></code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
 class HelloWorldHandler(private val spaceParser: SpaceParser&lt;Update, Chat&gt;) : TelegramHandler&lt;SendMessage&gt; {
 
     override fun canHandle(bot: TelegramBotConfiguration?, input: Update): Boolean = input.message.text.contains("hello")
 
     override fun handle(bot: TelegramBotConfiguration?, input: Update): Optional&lt;SendMessage&gt; =
         SendMessageUtils.compose(spaceParser, input, "Hello World")
-}
-// end::class[]</code></pre>
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -586,7 +521,7 @@ class UnknownCommandHandler implements TelegramHandler&lt;SendMessage&gt; {
 
     @Override
     public Optional&lt;SendMessage&gt; handle(@Nullable TelegramBotConfiguration bot, @NotNull Update input) {
-        return SendMessageUtils.compose(spaceParser, input, "I don't how to handle your query: %s".formatted(input.getMessage().getText()));
+        return SendMessageUtils.compose(spaceParser, input, "I don't know how to handle your query: %s".formatted(input.getMessage().getText()));
     }
 
     @Override
@@ -785,7 +720,7 @@ as the <a href="https://cloud.google.com/functions/docs/writing/write-http-funct
 </div></p>
 </div>
 <div class="paragraph">
-<p>You also need to con configure the path with the following:</p>
+<p>You can configure the path with:</p>
 </div>
 <a id="io.micronaut.chatbots.telegram.http.TelegramControllerConfiguration" href="#io.micronaut.chatbots.telegram.http.TelegramControllerConfiguration">&#128279;</a>
 <table class="tableblock frame-all grid-all stretch">
@@ -829,7 +764,45 @@ as the <a href="https://cloud.google.com/functions/docs/writing/write-http-funct
 <p>You can develop <a href="https://github.com/basecamp/bc3-api/blob/master/sections/chatbots.md">Basecamp Chatbots</a> quickly with Micronaut Chatbots.</p>
 </div>
 
-<h2 id="basecampHandler"><a class="anchor" href="#basecampHandler"></a>4.1 Basecamp Bot Handlers</h2>
+<h2 id="basecampWebhook"><a class="anchor" href="#basecampWebhook"></a>4.1 Basecamp Webhook</h2>
+
+<div class='contribute-btn'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/master/src/main/docs/guide/basecamp/basecampWebhook.adoc"'>
+        <i class='fa fa-pencil-square-o'></i> Improve this doc
+    </button>
+</div>
+
+
+<div class="paragraph">
+<p>You have to set the <a href="https://github.com/basecamp/bc3-api/blob/master/sections/chatbots.md">webhook via the Basecamp API</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -s \
+  -H "Authorization: Bearer ${ACCESS_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d '{"service_name":"${BOTNAME}","command_url":"${YOUR_HTTP_TRIGGER_URL}"}' \
+  https://3.basecampapi.com/${APP_ID}/buckets/${BUCKET_ID}/chats/${CHAT_ID}/integrations.json</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>BOTNAME</code> is the name of your bot</p>
+</li>
+<li>
+<p><code>ACCESS_TOKEN</code> is your Oauth2 Basecamp access token</p>
+</li>
+<li>
+<p><code>YOUR_HTTP_TRIGGER_URL</code> is the https address of your URL of your controller or function</p>
+</li>
+<li>
+<p><code>APP_ID</code>, <code>BUCKET_ID</code> and <code>CHAT_ID</code> are the IDs of your Basecamp application, bucket and chat respectively</p>
+</li>
+</ul>
+</div>
+
+<h2 id="basecampHandler"><a class="anchor" href="#basecampHandler"></a>4.2 Basecamp Bot Handlers</h2>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/master/src/main/docs/guide/basecamp/basecampHandler.adoc"'>
@@ -843,25 +816,12 @@ as the <a href="https://cloud.google.com/functions/docs/writing/write-http-funct
 </div>
 <div class="listingblock multi-language-sample">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package io.micronaut.chatbots.basecamp;
-
-import io.micronaut.chatbots.basecamp.api.Query;
-import io.micronaut.chatbots.basecamp.core.BasecampBotConfiguration;
-import io.micronaut.chatbots.basecamp.core.BasecampHandler;
-import io.micronaut.context.annotation.Requires;
-import jakarta.inject.Singleton;
-import io.micronaut.core.annotation.NonNull;
-import jakarta.validation.constraints.NotNull;
-import java.util.Optional;
-
-@Requires(property = "spec.name", value = "basecamp")
-// tag::class[]
-@Singleton
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Singleton
 class HelloWorldHandler implements BasecampHandler {
 
     @Override
     public boolean canHandle(BasecampBotConfiguration bot, @NonNull @NotNull Query input) {
-        return true;
+        return input.getCommand().contains("hello");
     }
 
     @NonNull
@@ -869,62 +829,236 @@ class HelloWorldHandler implements BasecampHandler {
     public Optional&lt;String&gt; handle(BasecampBotConfiguration bot, @NonNull @NotNull Query input) {
         return Optional.of("Hello World");
     }
-}
-// end::class[]</code></pre>
+}</code></pre>
 </div>
 </div>
 <div class="listingblock multi-language-sample">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">package io.micronaut.chatbots.basecamp
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy"></code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
+class HelloWorldHandler : BasecampHandler {
 
-import io.micronaut.chatbots.basecamp.api.Query
-import io.micronaut.chatbots.basecamp.core.BasecampBotConfiguration
-import io.micronaut.chatbots.basecamp.core.BasecampHandler
-import io.micronaut.context.annotation.Requires
-import jakarta.inject.Singleton
+    override fun canHandle(bot: BasecampBotConfiguration?, input: Query) =
+        input.command.contains("hello")
 
-import jakarta.validation.constraints.NotNull
+    override fun handle(bot: BasecampBotConfiguration?, input: Query) =
+        Optional.of("Hello World")
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To respond to specific messages with static content, you extend from <a href="../api/io/micronaut/chatbots/basecamp/core/BasecampHandler.html">BasecampHandler</a> and utilize the <a href="../api/io/micronaut/chatbots/core/TextResourceLoader.html">TextResourceLoader</a> class to load the content.</p>
+</div>
+<div class="paragraph">
+<p>For example to respond to an <code>/about</code> command with a static message, you create a bean:</p>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Singleton
+class AboutCommandHandler implements BasecampHandler {
 
-@Singleton
-@Requires(property = "spec.name", value = "basecamp")
-class HelloWorldHandler implements BasecampHandler {
+    public static final String ABOUT = "about";
+    private final TextResourceLoader textResourceLoader;
 
-    @Override
-    boolean canHandle(BasecampBotConfiguration bot, @NotNull Query input) {
-        true
+    AboutCommandHandler(TextResourceLoader textResourceLoader) {
+        this.textResourceLoader = textResourceLoader;
     }
 
     @Override
-    Optional&lt;String&gt; handle(BasecampBotConfiguration bot, @NotNull Query input) {
-        Optional.of("Hello World")
+    public boolean canHandle(@Nullable BasecampBotConfiguration bot, @NonNull @NotNull Query input) {
+        return input.getCommand().equalsIgnoreCase("/" + ABOUT);
+    }
+
+    @Override
+    public @NonNull Optional&lt;String&gt; handle(@Nullable BasecampBotConfiguration bot, @NonNull @NotNull Query input) {
+        return textResourceLoader
+            .composeCommandResponse(ABOUT)
+            .map(CommandResponse::text);
     }
 }</code></pre>
 </div>
 </div>
 <div class="listingblock multi-language-sample">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">package io.micronaut.chatbots.basecamp
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">@Singleton
+class AboutCommandHandler implements BasecampHandler {
 
-import io.micronaut.chatbots.basecamp.api.Query
-import io.micronaut.chatbots.basecamp.core.BasecampBotConfiguration
-import io.micronaut.chatbots.basecamp.core.BasecampHandler
-import io.micronaut.context.annotation.Requires
-import jakarta.inject.Singleton
-import java.util.Optional
+    static final String ABOUT = "about"
+    private final TextResourceLoader textResourceLoader
 
-@Requires(property = "spec.name", value = "basecamp")
-// tag::class[]
-@Singleton
-class HelloWorldHandler : BasecampHandler {
+    AboutCommandHandler(TextResourceLoader textResourceLoader) {
+        this.textResourceLoader = textResourceLoader
+    }
 
-    override fun canHandle(bot: BasecampBotConfiguration, input: Query): Boolean = true
-    override fun handle(bot: BasecampBotConfiguration, input: Query): Optional&lt;String&gt; = Optional.of("Hello World")
-}
-// end::class[]</code></pre>
+    @Override
+    boolean canHandle(@Nullable BasecampBotConfiguration bot, @NonNull @NotNull Query input) {
+        input.command.equalsIgnoreCase("/$ABOUT")
+    }
+
+    @Override
+    @NonNull Optional&lt;String&gt; handle(@Nullable BasecampBotConfiguration bot, @NonNull @NotNull Query input) {
+        textResourceLoader
+            .composeCommandResponse(ABOUT)
+            .map(CommandResponse::text)
+    }
+}</code></pre>
 </div>
 </div>
+<div class="listingblock multi-language-sample">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
+class AboutCommandHandler(
+    private val textResourceLoader: TextResourceLoader
+) : BasecampHandler {
 
-<h2 id="basecampLambda"><a class="anchor" href="#basecampLambda"></a>4.2 Basecamp Chatbots as an AWS Lambda Function</h2>
+    override fun canHandle(bot: BasecampBotConfiguration?, input: Query) =
+        input.command.equals("/$ABOUT", ignoreCase = true)
+
+    override fun handle(bot: BasecampBotConfiguration?, input: Query) =
+        textResourceLoader.composeCommandResponse(ABOUT).map(CommandResponse::text)
+
+    companion object {
+        const val ABOUT: String = "about"
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And then create some content with a matching name in the <code>botcommands</code> directory:</p>
+</div>
+<div class="listingblock">
+<div class="title">resources/botcommands/about.md</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-md hljs" data-lang="md">Bot developed with 💙 using [Micronaut](https://micronaut.io)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>botcommands</code> directory may be configured via the <code>micronaut.chatbots.folder</code> configuration property.</p>
+</div>
+<a id="io.micronaut.chatbots.core.ChatbotsConfigurationProperties" href="#io.micronaut.chatbots.core.ChatbotsConfigurationProperties">&#128279;</a>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Configuration Properties for <a href="../api/io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html">ChatbotsConfigurationProperties</a></caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.enabled</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether chatbots is enabled. Default value (true).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.folder</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">java.lang.String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The folder to look for bot commands.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.possible-static-command-extensions</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">java.util.List</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Possible static command file extensions. Default values MARKDOWN, HTML, TXT</p></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="basecampOrder"><a class="anchor" href="#basecampOrder"></a>4.3 Ordering Handlers</h2>
+
+<div class='contribute-btn'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/master/src/main/docs/guide/basecamp/basecampOrder.adoc"'>
+        <i class='fa fa-pencil-square-o'></i> Improve this doc
+    </button>
+</div>
+
+
+<div class="paragraph">
+<p>Chatbot handlers have order, and the first handler to support a command is the one used.</p>
+</div>
+<div class="paragraph">
+<p>To change the order of handlers, you can override the <code>getOrder</code> method in your handler.</p>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Singleton
+class UnknownCommandHandler implements BasecampHandler {
+
+    @Override
+    public boolean canHandle(@Nullable BasecampBotConfiguration bot, @NonNull @NotNull Query input) {
+        return true; // <b class="conum">(1)</b>
+    }
+
+    @Override
+    public @NonNull Optional&lt;String&gt; handle(@Nullable BasecampBotConfiguration bot, @NonNull @NotNull Query input) {
+        return Optional.of("I don't know how to handle your query: %s".formatted(input.getCommand()));
+    }
+
+    @Override
+    public int getOrder() {
+        return Ordered.LOWEST_PRECEDENCE; // <b class="conum">(2)</b>
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">@Singleton
+class UnknownCommandHandler implements BasecampHandler {
+
+    @Override
+    boolean canHandle(@Nullable BasecampBotConfiguration bot, @NonNull @NotNull Query input) {
+        true // <b class="conum">(1)</b>
+    }
+
+    @Override
+    @NonNull Optional&lt;String&gt; handle(@Nullable BasecampBotConfiguration bot, @NonNull @NotNull Query input) {
+        Optional.of("I don't know how to handle your query: $input.command".toString())
+    }
+
+    @Override
+    public int getOrder() {
+        Ordered.LOWEST_PRECEDENCE // <b class="conum">(2)</b>
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
+class UnknownCommandHandler : BasecampHandler {
+
+    override fun canHandle(bot: BasecampBotConfiguration?, input: Query) = true // <b class="conum">(1)</b>
+
+    override fun handle(bot: BasecampBotConfiguration?, input: Query) =
+        Optional.of("I don't know how to handle your query: ${input.command}")
+
+    override fun getOrder() = Ordered.LOWEST_PRECEDENCE // <b class="conum">(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>This handler will handle any message.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Ensure this handler is last in the list of handlers.</td>
+</tr>
+</table>
+</div>
+
+<h2 id="basecampLambda"><a class="anchor" href="#basecampLambda"></a>4.4 Basecamp Chatbots as an AWS Lambda Function</h2>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/master/src/main/docs/guide/basecamp/basecampLambda.adoc"'>
@@ -957,7 +1091,7 @@ class HelloWorldHandler : BasecampHandler {
 as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">AWS Lambda function handler</a>.</p>
 </div>
 
-<h2 id="basecampGcp"><a class="anchor" href="#basecampGcp"></a>4.3 Basecamp Chatbots as a Google Cloud Function</h2>
+<h2 id="basecampGcp"><a class="anchor" href="#basecampGcp"></a>4.5 Basecamp Chatbots as a Google Cloud Function</h2>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/master/src/main/docs/guide/basecamp/basecampGcp.adoc"'>
@@ -989,10 +1123,10 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
 <p>You can use the following entry point:</p>
 </div>
 <div class="paragraph">
-<p><code>io.micronaut.chatbots.basecamp.googlecloud.Handler</code></p>
+<p>Use the class: <code>io.micronaut.chatbots.basecamp.googlecloud.Handler</code> as the <a href="https://cloud.google.com/functions/docs/writing/write-http-functions#http-example-java">Http Function entrypoint</a>.</p>
 </div>
 
-<h2 id="basecampAzure"><a class="anchor" href="#basecampAzure"></a>4.4 Basecamp Chatbots as an Azure Function</h2>
+<h2 id="basecampAzure"><a class="anchor" href="#basecampAzure"></a>4.6 Basecamp Chatbots as an Azure Function</h2>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/master/src/main/docs/guide/basecamp/basecampAzure.adoc"'>
@@ -1020,8 +1154,11 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
 </div>
 </div></p>
 </div>
+<div class="paragraph">
+<p>This adds an <code>AzureFunction</code> with the name <code>BasecampTrigger</code> via the class <code>io.micronaut.chatbots.basecamp.azurefunction.Handler</code></p>
+</div>
 
-<h2 id="basecampHttp"><a class="anchor" href="#basecampHttp"></a>4.5 Basecamp Chatbots Controller</h2>
+<h2 id="basecampHttp"><a class="anchor" href="#basecampHttp"></a>4.7 Basecamp Chatbots Controller</h2>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/master/src/main/docs/guide/basecamp/basecampHttp.adoc"'>
