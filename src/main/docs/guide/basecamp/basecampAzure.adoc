@@ -1,3 +1,5 @@
 If you want to deploy to an https://docs.microsoft.com/azure[Azure] function, you can use the following dependency:
 
 dependency:micronaut-chatbots-basecamp-azure-function[groupId=io.micronaut.chatbots]
+
+This adds an `AzureFunction` with the name `BasecampTrigger` via the class `io.micronaut.chatbots.basecamp.azurefunction.Handler`

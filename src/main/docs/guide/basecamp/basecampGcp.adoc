@@ -4,4 +4,5 @@ dependency:micronaut-chatbots-basecamp-gcp-function[groupId=io.micronaut.chatbot
 
 You can use the following entry point:
 
-`io.micronaut.chatbots.basecamp.googlecloud.Handler`
+Use the class: `io.micronaut.chatbots.basecamp.googlecloud.Handler` as the https://cloud.google.com/functions/docs/writing/write-http-functions#http-example-java[Http Function entrypoint].
+

@@ -1,3 +1,21 @@
 To develop your bot, create beans of type api:io.micronaut.chatbots.basecamp.core.BasecampHandler[].
 
-snippet::io.micronaut.chatbots.basecamp.HelloWorldHandler[]
+snippet::io.micronaut.chatbots.basecamp.HelloWorldHandler[tags=class]
+
+To respond to specific messages with static content, you extend from api:chatbots.basecamp.core.BasecampHandler[] and utilize the api:chatbots.core.TextResourceLoader[] class to load the content.
+
+For example to respond to an `/about` command with a static message, you create a bean:
+
+snippet::io.micronaut.chatbots.basecamp.AboutCommandHandler[tags=class]
+
+And then create some content with a matching name in the `botcommands` directory:
+
+[source,md]
+.resources/botcommands/about.md
+----
+include::test-suite/src/test/resources/botcommands/about.md[]
+----
+
+The `botcommands` directory may be configured via the `micronaut.chatbots.folder` configuration property.
+
+include::{includedir}configurationProperties/io.micronaut.chatbots.core.ChatbotsConfigurationProperties.adoc[]

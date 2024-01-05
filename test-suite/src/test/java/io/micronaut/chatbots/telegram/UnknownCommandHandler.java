@@ -33,7 +33,7 @@ class UnknownCommandHandler implements TelegramHandler<SendMessage> {
 
     @Override
     public Optional<SendMessage> handle(@Nullable TelegramBotConfiguration bot, @NotNull Update input) {
-        return SendMessageUtils.compose(spaceParser, input, "I don't how to handle your query: %s".formatted(input.getMessage().getText()));
+        return SendMessageUtils.compose(spaceParser, input, "I don't know how to handle your query: %s".formatted(input.getMessage().getText()));
     }
 
     @Override
