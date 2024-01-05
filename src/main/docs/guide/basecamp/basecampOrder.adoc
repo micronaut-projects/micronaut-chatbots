@@ -1,0 +1,8 @@
+Chatbot handlers have order, and the first handler to support a command is the one used.
+
+To change the order of handlers, you can override the `getOrder` method in your handler.
+
+snippet::io.micronaut.chatbots.basecamp.UnknownCommandHandler[tags=class]
+
+<1> This handler will handle any message.
+<2> Ensure this handler is last in the list of handlers.

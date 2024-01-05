@@ -14,7 +14,7 @@ class HelloWorldHandler implements BasecampHandler {
 
     @Override
     boolean canHandle(BasecampBotConfiguration bot, @NotNull Query input) {
-        true
+        input.command.contains("hello")
     }
 
     @Override
