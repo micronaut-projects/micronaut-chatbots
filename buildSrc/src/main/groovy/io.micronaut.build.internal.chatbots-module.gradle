@@ -10,10 +10,3 @@ dependencies {
     testImplementation(mnSerde.micronaut.serde.jackson)
 }
 
-micronautBuild {
-    // new module, so no binary check
-    binaryCompatibility {
-        enabled.set(false)
-    }
-}
-
