@@ -1,17 +1,19 @@
 [versions]
 micronaut = "4.2.3"
+
+micronaut-aws = "4.2.3"
+micronaut-azure = "5.1.0"
 micronaut-docs = "2.0.0"
-groovy = "4.0.13"
+micronaut-gcp = "5.3.0"
+micronaut-logging = "1.2.0"
+micronaut-serde = "2.5.1"
+micronaut-test = "4.1.1"
+micronaut-validation = "4.2.0"
+
+groovy = "4.0.17"
 spock = "2.3-groovy-4.0"
 kotlin = "1.9.22"
-micronaut-test = "4.0.0"
-micronaut-aws = "4.2.3"
-micronaut-gcp = "5.3.0"
-micronaut-serde = "2.5.1"
-micronaut-validation = "4.2.0"
-micronaut-azure = "5.1.0"
 
-micronaut-logging = "1.2.0"
 [libraries]
 # Core
 micronaut-core = { module = 'io.micronaut:micronaut-core-bom', version.ref = 'micronaut' }
@@ -26,10 +28,13 @@ micronaut-validation = { module = "io.micronaut.validation:micronaut-validation-
 
 groovy-json = { module = "org.apache.groovy:groovy-json" }
 
-jackson-annotations = { module = 'com.fasterxml.jackson.core:jackson-annotations' }
 azure-functions-java-library = { module = 'com.microsoft.azure.functions:azure-functions-java-library' }
-kotlin-stdlib-jdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8" }
+
+jackson-annotations = { module = 'com.fasterxml.jackson.core:jackson-annotations' }
+
 junit-api = { module = "org.junit.jupiter:junit-jupiter-api" }
 junit-engine = { module = "org.junit.jupiter:junit-jupiter-engine" }
+
+kotlin-stdlib-jdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8" }
 
 gradle-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
