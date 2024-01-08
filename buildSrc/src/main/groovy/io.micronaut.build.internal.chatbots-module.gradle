@@ -11,11 +11,9 @@ dependencies {
 }
 
 micronautBuild {
+    // new module, so no binary check
     binaryCompatibility {
-        enabled.set(true)
-        // TODO required for now. Remove after Micronaut 4 release
-        baselineVersion = "2.0.0-M5"
+        enabled.set(false)
     }
 }
-
 
