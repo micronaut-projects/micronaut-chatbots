@@ -1,11 +1,11 @@
 [versions]
-micronaut = "4.2.3"
+micronaut = "4.3.9"
 
 micronaut-aws = "4.2.3"
 micronaut-azure = "5.1.0"
 micronaut-docs = "2.0.0"
 micronaut-gcp = "5.3.0"
-micronaut-logging = "1.2.0"
+micronaut-logging = "1.2.3"
 micronaut-serde = "2.5.1"
 micronaut-test = "4.1.1"
 micronaut-validation = "4.4.0"
