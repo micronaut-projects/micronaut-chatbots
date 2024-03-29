@@ -20,5 +20,6 @@ basecamp:
   basecampGcp: Basecamp Chatbots as a Google Cloud Function
   basecampAzure: Basecamp Chatbots as an Azure Function
   basecampHttp: Basecamp Chatbots Controller
+breaks: Breaking Changes
 repository: Repository
 
