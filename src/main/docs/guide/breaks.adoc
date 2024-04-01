@@ -1,0 +1,10 @@
+This section documents breaking changes between Micronaut Chatbots versions:
+
+=== Micronaut Chatbots 2.0.0
+
+==== Deprecations
+
+- The private class field `io.micronaut.chatbots.google.api.Space.type` deprecated previously has been removed.
+As a consequence the corresponding accessor/mutator methods `getType()` and `setType(Type)` have also been removed,
+even though they were not deprecated explicitly.
+Use the accessor/mutator methods for `singleUserBotDm` or `spaceType` (developer preview) instead.

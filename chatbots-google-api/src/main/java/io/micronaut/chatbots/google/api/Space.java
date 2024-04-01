@@ -18,7 +18,6 @@ package io.micronaut.chatbots.google.api;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.core.annotation.Nullable;
 import io.micronaut.serde.annotation.Serdeable;
-
 import jakarta.validation.constraints.NotBlank;
 
 /**
@@ -52,14 +51,6 @@ public class Space {
      */
     @Nullable
     private String displayName;
-
-    /**
-     * The type of a space.
-     * @deprecated Use {@link Space#singleUserBotDm} or {@link Space#spaceType} (developer preview) instead.
-     */
-    @Deprecated
-    @Nullable
-    private Type type;
 
     /**
      * The type of space. Required when creating a space. Output only for other usage.
@@ -139,23 +130,6 @@ public class Space {
      */
     public void setDisplayName(@Nullable String displayName) {
         this.displayName = displayName;
-    }
-
-    /**
-     *
-     * @return The type of a space.
-     */
-    @Nullable
-    public Type getType() {
-        return type;
-    }
-
-    /**
-     *
-     * @param type The type of a space.
-     */
-    public void setType(@Nullable Type type) {
-        this.type = type;
     }
 
     /**
