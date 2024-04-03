@@ -8,7 +8,7 @@ micronaut-gcp = "5.4.1"
 micronaut-logging = "1.2.3"
 micronaut-serde = "2.8.2"
 micronaut-test = "4.1.1"
-micronaut-validation = "4.4.4"
+micronaut-validation = "4.5.0"
 
 groovy = "4.0.17"
 spock = "2.3-groovy-4.0"
