@@ -52,7 +52,9 @@
                                 
                                 <div class="toc-item" style="margin-left:0"><a href="#basecamp"><strong>4</strong><span>Basecamp</span></a></div>
                                 
-                                <div class="toc-item" style="margin-left:0"><a href="#repository"><strong>5</strong><span>Repository</span></a></div>
+                                <div class="toc-item" style="margin-left:0"><a href="#breaks"><strong>5</strong><span>Breaking Changes</span></a></div>
+                                
+                                <div class="toc-item" style="margin-left:0"><a href="#repository"><strong>6</strong><span>Repository</span></a></div>
                                 
                             </div>
                         </div>
@@ -121,7 +123,9 @@
         
         <div class="toc-item" style="margin-left:10px" id="toc-item-basecampHttp"><a href="#basecampHttp"><strong>4.7</strong><span>Basecamp Chatbots Controller</span></a></div>
         
-        <div class="toc-item" style="margin-left:0px" id="toc-item-repository"><a href="#repository"><strong>5</strong><span>Repository</span></a></div>
+        <div class="toc-item" style="margin-left:0px" id="toc-item-breaks"><a href="#breaks"><strong>5</strong><span>Breaking Changes</span></a></div>
+        
+        <div class="toc-item" style="margin-left:0px" id="toc-item-repository"><a href="#repository"><strong>6</strong><span>Repository</span></a></div>
         
         </div>
     </div>
@@ -131,7 +135,7 @@
         <h1>Micronaut Chatbots</h1>
         <p></p>
         <p>Ease the creation of ChatBots with the Micronaut Framework</p>
-        <p><strong>Version:</strong> 1.1.0-SNAPSHOT </p>
+        <p><strong>Version:</strong> 2.0.0-SNAPSHOT </p>
     </div>
     
 <h1 id="introduction"><a class="anchor" href="#introduction"></a>1 Introduction</h1>
@@ -1218,7 +1222,36 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
 </tbody>
 </table>
 
-<h1 id="repository"><a class="anchor" href="#repository"></a>5 Repository</h1>
+<h1 id="breaks"><a class="anchor" href="#breaks"></a>5 Breaking Changes</h1>
+
+<div class='contribute-btn'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.1.x/src/main/docs/guide/breaks.adoc"'>
+        <i class='fa fa-pencil-square-o'></i> Improve this doc
+    </button>
+</div>
+
+
+<div class="paragraph">
+<p>This section documents breaking changes between Micronaut Chatbots versions:</p>
+</div>
+<div class="sect2">
+<h3 id="_micronaut_chatbots_2_0_0">Micronaut Chatbots 2.0.0</h3>
+<div class="sect3">
+<h4 id="_deprecations">Deprecations</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>The private class field <code>io.micronaut.chatbots.google.api.Space.type</code> deprecated previously has been removed.
+As a consequence the corresponding accessor/mutator methods <code>getType()</code> and <code>setType(Type)</code> have also been removed,
+even though they were not deprecated explicitly.
+Use the accessor/mutator methods for <code>singleUserBotDm</code> or <code>spaceType</code> (developer preview) instead.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<h1 id="repository"><a class="anchor" href="#repository"></a>6 Repository</h1>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.1.x/src/main/docs/guide/repository.adoc"'>
