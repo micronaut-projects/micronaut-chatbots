@@ -7,7 +7,7 @@ pluginManagement {
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 plugins {
-    id("io.micronaut.build.shared.settings") version "6.7.0"
+    id("io.micronaut.build.shared.settings") version "7.2.0"
 }
 
 rootProject.name = "chatbots-parent"
