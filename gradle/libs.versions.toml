@@ -1,5 +1,5 @@
 [versions]
-micronaut = "4.8.8"
+micronaut = "4.8.9"
 
 micronaut-azure = "5.8.0"
 micronaut-aws = "4.9.0"
