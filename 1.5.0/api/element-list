@@ -1,0 +1,17 @@
+io.micronaut.chatbots.basecamp.api
+io.micronaut.chatbots.basecamp.azurefunction
+io.micronaut.chatbots.basecamp.core
+io.micronaut.chatbots.basecamp.googlecloud
+io.micronaut.chatbots.basecamp.http
+io.micronaut.chatbots.basecamp.lambda
+io.micronaut.chatbots.core
+io.micronaut.chatbots.google.api
+io.micronaut.chatbots.http
+io.micronaut.chatbots.lambda
+io.micronaut.chatbots.telegram.api
+io.micronaut.chatbots.telegram.api.send
+io.micronaut.chatbots.telegram.azurefunction
+io.micronaut.chatbots.telegram.core
+io.micronaut.chatbots.telegram.googlecloud
+io.micronaut.chatbots.telegram.http
+io.micronaut.chatbots.telegram.lambda
