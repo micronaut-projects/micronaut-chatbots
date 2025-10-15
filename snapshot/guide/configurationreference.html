@@ -55,15 +55,17 @@
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Configuration Properties for <a href="../api/io/micronaut/chatbots/basecamp/core/BasecampBotConfigurationProperties.html">BasecampBotConfigurationProperties</a></caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Property</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Default value</th>
 </tr>
 </thead>
 <tbody>
@@ -71,6 +73,7 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.basecamp.bots.*.enabled</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sets whether this configuration is enabled. Default true.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -82,15 +85,17 @@
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. Configuration Properties for <a href="../api/io/micronaut/chatbots/basecamp/http/BasecampControllerConfiguration.html">BasecampControllerConfiguration</a></caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Property</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Default value</th>
 </tr>
 </thead>
 <tbody>
@@ -98,11 +103,13 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.basecamp.endpoint.enabled</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enables the controller. Default value true.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.basecamp.endpoint.path</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">java.lang.String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Path to the controller. Default value "/basecamp".</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -114,15 +121,17 @@
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 3. Configuration Properties for <a href="../api/io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html">ChatbotsConfigurationProperties</a></caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Property</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Default value</th>
 </tr>
 </thead>
 <tbody>
@@ -130,16 +139,19 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.enabled</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Whether chatbots is enabled. Default value (true).</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.folder</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">java.lang.String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The folder to look for bot commands.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.possible-static-command-extensions</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">java.util.List</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Possible static command file extensions. Default values MARKDOWN, HTML, TXT</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -151,32 +163,37 @@
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 4. Configuration Properties for <a href="../api/io/micronaut/chatbots/telegram/core/TelegramBotConfigurationProperties.html">TelegramBotConfigurationProperties</a></caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Property</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Default value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.telegram.bots.*.at-username</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">java.lang.String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bot username prefixed with @</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.telegram.bots.*.token</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">java.lang.String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Telegram&#8217;s token</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.telegram.bots.*.enabled</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sets whether this configuration is enabled. Default true.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -188,15 +205,17 @@
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 5. Configuration Properties for <a href="../api/io/micronaut/chatbots/telegram/http/TelegramControllerConfiguration.html">TelegramControllerConfiguration</a></caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Property</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Default value</th>
 </tr>
 </thead>
 <tbody>
@@ -204,11 +223,13 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.telegram.endpoint.enabled</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enables the controller. Default value true .</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.telegram.endpoint.path</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">java.lang.String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Path to the controller. Default value "/telegram" .</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
