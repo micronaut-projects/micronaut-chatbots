@@ -10,5 +10,5 @@ dependencies {
 }
 
 micronautBuild {
-    javaVersion.set(17)
+    javaVersion.set(21)
 }

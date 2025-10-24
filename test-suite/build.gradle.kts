@@ -8,6 +8,7 @@ repositories {
 dependencies {
     testRuntimeOnly(mnLogging.logback.classic)
     testRuntimeOnly(libs.junit.engine)
+    testRuntimeOnly(mnTest.junit.platform.launcher)
     testAnnotationProcessor(mn.micronaut.inject.java)
     testImplementation(mnTest.micronaut.test.junit5)
     testAnnotationProcessor(mnValidation.micronaut.validation.processor)
@@ -22,6 +23,6 @@ tasks.withType<Test> {
 }
 
 java {
-    sourceCompatibility = JavaVersion.toVersion("17")
-    targetCompatibility = JavaVersion.toVersion("17")
+    sourceCompatibility = JavaVersion.toVersion("21")
+    targetCompatibility = JavaVersion.toVersion("21")
 }

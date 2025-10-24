@@ -3,11 +3,15 @@ pluginManagement {
         gradlePluginPortal()
         mavenCentral()
     }
+    plugins {
+        id("org.jetbrains.kotlin.jvm") version "2.0.21"
+        id("org.jetbrains.kotlin.kapt") version "2.0.21"
+    }
 }
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 plugins {
-    id("io.micronaut.build.shared.settings") version "8.0.0-M4"
+    id("io.micronaut.build.shared.settings") version "8.0.0-M5"
 }
 
 rootProject.name = "chatbots-parent"
