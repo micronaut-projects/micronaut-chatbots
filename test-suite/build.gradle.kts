@@ -1,5 +1,7 @@
 plugins {
     id("java-library")
+    id("io.micronaut.build.internal.java-base")
+
 }
 repositories {
     mavenCentral()
@@ -20,9 +22,4 @@ dependencies {
 }
 tasks.withType<Test> {
     useJUnitPlatform()
-}
-
-java {
-    sourceCompatibility = JavaVersion.toVersion("21")
-    targetCompatibility = JavaVersion.toVersion("21")
 }
