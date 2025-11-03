@@ -1,5 +1,7 @@
 plugins {
     id("java-library")
+    id("io.micronaut.build.internal.java-base")
+
 }
 repositories {
     mavenCentral()
@@ -8,6 +10,7 @@ repositories {
 dependencies {
     testRuntimeOnly(mnLogging.logback.classic)
     testRuntimeOnly(libs.junit.engine)
+    testRuntimeOnly(mnTest.junit.platform.launcher)
     testAnnotationProcessor(mn.micronaut.inject.java)
     testImplementation(mnTest.micronaut.test.junit5)
     testAnnotationProcessor(mnValidation.micronaut.validation.processor)
@@ -19,9 +22,4 @@ dependencies {
 }
 tasks.withType<Test> {
     useJUnitPlatform()
-}
-
-java {
-    sourceCompatibility = JavaVersion.toVersion("17")
-    targetCompatibility = JavaVersion.toVersion("17")
 }

@@ -1,6 +1,7 @@
 plugins {
     id("org.jetbrains.kotlin.jvm")
     id("org.jetbrains.kotlin.kapt")
+    id("io.micronaut.build.internal.kotlin-base")
 }
 
 repositories {
@@ -11,6 +12,7 @@ dependencies {
     kaptTest(mn.micronaut.inject.java)
     testRuntimeOnly(mnLogging.logback.classic)
     testRuntimeOnly(libs.junit.engine)
+    testRuntimeOnly(mnTest.junit.platform.launcher)
     testAnnotationProcessor(mn.micronaut.inject.java)
     testImplementation(mnTest.micronaut.test.junit5)
     testAnnotationProcessor(mnValidation.micronaut.validation.processor)
@@ -27,8 +29,3 @@ tasks.named<Test>("test") {
     useJUnitPlatform()
 }
 
-kotlin {
-    jvmToolchain {
-        languageVersion.set(JavaLanguageVersion.of(17))
-    }
-}
