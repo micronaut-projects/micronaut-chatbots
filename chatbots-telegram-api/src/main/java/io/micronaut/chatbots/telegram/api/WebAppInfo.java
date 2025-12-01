@@ -15,7 +15,7 @@
  */
 package io.micronaut.chatbots.telegram.api;
 
-import io.micronaut.core.annotation.NonNull;
+import org.jspecify.annotations.NonNull;
 import io.micronaut.serde.annotation.Serdeable;
 import jakarta.validation.constraints.NotBlank;
 

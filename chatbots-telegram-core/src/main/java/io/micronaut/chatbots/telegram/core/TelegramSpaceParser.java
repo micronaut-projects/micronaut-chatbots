@@ -18,7 +18,7 @@ package io.micronaut.chatbots.telegram.core;
 import io.micronaut.chatbots.core.SpaceParser;
 import io.micronaut.chatbots.telegram.api.Chat;
 import io.micronaut.chatbots.telegram.api.Update;
-import io.micronaut.core.annotation.NonNull;
+import org.jspecify.annotations.NonNull;
 import jakarta.inject.Singleton;
 import jakarta.validation.constraints.NotNull;
 import java.util.Optional;

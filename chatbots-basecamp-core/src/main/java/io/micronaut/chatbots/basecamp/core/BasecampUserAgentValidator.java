@@ -15,7 +15,7 @@
  */
 package io.micronaut.chatbots.basecamp.core;
 
-import io.micronaut.core.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 import io.micronaut.core.util.StringUtils;
 import io.micronaut.http.HttpHeaders;
 import org.slf4j.Logger;

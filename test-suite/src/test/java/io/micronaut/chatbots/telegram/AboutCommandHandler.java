@@ -7,7 +7,7 @@ import io.micronaut.chatbots.telegram.api.Update;
 import io.micronaut.chatbots.telegram.core.CommandHandler;
 import io.micronaut.chatbots.telegram.core.TelegramSlashCommandParser;
 import io.micronaut.context.annotation.Requires;
-import io.micronaut.core.annotation.NonNull;
+import org.jspecify.annotations.NonNull;
 import jakarta.inject.Singleton;
 
 @Requires(property = "spec.name", value = "telegram")

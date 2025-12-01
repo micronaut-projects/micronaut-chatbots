@@ -16,7 +16,7 @@
 package io.micronaut.chatbots.core;
 
 import io.micronaut.context.annotation.DefaultImplementation;
-import io.micronaut.core.annotation.NonNull;
+import org.jspecify.annotations.NonNull;
 
 import jakarta.validation.constraints.NotBlank;
 import java.util.Optional;
