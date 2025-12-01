@@ -17,7 +17,7 @@ package io.micronaut.chatbots.basecamp.core;
 
 import io.micronaut.context.annotation.EachProperty;
 import io.micronaut.context.annotation.Parameter;
-import io.micronaut.core.annotation.NonNull;
+import org.jspecify.annotations.NonNull;
 import io.micronaut.chatbots.core.ChatbotsConfiguration;
 
 /**

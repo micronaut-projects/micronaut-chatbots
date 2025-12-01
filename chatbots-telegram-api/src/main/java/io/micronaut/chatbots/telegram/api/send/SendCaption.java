@@ -15,7 +15,7 @@
  */
 package io.micronaut.chatbots.telegram.api.send;
 
-import io.micronaut.core.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Send content with caption.

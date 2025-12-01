@@ -19,7 +19,7 @@ import io.micronaut.chatbots.core.ChatbotsConfiguration;
 
 import io.micronaut.context.annotation.EachProperty;
 import io.micronaut.context.annotation.Parameter;
-import io.micronaut.core.annotation.NonNull;
+import org.jspecify.annotations.NonNull;
 
 import jakarta.validation.constraints.NotBlank;
 import java.util.HashMap;

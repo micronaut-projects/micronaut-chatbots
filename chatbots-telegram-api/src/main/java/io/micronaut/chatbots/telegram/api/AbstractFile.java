@@ -16,7 +16,7 @@
 package io.micronaut.chatbots.telegram.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.micronaut.core.annotation.NonNull;
+import org.jspecify.annotations.NonNull;
 
 import jakarta.validation.constraints.NotBlank;
 

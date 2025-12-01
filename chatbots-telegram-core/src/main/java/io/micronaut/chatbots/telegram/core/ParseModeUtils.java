@@ -17,7 +17,7 @@ package io.micronaut.chatbots.telegram.core;
 
 import io.micronaut.chatbots.core.FileExtension;
 import io.micronaut.chatbots.telegram.api.send.ParseMode;
-import io.micronaut.core.annotation.NonNull;
+import org.jspecify.annotations.NonNull;
 
 import java.util.Optional;
 

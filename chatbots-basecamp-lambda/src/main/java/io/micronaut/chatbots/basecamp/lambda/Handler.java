@@ -24,7 +24,7 @@ import io.micronaut.chatbots.core.Dispatcher;
 import io.micronaut.chatbots.lambda.AbstractHandler;
 import io.micronaut.context.ApplicationContext;
 import io.micronaut.context.ApplicationContextBuilder;
-import io.micronaut.core.annotation.NonNull;
+import org.jspecify.annotations.NonNull;
 import io.micronaut.http.HttpHeaders;
 import io.micronaut.serde.ObjectMapper;
 import jakarta.inject.Inject;

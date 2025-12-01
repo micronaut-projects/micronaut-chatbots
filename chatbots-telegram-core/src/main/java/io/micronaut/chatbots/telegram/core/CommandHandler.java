@@ -20,8 +20,8 @@ import io.micronaut.chatbots.core.TextResourceLoader;
 import io.micronaut.chatbots.telegram.api.Chat;
 import io.micronaut.chatbots.telegram.api.Update;
 import io.micronaut.chatbots.telegram.api.send.SendMessage;
-import io.micronaut.core.annotation.NonNull;
-import io.micronaut.core.annotation.Nullable;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
 import jakarta.validation.constraints.NotNull;
 import java.util.Optional;
 

@@ -5,7 +5,7 @@ import io.micronaut.chatbots.basecamp.core.BasecampBotConfiguration;
 import io.micronaut.chatbots.basecamp.core.BasecampHandler;
 import io.micronaut.context.annotation.Requires;
 import jakarta.inject.Singleton;
-import io.micronaut.core.annotation.NonNull;
+import org.jspecify.annotations.NonNull;
 import jakarta.validation.constraints.NotNull;
 import java.util.Optional;
 

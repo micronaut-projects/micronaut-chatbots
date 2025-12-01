@@ -23,7 +23,7 @@ import io.micronaut.chatbots.telegram.api.Update;
 import io.micronaut.chatbots.telegram.api.send.Send;
 import io.micronaut.chatbots.telegram.core.TelegramBotConfiguration;
 import io.micronaut.chatbots.telegram.core.TokenValidator;
-import io.micronaut.core.annotation.NonNull;
+import org.jspecify.annotations.NonNull;
 import io.micronaut.function.executor.FunctionInitializer;
 import io.micronaut.http.HttpStatus;
 import io.micronaut.http.MediaType;

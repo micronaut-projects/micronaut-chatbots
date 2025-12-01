@@ -15,7 +15,7 @@
  */
 package io.micronaut.chatbots.core;
 
-import io.micronaut.core.annotation.NonNull;
+import org.jspecify.annotations.NonNull;
 
 /**
  * Static Response for a Slash command.

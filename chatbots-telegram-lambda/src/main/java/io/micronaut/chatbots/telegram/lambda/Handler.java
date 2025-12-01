@@ -25,7 +25,7 @@ import io.micronaut.chatbots.telegram.core.TelegramBotConfiguration;
 import io.micronaut.chatbots.telegram.core.TokenValidator;
 import io.micronaut.context.ApplicationContext;
 import io.micronaut.context.ApplicationContextBuilder;
-import io.micronaut.core.annotation.NonNull;
+import org.jspecify.annotations.NonNull;
 import io.micronaut.serde.ObjectMapper;
 import jakarta.inject.Inject;
 import org.slf4j.Logger;

@@ -8,7 +8,7 @@ import io.micronaut.chatbots.telegram.core.SendMessageUtils;
 import io.micronaut.chatbots.telegram.core.TelegramBotConfiguration;
 import io.micronaut.chatbots.telegram.core.TelegramHandler;
 import io.micronaut.context.annotation.Requires;
-import io.micronaut.core.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 import io.micronaut.core.order.Ordered;
 import jakarta.inject.Singleton;
 import jakarta.validation.constraints.NotNull;
