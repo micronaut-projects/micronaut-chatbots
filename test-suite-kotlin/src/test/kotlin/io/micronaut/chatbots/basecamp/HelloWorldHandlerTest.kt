@@ -32,19 +32,19 @@ class HelloWorldHandlerTest {
 
     @Test
     fun aboutCommandHandlerExists() {
-        val send = dispatcher.dispatch(null, jsonMapper.readValue(javaClass.getResourceAsStream("/basecampAbout.json"), Query::class.java)).get()
+        val send = dispatcher.dispatch(null, jsonMapper.readValue(javaClass.getResourceAsStream("/basecampAbout.json"), Query::class.java)!!).get()
         assertEquals("Bot developed with 💙 using [Micronaut](https://micronaut.io)", send.trim())
     }
 
     @Test
     fun helloCommandHandlerExists() {
-        val send = dispatcher.dispatch(null, jsonMapper.readValue(javaClass.getResourceAsStream("/basecampHello.json"), Query::class.java)).get()
+        val send = dispatcher.dispatch(null, jsonMapper.readValue(javaClass.getResourceAsStream("/basecampHello.json"), Query::class.java)!!).get()
         assertEquals("Hello World", send)
     }
 
     @Test
     fun unknownCommandHandlerExists() {
-        val send = dispatcher.dispatch(null, jsonMapper.readValue(javaClass.getResourceAsStream("/basecampText.json"), Query::class.java)).get()
+        val send = dispatcher.dispatch(null, jsonMapper.readValue(javaClass.getResourceAsStream("/basecampText.json"), Query::class.java)!!).get()
         assertEquals("I don't know how to handle your query: some text", send)
     }
 }
