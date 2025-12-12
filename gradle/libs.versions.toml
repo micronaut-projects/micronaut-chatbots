@@ -1,23 +1,16 @@
 [versions]
-micronaut = "4.10.9"
+micronaut = "5.0.0-M2"
 micronaut-azure = "5.12.0"
 micronaut-aws = "4.11.0"
-micronaut-docs = "3.0.0"
 micronaut-gcp = "5.13.1"
-micronaut-logging = "1.7.1"
-micronaut-serde = "2.16.2"
-micronaut-test = "4.9.0"
-micronaut-validation = "4.12.0"
-
-groovy = "4.0.17"
-spock = "2.3-groovy-4.0"
 kotlin = "2.2.21"
+micronaut-serde = "3.0.0-M1"
+micronaut-validation = "5.0.0-M1"
 
 [libraries]
 # Core
 micronaut-core = { module = 'io.micronaut:micronaut-core-bom', version.ref = 'micronaut' }
 
-micronaut-logging = { module = "io.micronaut.logging:micronaut-logging-bom", version.ref = "micronaut-logging" }
 
 micronaut-aws = { module = "io.micronaut.aws:micronaut-aws-bom", version.ref = "micronaut-aws" }
 micronaut-gcp = { module = "io.micronaut.gcp:micronaut-gcp-bom", version.ref = "micronaut-gcp" }
