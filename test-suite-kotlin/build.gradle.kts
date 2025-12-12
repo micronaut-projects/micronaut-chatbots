@@ -1,7 +1,5 @@
 plugins {
-    id("org.jetbrains.kotlin.jvm")
-    id("org.jetbrains.kotlin.kapt")
-    id("io.micronaut.build.internal.kotlin-base")
+    id("io.micronaut.build.internal.chatbots-testsuite-kotlin")
 }
 
 repositories {
@@ -10,22 +8,6 @@ repositories {
 
 dependencies {
     kaptTest(mn.micronaut.inject.java)
-    testRuntimeOnly(mnLogging.logback.classic)
-    testRuntimeOnly(libs.junit.engine)
-    testRuntimeOnly(mnTest.junit.platform.launcher)
     testAnnotationProcessor(mn.micronaut.inject.java)
     testImplementation(mnTest.micronaut.test.junit5)
-    testAnnotationProcessor(mnValidation.micronaut.validation.processor)
-    testImplementation(mnValidation.micronaut.validation)
-    testAnnotationProcessor(mnSerde.micronaut.serde.processor)
-    testImplementation(mnSerde.micronaut.serde.jackson)
-    testImplementation(projects.micronautChatbotsBasecampCore)
-    testImplementation(projects.micronautChatbotsTelegramCore)
-
-    testImplementation(libs.kotlin.stdlib.jdk8)
 }
-
-tasks.named<Test>("test") {
-    useJUnitPlatform()
-}
-
