@@ -1,7 +1,6 @@
 plugins {
-    id("org.jetbrains.kotlin.jvm")
-    id("org.jetbrains.kotlin.kapt")
     id("io.micronaut.build.internal.kotlin-base")
+    id("io.micronaut.build.internal.kotlin-kapt")
 }
 
 repositories {
@@ -21,8 +20,6 @@ dependencies {
     testImplementation(mnSerde.micronaut.serde.jackson)
     testImplementation(projects.micronautChatbotsBasecampCore)
     testImplementation(projects.micronautChatbotsTelegramCore)
-
-    testImplementation(libs.kotlin.stdlib.jdk8)
 }
 
 tasks.named<Test>("test") {

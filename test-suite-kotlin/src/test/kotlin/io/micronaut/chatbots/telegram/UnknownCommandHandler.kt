@@ -23,7 +23,7 @@ class UnknownCommandHandler(private val spaceParser: SpaceParser<Update, Chat>) 
         SendMessageUtils.compose(
             spaceParser,
             input,
-            "I don't how to handle your query: ${input.message.text}"
+            "I don't know how to handle your query: ${input.message?.text ?: "unknown"}"
         )
 
     override fun getOrder() = Ordered.LOWEST_PRECEDENCE // <2>

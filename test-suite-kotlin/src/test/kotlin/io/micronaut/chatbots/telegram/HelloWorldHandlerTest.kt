@@ -35,7 +35,7 @@ class HelloWorldHandlerTest {
     @Test
     @Throws(Exception::class)
     fun aboutCommandHandlerExists() {
-        val send = dispatcher.dispatch(null, jsonMapper.readValue(javaClass.getResourceAsStream("/about.json"), Update::class.java)).get()
+        val send = dispatcher.dispatch(null, jsonMapper.readValue(javaClass.getResourceAsStream("/about.json"), Update::class.java)!!).get()
 
         assertTrue(send is SendMessage)
         Assertions.assertEquals(
@@ -46,7 +46,7 @@ class HelloWorldHandlerTest {
     @Test
     @Throws(Exception::class)
     fun helloCommandHandlerExists() {
-        val send = dispatcher.dispatch(null, jsonMapper.readValue(javaClass.getResourceAsStream("/hello.json"), Update::class.java)).get()
+        val send = dispatcher.dispatch(null, jsonMapper.readValue(javaClass.getResourceAsStream("/hello.json"), Update::class.java)!!).get()
 
         assertTrue(send is SendMessage)
         Assertions.assertEquals("Hello World", (send as SendMessage).text)
@@ -55,9 +55,9 @@ class HelloWorldHandlerTest {
     @Test
     @Throws(Exception::class)
     fun unknownCommandHandlerExists() {
-        val send = dispatcher.dispatch(null, jsonMapper.readValue(javaClass.getResourceAsStream("/text.json"), Update::class.java)).get()
+        val send = dispatcher.dispatch(null, jsonMapper.readValue(javaClass.getResourceAsStream("/text.json"), Update::class.java)!!).get()
 
         assertTrue(send is SendMessage)
-        Assertions.assertEquals("I don't how to handle your query: some text", (send as SendMessage).text)
+        Assertions.assertEquals("I don't know how to handle your query: some text", (send as SendMessage).text)
     }
 }

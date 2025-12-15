@@ -16,7 +16,7 @@ import java.util.*
 @Singleton
 class HelloWorldHandler(private val spaceParser: SpaceParser<Update, Chat>) : TelegramHandler<SendMessage> {
 
-    override fun canHandle(bot: TelegramBotConfiguration?, input: Update): Boolean = input.message.text.contains("hello")
+    override fun canHandle(bot: TelegramBotConfiguration?, input: Update): Boolean = input.message?.text?.contains("hello") ?: false
 
     override fun handle(bot: TelegramBotConfiguration?, input: Update): Optional<SendMessage> =
         SendMessageUtils.compose(spaceParser, input, "Hello World")
