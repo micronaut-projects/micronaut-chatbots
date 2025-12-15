@@ -197,8 +197,7 @@ implements <a href="TelegramHandler.html" title="interface in io.micronaut.chatb
 <li>
 <section class="detail" id="getCommand()">
 <h3>getCommand</h3>
-<div class="member-signature"><span class="annotations">@NonNull
-</span><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">@NonNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getCommand</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">@NonNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getCommand</span>()</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>A slash command. E.g. /help</dd>
@@ -208,9 +207,8 @@ implements <a href="TelegramHandler.html" title="interface in io.micronaut.chatb
 <li>
 <section class="detail" id="canHandle(io.micronaut.chatbots.telegram.core.TelegramBotConfiguration,io.micronaut.chatbots.telegram.api.Update)">
 <h3>canHandle</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canHandle</span><wbr><span class="parameters">(@Nullable
- @Nullable <a href="TelegramBotConfiguration.html" title="interface in io.micronaut.chatbots.telegram.core">TelegramBotConfiguration</a>&nbsp;bot,
- @NonNull @NotNull
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canHandle</span><wbr><span class="parameters">(@Nullable <a href="TelegramBotConfiguration.html" title="interface in io.micronaut.chatbots.telegram.core">TelegramBotConfiguration</a>&nbsp;bot,
+ @NotNull
  @NonNull @NotNull <a href="../api/Update.html" title="class in io.micronaut.chatbots.telegram.api">Update</a>&nbsp;input)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../core/Handler.html#canHandle(B,I)">Handler</a></code></span></div>
 <div class="block">Returns true if the handler can dispatch the current request.</div>
@@ -228,10 +226,8 @@ implements <a href="TelegramHandler.html" title="interface in io.micronaut.chatb
 <li>
 <section class="detail" id="handle(io.micronaut.chatbots.telegram.core.TelegramBotConfiguration,io.micronaut.chatbots.telegram.api.Update)">
 <h3>handle</h3>
-<div class="member-signature"><span class="annotations">@NonNull
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NonNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../api/send/SendMessage.html" title="class in io.micronaut.chatbots.telegram.api.send">SendMessage</a>&gt;</span>&nbsp;<span class="element-name">handle</span><wbr><span class="parameters">(@Nullable
- @Nullable <a href="TelegramBotConfiguration.html" title="interface in io.micronaut.chatbots.telegram.core">TelegramBotConfiguration</a>&nbsp;bot,
- @NonNull @NotNull
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">@NonNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="../api/send/SendMessage.html" title="class in io.micronaut.chatbots.telegram.api.send">SendMessage</a>&gt;</span>&nbsp;<span class="element-name">handle</span><wbr><span class="parameters">(@Nullable <a href="TelegramBotConfiguration.html" title="interface in io.micronaut.chatbots.telegram.core">TelegramBotConfiguration</a>&nbsp;bot,
+ @NotNull
  @NonNull @NotNull <a href="../api/Update.html" title="class in io.micronaut.chatbots.telegram.api">Update</a>&nbsp;input)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../../core/Handler.html#handle(B,I)">Handler</a></code></span></div>
 <div class="block">Handles the request.</div>

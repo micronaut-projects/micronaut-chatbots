@@ -23,7 +23,9 @@
             document.body.className = classes.join(" ");
         }
     </script>
-
+    <style type="text/css">
+        .lang-java { display: block }; .lang-python { display: block }; .lang-kotlin { display: block }; .lang-groovy { display: block }; 
+    </style>
 </head>
 
 <body class="body" id="docs" onload="addJsClass();" onhashchange="highlightMenu()">
@@ -364,19 +366,19 @@ class HelloWorldHandler implements TelegramHandler&lt;SendMessage&gt; {
 </div>
 <div class="listingblock multi-language-sample">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy"></code></pre>
-</div>
-</div>
-<div class="listingblock multi-language-sample">
-<div class="content">
 <pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
 class HelloWorldHandler(private val spaceParser: SpaceParser&lt;Update, Chat&gt;) : TelegramHandler&lt;SendMessage&gt; {
 
-    override fun canHandle(bot: TelegramBotConfiguration?, input: Update): Boolean = input.message.text.contains("hello")
+    override fun canHandle(bot: TelegramBotConfiguration?, input: Update): Boolean = input.message?.text?.contains("hello") ?: false
 
     override fun handle(bot: TelegramBotConfiguration?, input: Update): Optional&lt;SendMessage&gt; =
         SendMessageUtils.compose(spaceParser, input, "Hello World")
 }</code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy"></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -408,6 +410,23 @@ class AboutCommandHandler extends CommandHandler {
 </div>
 <div class="listingblock multi-language-sample">
 <div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
+class AboutCommandHandler(
+    slashCommandParser: TelegramSlashCommandParser,
+    textResourceLoader: TextResourceLoader,
+    spaceParser: SpaceParser&lt;Update, Chat&gt;
+) : CommandHandler(slashCommandParser, textResourceLoader, spaceParser) {
+
+    override fun getCommand() = COMMAND_ABOUT
+
+    companion object {
+        private const val COMMAND_ABOUT = "/about"
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
 <pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">@Singleton
 class AboutCommandHandler extends CommandHandler {
 
@@ -425,23 +444,6 @@ class AboutCommandHandler extends CommandHandler {
     @NonNull
     String getCommand() {
         COMMAND_ABOUT
-    }
-}</code></pre>
-</div>
-</div>
-<div class="listingblock multi-language-sample">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
-class AboutCommandHandler(
-    slashCommandParser: TelegramSlashCommandParser,
-    textResourceLoader: TextResourceLoader,
-    spaceParser: SpaceParser&lt;Update, Chat&gt;
-) : CommandHandler(slashCommandParser, textResourceLoader, spaceParser) {
-
-    override fun getCommand() = COMMAND_ABOUT
-
-    companion object {
-        private const val COMMAND_ABOUT = "/about"
     }
 }</code></pre>
 </div>
@@ -542,6 +544,24 @@ class UnknownCommandHandler implements TelegramHandler&lt;SendMessage&gt; {
 </div>
 <div class="listingblock multi-language-sample">
 <div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
+class UnknownCommandHandler(private val spaceParser: SpaceParser&lt;Update, Chat&gt;) : TelegramHandler&lt;SendMessage&gt; {
+
+    override fun canHandle(bot: TelegramBotConfiguration?, input: Update) = true // <b class="conum">(1)</b>
+
+    override fun handle(bot: TelegramBotConfiguration?, input: Update): Optional&lt;SendMessage&gt; =
+        SendMessageUtils.compose(
+            spaceParser,
+            input,
+            "I don't know how to handle your query: ${input.message?.text ?: "unknown"}"
+        )
+
+    override fun getOrder() = Ordered.LOWEST_PRECEDENCE // <b class="conum">(2)</b>
+}</code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
 <pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">@Singleton
 class UnknownCommandHandler implements TelegramHandler&lt;SendMessage&gt; {
 
@@ -565,24 +585,6 @@ class UnknownCommandHandler implements TelegramHandler&lt;SendMessage&gt; {
     int getOrder() {
         Ordered.LOWEST_PRECEDENCE // <b class="conum">(2)</b>
     }
-}</code></pre>
-</div>
-</div>
-<div class="listingblock multi-language-sample">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
-class UnknownCommandHandler(private val spaceParser: SpaceParser&lt;Update, Chat&gt;) : TelegramHandler&lt;SendMessage&gt; {
-
-    override fun canHandle(bot: TelegramBotConfiguration?, input: Update) = true // <b class="conum">(1)</b>
-
-    override fun handle(bot: TelegramBotConfiguration?, input: Update): Optional&lt;SendMessage&gt; =
-        SendMessageUtils.compose(
-            spaceParser,
-            input,
-            "I don't how to handle your query: ${input.message.text}"
-        )
-
-    override fun getOrder() = Ordered.LOWEST_PRECEDENCE // <b class="conum">(2)</b>
 }</code></pre>
 </div>
 </div>
@@ -851,11 +853,6 @@ class HelloWorldHandler implements BasecampHandler {
 </div>
 <div class="listingblock multi-language-sample">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy"></code></pre>
-</div>
-</div>
-<div class="listingblock multi-language-sample">
-<div class="content">
 <pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
 class HelloWorldHandler : BasecampHandler {
 
@@ -865,6 +862,11 @@ class HelloWorldHandler : BasecampHandler {
     override fun handle(bot: BasecampBotConfiguration?, input: Query) =
         Optional.of("Hello World")
 }</code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy"></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -901,6 +903,25 @@ class AboutCommandHandler implements BasecampHandler {
 </div>
 <div class="listingblock multi-language-sample">
 <div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
+class AboutCommandHandler(
+    private val textResourceLoader: TextResourceLoader
+) : BasecampHandler {
+
+    override fun canHandle(bot: BasecampBotConfiguration?, input: Query) =
+        input.command.equals("/$ABOUT", ignoreCase = true)
+
+    override fun handle(bot: BasecampBotConfiguration?, input: Query) =
+        textResourceLoader.composeCommandResponse(ABOUT).map(CommandResponse::text)
+
+    companion object {
+        const val ABOUT: String = "about"
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
 <pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">@Singleton
 class AboutCommandHandler implements BasecampHandler {
 
@@ -921,25 +942,6 @@ class AboutCommandHandler implements BasecampHandler {
         textResourceLoader
             .composeCommandResponse(ABOUT)
             .map(CommandResponse::text)
-    }
-}</code></pre>
-</div>
-</div>
-<div class="listingblock multi-language-sample">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
-class AboutCommandHandler(
-    private val textResourceLoader: TextResourceLoader
-) : BasecampHandler {
-
-    override fun canHandle(bot: BasecampBotConfiguration?, input: Query) =
-        input.command.equals("/$ABOUT", ignoreCase = true)
-
-    override fun handle(bot: BasecampBotConfiguration?, input: Query) =
-        textResourceLoader.composeCommandResponse(ABOUT).map(CommandResponse::text)
-
-    companion object {
-        const val ABOUT: String = "about"
     }
 }</code></pre>
 </div>
@@ -1034,6 +1036,19 @@ class UnknownCommandHandler implements BasecampHandler {
 </div>
 <div class="listingblock multi-language-sample">
 <div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
+class UnknownCommandHandler : BasecampHandler {
+
+    override fun canHandle(bot: BasecampBotConfiguration?, input: Query) = true // <b class="conum">(1)</b>
+
+    override fun handle(bot: BasecampBotConfiguration?, input: Query) =
+        Optional.of("I don't know how to handle your query: ${input.command}")
+
+    override fun getOrder() = Ordered.LOWEST_PRECEDENCE // <b class="conum">(2)</b></code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
 <pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">@Singleton
 class UnknownCommandHandler implements BasecampHandler {
 
@@ -1052,19 +1067,6 @@ class UnknownCommandHandler implements BasecampHandler {
         Ordered.LOWEST_PRECEDENCE // <b class="conum">(2)</b>
     }
 }</code></pre>
-</div>
-</div>
-<div class="listingblock multi-language-sample">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
-class UnknownCommandHandler : BasecampHandler {
-
-    override fun canHandle(bot: BasecampBotConfiguration?, input: Query) = true // <b class="conum">(1)</b>
-
-    override fun handle(bot: BasecampBotConfiguration?, input: Query) =
-        Optional.of("I don't know how to handle your query: ${input.command}")
-
-    override fun getOrder() = Ordered.LOWEST_PRECEDENCE // <b class="conum">(2)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">

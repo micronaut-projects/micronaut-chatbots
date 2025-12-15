@@ -138,8 +138,8 @@ implements <a href="Dispatcher.html" title="interface in io.micronaut.chatbots.c
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NonNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="DefaultDispatcher.html" title="type parameter in DefaultDispatcher">O</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dispatch(B,I)" class="member-name-link">dispatch</a><wbr>(<a href="DefaultDispatcher.html" title="type parameter in DefaultDispatcher">B</a>&nbsp;bot,
- <a href="DefaultDispatcher.html" title="type parameter in DefaultDispatcher">I</a>&nbsp;input)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dispatch(B,I)" class="member-name-link">dispatch</a><wbr>(@Nullable <a href="DefaultDispatcher.html" title="type parameter in DefaultDispatcher">B</a>&nbsp;bot,
+ @NonNull <a href="DefaultDispatcher.html" title="type parameter in DefaultDispatcher">I</a>&nbsp;input)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -175,11 +175,9 @@ implements <a href="Dispatcher.html" title="interface in io.micronaut.chatbots.c
 <li>
 <section class="detail" id="dispatch(B,I)">
 <h3 id="dispatch(io.micronaut.chatbots.core.BotConfiguration,java.lang.Object)">dispatch</h3>
-<div class="member-signature"><span class="annotations">@NonNull
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type">@NonNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="DefaultDispatcher.html" title="type parameter in DefaultDispatcher">O</a>&gt;</span>&nbsp;<span class="element-name">dispatch</span><wbr><span class="parameters">(@Nullable
- <a href="DefaultDispatcher.html" title="type parameter in DefaultDispatcher">B</a>&nbsp;bot,
- @NonNull @NotNull
- <a href="DefaultDispatcher.html" title="type parameter in DefaultDispatcher">I</a>&nbsp;input)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">@NonNull <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="DefaultDispatcher.html" title="type parameter in DefaultDispatcher">O</a>&gt;</span>&nbsp;<span class="element-name">dispatch</span><wbr><span class="parameters">(@Nullable <a href="DefaultDispatcher.html" title="type parameter in DefaultDispatcher">B</a>&nbsp;bot,
+ @NotNull
+ @NonNull <a href="DefaultDispatcher.html" title="type parameter in DefaultDispatcher">I</a>&nbsp;input)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="Dispatcher.html#dispatch(B,I)">dispatch</a></code>&nbsp;in interface&nbsp;<code><a href="Dispatcher.html" title="interface in io.micronaut.chatbots.core">Dispatcher</a>&lt;<a href="DefaultDispatcher.html" title="type parameter in DefaultDispatcher">B</a> extends <a href="BotConfiguration.html" title="interface in io.micronaut.chatbots.core">BotConfiguration</a>,<wbr><a href="DefaultDispatcher.html" title="type parameter in DefaultDispatcher">I</a>,<wbr><a href="DefaultDispatcher.html" title="type parameter in DefaultDispatcher">O</a>&gt;</code></dd>
