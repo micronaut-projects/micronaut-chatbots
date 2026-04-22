@@ -1,6 +1,6 @@
 [versions]
 micronaut = "5.0.0-M22"
-micronaut-azure = "5.12.0"
+micronaut-azure = "5.13.0"
 micronaut-aws = "4.11.0"
 micronaut-gcp = "5.13.1"
 micronaut-serde = "3.0.0-M6"
