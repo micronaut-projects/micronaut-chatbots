@@ -8,7 +8,3 @@ dependencies {
     api(mnGcp.micronaut.gcp.function)
     api("com.google.cloud.functions:functions-framework-api:2.0.1")
 }
-
-micronautBuild {
-    javaVersion.set(21)
-}
