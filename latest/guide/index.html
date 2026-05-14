@@ -15,7 +15,7 @@
     <script>hljs.initHighlightingOnLoad();</script>
     <link rel="stylesheet" href="../css/multi-language-sample.css"/>
     <script src="../js/docs.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.13/clipboard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
     <script type="text/javascript">
         function addJsClass(el) {
             var classes = document.body.className.split(" ");
@@ -23,7 +23,9 @@
             document.body.className = classes.join(" ");
         }
     </script>
-
+    <style type="text/css">
+        .lang-java { display: block }; .lang-python { display: block }; .lang-kotlin { display: block }; .lang-groovy { display: block }; 
+    </style>
 </head>
 
 <body class="body" id="docs" onload="addJsClass();" onhashchange="highlightMenu()">
@@ -135,13 +137,13 @@
         <h1>Micronaut Chatbots</h1>
         <p></p>
         <p>Ease the creation of ChatBots with the Micronaut Framework</p>
-        <p><strong>Version:</strong> 1.5.0 </p>
+        <p><strong>Version:</strong> 2.0.0 </p>
     </div>
     
 <h1 id="introduction"><a class="anchor" href="#introduction"></a>1 Introduction</h1>
 
 <div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.5.x/src/main/docs/guide/introduction.adoc"'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/2.0.x/src/main/docs/guide/introduction.adoc"'>
         <i class='fa fa-pencil-square-o'></i> Improve this doc
     </button>
 </div>
@@ -154,7 +156,7 @@
 <h1 id="releaseHistory"><a class="anchor" href="#releaseHistory"></a>2 Release History</h1>
 
 <div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.5.x/src/main/docs/guide/releaseHistory.adoc"'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/2.0.x/src/main/docs/guide/releaseHistory.adoc"'>
         <i class='fa fa-pencil-square-o'></i> Improve this doc
     </button>
 </div>
@@ -170,7 +172,7 @@
 <h1 id="telegram"><a class="anchor" href="#telegram"></a>3 Telegram</h1>
 
 <div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.5.x/src/main/docs/guide/telegram.adoc"'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/2.0.x/src/main/docs/guide/telegram.adoc"'>
         <i class='fa fa-pencil-square-o'></i> Improve this doc
     </button>
 </div>
@@ -202,7 +204,7 @@ At the end of this process, you will receive a token to access the HTTP API.</p>
 <h2 id="telegramConfiguration"><a class="anchor" href="#telegramConfiguration"></a>3.1 Telegram Bot Configuration</h2>
 
 <div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.5.x/src/main/docs/guide/telegram/telegramConfiguration.adoc"'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/2.0.x/src/main/docs/guide/telegram/telegramConfiguration.adoc"'>
         <i class='fa fa-pencil-square-o'></i> Improve this doc
     </button>
 </div>
@@ -299,7 +301,7 @@ micronaut.chatbots.telegram.bots.mnexample.at-username=@MicronautExampleBot</cod
 <h2 id="telegramWebhook"><a class="anchor" href="#telegramWebhook"></a>3.2 Telegram Webhook</h2>
 
 <div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.5.x/src/main/docs/guide/telegram/telegramWebhook.adoc"'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/2.0.x/src/main/docs/guide/telegram/telegramWebhook.adoc"'>
         <i class='fa fa-pencil-square-o'></i> Improve this doc
     </button>
 </div>
@@ -330,7 +332,7 @@ micronaut.chatbots.telegram.bots.mnexample.at-username=@MicronautExampleBot</cod
 <h2 id="telegramHandler"><a class="anchor" href="#telegramHandler"></a>3.3 Telegram Bot Handlers</h2>
 
 <div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.5.x/src/main/docs/guide/telegram/telegramHandler.adoc"'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/2.0.x/src/main/docs/guide/telegram/telegramHandler.adoc"'>
         <i class='fa fa-pencil-square-o'></i> Improve this doc
     </button>
 </div>
@@ -364,19 +366,19 @@ class HelloWorldHandler implements TelegramHandler&lt;SendMessage&gt; {
 </div>
 <div class="listingblock multi-language-sample">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy"></code></pre>
-</div>
-</div>
-<div class="listingblock multi-language-sample">
-<div class="content">
 <pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
 class HelloWorldHandler(private val spaceParser: SpaceParser&lt;Update, Chat&gt;) : TelegramHandler&lt;SendMessage&gt; {
 
-    override fun canHandle(bot: TelegramBotConfiguration?, input: Update): Boolean = input.message.text.contains("hello")
+    override fun canHandle(bot: TelegramBotConfiguration?, input: Update): Boolean = input.message?.text?.contains("hello") ?: false
 
     override fun handle(bot: TelegramBotConfiguration?, input: Update): Optional&lt;SendMessage&gt; =
         SendMessageUtils.compose(spaceParser, input, "Hello World")
 }</code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy"></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -408,6 +410,23 @@ class AboutCommandHandler extends CommandHandler {
 </div>
 <div class="listingblock multi-language-sample">
 <div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
+class AboutCommandHandler(
+    slashCommandParser: TelegramSlashCommandParser,
+    textResourceLoader: TextResourceLoader,
+    spaceParser: SpaceParser&lt;Update, Chat&gt;
+) : CommandHandler(slashCommandParser, textResourceLoader, spaceParser) {
+
+    override fun getCommand() = COMMAND_ABOUT
+
+    companion object {
+        private const val COMMAND_ABOUT = "/about"
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
 <pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">@Singleton
 class AboutCommandHandler extends CommandHandler {
 
@@ -429,23 +448,6 @@ class AboutCommandHandler extends CommandHandler {
 }</code></pre>
 </div>
 </div>
-<div class="listingblock multi-language-sample">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
-class AboutCommandHandler(
-    slashCommandParser: TelegramSlashCommandParser,
-    textResourceLoader: TextResourceLoader,
-    spaceParser: SpaceParser&lt;Update, Chat&gt;
-) : CommandHandler(slashCommandParser, textResourceLoader, spaceParser) {
-
-    override fun getCommand() = COMMAND_ABOUT
-
-    companion object {
-        private const val COMMAND_ABOUT = "/about"
-    }
-}</code></pre>
-</div>
-</div>
 <div class="paragraph">
 <p>And then create some content with a matching name in the <code>botcommands</code> directory:</p>
 </div>
@@ -462,15 +464,17 @@ class AboutCommandHandler(
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Configuration Properties for <a href="../api/io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html">ChatbotsConfigurationProperties</a></caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Property</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Default value</th>
 </tr>
 </thead>
 <tbody>
@@ -478,16 +482,19 @@ class AboutCommandHandler(
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.enabled</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Whether chatbots is enabled. Default value (true).</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.folder</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">java.lang.String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The folder to look for bot commands.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.possible-static-command-extensions</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">java.util.List</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Possible static command file extensions. Default values MARKDOWN, HTML, TXT</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -495,7 +502,7 @@ class AboutCommandHandler(
 <h2 id="telegramOrder"><a class="anchor" href="#telegramOrder"></a>3.4 Ordering Handlers</h2>
 
 <div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.5.x/src/main/docs/guide/telegram/telegramOrder.adoc"'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/2.0.x/src/main/docs/guide/telegram/telegramOrder.adoc"'>
         <i class='fa fa-pencil-square-o'></i> Improve this doc
     </button>
 </div>
@@ -537,6 +544,24 @@ class UnknownCommandHandler implements TelegramHandler&lt;SendMessage&gt; {
 </div>
 <div class="listingblock multi-language-sample">
 <div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
+class UnknownCommandHandler(private val spaceParser: SpaceParser&lt;Update, Chat&gt;) : TelegramHandler&lt;SendMessage&gt; {
+
+    override fun canHandle(bot: TelegramBotConfiguration?, input: Update) = true // <b class="conum">(1)</b>
+
+    override fun handle(bot: TelegramBotConfiguration?, input: Update): Optional&lt;SendMessage&gt; =
+        SendMessageUtils.compose(
+            spaceParser,
+            input,
+            "I don't know how to handle your query: ${input.message?.text ?: "unknown"}"
+        )
+
+    override fun getOrder() = Ordered.LOWEST_PRECEDENCE // <b class="conum">(2)</b>
+}</code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
 <pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">@Singleton
 class UnknownCommandHandler implements TelegramHandler&lt;SendMessage&gt; {
 
@@ -563,24 +588,6 @@ class UnknownCommandHandler implements TelegramHandler&lt;SendMessage&gt; {
 }</code></pre>
 </div>
 </div>
-<div class="listingblock multi-language-sample">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
-class UnknownCommandHandler(private val spaceParser: SpaceParser&lt;Update, Chat&gt;) : TelegramHandler&lt;SendMessage&gt; {
-
-    override fun canHandle(bot: TelegramBotConfiguration?, input: Update) = true // <b class="conum">(1)</b>
-
-    override fun handle(bot: TelegramBotConfiguration?, input: Update): Optional&lt;SendMessage&gt; =
-        SendMessageUtils.compose(
-            spaceParser,
-            input,
-            "I don't how to handle your query: ${input.message.text}"
-        )
-
-    override fun getOrder() = Ordered.LOWEST_PRECEDENCE // <b class="conum">(2)</b>
-}</code></pre>
-</div>
-</div>
 <div class="colist arabic">
 <table>
 <tr>
@@ -597,7 +604,7 @@ class UnknownCommandHandler(private val spaceParser: SpaceParser&lt;Update, Chat
 <h2 id="telegramLambda"><a class="anchor" href="#telegramLambda"></a>3.5 Telegram Chatbots as an AWS Lambda Function</h2>
 
 <div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.5.x/src/main/docs/guide/telegram/telegramLambda.adoc"'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/2.0.x/src/main/docs/guide/telegram/telegramLambda.adoc"'>
         <i class='fa fa-pencil-square-o'></i> Improve this doc
     </button>
 </div>
@@ -620,7 +627,8 @@ class UnknownCommandHandler(private val spaceParser: SpaceParser&lt;Update, Chat
     &lt;artifactId&gt;micronaut-chatbots-telegram-lambda&lt;/artifactId&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
-</div></p>
+</div>
+</p>
 </div>
 <div class="paragraph">
 <p>Use the class <code>io.micronaut.chatbots.telegram.lambda.Handler</code>
@@ -630,7 +638,7 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
 <h2 id="telegramGcp"><a class="anchor" href="#telegramGcp"></a>3.6 Telegram Chatbots as a Google Cloud Function</h2>
 
 <div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.5.x/src/main/docs/guide/telegram/telegramGcp.adoc"'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/2.0.x/src/main/docs/guide/telegram/telegramGcp.adoc"'>
         <i class='fa fa-pencil-square-o'></i> Improve this doc
     </button>
 </div>
@@ -653,7 +661,8 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
     &lt;artifactId&gt;micronaut-chatbots-telegram-gcp-function&lt;/artifactId&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
-</div></p>
+</div>
+</p>
 </div>
 <div class="paragraph">
 <p>You can use the following entry point:</p>
@@ -666,7 +675,7 @@ as the <a href="https://cloud.google.com/functions/docs/writing/write-http-funct
 <h2 id="telegramAzure"><a class="anchor" href="#telegramAzure"></a>3.7 Telegram Chatbots as an Azure Function</h2>
 
 <div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.5.x/src/main/docs/guide/telegram/telegramAzure.adoc"'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/2.0.x/src/main/docs/guide/telegram/telegramAzure.adoc"'>
         <i class='fa fa-pencil-square-o'></i> Improve this doc
     </button>
 </div>
@@ -689,7 +698,8 @@ as the <a href="https://cloud.google.com/functions/docs/writing/write-http-funct
     &lt;artifactId&gt;micronaut-chatbots-telegram-azure-function&lt;/artifactId&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
-</div></p>
+</div>
+</p>
 </div>
 <div class="paragraph">
 <p>This adds an <code>AzureFunction</code> with the name <code>TelegramTrigger</code> via the class <code>io.micronaut.chatbots.telegram.azurefunction.Handler</code></p>
@@ -698,7 +708,7 @@ as the <a href="https://cloud.google.com/functions/docs/writing/write-http-funct
 <h2 id="telegramHttp"><a class="anchor" href="#telegramHttp"></a>3.8 Telegram Chatbots Controller</h2>
 
 <div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.5.x/src/main/docs/guide/telegram/telegramHttp.adoc"'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/2.0.x/src/main/docs/guide/telegram/telegramHttp.adoc"'>
         <i class='fa fa-pencil-square-o'></i> Improve this doc
     </button>
 </div>
@@ -721,7 +731,8 @@ as the <a href="https://cloud.google.com/functions/docs/writing/write-http-funct
     &lt;artifactId&gt;micronaut-mironaut-chatbots-telegram-http&lt;/artifactId&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
-</div></p>
+</div>
+</p>
 </div>
 <div class="paragraph">
 <p>You can configure the path with:</p>
@@ -730,15 +741,17 @@ as the <a href="https://cloud.google.com/functions/docs/writing/write-http-funct
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Configuration Properties for <a href="../api/io/micronaut/chatbots/telegram/http/TelegramControllerConfiguration.html">TelegramControllerConfiguration</a></caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Property</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Default value</th>
 </tr>
 </thead>
 <tbody>
@@ -746,11 +759,13 @@ as the <a href="https://cloud.google.com/functions/docs/writing/write-http-funct
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.telegram.endpoint.enabled</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enables the controller. Default value true .</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.telegram.endpoint.path</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">java.lang.String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Path to the controller. Default value "/telegram" .</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -758,7 +773,7 @@ as the <a href="https://cloud.google.com/functions/docs/writing/write-http-funct
 <h1 id="basecamp"><a class="anchor" href="#basecamp"></a>4 Basecamp</h1>
 
 <div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.5.x/src/main/docs/guide/basecamp.adoc"'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/2.0.x/src/main/docs/guide/basecamp.adoc"'>
         <i class='fa fa-pencil-square-o'></i> Improve this doc
     </button>
 </div>
@@ -771,7 +786,7 @@ as the <a href="https://cloud.google.com/functions/docs/writing/write-http-funct
 <h2 id="basecampWebhook"><a class="anchor" href="#basecampWebhook"></a>4.1 Basecamp Webhook</h2>
 
 <div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.5.x/src/main/docs/guide/basecamp/basecampWebhook.adoc"'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/2.0.x/src/main/docs/guide/basecamp/basecampWebhook.adoc"'>
         <i class='fa fa-pencil-square-o'></i> Improve this doc
     </button>
 </div>
@@ -809,7 +824,7 @@ as the <a href="https://cloud.google.com/functions/docs/writing/write-http-funct
 <h2 id="basecampHandler"><a class="anchor" href="#basecampHandler"></a>4.2 Basecamp Bot Handlers</h2>
 
 <div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.5.x/src/main/docs/guide/basecamp/basecampHandler.adoc"'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/2.0.x/src/main/docs/guide/basecamp/basecampHandler.adoc"'>
         <i class='fa fa-pencil-square-o'></i> Improve this doc
     </button>
 </div>
@@ -838,11 +853,6 @@ class HelloWorldHandler implements BasecampHandler {
 </div>
 <div class="listingblock multi-language-sample">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy"></code></pre>
-</div>
-</div>
-<div class="listingblock multi-language-sample">
-<div class="content">
 <pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
 class HelloWorldHandler : BasecampHandler {
 
@@ -852,6 +862,11 @@ class HelloWorldHandler : BasecampHandler {
     override fun handle(bot: BasecampBotConfiguration?, input: Query) =
         Optional.of("Hello World")
 }</code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy"></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -888,6 +903,25 @@ class AboutCommandHandler implements BasecampHandler {
 </div>
 <div class="listingblock multi-language-sample">
 <div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
+class AboutCommandHandler(
+    private val textResourceLoader: TextResourceLoader
+) : BasecampHandler {
+
+    override fun canHandle(bot: BasecampBotConfiguration?, input: Query) =
+        input.command.equals("/$ABOUT", ignoreCase = true)
+
+    override fun handle(bot: BasecampBotConfiguration?, input: Query) =
+        textResourceLoader.composeCommandResponse(ABOUT).map(CommandResponse::text)
+
+    companion object {
+        const val ABOUT: String = "about"
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
 <pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">@Singleton
 class AboutCommandHandler implements BasecampHandler {
 
@@ -912,25 +946,6 @@ class AboutCommandHandler implements BasecampHandler {
 }</code></pre>
 </div>
 </div>
-<div class="listingblock multi-language-sample">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
-class AboutCommandHandler(
-    private val textResourceLoader: TextResourceLoader
-) : BasecampHandler {
-
-    override fun canHandle(bot: BasecampBotConfiguration?, input: Query) =
-        input.command.equals("/$ABOUT", ignoreCase = true)
-
-    override fun handle(bot: BasecampBotConfiguration?, input: Query) =
-        textResourceLoader.composeCommandResponse(ABOUT).map(CommandResponse::text)
-
-    companion object {
-        const val ABOUT: String = "about"
-    }
-}</code></pre>
-</div>
-</div>
 <div class="paragraph">
 <p>And then create some content with a matching name in the <code>botcommands</code> directory:</p>
 </div>
@@ -947,15 +962,17 @@ class AboutCommandHandler(
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Configuration Properties for <a href="../api/io/micronaut/chatbots/core/ChatbotsConfigurationProperties.html">ChatbotsConfigurationProperties</a></caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Property</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Default value</th>
 </tr>
 </thead>
 <tbody>
@@ -963,16 +980,19 @@ class AboutCommandHandler(
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.enabled</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Whether chatbots is enabled. Default value (true).</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.folder</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">java.lang.String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The folder to look for bot commands.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.possible-static-command-extensions</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">java.util.List</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Possible static command file extensions. Default values MARKDOWN, HTML, TXT</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -980,7 +1000,7 @@ class AboutCommandHandler(
 <h2 id="basecampOrder"><a class="anchor" href="#basecampOrder"></a>4.3 Ordering Handlers</h2>
 
 <div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.5.x/src/main/docs/guide/basecamp/basecampOrder.adoc"'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/2.0.x/src/main/docs/guide/basecamp/basecampOrder.adoc"'>
         <i class='fa fa-pencil-square-o'></i> Improve this doc
     </button>
 </div>
@@ -1016,6 +1036,19 @@ class UnknownCommandHandler implements BasecampHandler {
 </div>
 <div class="listingblock multi-language-sample">
 <div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
+class UnknownCommandHandler : BasecampHandler {
+
+    override fun canHandle(bot: BasecampBotConfiguration?, input: Query) = true // <b class="conum">(1)</b>
+
+    override fun handle(bot: BasecampBotConfiguration?, input: Query) =
+        Optional.of("I don't know how to handle your query: ${input.command}")
+
+    override fun getOrder() = Ordered.LOWEST_PRECEDENCE // <b class="conum">(2)</b></code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="content">
 <pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">@Singleton
 class UnknownCommandHandler implements BasecampHandler {
 
@@ -1036,19 +1069,6 @@ class UnknownCommandHandler implements BasecampHandler {
 }</code></pre>
 </div>
 </div>
-<div class="listingblock multi-language-sample">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">@Singleton
-class UnknownCommandHandler : BasecampHandler {
-
-    override fun canHandle(bot: BasecampBotConfiguration?, input: Query) = true // <b class="conum">(1)</b>
-
-    override fun handle(bot: BasecampBotConfiguration?, input: Query) =
-        Optional.of("I don't know how to handle your query: ${input.command}")
-
-    override fun getOrder() = Ordered.LOWEST_PRECEDENCE // <b class="conum">(2)</b></code></pre>
-</div>
-</div>
 <div class="colist arabic">
 <table>
 <tr>
@@ -1065,7 +1085,7 @@ class UnknownCommandHandler : BasecampHandler {
 <h2 id="basecampLambda"><a class="anchor" href="#basecampLambda"></a>4.4 Basecamp Chatbots as an AWS Lambda Function</h2>
 
 <div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.5.x/src/main/docs/guide/basecamp/basecampLambda.adoc"'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/2.0.x/src/main/docs/guide/basecamp/basecampLambda.adoc"'>
         <i class='fa fa-pencil-square-o'></i> Improve this doc
     </button>
 </div>
@@ -1088,7 +1108,8 @@ class UnknownCommandHandler : BasecampHandler {
     &lt;artifactId&gt;micronaut-chatbots-basecamp-lambda&lt;/artifactId&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
-</div></p>
+</div>
+</p>
 </div>
 <div class="paragraph">
 <p>Use the class <code>io.micronaut.chatbots.basecamp.lambda.Handler</code>
@@ -1098,7 +1119,7 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
 <h2 id="basecampGcp"><a class="anchor" href="#basecampGcp"></a>4.5 Basecamp Chatbots as a Google Cloud Function</h2>
 
 <div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.5.x/src/main/docs/guide/basecamp/basecampGcp.adoc"'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/2.0.x/src/main/docs/guide/basecamp/basecampGcp.adoc"'>
         <i class='fa fa-pencil-square-o'></i> Improve this doc
     </button>
 </div>
@@ -1121,7 +1142,8 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
     &lt;artifactId&gt;micronaut-chatbots-basecamp-gcp-function&lt;/artifactId&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
-</div></p>
+</div>
+</p>
 </div>
 <div class="paragraph">
 <p>You can use the following entry point:</p>
@@ -1133,7 +1155,7 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
 <h2 id="basecampAzure"><a class="anchor" href="#basecampAzure"></a>4.6 Basecamp Chatbots as an Azure Function</h2>
 
 <div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.5.x/src/main/docs/guide/basecamp/basecampAzure.adoc"'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/2.0.x/src/main/docs/guide/basecamp/basecampAzure.adoc"'>
         <i class='fa fa-pencil-square-o'></i> Improve this doc
     </button>
 </div>
@@ -1156,7 +1178,8 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
     &lt;artifactId&gt;micronaut-chatbots-basecamp-azure-function&lt;/artifactId&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
-</div></p>
+</div>
+</p>
 </div>
 <div class="paragraph">
 <p>This adds an <code>AzureFunction</code> with the name <code>BasecampTrigger</code> via the class <code>io.micronaut.chatbots.basecamp.azurefunction.Handler</code></p>
@@ -1165,7 +1188,7 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
 <h2 id="basecampHttp"><a class="anchor" href="#basecampHttp"></a>4.7 Basecamp Chatbots Controller</h2>
 
 <div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.5.x/src/main/docs/guide/basecamp/basecampHttp.adoc"'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/2.0.x/src/main/docs/guide/basecamp/basecampHttp.adoc"'>
         <i class='fa fa-pencil-square-o'></i> Improve this doc
     </button>
 </div>
@@ -1188,7 +1211,8 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
     &lt;artifactId&gt;micronaut-chatbots-basecamp-http&lt;/artifactId&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
-</div></p>
+</div>
+</p>
 </div>
 <div class="paragraph">
 <p>You can configure the path with:</p>
@@ -1197,15 +1221,17 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Configuration Properties for <a href="../api/io/micronaut/chatbots/basecamp/http/BasecampControllerConfiguration.html">BasecampControllerConfiguration</a></caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Property</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Default value</th>
 </tr>
 </thead>
 <tbody>
@@ -1213,11 +1239,13 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.basecamp.endpoint.enabled</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enables the controller. Default value true.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>micronaut.chatbots.basecamp.endpoint.path</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">java.lang.String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Path to the controller. Default value "/basecamp".</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -1225,7 +1253,7 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
 <h1 id="breaks"><a class="anchor" href="#breaks"></a>5 Breaking Changes</h1>
 
 <div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.5.x/src/main/docs/guide/breaks.adoc"'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/2.0.x/src/main/docs/guide/breaks.adoc"'>
         <i class='fa fa-pencil-square-o'></i> Improve this doc
     </button>
 </div>
@@ -1254,7 +1282,7 @@ Use the accessor/mutator methods for <code>singleUserBotDm</code> or <code>space
 <h1 id="repository"><a class="anchor" href="#repository"></a>6 Repository</h1>
 
 <div class='contribute-btn'>
-    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/1.5.x/src/main/docs/guide/repository.adoc"'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/micronaut-projects/micronaut-chatbots/edit/2.0.x/src/main/docs/guide/repository.adoc"'>
         <i class='fa fa-pencil-square-o'></i> Improve this doc
     </button>
 </div>
