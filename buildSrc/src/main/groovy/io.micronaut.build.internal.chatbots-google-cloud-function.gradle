@@ -6,5 +6,5 @@ dependencies {
     annotationProcessor(mnSerde.micronaut.serde.processor)
     implementation(mnSerde.micronaut.serde.jackson)
     api(mnGcp.micronaut.gcp.function)
-    api("com.google.cloud.functions:functions-framework-api:2.0.1")
+    api("com.google.cloud.functions:functions-framework-api:2.0.2")
 }
