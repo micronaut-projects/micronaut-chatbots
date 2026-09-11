@@ -1,9 +1,9 @@
 [versions]
-micronaut = "5.2.0"
-micronaut-azure = "6.1.0"
-micronaut-aws = "5.1.1"
-micronaut-gcp = "6.1.0"
-micronaut-serde = "3.1.1"
+micronaut = "5.1.6"
+micronaut-azure = "6.0.0"
+micronaut-aws = "5.0.2"
+micronaut-gcp = "6.0.0"
+micronaut-serde = "3.1.0"
 micronaut-validation = "5.1.0"
 
 [libraries]
