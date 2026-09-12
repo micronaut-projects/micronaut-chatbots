@@ -1,5 +1,5 @@
 [versions]
-micronaut = "5.2.0"
+micronaut = "5.2.1"
 micronaut-azure = "6.1.0"
 micronaut-aws = "5.1.1"
 micronaut-gcp = "6.1.0"
