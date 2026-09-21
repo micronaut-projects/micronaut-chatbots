@@ -7,7 +7,7 @@ pluginManagement {
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 plugins {
-    id("io.micronaut.build.shared.settings") version "8.0.2"
+    id("io.micronaut.build.shared.settings") version "8.1.2"
 }
 
 rootProject.name = "chatbots-parent"
@@ -31,6 +31,7 @@ include("chatbots-bom")
 include("test-suite")
 include("test-suite-groovy")
 include("test-suite-kotlin")
+include("test-suite-python")
 
 configure<io.micronaut.build.MicronautBuildSettingsExtension> {
     useStandardizedProjectNames.set(true)
