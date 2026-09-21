@@ -7,9 +7,6 @@ For example to respond to an `/about` command with a static message, you create 
 
 snippet::io.micronaut.chatbots.docs.telegram.AboutCommandHandler[tags=class]
 
-[.lang-python]
-NOTE: A Python class cannot extend the Java class `CommandHandler`. The Python handler implements api:chatbots.telegram.core.TelegramHandler[] directly and composes the same collaborators the parent class uses (api:chatbots.telegram.core.TelegramSlashCommandParser[], api:chatbots.core.TextResourceLoader[] and the api:chatbots.core.SpaceParser[]) to parse the command, load the static content and compose the reply.
-
 And then create some content with a matching name in the `botcommands` directory:
 
 [source,md]

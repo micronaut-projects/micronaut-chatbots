@@ -1,6 +1,5 @@
 from typing import Annotated
 
-import java
 from jakarta.inject import Inject
 from micronaut.chatbots.core import Dispatcher
 from micronaut.chatbots.telegram.api import Update
@@ -31,19 +30,19 @@ class HelloWorldHandlerTest:
     @Test
     def test_about_command_handler_exists(self):
         send = self.dispatch("about.json")
-        assert java.instanceof(send, SendMessage)
+        assert isinstance(send, SendMessage)
         assert send.getText().strip() == "Bot developed with 💙 using [Micronaut](https://micronaut.io)"
 
     @Test
     def test_hello_command_handler_exists(self):
         send = self.dispatch("hello.json")
-        assert java.instanceof(send, SendMessage)
+        assert isinstance(send, SendMessage)
         assert send.getText() == "Hello World"
 
     @Test
     def test_unknown_command_handler_exists(self):
         send = self.dispatch("text.json")
-        assert java.instanceof(send, SendMessage)
+        assert isinstance(send, SendMessage)
         assert send.getText() == "I don't know how to handle your query: some text"
 
     def dispatch(self, resource: str) -> Send:

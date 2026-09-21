@@ -4,7 +4,7 @@ from micronaut.chatbots.core import SpaceParser
 from micronaut.chatbots.telegram.api import Chat, Update
 from micronaut.chatbots.telegram.api.send import SendMessage
 from micronaut.chatbots.telegram.core import SendMessageUtils, TelegramBotConfiguration, TelegramHandler
-from micronaut.context.annotation import Executable, Requires
+from micronaut.context.annotation import Requires
 from micronaut.core.order import Ordered
 
 
@@ -22,7 +22,6 @@ class UnknownCommandHandler(TelegramHandler[SendMessage]):
     def handle(self, bot: TelegramBotConfiguration | None, input: Update) -> Optional[SendMessage]:
         return SendMessageUtils.compose(self.space_parser, input, f"I don't know how to handle your query: {input.getMessage().getText()}")
 
-    @Executable  # overrides the default getOrder() method of the Handler interface
     def getOrder(self) -> int:
         return Ordered.LOWEST_PRECEDENCE  # <2>
 # end::class[]

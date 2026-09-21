@@ -26,6 +26,4 @@ dependencies {
 tasks.withType<Test> {
     useJUnitPlatform()
     systemProperty("micronaut.python.pool.enabled", "false")
-    // a Truffle host-interop assertion trips on varargs overloads (e.g. jakarta.validation.Validator#validate)
-    enableAssertions = false
 }
