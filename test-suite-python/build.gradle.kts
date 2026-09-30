@@ -3,9 +3,6 @@ plugins {
     id("io.micronaut.build.internal.java-base")
     id("io.micronaut.build.internal.python")
 }
-repositories {
-    mavenCentral()
-}
 
 dependencies {
     testRuntimeOnly(mnLogging.logback.classic)
@@ -25,5 +22,4 @@ dependencies {
 }
 tasks.withType<Test> {
     useJUnitPlatform()
-    systemProperty("micronaut.python.pool.enabled", "false")
 }
