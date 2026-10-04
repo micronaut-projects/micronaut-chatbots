@@ -231,7 +231,9 @@ micronaut.chatbots.telegram.bots.mnexample.at-username=@MicronautExampleBot</cod
 </div>
 <div class="listingblock multi-language-sample">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="toml">micronaut = {chatbots = {telegram = {bots = {mnexample = {token = "xxxyyyzzz", at-username = "@MicronautExampleBot"}}}}}</code></pre>
+<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="toml">[micronaut.chatbots.telegram.bots.mnexample]
+token = "xxxyyyzzz"
+at-username = "@MicronautExampleBot"</code></pre>
 </div>
 </div>
 <div class="listingblock multi-language-sample">
@@ -622,6 +624,15 @@ class UnknownCommandHandler implements TelegramHandler&lt;SendMessage&gt; {
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
+<div class="listingblock multi-language-sample">
+<div class="title"></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="pyronaut">[tool.pyronaut.dependencies]
+runtime = [
+    <span class="hljs-string">"io.micronaut.chatbots:micronaut-chatbots-telegram-lambda"</span>,
+]</code></pre>
+</div>
+</div>
 </p>
 </div>
 <div class="paragraph">
@@ -654,6 +665,15 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
     &lt;groupId&gt;io.micronaut.chatbots&lt;/groupId&gt;
     &lt;artifactId&gt;micronaut-chatbots-telegram-gcp-function&lt;/artifactId&gt;
 &lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="title"></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="pyronaut">[tool.pyronaut.dependencies]
+runtime = [
+    <span class="hljs-string">"io.micronaut.chatbots:micronaut-chatbots-telegram-gcp-function"</span>,
+]</code></pre>
 </div>
 </div>
 </p>
@@ -693,6 +713,15 @@ as the <a href="https://cloud.google.com/functions/docs/writing/write-http-funct
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
+<div class="listingblock multi-language-sample">
+<div class="title"></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="pyronaut">[tool.pyronaut.dependencies]
+runtime = [
+    <span class="hljs-string">"io.micronaut.chatbots:micronaut-chatbots-telegram-azure-function"</span>,
+]</code></pre>
+</div>
+</div>
 </p>
 </div>
 <div class="paragraph">
@@ -724,6 +753,15 @@ as the <a href="https://cloud.google.com/functions/docs/writing/write-http-funct
     &lt;groupId&gt;io.micronaut.chatbots&lt;/groupId&gt;
     &lt;artifactId&gt;micronaut-mironaut-chatbots-telegram-http&lt;/artifactId&gt;
 &lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="title"></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="pyronaut">[tool.pyronaut.dependencies]
+runtime = [
+    <span class="hljs-string">"io.micronaut.chatbots:micronaut-mironaut-chatbots-telegram-http"</span>,
+]</code></pre>
 </div>
 </div>
 </p>
@@ -1103,6 +1141,15 @@ class UnknownCommandHandler implements BasecampHandler {
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
+<div class="listingblock multi-language-sample">
+<div class="title"></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="pyronaut">[tool.pyronaut.dependencies]
+runtime = [
+    <span class="hljs-string">"io.micronaut.chatbots:micronaut-chatbots-basecamp-lambda"</span>,
+]</code></pre>
+</div>
+</div>
 </p>
 </div>
 <div class="paragraph">
@@ -1135,6 +1182,15 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
     &lt;groupId&gt;io.micronaut.chatbots&lt;/groupId&gt;
     &lt;artifactId&gt;micronaut-chatbots-basecamp-gcp-function&lt;/artifactId&gt;
 &lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="title"></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="pyronaut">[tool.pyronaut.dependencies]
+runtime = [
+    <span class="hljs-string">"io.micronaut.chatbots:micronaut-chatbots-basecamp-gcp-function"</span>,
+]</code></pre>
 </div>
 </div>
 </p>
@@ -1173,6 +1229,15 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
+<div class="listingblock multi-language-sample">
+<div class="title"></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="pyronaut">[tool.pyronaut.dependencies]
+runtime = [
+    <span class="hljs-string">"io.micronaut.chatbots:micronaut-chatbots-basecamp-azure-function"</span>,
+]</code></pre>
+</div>
+</div>
 </p>
 </div>
 <div class="paragraph">
@@ -1204,6 +1269,15 @@ as the <a href="https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html">
     &lt;groupId&gt;io.micronaut.chatbots&lt;/groupId&gt;
     &lt;artifactId&gt;micronaut-chatbots-basecamp-http&lt;/artifactId&gt;
 &lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock multi-language-sample">
+<div class="title"></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="pyronaut">[tool.pyronaut.dependencies]
+runtime = [
+    <span class="hljs-string">"io.micronaut.chatbots:micronaut-chatbots-basecamp-http"</span>,
+]</code></pre>
 </div>
 </div>
 </p>
