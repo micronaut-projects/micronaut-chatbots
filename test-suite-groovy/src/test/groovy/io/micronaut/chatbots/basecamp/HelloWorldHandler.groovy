@@ -8,8 +8,9 @@ import jakarta.inject.Singleton
 
 import jakarta.validation.constraints.NotNull
 
-@Singleton
 @Requires(property = "spec.name", value = "basecamp")
+// tag::class[]
+@Singleton
 class HelloWorldHandler implements BasecampHandler {
 
     @Override
@@ -22,4 +23,4 @@ class HelloWorldHandler implements BasecampHandler {
         Optional.of("Hello World")
     }
 }
-
+// end::class[]

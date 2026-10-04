@@ -13,8 +13,9 @@ import jakarta.inject.Singleton
 
 import jakarta.validation.constraints.NotNull
 
-@Singleton
 @Requires(property = "spec.name", value = "telegram")
+// tag::class[]
+@Singleton
 class HelloWorldHandler implements TelegramHandler<SendMessage> {
 
     private final SpaceParser<Update, Chat> spaceParser
@@ -33,3 +34,4 @@ class HelloWorldHandler implements TelegramHandler<SendMessage> {
         SendMessageUtils.compose(spaceParser, input, "Hello World")
     }
 }
+// end::class[]
